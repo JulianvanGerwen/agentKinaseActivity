@@ -10,6 +10,10 @@ dependencies = ["numpy", "pandas", "scipy", "threadpoolctl"]
 
 [project.optional-dependencies]
 test = ["pytest"]
+gpu = ["torch"]
+
+[project.scripts]
+kinact = "kinact.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
