@@ -1,0 +1,56 @@
+{
+ "bench": "kinact.runtime.bench_runtime, 200 fixed DEV conditions (seed 0), warm, median of 5",
+ "cpu": {
+  "n_conditions": 200,
+  "n_rep": 5,
+  "phases": true,
+  "threads_1": {
+   "load_mapping_s": 0.18431894411332905,
+   "scoring_s": 1.138026717118919,
+   "total_s": 1.322345661232248,
+   "ms_per_condition": 6.61172830616124,
+   "compendium_extrapolated_s": 12.806917729034321
+  },
+  "threads_16": {
+   "load_mapping_s": 0.22766061313450336,
+   "scoring_s": 1.0458426258992404,
+   "total_s": 1.2735032390337437,
+   "ms_per_condition": 6.367516195168719,
+   "compendium_extrapolated_s": 12.33387887004181
+  }
+ },
+ "gpu": {
+  "n_conditions": 200,
+  "n_rep": 5,
+  "phases": true,
+  "threads_16": {
+   "load_mapping_s": 0.23781467392109334,
+   "scoring_s": 0.2914355529937893,
+   "total_s": 0.5292502269148827,
+   "ms_per_condition": 2.6462511345744133,
+   "compendium_extrapolated_s": 5.125788447670638
+  }
+ },
+ "dev_compendium_1358": {
+  "cpu_1t_prepare_s": 1.051605218090117,
+  "cpu_1t_score_s": 5.162996474886313,
+  "cpu_1t_total_s": 6.21460169297643,
+  "cpu_16t_prepare_s": 1.0960491329897195,
+  "cpu_16t_score_s": 4.922893453156576,
+  "cpu_16t_total_s": 6.018942586146295,
+  "gpu_score_s": 1.7116703412029892,
+  "gpu_total_s": 2.8077194741927087,
+  "n_conditions": 1358,
+  "n_patterns": 958,
+  "n_woodbury_1t": 395
+ },
+ "hardware": {
+  "cpu_count": 128,
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "loadavg_at_end": [
+   101.1318359375,
+   85.5234375,
+   53.5478515625
+  ]
+ }
+}

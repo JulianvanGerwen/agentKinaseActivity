@@ -1,0 +1,23 @@
+{
+ "name": "core-v1",
+ "description": "Bayesian linear-Gaussian core (D6/D7): curated_union + r2np global top-100 (alpha=1), Manning family/group kernel, z_vif output. Frozen values from docs/audit/core_v1_audit.md / results/audit_core_v1/devconfirm_frozen_config.json (hash 04b69b6513e3927d).",
+ "library": {
+  "curated": "curated_union",
+  "predicted": {"r2np": {"k": 100, "alpha": 1.0}}
+ },
+ "scale": "wsd",
+ "winsor": null,
+ "borrow": true,
+ "min_substrates": 1,
+ "tau": 0.125,
+ "rho_f": 3.0,
+ "rho_g": 0.25,
+ "rho_e": 0.01,
+ "output": "z_vif",
+ "artifacts": "../models/core_v1",
+ "provenance": {
+  "rho_g": "argmax pooled all-DEV M1-sel of z_vif over {0, 0.25, 1} (audit; DEV-confirm frozen config)",
+  "rho_e": "fit_rho_null on the 7 DEV role=null conditions (folds 0-4); refitted and checked by scripts/build_core_artifacts.py",
+  "frozen_config_hash": "04b69b6513e3927d"
+ }
+}

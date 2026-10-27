@@ -8,3 +8,4 @@ cache/
 logs/*.log
 __pycache__/
 *.pyc
+models/*/edges.tsv.gz

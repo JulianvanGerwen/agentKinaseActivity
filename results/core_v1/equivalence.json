@@ -1,0 +1,50 @@
+{
+ "bench200_cpu_vs_bayes2_SingleSample2_float64": {
+  "n_conditions": 200,
+  "n_scored_cells": 100415,
+  "nan_pattern_equal": true,
+  "max_abs_diff": 8.355094394119078e-12,
+  "pooled_spearman": 0.9999999992931093,
+  "min_per_condition_spearman": 0.999086747874572,
+  "min_per_condition_spearman_round1e-8": 0.9999999999999998
+ },
+ "bench200_gpu_vs_bayes2_SingleSample2_float64": {
+  "n_conditions": 200,
+  "n_scored_cells": 100415,
+  "nan_pattern_equal": true,
+  "max_abs_diff": 5.53468382236133e-12,
+  "pooled_spearman": 0.9999999992470294,
+  "min_per_condition_spearman": 0.9988387570540037,
+  "min_per_condition_spearman_round1e-8": 0.9999999999999998
+ },
+ "bench200_cpu_vs_bayes2_score_batched": {
+  "n_conditions": 200,
+  "n_scored_cells": 100415,
+  "nan_pattern_equal": true,
+  "max_abs_diff": 1.7341846643148529e-06,
+  "pooled_spearman": 0.9999999993379538,
+  "min_per_condition_spearman": 0.9993993280515745,
+  "min_per_condition_spearman_round1e-8": 0.9999997556261636
+ },
+ "bench200_bayes2_SingleSample2_vs_bayes2_score (bayes2 internal float32 error)": {
+  "n_conditions": 200,
+  "n_scored_cells": 100415,
+  "nan_pattern_equal": true,
+  "max_abs_diff": 1.7341846776375291e-06,
+  "pooled_spearman": 0.9999999994108723,
+  "min_per_condition_spearman": 0.9994959314553243,
+  "min_per_condition_spearman_round1e-8": 0.9999997556261636
+ },
+ "dev1358_cpu_vs_bayes2_score_batched": {
+  "n_conditions": 1358,
+  "n_scored_cells": 681658,
+  "nan_pattern_equal": true,
+  "max_abs_diff": 2.497751780072832e-06,
+  "pooled_spearman": 0.9999999999829023,
+  "min_per_condition_spearman": 0.9976319432549531,
+  "min_per_condition_spearman_round1e-8": 0.9999997556261636
+ },
+ "bench200_mean_vs_bayes2_posterior_mean_maxabs": 1.053141917561895e-07,
+ "bench200_sd_vs_bayes2_posterior_sd_maxabs": 9.159339953157541e-16,
+ "bench200_n_substrates_equal": true
+}
