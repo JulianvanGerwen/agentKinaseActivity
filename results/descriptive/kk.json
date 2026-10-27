@@ -1,0 +1,130 @@
+{
+ "n_conditions": 1325,
+ "n_gold_pairs_U": 790,
+ "core-v1": {
+  "n_kinases": 503,
+  "n_pairs": 125956,
+  "n_gold": 790,
+  "auroc_abs": 0.6819897758055783,
+  "auroc_signed": 0.6635272358308166,
+  "mean_abs_rho_gold": 0.22533907433114614,
+  "mean_abs_rho_other": 0.12158825506166429,
+  "auroc_abs_diff_family": 0.6684892088596001,
+  "n_gold_diff_family": 736,
+  "stratum J=0": {
+   "n_gold": 110,
+   "n_other": 82863,
+   "auroc_abs": 0.5489438755975087
+  },
+  "stratum 0<J<=.05": {
+   "n_gold": 580,
+   "n_other": 39212,
+   "auroc_abs": 0.6012899816030983
+  },
+  "stratum .05<J<=.2": {
+   "n_gold": 96,
+   "n_other": 2975,
+   "auroc_abs": 0.566295518207283
+  },
+  "stratum J>.2": {
+   "n_gold": 4,
+   "n_other": 116,
+   "auroc_abs": 0.38146551724137934
+  }
+ },
+ "core-v2": {
+  "n_kinases": 503,
+  "n_pairs": 125956,
+  "n_gold": 790,
+  "auroc_abs": 0.6605939717118957,
+  "auroc_signed": 0.6446678406013523,
+  "mean_abs_rho_gold": 0.21823135571989283,
+  "mean_abs_rho_other": 0.12056764540012896,
+  "auroc_abs_diff_family": 0.6453219574341267,
+  "n_gold_diff_family": 736,
+  "stratum J=0": {
+   "n_gold": 110,
+   "n_other": 82863,
+   "auroc_abs": 0.5327022807635385
+  },
+  "stratum 0<J<=.05": {
+   "n_gold": 580,
+   "n_other": 39212,
+   "auroc_abs": 0.5882313032252618
+  },
+  "stratum .05<J<=.2": {
+   "n_gold": 96,
+   "n_other": 2975,
+   "auroc_abs": 0.5367261904761905
+  },
+  "stratum J>.2": {
+   "n_gold": 4,
+   "n_other": 116,
+   "auroc_abs": 0.3146551724137931
+  }
+ },
+ "psp-z-min3": {
+  "n_kinases": 176,
+  "n_pairs": 13145,
+  "n_gold": 537,
+  "auroc_abs": 0.6755205231640341,
+  "auroc_signed": 0.688843180765486,
+  "mean_abs_rho_gold": 0.2874838389536713,
+  "mean_abs_rho_other": 0.18712086923377746,
+  "auroc_abs_diff_family": 0.6829333231354406,
+  "n_gold_diff_family": 508,
+  "stratum J=0": {
+   "n_gold": 68,
+   "n_other": 6063,
+   "auroc_abs": 0.6551333546778434
+  },
+  "stratum 0<J<=.05": {
+   "n_gold": 428,
+   "n_other": 6200,
+   "auroc_abs": 0.6189582077178173
+  },
+  "stratum .05<J<=.2": {
+   "n_gold": 40,
+   "n_other": 323,
+   "auroc_abs": 0.5731424148606811
+  },
+  "stratum J>.2": {
+   "n_gold": 1,
+   "n_other": 22,
+   "auroc_abs": 0.3181818181818182
+  }
+ },
+ "cur-z-min1": {
+  "n_kinases": 369,
+  "n_pairs": 64538,
+  "n_gold": 768,
+  "auroc_abs": 0.7414652388466364,
+  "auroc_signed": 0.754989304825937,
+  "mean_abs_rho_gold": 0.28199611581771256,
+  "mean_abs_rho_other": 0.14661905958881194,
+  "auroc_abs_diff_family": 0.7391191245725156,
+  "n_gold_diff_family": 717,
+  "stratum J=0": {
+   "n_gold": 101,
+   "n_other": 38980,
+   "auroc_abs": 0.6645189967944973
+  },
+  "stratum 0<J<=.05": {
+   "n_gold": 570,
+   "n_other": 23185,
+   "auroc_abs": 0.672981018429187
+  },
+  "stratum .05<J<=.2": {
+   "n_gold": 94,
+   "n_other": 1526,
+   "auroc_abs": 0.7099704414266195
+  },
+  "stratum J>.2": {
+   "n_gold": 3,
+   "n_other": 79,
+   "auroc_abs": 0.7046413502109705
+  }
+ },
+ "core v1-v2 rho agreement (pearson over pairs)": 0.9750407849968791,
+ "n_novel_candidates": 82800
+}

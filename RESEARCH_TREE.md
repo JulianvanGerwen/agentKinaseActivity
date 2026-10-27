@@ -71,5 +71,9 @@ Key finding for strategy: under the pre-registered coverage-aware primary metric
       - [x] audit (docs/audit/b7b_audit.md): reproduces byte-identical; no leakage (label randomisation invariant); α plateau 0.75–2; all 5 folds gain. Caveats: 71% of gain from 5 kinases (MAP3K7, ROCK1/2, MET, IKBKB); signature-kinase FP 8.1→9.8%; z over-dispersed for signature kinases (7.0%). → ADOPTED as core-v2, conditional on DEV-confirm.
   - [ ] 5.8 Final idea box (docs/retro/ideas_m2.md): (1) remove shared drug-response factors from input (per-fold SVD), (3) average top-3 inner configs — ONE 3 h box, then stop development
 - [x] 7. Deliverable core-v1: src/kinact/core.py + CLI `kinact score`; equivalence max|Δz| 8e-12; 4.6 ms/cond (CPU 1T, compendium avg), 2.1 ms (16T/GPU); DEV compendium 2.2–6.2 s. PSP-derived edges git-ignored, rebuilt by scripts/build_core_artifacts.py.
+- [x] 9. Descriptive DEV analyses (results/descriptive/descriptive_dev.md; not used for selection)
+  - M3 benchmarKIN-style (matched cells): core-v2 0.740 > core-v1 0.714 > curated-z 0.682 > PSP-z 0.668 > prior-only 0.598.
+  - GT-A self-sites: cores most kinase-specific (80/145 kinases sig.). Kinase–kinase: AUROC 0.66–0.68 but 0.53–0.60 within substrate-overlap strata (mostly shared-substrate artefact) — honest limitation.
+  - Residue-matched random library: M1-sel 0.529 (real 0.668).
 - [x] 8. External test pipelines ready (docs/external_eval.md; run_external(..., confirm_test=True)); Tyr 18 exps/16 kin, Hernandez 15/7, CPTAC 7 cohorts/367 kin (gold = protein abundance, C9). No real method run.
 - [ ] 6. Sealed test + REPORT.md
