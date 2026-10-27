@@ -1728,6 +1728,459 @@
     "compendium_s_16t": 33.1819492079923,
     "bench": "bench_runtime, 200 DEV conditions (seed 0), warm, median of n_rep; process-parallel n_jobs = thread setting"
    }
+  },
+  "rokai__curated_union__min3": {
+   "method": "rokai",
+   "library": "curated_union",
+   "cfg": "min3",
+   "default": false,
+   "metrics": {
+    "M1-sel": 0.5260945845267473,
+    "M1-all": 0.5186765960188682,
+    "M1-sel-scored": 0.6449457011965454,
+    "M1-all-scored": 0.6327577293094541,
+    "coverage_M1-sel": 0.7172177879133409,
+    "coverage_M1-all": 0.6311647429171039,
+    "harmony": 0.5287562182529612,
+    "harmony_per_bin": {
+     "0": 0.5097167037583508,
+     "1-4": 0.5145324264191585,
+     "5-19": 0.5526043263229443,
+     ">=20": 0.5381714165113908
+    },
+    "by_source": {
+     "D": 0.6007173715633648,
+     "H": 0.5248483592517654,
+     "O": 0.5176064636736577
+    },
+    "by_sign": {
+     "-1": 0.5220779994456735,
+     "1": 0.5573472571528223
+    },
+    "tie_share_M1-sel": 0.0047694753577106515,
+    "n_significant": 29,
+    "n_kinases_M1sel": 106,
+    "coverage_scored_kinase_cond": 0.3349437871996473
+   },
+   "runtime": {
+    "full_dev_wall_s": 17.454142320202664,
+    "n_conditions_full": 1358,
+    "full_dev_jobs": 32,
+    "ms_per_condition_1t": 131.90549773979,
+    "compendium_s_1t": 255.50094912197326,
+    "bench_n_rep": 1,
+    "ms_per_condition_16t": 22.23988140001893,
+    "compendium_s_16t": 43.07865027183667,
+    "bench": "bench_runtime, 200 DEV conditions (seed 0), warm, median of n_rep; process-parallel n_jobs = thread setting"
+   }
+  },
+  "motif_zscore__cantley-top50__min3": {
+   "method": "motif_zscore",
+   "library": "cantley-top50",
+   "cfg": "min3",
+   "default": false,
+   "metrics": {
+    "M1-sel": 0.5100189946286233,
+    "M1-all": 0.5104610520731974,
+    "M1-sel-scored": 0.571561375615525,
+    "M1-all-scored": 0.5899090605860527,
+    "coverage_M1-sel": 0.39110604332953247,
+    "coverage_M1-all": 0.4590766002098636,
+    "harmony": 0.5095399631034161,
+    "harmony_per_bin": {
+     "0": 0.501507980857267,
+     "1-4": 0.5073110362959804,
+     "5-19": 0.5089496507245047,
+     ">=20": 0.5203911845359123
+    },
+    "by_source": {
+     "D": 0.5179158840383129,
+     "H": 0.5032668188944467,
+     "O": 0.5086830196713163
+    },
+    "by_sign": {
+     "-1": 0.5107057673339613,
+     "1": 0.5251748584421814
+    },
+    "tie_share_M1-sel": 0.011661807580174927,
+    "n_significant": 3,
+    "n_kinases_M1sel": 106,
+    "coverage_scored_kinase_cond": 0.3935388834582383
+   },
+   "runtime": {
+    "full_dev_wall_s": 2.2041273100767285,
+    "n_conditions_full": 1358,
+    "full_dev_jobs": "threads(default)",
+    "ms_per_condition_1t": 1.8710183911025524,
+    "compendium_s_1t": 3.624162623565644,
+    "bench_n_rep": 5,
+    "ms_per_condition_16t": 1.873151125619188,
+    "compendium_s_16t": 3.628293730324367,
+    "bench": "bench_runtime, 200 DEV conditions (seed 0), warm, median of n_rep; threadpool limits"
+   }
+  },
+  "motif_zscore__cantley-top100__min3": {
+   "method": "motif_zscore",
+   "library": "cantley-top100",
+   "cfg": "min3",
+   "default": true,
+   "metrics": {
+    "M1-sel": 0.5240576243984754,
+    "M1-all": 0.5175699198935458,
+    "M1-sel-scored": 0.5807715902021403,
+    "M1-all-scored": 0.565801424803744,
+    "coverage_M1-sel": 0.6716077537058153,
+    "coverage_M1-all": 0.6841552990556139,
+    "harmony": 0.5229939113029507,
+    "harmony_per_bin": {
+     "0": 0.503227254608379,
+     "1-4": 0.5312308730740783,
+     "5-19": 0.5200435301858514,
+     ">=20": 0.5374739873434942
+    },
+    "by_source": {
+     "D": 0.5531556307804957,
+     "H": 0.5156717151554381,
+     "O": 0.5150107474336122
+    },
+    "by_sign": {
+     "-1": 0.5216639315951028,
+     "1": 0.5564102304167785
+    },
+    "tie_share_M1-sel": 0.022071307300509338,
+    "n_significant": 12,
+    "n_kinases_M1sel": 106,
+    "coverage_scored_kinase_cond": 0.5737414467253177
+   },
+   "runtime": {
+    "full_dev_wall_s": 2.3436835252214223,
+    "n_conditions_full": 1358,
+    "full_dev_jobs": "threads(default)",
+    "ms_per_condition_1t": 2.043633160647005,
+    "compendium_s_1t": 3.9585174321732484,
+    "bench_n_rep": 5,
+    "ms_per_condition_16t": 2.0397466304711998,
+    "compendium_s_16t": 3.950989223222714,
+    "bench": "bench_runtime, 200 DEV conditions (seed 0), warm, median of n_rep; threadpool limits"
+   }
+  },
+  "motif_zscore__cantley-top200__min3": {
+   "method": "motif_zscore",
+   "library": "cantley-top200",
+   "cfg": "min3",
+   "default": false,
+   "metrics": {
+    "M1-sel": 0.5407834662274339,
+    "M1-all": 0.5293428475147665,
+    "M1-sel-scored": 0.5906478423765933,
+    "M1-all-scored": 0.5763149854631919,
+    "coverage_M1-sel": 0.8084378563283923,
+    "coverage_M1-all": 0.7869884575026233,
+    "harmony": 0.5410206665581432,
+    "harmony_per_bin": {
+     "0": 0.5253979095008818,
+     "1-4": 0.5456921322970208,
+     "5-19": 0.5432488014396738,
+     ">=20": 0.5497438229949962
+    },
+    "by_source": {
+     "D": 0.5992128610625924,
+     "H": 0.515853248837743,
+     "O": 0.5333841143183685
+    },
+    "by_sign": {
+     "-1": 0.5318245499878967,
+     "1": 0.6044403807846058
+    },
+    "tie_share_M1-sel": 0.021156558533145273,
+    "n_significant": 15,
+    "n_kinases_M1sel": 106,
+    "coverage_scored_kinase_cond": 0.7183393070489845
+   },
+   "runtime": {
+    "full_dev_wall_s": 2.571716788923368,
+    "n_conditions_full": 1358,
+    "full_dev_jobs": "threads(default)",
+    "ms_per_condition_1t": 2.363117445493117,
+    "compendium_s_1t": 4.577358491920167,
+    "bench_n_rep": 5,
+    "ms_per_condition_16t": 2.3613192001357675,
+    "compendium_s_16t": 4.573875290662982,
+    "bench": "bench_runtime, 200 DEV conditions (seed 0), warm, median of n_rep; threadpool limits"
+   }
+  },
+  "phosx_like__cantley-site-top10__min3": {
+   "method": "phosx_like",
+   "library": "cantley-site-top10",
+   "cfg": "min3",
+   "default": true,
+   "metrics": {
+    "M1-sel": 0.5545406811993828,
+    "M1-all": 0.5389384663457714,
+    "M1-sel-scored": 0.5973148613920687,
+    "M1-all-scored": 0.5792972600630191,
+    "coverage_M1-sel": 0.8563283922462942,
+    "coverage_M1-all": 0.8467995802728226,
+    "harmony": 0.5537829083136585,
+    "harmony_per_bin": {
+     "0": 0.5404128131906496,
+     "1-4": 0.5479830773020148,
+     "5-19": 0.5694912207984258,
+     ">=20": 0.5572445219635437
+    },
+    "by_source": {
+     "D": 0.6235796137876954,
+     "H": 0.5264654997099393,
+     "O": 0.532761670478401
+    },
+    "by_sign": {
+     "-1": 0.5436806954748833,
+     "1": 0.6251085562284643
+    },
+    "tie_share_M1-sel": 0.0,
+    "n_significant": 15,
+    "n_kinases_M1sel": 106,
+    "coverage_scored_kinase_cond": 0.8126629195177583
+   },
+   "runtime": {
+    "full_dev_wall_s": 22.292794374981895,
+    "n_conditions_full": 1358,
+    "full_dev_jobs": 32,
+    "ms_per_condition_1t": 438.98599463514984,
+    "compendium_s_1t": 850.3158716082852,
+    "bench_n_rep": 1,
+    "ms_per_condition_16t": 81.02341586956754,
+    "compendium_s_16t": 156.94235653935235,
+    "bench": "bench_runtime, 200 DEV conditions (seed 0), warm, median of n_rep; process-parallel n_jobs = thread setting"
+   }
+  },
+  "phosx_like__cantley-site-top15__min3": {
+   "method": "phosx_like",
+   "library": "cantley-site-top15",
+   "cfg": "min3",
+   "default": false,
+   "metrics": {
+    "M1-sel": 0.5566694143781359,
+    "M1-all": 0.5387966156081004,
+    "M1-sel-scored": 0.5925245198929747,
+    "M1-all-scored": 0.5740722045555496,
+    "coverage_M1-sel": 0.8802736602052451,
+    "coverage_M1-all": 0.8614900314795383,
+    "harmony": 0.5552389920150448,
+    "harmony_per_bin": {
+     "0": 0.5447771264294522,
+     "1-4": 0.5573945587412604,
+     "5-19": 0.5660672586706487,
+     ">=20": 0.552717024218818
+    },
+    "by_source": {
+     "D": 0.6440658707822594,
+     "H": 0.5268967244395286,
+     "O": 0.5306464345237494
+    },
+    "by_sign": {
+     "-1": 0.5454565897474172,
+     "1": 0.6266005818261694
+    },
+    "tie_share_M1-sel": 0.0,
+    "n_significant": 16,
+    "n_kinases_M1sel": 106,
+    "coverage_scored_kinase_cond": 0.8335912892364505
+   },
+   "runtime": {
+    "full_dev_wall_s": 48.94765603309497,
+    "n_conditions_full": 1358,
+    "full_dev_jobs": 32,
+    "ms_per_condition_1t": 481.5073122852482,
+    "compendium_s_1t": 932.6796638965258,
+    "bench_n_rep": 1,
+    "ms_per_condition_16t": 36.58929378958419,
+    "compendium_s_16t": 70.87346207042458,
+    "bench": "bench_runtime, 200 DEV conditions (seed 0), warm, median of n_rep; process-parallel n_jobs = thread setting"
+   }
+  },
+  "kl_enrich__cantley-site-top15__thr0.5_min3": {
+   "method": "kl_enrich",
+   "library": "cantley-site-top15",
+   "cfg": "thr0.5_min3",
+   "default": true,
+   "metrics": {
+    "M1-sel": 0.5503383644604118,
+    "M1-all": 0.5413502011751871,
+    "M1-sel-scored": 0.5825184120193323,
+    "M1-all-scored": 0.5786588019910723,
+    "coverage_M1-sel": 0.8802736602052451,
+    "coverage_M1-all": 0.8614900314795383,
+    "harmony": 0.5479997677371101,
+    "harmony_per_bin": {
+     "0": 0.5343419427950994,
+     "1-4": 0.53715181636018,
+     "5-19": 0.5716144929050431,
+     ">=20": 0.548890818888118
+    },
+    "by_source": {
+     "D": 0.5865940871420017,
+     "H": 0.5262120506239791,
+     "O": 0.5265787781549918
+    },
+    "by_sign": {
+     "-1": 0.5415437575726789,
+     "1": 0.6090645177392362
+    },
+    "tie_share_M1-sel": 0.30440414507772023,
+    "n_significant": 17,
+    "n_kinases_M1sel": 106,
+    "coverage_scored_kinase_cond": 0.8335912892364505
+   },
+   "runtime": {
+    "full_dev_wall_s": 14.510775776114315,
+    "n_conditions_full": 1358,
+    "full_dev_jobs": "threads(default)",
+    "ms_per_condition_1t": 11.882001295452937,
+    "compendium_s_1t": 23.01543650929234,
+    "bench_n_rep": 5,
+    "ms_per_condition_16t": 11.8727527896408,
+    "compendium_s_16t": 22.997522153534227,
+    "bench": "bench_runtime, 200 DEV conditions (seed 0), warm, median of n_rep; threadpool limits"
+   }
+  },
+  "kl_enrich__cantley-site-top15__thr1.0_min3": {
+   "method": "kl_enrich",
+   "library": "cantley-site-top15",
+   "cfg": "thr1.0_min3",
+   "default": false,
+   "metrics": {
+    "M1-sel": 0.5399938519927299,
+    "M1-all": 0.5374904590771965,
+    "M1-sel-scored": 0.5661757180003122,
+    "M1-all-scored": 0.5730497100303366,
+    "coverage_M1-sel": 0.8802736602052451,
+    "coverage_M1-all": 0.8614900314795383,
+    "harmony": 0.5383812857704534,
+    "harmony_per_bin": {
+     "0": 0.540833745868323,
+     "1-4": 0.5363812593397023,
+     "5-19": 0.5539069324556459,
+     ">=20": 0.5224032054181422
+    },
+    "by_source": {
+     "D": 0.5892153626060057,
+     "H": 0.5194528779687831,
+     "O": 0.5210673166861364
+    },
+    "by_sign": {
+     "-1": 0.5357294200789648,
+     "1": 0.586772056511394
+    },
+    "tie_share_M1-sel": 0.4494818652849741,
+    "n_significant": 15,
+    "n_kinases_M1sel": 106,
+    "coverage_scored_kinase_cond": 0.8335912892364505
+   },
+   "runtime": {
+    "full_dev_wall_s": 10.96328091993928,
+    "n_conditions_full": 1358,
+    "full_dev_jobs": "threads(default)",
+    "ms_per_condition_1t": 11.882001295452937,
+    "compendium_s_1t": 23.01543650929234,
+    "bench_n_rep": 5,
+    "ms_per_condition_16t": 11.8727527896408,
+    "compendium_s_16t": 22.997522153534227,
+    "bench": "bench_runtime, 200 DEV conditions (seed 0), warm, median of n_rep; threadpool limits",
+    "bench_note": "same method+library benchmarked at another min_substrates"
+   }
+  },
+  "jumpsem__psp_human_only__min3": {
+   "method": "jumpsem",
+   "library": "psp_human_only",
+   "cfg": "min3",
+   "default": true,
+   "metrics": {
+    "M1-sel": 0.5017153754492544,
+    "M1-all": 0.5019349741923723,
+    "M1-sel-scored": 0.5549463865437956,
+    "M1-all-scored": 0.5637834222720315,
+    "coverage_M1-sel": 0.3808437856328392,
+    "coverage_M1-all": 0.35729275970619095,
+    "harmony": 0.5017053798988897,
+    "harmony_per_bin": {
+     "0": 0.5007260302538462,
+     "1-4": 0.5022125592149741,
+     "5-19": 0.5026207054618539,
+     ">=20": 0.5012622246648848
+    },
+    "by_source": {
+     "D": 0.5073636949011145,
+     "H": 0.5034722189225913,
+     "O": 0.5006155499254378
+    },
+    "by_sign": {
+     "-1": 0.5021282553105979,
+     "1": 0.4994986852347356
+    },
+    "tie_share_M1-sel": 0.0,
+    "n_significant": 1,
+    "n_kinases_M1sel": 106,
+    "coverage_scored_kinase_cond": 0.17491319444444445
+   },
+   "runtime": {
+    "full_dev_wall_s": 533.9272082301322,
+    "r_cpu_s_sum_units": 7229.479485618416,
+    "n_conditions_full": 1184,
+    "ms_per_condition_1t": 6105.979295285824,
+    "compendium_s_1t": 11827.281894968643,
+    "bench": "not bench_runtime (transductive per study): summed single-threaded Rscript wall time over study units / # conditions in units; full run with 48 parallel units"
+   },
+   "n_units": 98,
+   "n_units_failed": 0,
+   "n_conditions_in_units": 1184,
+   "n_conditions_with_scores": 1184
+  },
+  "jumpsem_aligned__psp_human_only__min3": {
+   "method": "jumpsem_aligned",
+   "library": "psp_human_only",
+   "cfg": "min3",
+   "default": true,
+   "metrics": {
+    "M1-sel": 0.5028293705654685,
+    "M1-all": 0.5021550227296889,
+    "M1-sel-scored": 0.5602339673977188,
+    "M1-all-scored": 0.5629707818305187,
+    "coverage_M1-sel": 0.3808437856328392,
+    "coverage_M1-all": 0.35729275970619095,
+    "harmony": 0.5029601886493122,
+    "harmony_per_bin": {
+     "0": 0.5007562306408186,
+     "1-4": 0.5010893730702387,
+     "5-19": 0.5055549858175157,
+     ">=20": 0.5044401650686761
+    },
+    "by_source": {
+     "D": 0.5216374950378226,
+     "H": 0.5058269701058429,
+     "O": 0.501122219799052
+    },
+    "by_sign": {
+     "-1": 0.5034597359277591,
+     "1": 0.5014206605839191
+    },
+    "tie_share_M1-sel": 0.0,
+    "n_significant": 7,
+    "n_kinases_M1sel": 106,
+    "coverage_scored_kinase_cond": 0.17491319444444445
+   },
+   "runtime": {
+    "full_dev_wall_s": 533.9272082301322,
+    "r_cpu_s_sum_units": 7229.479485618416,
+    "n_conditions_full": 1184,
+    "ms_per_condition_1t": 6105.979295285824,
+    "compendium_s_1t": 11827.281894968643,
+    "bench": "not bench_runtime (transductive per study): summed single-threaded Rscript wall time over study units / # conditions in units; full run with 48 parallel units"
+   },
+   "n_units": 98,
+   "n_units_failed": 0,
+   "n_conditions_in_units": 1184,
+   "n_conditions_with_scores": 1184
   }
  }
 }

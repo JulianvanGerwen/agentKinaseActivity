@@ -43,7 +43,9 @@ Key finding for strategy: under the pre-registered coverage-aware primary metric
   - [x] 3.3 KS libraries: psp_all 401 kin (225 with ≥5 quantified), curated_union 439 kin (296 ≥5), Sugiyama in vitro 347 kin (342 ≥5), predicted top-500 r2np/r3 (503), cantley (396). 405 PMIDs excluded (compendium + HT-MS). 27 tests.
 - [~] 4. Baselines (z-score, KSEA, JUMPsem, decoupler ulm/mlm/wmean/norm_wmean/viper, GSEA, RoKAI, KinLib) on DEV
 - [~] 5. Method development (DEV only; adoption per DESIGN §7)
-  - [~] 5.1 B1 library variants (PSP/curated/Sugiyama/predicted top-k, γ, mixtures) — time box 2 h
+  - [x] 5.1 B1 library variants (408 configs; results/b1/b1_report.md)
+    - [!] z-score + r2np top-200: M1-sel 0.664 (nested 0.638; optimism +0.026), coverage ≈1.0, M2 vs PSP-z 0.699 vs 0.633; Δ vs PSP-z +0.12 [0.07,0.16]. Still < prior-only 0.687 (n.s.). r2np > r3 > cantley > curated; Hijazi weak (0.57), decryptM 0.89 (suspicious).
+    - [~] 5.1a independent r2np/r3 leakage audit (decryptM 0.89) — BLOCKS adoption
   - [~] 5.2 B2 Bayesian linear-Gaussian core (noise model, family kernel, closed form) — time box 3 h
   - [ ] 5.3 B3 calibration (effective-m / empirical null)
   - [ ] 5.4 B4 shared-function edge weights; co-regulation/factorisation expansion
