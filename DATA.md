@@ -45,3 +45,8 @@ Notes
 - PSP files are latin-1 encoded and start with 3 header lines (date code, license, blank). Parse them with `scripts/prep_data.py`.
 - Derived caches are in `cache/` (regenerate with `python scripts/prep_data.py`, about 30 s). Small derived tables are in `results/` and may be committed. Some of them hold PSP-derived rows (for example `results/data_profile/psp_kinase_coverage.tsv` holds counts only). Do not commit raw PSP rows: CC BY-NC-SA requires attribution and share-alike.
 - Manual mappings are in `results/ground_truth/drug_targets_manual.tsv` and `condition_rules_manual.tsv`, each with a note column.
+
+## External benchmark data (copied 2026-10-27 from kinaseSubMain, never committed; checksums in results/external_checksums.txt)
+- `external/benchmarkin/` — benchmarKIN Zenodo 10.5281/zenodo.12566560 (Müller-Dott et al. 2025, Nat Commun 16:4771), CC BY 4.0. Originally downloaded 2026-10-26 by kinaseSubMain (see its DATA.md for per-file provenance).
+- `external/benchmarkin_github/` — tyrosineData.rda / tyrosineMeta.rda from github.com/saezlab/benchmarKIN main@2aa6e25c4e5c, GPL-3.
+- `external/benchmarkin_py/` — Python (parquet/json) conversions of the above produced by kinaseSubMain `src/ksp/downstream/bench_data.py` (derived; same licences). The `r2_clean`/`r2_nophospho` dirs were NOT copied.
