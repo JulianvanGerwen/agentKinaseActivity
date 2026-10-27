@@ -8,6 +8,7 @@ Design closed after 3 review rounds (DESIGN v3 + C7/C8). G1 frozen (results/G1.j
 Key finding for strategy: under the pre-registered coverage-aware primary metric (unscored = ½), PSP z-score scores M1-sel 0.515 (scored-only 0.633, coverage 0.58) — barely above random (Δ +0.010, n.s.) — while the popularity prior-only control scores 0.687. Winning therefore requires accurate scores for MANY kinases (incl. understudied ones), i.e. extended/predicted libraries + a statistic that ranks well across kinases with very different substrate counts. Next: baselines finishing; then method branch 1 (library variants) and 2 (Bayesian core).
 
 ## Decision log
+- D6: Adopted bundle 'core-v1' = curated_union + r2np@100 (α=1), Bayesian core, family kernel ρ_f=3/ρ_g per nested, τ=0.125, calibrated z; no winsor (failed adoption rule).
 - D5: Do NOT add any kinase-popularity prior (literature counts etc.) to close the gap to prior-only: it exploits annotation/drug-target bias the brief warns against. Prior-only remains a reported control; T-unseen and harmony carry the evidence.
 - D4: G1 frozen at commit 7de8eef. MDE ≈0.06.
 - D3: ½ rule confirmed (coverage is part of the objective; M2 ≥ 0 required in 'beats'). Bootstrap bias fixed by C8 before any method comparison.
@@ -49,7 +50,10 @@ Key finding for strategy: under the pre-registered coverage-aware primary metric
     - [x] 5.1a r2np/r3/cantley leakage audit: SAFE (docs/audit/r2np_leakage.md). decryptM high = dasatinib/Tyr composition (residue-matched random library already 0.70 on D) → quote D only with caveat; residue-matched null added as descriptive control.
   - [x] 5.2 B2 Bayesian core (results/b2/b2_report.md): curated_union + r2np@100 (α=1), family kernel ρ_f=3, ρ_g=0.25, τ=0.125, no noise model. Nested M1-sel 0.655 (H .644 D .768 O .674), M2 +0.033 vs PSP-z, T-unseen 0.589 (prior-only 0.324). Ablations: −K 0.617, −predicted 0.607, neither 0.553; noise model hurts; posterior-mean ranking 0.672 (post hoc). Calibration 4.6% overall but grows with substrate count (1.2%→7.6%). 8.9 ms/cond CPU-1T.
     - [!] Complementary to prior-only (prior wins H; B2 wins D and unseen kinases).
-  - [~] 5.3 B2.1+B3 refine core: output statistic, calibration, r2np+r3+cantley ensemble, kernels, robustness — 3 h
+  - [x] 5.3 B2.1+B3 (results/b21/b21_report.md)
+    - [!] ADOPTED: ρ_f ≤ 3 → nested 0.670 (Δ +0.015 [0.006,0.035], p=0.001; T-unseen 0.589→0.643). Calibrated z (variance inflation ρ_e≈0.01 fitted on DEV nulls): 5.0% overall, 4.3–6.0% per bin, no M1 cost — adopted as a calibration desideratum.
+    - NOT adopted: winsorising (+0.004, threshold chosen post hoc), posterior-mean output (not robust), r3/cantley edges (flat), similarity kernel (flat). Bigger search spaces lose ~0.03 to selection noise → keep final search small.
+    - [~] 5.3a independent audit of B2.1 + DEV-confirm look #1
   - [-] 5.4 B4 co-regulation expansion (results/b4/b4_report.md): on B2 core ΔM1-sel −0.010 [−0.021,−0.003] (expanded sites shared across kinases → noise); neighbour fill-in n.s.; on weighted z +0.026 (only reaches B1 level). Kept as stacking candidate (T-unseen 0.684). NOTE for G2: exclude DEV conditions sharing a control with TEST conditions from any co-regulation fit (metadata only).
   - [ ] 5.4b shared-function edge weights
   - [-] 5.5 B5 self-sites (results/b5/b5_report.md): alone 0.726 on pairs with measured self-site (35% of M1-sel pairs); paradoxical up for PKC/PKA/ERKi/TAK1; on core +0.003 [−0.001,0.008] n.s. (half of self-sites already library edges). GT-A helper mask_self_sites.
