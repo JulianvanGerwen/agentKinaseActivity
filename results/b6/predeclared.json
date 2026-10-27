@@ -1,0 +1,13 @@
+{
+ "written": "2026-10-27T15:40 (after complementarity.json, before any stacker was evaluated)",
+ "primary": "A1_avg_zvif_wzexp",
+ "rationale": "0 fitted weights (no selection noise); wzexp is the only strong component with low rank correlation to core-v1 (median per-condition Spearman 0.56, pair-AUROC corr 0.73, ~20%/18% of pairs better/worse by >0.1) and is strongest where core-v1 is weakest (harmony bin 0 .645 vs .582, T-unseen .684 vs .648). mean/prom are ~0.96-0.98 correlated with zvif; phosx/kinlib/curz/self are weak (M2 0.59-0.73 vs core 0.69-0.79). Choice of the A1 subset was made after seeing complementarity on the same DEV folds (disclosed).",
+ "hard_test": "one-sided paired group bootstrap p<0.05 for dM1-sel>0 vs core-v1 z_vif OOF (0.663); non-inferiority M1-all/H/D/O/harmony bins/M2 -0.02, T-unseen -0.01",
+ "stackers": [
+  {"name": "A1_avg_zvif_wzexp", "kind": "average", "transform": "z", "components": ["zvif", "wzexp"]},
+  {"name": "A2_avg_zvif_wzexp_phosx_curz", "kind": "average", "transform": "z", "components": ["zvif", "wzexp", "phosx", "curz"]},
+  {"name": "A3_rankavg_zvif_wzexp", "kind": "average", "transform": "rank", "components": ["zvif", "wzexp"]},
+  {"name": "L1_linear_pairwise", "kind": "linear", "transform": "z", "components": ["zvif", "prom", "wzexp", "phosx", "curz", "self"],
+   "lambdas": ["inf", "0.1", "0.01", "0.001"], "loss": "sigmoid smooth-AUROC, T=0.5, macro pair weights, ridge toward core-only", "n_params": 6}
+ ]
+}

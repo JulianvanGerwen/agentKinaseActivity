@@ -1,0 +1,13 @@
+[ctx] 2s; 372 GT conds, 7 DEV nulls, lib rows 27601; GT_FREEZE 1e6f791c6b85f15d
+ref 0.6627
+A1_avg_zvif_wzexp 0.6748 {'estimate': 0.012181903760257184, 'ci_low': -0.0010173794109584605, 'ci_high': 0.03034858407500345, 'p_one_sided': 0.05697151424287856} 0.04572564612326044 0.052268571489675675 2s
+A2_avg_zvif_wzexp_phosx_curz 0.6748 {'estimate': 0.012163716791470547, 'ci_low': -0.007249934081540878, 'ci_high': 0.036856641376156074, 'p_one_sided': 0.1424287856071964} 0.04430559500142005 0.05023736714924192 2s
+A3_rankavg_zvif_wzexp 0.6724 {'estimate': 0.009744513709428304, 'ci_low': -0.004076093264269241, 'ci_high': 0.02752975627338929, 'p_one_sided': 0.10344827586206896} 0.05822209599545584 0.05251451607729076 2s
+/workspace/src/kinact/explore/stacking.py:106: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:203.)
+  ki = torch.as_tensor(pd_["ki"], device=device)
+  L1_linear_pairwise fold0 inner {'inf': 0.6853, '0.1': 0.6863, '0.01': 0.688, '0.001': 0.6835} -> 0.01 w [ 0.959  0.112 -0.    -0.     0.139  0.196]
+  L1_linear_pairwise fold1 inner {'inf': 0.679, '0.1': 0.6805, '0.01': 0.676, '0.001': 0.6768} -> 0.1 w [0.975 0.035 0.137 0.019 0.045 0.043]
+  L1_linear_pairwise fold2 inner {'inf': 0.6808, '0.1': 0.6858, '0.01': 0.6905, '0.001': 0.6829} -> 0.01 w [ 0.598  0.003  0.441  0.134 -0.026  0.165]
+  L1_linear_pairwise fold3 inner {'inf': 0.6566, '0.1': 0.6561, '0.01': 0.6571, '0.001': 0.6306} -> 0.01 w [ 0.713  0.161  0.304  0.234 -0.09   0.152]
+  L1_linear_pairwise fold4 inner {'inf': 0.6601, '0.1': 0.6616, '0.01': 0.655, '0.001': 0.6559} -> 0.1 w [ 0.99   0.051 -0.    -0.001  0.068  0.047]
+L1_linear_pairwise 0.6615 {'estimate': -0.0011415171230361176, 'ci_low': -0.009695512331846855, 'ci_high': 0.006855947461146084, 'p_one_sided': 0.607696151924038} 0.06532235160465777 0.05233838718645083 813s

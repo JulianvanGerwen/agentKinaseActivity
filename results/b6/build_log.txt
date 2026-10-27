@@ -1,0 +1,19 @@
+[ctx] 2s; 372 GT conds, 7 DEV nulls, lib rows 27601; GT_FREEZE 1e6f791c6b85f15d
+/workspace/src/kinact/explore/edgeweights.py:116: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:203.)
+  self.k = torch.as_tensor(E["k"].to_numpy(), device=device)
+[b4b ctx] 8s edges 58487 rows 27601
+zvif recompute max|d| 0.0
+[core] 16s
+wzexp fold0 reproduce max|d| 3.73e-06 nan-mismatch 0
+wzexp fold1 reproduce max|d| 3.30e-06 nan-mismatch 0
+wzexp fold2 reproduce max|d| 3.73e-06 nan-mismatch 0
+wzexp fold3 reproduce max|d| 3.56e-06 nan-mismatch 0
+wzexp fold4 reproduce max|d| 3.73e-06 nan-mismatch 0
+[wzexp] 38s
+phosx recompute (20 conds) max|d| 0.00e+00
+[phosx] 48s
+kinlib recompute (20 conds) max|d| 0.00e+00
+[kinlib] 53s
+curz recompute (20 conds) max|d| 0.00e+00
+[curz] 54s
+done 58s
