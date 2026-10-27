@@ -88,7 +88,11 @@ def main():
            "MDE_3.5_alt": 3.5 * se * np.sqrt(G_dev / G_TEST_ALL),
            "alt_all_groups_ratio": {"G_DEV_all_groups": g_all_dev,
                                     "MDE_2.5": 2.5 * se * np.sqrt(g_all_dev / G_TEST_ALL)},
-           "delta_estimate": deltas["zscore_vs_prior_only"]["estimate"], "B": 2000, "seed": 0,
+           "delta_estimate": deltas["zscore_vs_prior_only"]["estimate"],
+           "bootstrap_bias": deltas["zscore_vs_prior_only"]["bias"],
+           "SE_note": "C8: SE = sd of paired replicates; the C8 bias correction is a location shift, so the SE "
+                      "(and MDE) are invariant to it",
+           "B": 2000, "seed": 0,
            "folds": FOLDS}
     (OUT / "mde.json").write_text(json.dumps(to_jsonable(mde), indent=1))
     # outputs
@@ -129,8 +133,9 @@ def main():
                  f" | {r['coverage_significant']['n_significant']} |")
     L += ["", "## Paired bootstrap (groups, B=2000, seed 0), M1-sel", ""]
     for k, d in deltas.items():
-        L.append(f"- {k}: Δ={d['estimate']:+.3f}, SE={d['se']:.3f}, 95% CI [{d['ci_low']:+.3f}, {d['ci_high']:+.3f}], "
-                 f"one-sided p={d['p_one_sided']:.4f}")
+        L.append(f"- {k}: Δ={d['estimate']:+.3f}, SE={d['se']:.3f}, 95% basic CI [{d['ci_low']:+.3f}, {d['ci_high']:+.3f}], "
+                 f"one-sided shifted-null p={d['p_one_sided']:.4f} (C8; diagnostics: bootstrap bias {d['bias']:+.3f}, "
+                 f"percentile CI [{d['ci_low_pct']:+.3f}, {d['ci_high_pct']:+.3f}], percentile p={d['p_one_sided_pct']:.4f})")
     L += ["", f"## MDE\n", f"SE(ΔM1-sel, z-score vs prior-only) = {se:.4f}; G_DEV = {G_dev}, G_TEST = {G_TEST_ALL}; "
           f"MDE = 2.5·SE·sqrt(G_DEV/G_TEST) = {mde['MDE_2.5']:.4f} (see results/smoke/mde.json).",
           "", "Raw metric dicts (incl. coverage-significant): `smoke_dev.json`. T-unseen not computed."]

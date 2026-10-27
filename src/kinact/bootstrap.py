@@ -6,7 +6,11 @@ Because whole groups are resampled, (kinase, group) means are fixed and the full
 (kinase set, bin membership, macro) is recomputed per resample as weighted sums:
     kinase_b = Σ_g W[b,g]·v_kg / Σ_g W[b,g]   (kinase present iff denominator > 0)
     metric_b = mean over present kinases (harmony: per bin, then mean over non-empty bins).
-One-sided p for Δ>0: (1 + #{Δ*_b ≤ 0}) / (B + 1).
+Inference (DESIGN §12 C8, bias-corrected because the kinase composition of the macro average
+changes across resamples):
+    CI  = basic (reverse-percentile) interval [2·θ̂ − q97.5, 2·θ̂ − q2.5]
+    p   = one-sided shifted-null p for Δ > 0: (1 + #{Δ*_b − mean(Δ*) ≥ Δ̂}) / (B + 1)
+    raw percentile interval [q2.5, q97.5], mean(θ*) and bias = mean(θ*) − θ̂ are kept as diagnostics.
 """
 from __future__ import annotations
 
@@ -94,9 +98,28 @@ def metric_replicates(ev: Evaluator, pairs: pd.DataFrame, endpoint: str, plan: B
 
 
 def _summ(point: float, reps: np.ndarray, alpha: float = 0.05) -> dict:
+    """C8: basic (reverse-percentile) CI; raw percentile CI and bootstrap bias as diagnostics."""
     lo, hi = np.nanpercentile(reps, [100 * alpha / 2, 100 * (1 - alpha / 2)])
+    m = float(np.nanmean(reps))
     return {"estimate": float(point), "se": float(np.nanstd(reps, ddof=1)),
-            "ci_low": float(lo), "ci_high": float(hi)}
+            "ci_low": float(2 * point - hi), "ci_high": float(2 * point - lo),
+            "ci_low_pct": float(lo), "ci_high_pct": float(hi),
+            "mean_replicates": m, "bias": m - float(point)}
+
+
+def shifted_null_p(point: float, reps: np.ndarray) -> float:
+    """C8 one-sided p for Δ > 0: (1 + #{Δ*_b − mean(Δ*) ≥ Δ̂}) / (B + 1); NaN replicates count
+    against (as exceedances)."""
+    reps = np.asarray(reps, float)
+    centred = reps - np.nanmean(reps)
+    exceed = ~(centred < point)          # ≥ point, or NaN
+    return float((1 + exceed.sum()) / (reps.size + 1))
+
+
+def percentile_p(reps: np.ndarray) -> float:
+    """Pre-C8 diagnostic: (1 + #{Δ*_b ≤ 0}) / (B + 1) (biased when replicates are shifted)."""
+    reps = np.asarray(reps, float)
+    return float((1 + np.sum(~(reps > 0))) / (reps.size + 1))
 
 
 def bootstrap_ci(ev: Evaluator, scores: pd.DataFrame, endpoint: str = "M1-sel",
@@ -109,7 +132,8 @@ def bootstrap_ci(ev: Evaluator, scores: pd.DataFrame, endpoint: str = "M1-sel",
 
 def paired_delta(ev: Evaluator, scores_a: pd.DataFrame, scores_b: pd.DataFrame,
                  endpoint: str = "M1-sel", plan: BootstrapPlan | None = None) -> dict:
-    """Δ = metric(A) − metric(B) on shared resamples; one-sided p for Δ > 0.
+    """Δ = metric(A) − metric(B) on shared resamples; one-sided shifted-null p for Δ > 0 (C8),
+    basic CI in ci_low/ci_high, raw percentile CI / p in *_pct (diagnostic).
 
     endpoint 'M2' (or 'M2:<filter>') evaluates both on the matched universe S(A)∩S(B).
     """
@@ -124,8 +148,8 @@ def paired_delta(ev: Evaluator, scores_a: pd.DataFrame, scores_b: pd.DataFrame,
     ra, rb = metric_replicates(ev, pa, ep, plan), metric_replicates(ev, pb, ep, plan)
     d = ra - rb
     point = ev.metric(pa, ep)["value"] - ev.metric(pb, ep)["value"]
-    p = (1 + np.sum(~(d > 0))) / (plan.B + 1)   # Δ* ≤ 0 (NaN counted against)
-    return _summ(point, d) | {"p_one_sided": float(p), "B": plan.B, "replicates": d}
+    return _summ(point, d) | {"p_one_sided": shifted_null_p(point, d),
+                              "p_one_sided_pct": percentile_p(d), "B": plan.B, "replicates": d}
 
 
 def holm(pvals) -> np.ndarray:

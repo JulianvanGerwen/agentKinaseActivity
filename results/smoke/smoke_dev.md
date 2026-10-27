@@ -32,8 +32,8 @@ Library `psp_all`, z-score = mean(x_s)*sqrt(n)/sd(x_c), min 3 substrates. 372 el
 
 ## Paired bootstrap (groups, B=2000, seed 0), M1-sel
 
-- zscore_vs_prior_only: Δ=-0.172, SE=0.024, 95% CI [-0.255, -0.166], one-sided p=1.0000
-- zscore_vs_random: Δ=+0.010, SE=0.013, 95% CI [-0.015, +0.039], one-sided p=0.1749
+- zscore_vs_prior_only: Δ=-0.172, SE=0.024, 95% basic CI [-0.179, -0.089], one-sided shifted-null p=1.0000 (C8; diagnostics: bootstrap bias -0.030, percentile CI [-0.255, -0.166], percentile p=1.0000)
+- zscore_vs_random: Δ=+0.010, SE=0.013, 95% basic CI [-0.018, +0.035], one-sided shifted-null p=0.2169 (C8; diagnostics: bootstrap bias +0.002, percentile CI [-0.015, +0.039], percentile p=0.1749)
 
 ## MDE
 

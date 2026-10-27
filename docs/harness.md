@@ -61,7 +61,11 @@ ledger.append("zscore", config_dict, "dev", ledger_metrics, branch="1-library", 
 - Because whole groups are resampled, (kinase, group) means are fixed. Each replicate is then exact and vectorised (checked against brute-force duplication in the tests):
   - kinase_b = Σ_g W_bg·v_kg / Σ_g W_bg, and a kinase is present iff the denominator > 0;
   - metric_b = macro over present kinases (for harmony: within each bin, then over bins).
-- Paired Δ = A − B on identical resamples. One-sided p = (1 + #{Δ*_b ≤ 0}) / (B + 1). CI = 2.5/97.5 percentiles.
+- Paired Δ = A − B on identical resamples. Inference is bias-corrected (DESIGN §12 C8). The group bootstrap shifts the kinase composition of the macro average, because single-group kinases drop out of about 37% of resamples:
+  - CI (`ci_low`/`ci_high`) = basic interval [2Δ̂ − q97.5, 2Δ̂ − q2.5];
+  - one-sided p (`p_one_sided`) = shifted-null (1 + #{Δ*_b − mean(Δ*) ≥ Δ̂}) / (B + 1);
+  - diagnostics: `ci_low_pct`/`ci_high_pct` (raw percentile interval), `p_one_sided_pct` (old (1 + #{Δ* ≤ 0}) / (B + 1)), `mean_replicates`, and `bias` = mean(Δ*) − Δ̂;
+  - SE = sd(Δ*), which the location correction does not change.
 - `holm`: step-down adjusted p. `beats` = Holm p < .05 AND ΔM1-sel ≥ 0.01 AND ΔM1-sel(T-unseen) > 0 AND ΔM2 ≥ 0.
 
 ## Controls (`kinact.controls`)

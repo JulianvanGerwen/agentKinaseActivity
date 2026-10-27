@@ -391,3 +391,56 @@ def test_gt_readers_keep_null_role(tmp_path):
     assert P["sign"].dtype.kind == "i" and C["n_targets"].dtype.kind == "i"
     (tmp_path / "x.tsv").write_text("a\tb\n1\t\n")
     assert read_gt_tsv(tmp_path / "x.tsv")["b"].isna().all()  # empty stays NaN
+
+
+# ------------------------------------------------------------------------------- C8 (bias-corrected bootstrap)
+def _single_group_bias_gt(n_groups=20, n_neg=10):
+    """Kinase M is a target in every group; S_i only in group i (single-group kinases)."""
+    spec = [(f"c{i}", f"g{i}", "H", [("M", "direct", 1, "high"), (f"S{i}", "direct", 1, "high")], 2, True)
+            for i in range(n_groups)]
+    P, C = make_gt(spec)
+    uni = ["M"] + [f"S{i}" for i in range(n_groups)] + [f"N{j}" for j in range(n_neg)]
+    X = pd.DataFrame(-1.0, index=C["conditionID"], columns=uni)  # every kinase scored
+    X["M"] = 10.0
+    for j in range(n_neg):
+        X[f"N{j}"] = float(j)
+    Y = X.assign(M=np.nan)  # identical except M -> Δ = 0 for every single-group kinase
+    return P, C, uni, X, Y
+
+
+def test_c8_single_group_kinase_bias_basic_ci():
+    P, C, uni, X, Y = _single_group_bias_gt()
+    ev = ev_of(P, C, uni)
+    plan = bs.BootstrapPlan.from_evaluator(ev, B=1000, seed=0)
+    d = bs.paired_delta(ev, X, Y, "M1-sel", plan)
+    r = d["replicates"]
+    # bias reproduced: single-group kinases (Δ=0) drop out of ~37% of resamples -> Δ* shifted up
+    assert d["bias"] > 0.008 and (r > d["estimate"]).mean() > 0.95
+    assert d["ci_low_pct"] >= d["estimate"] - 1e-12          # raw percentile CI excludes/abuts Δ̂
+    # basic interval = [2Δ̂ − q97.5, 2Δ̂ − q2.5]: the percentile interval reflected about Δ̂, so it
+    # moves opposite to the bias (with bias this strong it can lie wholly below Δ̂)
+    lo, hi = np.percentile(r, [2.5, 97.5])
+    assert d["ci_low"] == pytest.approx(2 * d["estimate"] - hi)
+    assert d["ci_high"] == pytest.approx(2 * d["estimate"] - lo)
+    assert d["ci_low"] < d["estimate"] and d["ci_high"] < d["ci_high_pct"]
+    assert (d["ci_low"] + d["ci_high"]) / 2 == pytest.approx(2 * d["estimate"] - (lo + hi) / 2)
+    # shifted-null p by hand
+    want = (1 + np.sum(r - r.mean() >= d["estimate"])) / (len(r) + 1)
+    assert d["p_one_sided"] == pytest.approx(want)
+    assert d["p_one_sided"] < 0.05 and "p_one_sided_pct" in d
+
+
+def test_c8_null_pvalues_uniform():
+    """Equal methods (two independent random score sets): ~5% of shifted-null p < 0.05."""
+    P, C, ks = big_gt(n_cond=120, n_k=40, n_groups=30)
+    ev = ev_of(P, C, ks)
+    plan = bs.BootstrapPlan.from_evaluator(ev, B=400, seed=0)
+    ps = []
+    for s in range(200):
+        A = ctl.random_scores(C["conditionID"], ks, seed=1000 + 2 * s, coverage=0.7)
+        B = ctl.random_scores(C["conditionID"], ks, seed=1001 + 2 * s, coverage=0.7)
+        ps.append(bs.paired_delta(ev, A, B, "M1-sel", plan)["p_one_sided"])
+    ps = np.asarray(ps)
+    assert 0.01 <= (ps < 0.05).mean() <= 0.10
+    assert 0.40 <= np.mean(ps) <= 0.60
+    assert (ps < 0.5).mean() == pytest.approx(0.5, abs=0.1)

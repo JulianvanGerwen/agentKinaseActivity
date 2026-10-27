@@ -159,3 +159,24 @@ Paired bootstrap (B = 2000):
 | z vs random | +0.010 | [−0.015, +0.039] | 0.17 |
 
 MDE = 0.0605.
+
+## C8 implemented (after PI decision)
+`src/kinact/bootstrap.py` now reports:
+- the basic CI [2Δ̂ − q97.5, 2Δ̂ − q2.5];
+- the shifted-null one-sided p;
+- the raw percentile CI and p, the mean of the replicates and the bias, as diagnostics.
+
+New tests in `tests/test_eval.py`:
+- `test_c8_single_group_kinase_bias_basic_ci`: a toy case that reproduces the bias;
+- `test_c8_null_pvalues_uniform`: 200 equal-method nulls, where the fraction with p < 0.05 must fall in [0.01, 0.10].
+
+`pytest tests/`: 96 passed.
+
+Smoke results on the same GT (`1e6f791c…`):
+
+| comparison | Δ | basic CI | shifted-null p | bias |
+|---|---|---|---|---|
+| z vs prior-only | −0.172 | [−0.179, −0.089] | 1.0 | −0.030 |
+| z vs random | +0.010 | [−0.018, +0.035] | 0.217 | — |
+
+The SE is unchanged at 0.0239 because the correction is a pure location shift. The recomputed MDE is therefore also unchanged at 0.0605 (`results/smoke/mde.json`).

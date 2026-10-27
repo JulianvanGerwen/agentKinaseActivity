@@ -10,6 +10,8 @@
   "MDE_2.5": 0.09424111116157521
  },
  "delta_estimate": -0.17211639845395488,
+ "bootstrap_bias": -0.030066473476163175,
+ "SE_note": "C8: SE = sd of paired replicates; the C8 bias correction is a location shift, so the SE (and MDE) are invariant to it",
  "B": 2000,
  "seed": 0,
  "folds": [
