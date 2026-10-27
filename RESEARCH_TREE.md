@@ -59,7 +59,9 @@ Key finding for strategy: under the pre-registered coverage-aware primary metric
     - NOT adopted: winsorising (+0.004, threshold chosen post hoc), posterior-mean output (not robust), r3/cantley edges (flat), similarity kernel (flat). Bigger search spaces lose ~0.03 to selection noise → keep final search small.
     - [x] 5.3a audit (docs/audit/core_v1_audit.md): reproduced exactly, no leakage. DEV-confirm look #1 (179 M1-sel pairs): core-v1 0.803 vs PSP-z 0.545 (+0.26 [0.19,0.31]), curated-z 0.618 (+0.19), prior-only 0.856 (−0.05, n.s.). M2 gain vs PSP-z only +0.008 on devconfirm. 4 looks left.
   - [-] 5.4 B4 co-regulation expansion (results/b4/b4_report.md): on B2 core ΔM1-sel −0.010 [−0.021,−0.003] (expanded sites shared across kinases → noise); neighbour fill-in n.s.; on weighted z +0.026 (only reaches B1 level). Kept as stacking candidate (T-unseen 0.684). NOTE for G2: exclude DEV conditions sharing a control with TEST conditions from any co-regulation fit (metadata only).
-  - [ ] 5.4b shared-function edge weights
+  - [~] 5.4b B4b shared-function learned edge weights (≤20 params) vs core-v1 z_vif 0.663
   - [-] 5.5 B5 self-sites (results/b5/b5_report.md): alone 0.726 on pairs with measured self-site (35% of M1-sel pairs); paradoxical up for PKC/PKA/ERKi/TAK1; on core +0.003 [−0.001,0.008] n.s. (half of self-sites already library edges). GT-A helper mask_self_sites.
   - [ ] 5.6 B6 stacking
+- [~] 7. Deliverable: src/kinact/core.py API + CLI + speed (CPU ≤5 ms/cond, GPU path), equivalence to bayes2
+- [~] 8. External test pipelines (benchmarKIN Tyr, Hernandez non-compendium, CPTAC) — data/harness only, no real method run until TEST
 - [ ] 6. Sealed test + REPORT.md
