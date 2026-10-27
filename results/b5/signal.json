@@ -1,0 +1,911 @@
+{
+ "gt_freeze_sha256": "1e6f791c6b85f15dfe51d7eb045bf392a6b25be576b10974f7bba6c5d887baac",
+ "psp": {
+  "coverage": {
+   "n_sites": 1073,
+   "n_kinases_table": 276,
+   "n_inhib_sites": 234,
+   "n_kinases_site_in_compendium_DEV": 216,
+   "n_kinases_measured_any_DEV_cond": 211,
+   "n_kinases_measured_in_GT_conds": 192,
+   "median_kinases_per_GT_cond": 50.0,
+   "M1sel_pairs": 877,
+   "M1sel_pairs_measured": 304,
+   "M1sel_kinases": 106,
+   "M1sel_kinases_measured_any": 41,
+   "all_pairs": 1906,
+   "all_pairs_measured": 512,
+   "by_sign_measured_frac": {
+    "-1": 0.31587057010785824,
+    "1": 0.4342105263157895
+   },
+   "by_source_measured_frac": {
+    "D": 0.4537037037037037,
+    "H": 0.1932367149758454,
+    "O": 0.3656387665198238
+   }
+  },
+  "standalone": {
+   "M1-sel": 0.5054064392194557,
+   "M1-sel-scored": 0.7255889402140604,
+   "coverage": 0.346636259977195,
+   "M1-sel-scored:sign=-1": {
+    "value": 0.7282967665825788,
+    "n_pairs": 205,
+    "n_kinases": 35
+   },
+   "M1-sel-scored:sign=1": {
+    "value": 0.6441311707605372,
+    "n_pairs": 99,
+    "n_kinases": 15
+   },
+   "M1-sel-scored:source=H": {
+    "value": 0.5943222810253304,
+    "n_pairs": 40,
+    "n_kinases": 11
+   },
+   "M1-sel-scored:source=D": {
+    "value": 0.7337556882411664,
+    "n_pairs": 98,
+    "n_kinases": 10
+   },
+   "M1-sel-scored:source=O": {
+    "value": 0.7502338628472297,
+    "n_pairs": 166,
+    "n_kinases": 34
+   },
+   "M1-all-scored": {
+    "value": 0.6242259510071809,
+    "n_pairs": 512,
+    "n_kinases": 61
+   },
+   "direction_agree": {
+    "-1": {
+     "frac_agree": 0.5980629539951574,
+     "mean_s": -0.4752248578109641,
+     "n": 413
+    },
+    "1": {
+     "frac_agree": 0.7272727272727273,
+     "mean_s": 0.9388025597696893,
+     "n": 99
+    }
+   }
+  }
+ },
+ "paradox_by_family": [
+  {
+   "fam": "Src",
+   "n": 69,
+   "n_kin": 5,
+   "mean_s": -1.185772703422833,
+   "frac_up": 0.2463768115942029,
+   "kinases": "FYN,LCK,LYN,SRC,YES1"
+  },
+  {
+   "fam": "PKC",
+   "n": 43,
+   "n_kin": 3,
+   "mean_s": 0.17053393305942757,
+   "frac_up": 0.627906976744186,
+   "kinases": "PRKCA,PRKCD,PRKCQ"
+  },
+  {
+   "fam": "STE7",
+   "n": 35,
+   "n_kin": 2,
+   "mean_s": -0.17244508865155248,
+   "frac_up": 0.3142857142857143,
+   "kinases": "MAP2K1,MAP2K2"
+  },
+  {
+   "fam": "CDK",
+   "n": 34,
+   "n_kin": 6,
+   "mean_s": -0.24075009060878075,
+   "frac_up": 0.38235294117647056,
+   "kinases": "CDK1,CDK12,CDK16,CDK2,CDK5,CDK7"
+  },
+  {
+   "fam": "GSK",
+   "n": 24,
+   "n_kin": 2,
+   "mean_s": -0.4074916991938611,
+   "frac_up": 0.2916666666666667,
+   "kinases": "GSK3A,GSK3B"
+  },
+  {
+   "fam": "RSK",
+   "n": 23,
+   "n_kin": 4,
+   "mean_s": -0.4951869810951838,
+   "frac_up": 0.391304347826087,
+   "kinases": "RPS6KA1,RPS6KA3,RPS6KA6,RPS6KB1"
+  },
+  {
+   "fam": "PKN",
+   "n": 18,
+   "n_kin": 1,
+   "mean_s": 0.08482581043378425,
+   "frac_up": 0.5,
+   "kinases": "PKN1"
+  },
+  {
+   "fam": "PIKK",
+   "n": 17,
+   "n_kin": 1,
+   "mean_s": -0.8507782405420004,
+   "frac_up": 0.17647058823529413,
+   "kinases": "MTOR"
+  },
+  {
+   "fam": "CAMKL",
+   "n": 17,
+   "n_kin": 4,
+   "mean_s": -0.1509082097646779,
+   "frac_up": 0.5294117647058824,
+   "kinases": "CHEK1,PRKAA2,SIK2,SIK3"
+  },
+  {
+   "fam": "MLK",
+   "n": 15,
+   "n_kin": 1,
+   "mean_s": 0.3747922419609245,
+   "frac_up": 0.8,
+   "kinases": "MAP3K7"
+  },
+  {
+   "fam": "STE20",
+   "n": 12,
+   "n_kin": 4,
+   "mean_s": -0.4084313827396577,
+   "frac_up": 0.4166666666666667,
+   "kinases": "PAK1,PAK2,PAK4,TAOK3"
+  },
+  {
+   "fam": "Akt",
+   "n": 12,
+   "n_kin": 2,
+   "mean_s": -0.7906609082865405,
+   "frac_up": 0.16666666666666666,
+   "kinases": "AKT1,AKT2"
+  },
+  {
+   "fam": "EGFR",
+   "n": 10,
+   "n_kin": 1,
+   "mean_s": -1.2269382496913235,
+   "frac_up": 0.1,
+   "kinases": "EGFR"
+  },
+  {
+   "fam": "Ret",
+   "n": 9,
+   "n_kin": 1,
+   "mean_s": -0.11535135836091465,
+   "frac_up": 0.6666666666666666,
+   "kinases": "RET"
+  },
+  {
+   "fam": "PKA",
+   "n": 9,
+   "n_kin": 1,
+   "mean_s": 0.5712691684022504,
+   "frac_up": 1.0,
+   "kinases": "PRKACA"
+  },
+  {
+   "fam": "PKD",
+   "n": 9,
+   "n_kin": 2,
+   "mean_s": -0.6247228885361361,
+   "frac_up": 0.6666666666666666,
+   "kinases": "PRKD1,PRKD3"
+  },
+  {
+   "fam": "MAPK",
+   "n": 8,
+   "n_kin": 3,
+   "mean_s": -0.11123761409446403,
+   "frac_up": 0.625,
+   "kinases": "MAPK1,MAPK14,MAPK3"
+  },
+  {
+   "fam": "Abl",
+   "n": 8,
+   "n_kin": 1,
+   "mean_s": -0.8544699406878831,
+   "frac_up": 0.25,
+   "kinases": "ABL1"
+  },
+  {
+   "fam": "DYRK",
+   "n": 6,
+   "n_kin": 1,
+   "mean_s": 0.017342998549421285,
+   "frac_up": 0.5,
+   "kinases": "DYRK1A"
+  },
+  {
+   "fam": "Eph",
+   "n": 6,
+   "n_kin": 1,
+   "mean_s": -4.362984938563993,
+   "frac_up": 0.0,
+   "kinases": "EPHA2"
+  },
+  {
+   "fam": "CAMKK",
+   "n": 6,
+   "n_kin": 2,
+   "mean_s": -1.0873817910851267,
+   "frac_up": 0.3333333333333333,
+   "kinases": "CAMKK1,CAMKK2"
+  },
+  {
+   "fam": "PLK",
+   "n": 4,
+   "n_kin": 1,
+   "mean_s": -0.03835754542670608,
+   "frac_up": 0.5,
+   "kinases": "PLK1"
+  },
+  {
+   "fam": "ALK",
+   "n": 4,
+   "n_kin": 1,
+   "mean_s": -1.706652582937255,
+   "frac_up": 0.0,
+   "kinases": "ALK"
+  },
+  {
+   "fam": "CAMK1",
+   "n": 3,
+   "n_kin": 2,
+   "mean_s": 0.6825444839623942,
+   "frac_up": 0.6666666666666666,
+   "kinases": "CAMK1,CAMK1D"
+  },
+  {
+   "fam": "GRK",
+   "n": 3,
+   "n_kin": 1,
+   "mean_s": 0.012535992867712545,
+   "frac_up": 0.3333333333333333,
+   "kinases": "GRK2"
+  },
+  {
+   "fam": "ULK",
+   "n": 3,
+   "n_kin": 1,
+   "mean_s": -2.1521664551671633,
+   "frac_up": 0.0,
+   "kinases": "ULK1"
+  },
+  {
+   "fam": "STE11",
+   "n": 3,
+   "n_kin": 1,
+   "mean_s": 1.7939525074213192,
+   "frac_up": 0.6666666666666666,
+   "kinases": "MAP3K3"
+  },
+  {
+   "fam": "DMPK",
+   "n": 2,
+   "n_kin": 1,
+   "mean_s": 0.14787183277427066,
+   "frac_up": 0.5,
+   "kinases": "ROCK2"
+  },
+  {
+   "fam": "InsR",
+   "n": 1,
+   "n_kin": 1,
+   "mean_s": -2.3371691127794616,
+   "frac_up": 0.0,
+   "kinases": "INSR"
+  }
+ ],
+ "paradox_by_group": [
+  {
+   "grp": "AGC",
+   "n": 110,
+   "mean_s": -0.059478487231747985,
+   "frac_up": 0.5272727272727272
+  },
+  {
+   "grp": "Atypical",
+   "n": 17,
+   "mean_s": -0.8507782405420004,
+   "frac_up": 0.17647058823529413
+  },
+  {
+   "grp": "CAMK",
+   "n": 29,
+   "mean_s": -0.21173490037715753,
+   "frac_up": 0.5862068965517241
+  },
+  {
+   "grp": "CMGC",
+   "n": 72,
+   "mean_s": -0.2604325942056999,
+   "frac_up": 0.3888888888888889
+  },
+  {
+   "grp": "Other",
+   "n": 13,
+   "mean_s": -1.0103246379783903,
+   "frac_up": 0.3076923076923077
+  },
+  {
+   "grp": "STE",
+   "n": 50,
+   "mean_s": -0.11109794346832542,
+   "frac_up": 0.36
+  },
+  {
+   "grp": "TK",
+   "n": 107,
+   "mean_s": -1.2832085033621723,
+   "frac_up": 0.24299065420560748
+  },
+  {
+   "grp": "TKL",
+   "n": 15,
+   "mean_s": 0.3747922419609245,
+   "frac_up": 0.8
+  }
+ ],
+ "paradox_by_source": [
+  {
+   "source": "D",
+   "n": 98,
+   "mean_s": -1.323130524207471,
+   "frac_up": 0.19387755102040816
+  },
+  {
+   "source": "H",
+   "n": 248,
+   "mean_s": -0.07888020510398022,
+   "frac_up": 0.5161290322580645
+  },
+  {
+   "source": "O",
+   "n": 67,
+   "mean_s": -0.7020714035493872,
+   "frac_up": 0.2835820895522388
+  }
+ ],
+ "paradox_by_kinase": [
+  {
+   "kinase": "MAP3K3",
+   "n": 3,
+   "mean_s": 1.7939525074213192,
+   "frac_up": 0.6666666666666666,
+   "drugs": "MCF7_Go6983;MCF7_PF3758309;NTERA2_Go6983"
+  },
+  {
+   "kinase": "PRKACA",
+   "n": 9,
+   "mean_s": 0.5712691684022504,
+   "frac_up": 1.0,
+   "drugs": "HL60_AT13148;HL60_H89_2HCl;HL60_PF3758309;MCF7_AT13148"
+  },
+  {
+   "kinase": "PRKCQ",
+   "n": 9,
+   "mean_s": 0.3997991871810649,
+   "frac_up": 0.7777777777777778,
+   "drugs": "HL60_Dasatinib;HL60_GSK690693;HL60_Go6983;HL60_PF3758309"
+  },
+  {
+   "kinase": "MAP3K7",
+   "n": 15,
+   "mean_s": 0.3747922419609245,
+   "frac_up": 0.8,
+   "drugs": "7Oxo;HL60_AZD5438;HL60_LY2835219;MCF7_AZD5438"
+  },
+  {
+   "kinase": "PAK2",
+   "n": 3,
+   "mean_s": 0.26661232674862667,
+   "frac_up": 1.0,
+   "drugs": "HL60_LY2835219;MCF7_LY2835219;NTERA2_LY2835219"
+  },
+  {
+   "kinase": "MAPK3",
+   "n": 3,
+   "mean_s": 0.22507813293263848,
+   "frac_up": 0.6666666666666666,
+   "drugs": "HL60_GDC0994;MCF7_GDC0994;NTERA2_GDC0994"
+  },
+  {
+   "kinase": "PRKD1",
+   "n": 4,
+   "mean_s": 0.18778253648049437,
+   "frac_up": 0.75,
+   "drugs": "HL60_PF3758309;MCF7_PF3758309;NTERA2_PF3758309;PKD1kd"
+  },
+  {
+   "kinase": "PRKCA",
+   "n": 14,
+   "mean_s": 0.16818037358992344,
+   "frac_up": 0.5714285714285714,
+   "drugs": "HL60_GSK690693;HL60_Go6983;HL60_LY2835219;HL60_PF3758309"
+  },
+  {
+   "kinase": "PKN1",
+   "n": 18,
+   "mean_s": 0.08482581043378425,
+   "frac_up": 0.5,
+   "drugs": "HL60_AT13148;HL60_Dasatinib;HL60_GSK690693;HL60_PF3758309"
+  },
+  {
+   "kinase": "PRKCD",
+   "n": 20,
+   "mean_s": 0.06901206033334367,
+   "frac_up": 0.6,
+   "drugs": "HL60_AT13148;HL60_GSK690693;HL60_Go6983;HL60_LY2584702"
+  },
+  {
+   "kinase": "CDK16",
+   "n": 9,
+   "mean_s": 0.031518484432738254,
+   "frac_up": 0.4444444444444444,
+   "drugs": "HL60_AZD5438;HL60_LY2090314;HL60_LY2835219;MCF7_AZD5438"
+  },
+  {
+   "kinase": "DYRK1A",
+   "n": 6,
+   "mean_s": 0.017342998549421285,
+   "frac_up": 0.5,
+   "drugs": "HL60_Go6983;HL60_LY2835219;MCF7_Go6983;MCF7_LY2835219"
+  },
+  {
+   "kinase": "GRK2",
+   "n": 3,
+   "mean_s": 0.012535992867712545,
+   "frac_up": 0.3333333333333333,
+   "drugs": "HL60_AT13148;MCF7_AT13148;NTERA2_AT13148"
+  },
+  {
+   "kinase": "PLK1",
+   "n": 4,
+   "mean_s": -0.03835754542670608,
+   "frac_up": 0.5,
+   "drugs": "HL60_HS173;MCF7_HS173;NTERA2_HS173;Plk1(as) 3-MB-PP1"
+  },
+  {
+   "kinase": "CHEK1",
+   "n": 3,
+   "mean_s": -0.0856487630111168,
+   "frac_up": 0.6666666666666666,
+   "drugs": "HL60_PF3758309;MCF7_PF3758309;NTERA2_PF3758309"
+  },
+  {
+   "kinase": "SRC",
+   "n": 34,
+   "mean_s": -0.1084039744764047,
+   "frac_up": 0.3235294117647059,
+   "drugs": "Dasatinib 5nM;Dasatinib_10000nM;Dasatinib_1000nM;Dasatinib_100nM"
+  },
+  {
+   "kinase": "FYN",
+   "n": 7,
+   "mean_s": -0.10887240780904502,
+   "frac_up": 0.5714285714285714,
+   "drugs": "Dasatinib 5nM;Dasatinib_10000nM;Dasatinib_1000nM;Dasatinib_100nM"
+  },
+  {
+   "kinase": "RET",
+   "n": 9,
+   "mean_s": -0.11535135836091465,
+   "frac_up": 0.6666666666666666,
+   "drugs": "HL60_AC220;HL60_Dasatinib;HL60_PF3758309;MCF7_AC220"
+  },
+  {
+   "kinase": "RPS6KA1",
+   "n": 5,
+   "mean_s": -0.11976931799950649,
+   "frac_up": 0.6,
+   "drugs": "BI-D1870;HL60_PF3758309;MCF7_PF3758309;NTERA2_PF3758309"
+  },
+  {
+   "kinase": "MAP2K2",
+   "n": 26,
+   "mean_s": -0.14966033626426714,
+   "frac_up": 0.2692307692307692,
+   "drugs": "Cobimetinib_0-5uM;Cobimetinib_5uM;GDC0973+GDC0941;HL60_Go6983"
+  },
+  {
+   "kinase": "MAP2K1",
+   "n": 9,
+   "mean_s": -0.23826770665926564,
+   "frac_up": 0.4444444444444444,
+   "drugs": "MEKi (GSK-1120212);MEKi (U0126);Refametinib_10000nM;Refametinib_1000nM"
+  },
+  {
+   "kinase": "CDK7",
+   "n": 12,
+   "mean_s": -0.24869936998841746,
+   "frac_up": 0.4166666666666667,
+   "drugs": "HL60_AZD5438;HL60_Go6983;HL60_LY2835219;HL60_PF3758309"
+  },
+  {
+   "kinase": "SIK3",
+   "n": 9,
+   "mean_s": -0.25030787676667465,
+   "frac_up": 0.3333333333333333,
+   "drugs": "HL60_Dasatinib;HL60_GDC0994;HL60_LY2835219;MCF7_Dasatinib"
+  },
+  {
+   "kinase": "GSK3A",
+   "n": 23,
+   "mean_s": -0.3043365529681233,
+   "frac_up": 0.30434782608695654,
+   "drugs": "GSK3i_BIO_0-1;GSK3i_BIO_1;GSK3i_CHIR-99021_0-1;GSK3i_CHIR-99021_1"
+  },
+  {
+   "kinase": "RPS6KB1",
+   "n": 12,
+   "mean_s": -0.32379533208723404,
+   "frac_up": 0.3333333333333333,
+   "drugs": "HL60_AT13148;HL60_Go6983;HL60_LY2584702;HL60_PF3758309"
+  },
+  {
+   "kinase": "CDK1",
+   "n": 4,
+   "mean_s": -0.3800672888733582,
+   "frac_up": 0.25,
+   "drugs": "HL60_AZD5438;Kenpaullone;MCF7_AZD5438;NTERA2_AZD5438"
+  },
+  {
+   "kinase": "CDK5",
+   "n": 3,
+   "mean_s": -0.4477357168671426,
+   "frac_up": 0.6666666666666666,
+   "drugs": "HL60_AZD5438;MCF7_AZD5438;NTERA2_AZD5438"
+  },
+  {
+   "kinase": "MAPK1",
+   "n": 4,
+   "mean_s": -0.5135129913433738,
+   "frac_up": 0.5,
+   "drugs": "HL60_GDC0994;MCF7_GDC0994;NTERA2_GDC0994;SCH"
+  },
+  {
+   "kinase": "PRKAA2",
+   "n": 3,
+   "mean_s": -0.5246035355382429,
+   "frac_up": 0.6666666666666666,
+   "drugs": "HL60_PF3758309;MCF7_PF3758309;NTERA2_PF3758309"
+  },
+  {
+   "kinase": "CDK2",
+   "n": 4,
+   "mean_s": -0.6197018548529001,
+   "frac_up": 0.25,
+   "drugs": "Flavopiridol;HL60_AZD5438;MCF7_AZD5438;NTERA2_AZD5438"
+  },
+  {
+   "kinase": "LCK",
+   "n": 4,
+   "mean_s": -0.6389739736220642,
+   "frac_up": 0.25,
+   "drugs": "Dasatinib 5nM;Dasatinib_100nM;Dasatinib_10nM;Dasatinib_30nM"
+  },
+  {
+   "kinase": "PAK4",
+   "n": 4,
+   "mean_s": -0.7077097086215662,
+   "frac_up": 0.25,
+   "drugs": "HL60_PF3758309;MCF7_PF3758309;NTERA2_GSK690693;NTERA2_PF3758309"
+  },
+  {
+   "kinase": "AKT1",
+   "n": 11,
+   "mean_s": -0.7549833489543706,
+   "frac_up": 0.18181818181818182,
+   "drugs": "Akti_Akt-1-2_0-1;Akti_Akt-1-2_1;HL60_AT13148;HL60_GDC0068"
+  },
+  {
+   "kinase": "PAK1",
+   "n": 3,
+   "mean_s": -0.7664752723018157,
+   "frac_up": 0.0,
+   "drugs": "HL60_PF3758309;MCF7_PF3758309;NTERA2_PF3758309"
+  },
+  {
+   "kinase": "MTOR",
+   "n": 17,
+   "mean_s": -0.8507782405420004,
+   "frac_up": 0.17647058823529413,
+   "drugs": "Dactolisib 1h;Dactolisib_10000nM;Dactolisib_1000nM;Dactolisib_100nM"
+  },
+  {
+   "kinase": "ABL1",
+   "n": 8,
+   "mean_s": -0.8544699406878831,
+   "frac_up": 0.25,
+   "drugs": "Dasatinib_10000nM;Dasatinib_1000nM;Dasatinib_100nM;Dasatinib_10nM"
+  },
+  {
+   "kinase": "RPS6KA3",
+   "n": 5,
+   "mean_s": -0.892921257265035,
+   "frac_up": 0.4,
+   "drugs": "BI-D1870;HL60_PF3758309;MCF7_PF3758309;NTERA2_PF3758309"
+  },
+  {
+   "kinase": "CAMKK1",
+   "n": 3,
+   "mean_s": -1.026049097830864,
+   "frac_up": 0.3333333333333333,
+   "drugs": "HL60_LY2835219;MCF7_LY2835219;NTERA2_LY2835219"
+  },
+  {
+   "kinase": "CAMKK2",
+   "n": 3,
+   "mean_s": -1.1487144843393893,
+   "frac_up": 0.3333333333333333,
+   "drugs": "HL60_LY2835219;MCF7_LY2835219;NTERA2_LY2835219"
+  },
+  {
+   "kinase": "EGFR",
+   "n": 10,
+   "mean_s": -1.2269382496913235,
+   "frac_up": 0.1,
+   "drugs": "Afatinib_10000nM;Afatinib_1000nM;Afatinib_100nM;Afatinib_10nM"
+  },
+  {
+   "kinase": "PRKD3",
+   "n": 5,
+   "mean_s": -1.2747272285494406,
+   "frac_up": 0.6,
+   "drugs": "HL60_PF3758309;MCF7_Go6983;MCF7_PF3758309;NTERA2_Go6983"
+  },
+  {
+   "kinase": "ALK",
+   "n": 4,
+   "mean_s": -1.706652582937255,
+   "frac_up": 0.0,
+   "drugs": "Crizotinib 1h;Lorlatinib 1h"
+  },
+  {
+   "kinase": "ULK1",
+   "n": 3,
+   "mean_s": -2.1521664551671633,
+   "frac_up": 0.0,
+   "drugs": "HL60_PF3758309;MCF7_PF3758309;NTERA2_PF3758309"
+  },
+  {
+   "kinase": "LYN",
+   "n": 23,
+   "mean_s": -3.2069674247240334,
+   "frac_up": 0.043478260869565216,
+   "drugs": "Dasatinib_10000nM;Dasatinib_1000nM;Dasatinib_100nM;Dasatinib_10nM"
+  },
+  {
+   "kinase": "EPHA2",
+   "n": 6,
+   "mean_s": -4.362984938563993,
+   "frac_up": 0.0,
+   "drugs": "Dasatinib_10000nM;Dasatinib_1000nM;Dasatinib_100nM;Dasatinib_10nM"
+  }
+ ],
+ "stim_by_family": [
+  {
+   "fam": "MAPK",
+   "n": 36,
+   "mean_s": 1.607921390610688,
+   "frac_up": 0.9444444444444444
+  },
+  {
+   "fam": "MLK",
+   "n": 24,
+   "mean_s": -0.16956959878216915,
+   "frac_up": 0.375
+  },
+  {
+   "fam": "PKA",
+   "n": 11,
+   "mean_s": 0.2243005095722836,
+   "frac_up": 0.7272727272727273
+  },
+  {
+   "fam": "EGFR",
+   "n": 9,
+   "mean_s": 1.394839667565454,
+   "frac_up": 0.7777777777777778
+  },
+  {
+   "fam": "PIKK",
+   "n": 5,
+   "mean_s": 3.3212842098588062,
+   "frac_up": 1.0
+  },
+  {
+   "fam": "CAMKL",
+   "n": 4,
+   "mean_s": 1.9677140943661693,
+   "frac_up": 1.0
+  },
+  {
+   "fam": "ALK",
+   "n": 3,
+   "mean_s": 1.2333729908102844,
+   "frac_up": 1.0
+  },
+  {
+   "fam": "Jak",
+   "n": 3,
+   "mean_s": -1.3861503908686277,
+   "frac_up": 0.0
+  },
+  {
+   "fam": "CDK",
+   "n": 2,
+   "mean_s": -0.27744236842056785,
+   "frac_up": 0.5
+  },
+  {
+   "fam": "Aur",
+   "n": 1,
+   "mean_s": 0.9656382613604697,
+   "frac_up": 1.0
+  },
+  {
+   "fam": "PLK",
+   "n": 1,
+   "mean_s": -0.32460763850067276,
+   "frac_up": 0.0
+  }
+ ],
+ "aloop": {
+  "coverage": {
+   "n_sites": 2021,
+   "n_kinases_table": 389,
+   "n_inhib_sites": 0,
+   "n_kinases_site_in_compendium_DEV": 216,
+   "n_kinases_measured_any_DEV_cond": 211,
+   "n_kinases_measured_in_GT_conds": 183,
+   "median_kinases_per_GT_cond": 28.0,
+   "M1sel_pairs": 877,
+   "M1sel_pairs_measured": 178,
+   "M1sel_kinases": 106,
+   "M1sel_kinases_measured_any": 35,
+   "all_pairs": 1906,
+   "all_pairs_measured": 277,
+   "by_sign_measured_frac": {
+    "-1": 0.18335901386748846,
+    "1": 0.25877192982456143
+   },
+   "by_source_measured_frac": {
+    "D": 0.3101851851851852,
+    "H": 0.057971014492753624,
+    "O": 0.21806167400881057
+   }
+  },
+  "standalone": {
+   "M1-sel": 0.5032520924329451,
+   "M1-sel-scored": 0.7048781693074951,
+   "coverage": 0.20296465222348917,
+   "M1-sel-scored:sign=-1": {
+    "value": 0.667230243403231,
+    "n_pairs": 119,
+    "n_kinases": 28
+   },
+   "M1-sel-scored:sign=1": {
+    "value": 0.7226996626501692,
+    "n_pairs": 59,
+    "n_kinases": 11
+   },
+   "M1-sel-scored:source=H": {
+    "value": 0.4251487984131662,
+    "n_pairs": 12,
+    "n_kinases": 5
+   },
+   "M1-sel-scored:source=D": {
+    "value": 0.7069601205725187,
+    "n_pairs": 67,
+    "n_kinases": 6
+   },
+   "M1-sel-scored:source=O": {
+    "value": 0.7289843093931013,
+    "n_pairs": 99,
+    "n_kinases": 30
+   },
+   "M1-all-scored": {
+    "value": 0.6253773125496371,
+    "n_pairs": 277,
+    "n_kinases": 46
+   },
+   "direction_agree": {
+    "-1": {
+     "frac_agree": 0.6513761467889908,
+     "mean_s": -0.5326033520856411,
+     "n": 218
+    },
+    "1": {
+     "frac_agree": 0.864406779661017,
+     "mean_s": 0.9598215218880899,
+     "n": 59
+    }
+   }
+  }
+ },
+ "psp+aloop": {
+  "coverage": {
+   "n_sites": 2811,
+   "n_kinases_table": 427,
+   "n_inhib_sites": 234,
+   "n_kinases_site_in_compendium_DEV": 278,
+   "n_kinases_measured_any_DEV_cond": 271,
+   "n_kinases_measured_in_GT_conds": 245,
+   "median_kinases_per_GT_cond": 61.0,
+   "M1sel_pairs": 877,
+   "M1sel_pairs_measured": 339,
+   "M1sel_kinases": 106,
+   "M1sel_kinases_measured_any": 47,
+   "all_pairs": 1906,
+   "all_pairs_measured": 563,
+   "by_sign_measured_frac": {
+    "-1": 0.349768875192604,
+    "1": 0.49122807017543857
+   },
+   "by_source_measured_frac": {
+    "D": 0.5416666666666666,
+    "H": 0.1932367149758454,
+    "O": 0.4008810572687225
+   }
+  },
+  "standalone": {
+   "M1-sel": 0.5081996738984937,
+   "M1-sel-scored": 0.70649266907927,
+   "coverage": 0.3865450399087799,
+   "M1-sel-scored:sign=-1": {
+    "value": 0.6968506752786,
+    "n_pairs": 227,
+    "n_kinases": 38
+   },
+   "M1-sel-scored:sign=1": {
+    "value": 0.6774203791490669,
+    "n_pairs": 112,
+    "n_kinases": 18
+   },
+   "M1-sel-scored:source=H": {
+    "value": 0.6068558580183181,
+    "n_pairs": 40,
+    "n_kinases": 11
+   },
+   "M1-sel-scored:source=D": {
+    "value": 0.7312551789712284,
+    "n_pairs": 117,
+    "n_kinases": 11
+   },
+   "M1-sel-scored:source=O": {
+    "value": 0.726094553721766,
+    "n_pairs": 182,
+    "n_kinases": 39
+   },
+   "M1-all-scored": {
+    "value": 0.6075121774422069,
+    "n_pairs": 563,
+    "n_kinases": 70
+   },
+   "direction_agree": {
+    "-1": {
+     "frac_agree": 0.6075388026607539,
+     "mean_s": -0.43073949659917576,
+     "n": 451
+    },
+    "1": {
+     "frac_agree": 0.7321428571428571,
+     "mean_s": 0.871979979145434,
+     "n": 112
+    }
+   }
+  }
+ }
+}

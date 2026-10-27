@@ -1,0 +1,102 @@
+| variant | M1-sel | M1-all | cov | harm | b0 | b1-4 | b5-19 | b>=20 | H | D | O | s- | s+ | T-uns | nsig |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| ref_z | 0.673 | 0.619 | 1.000 | 0.673 | 0.596 | 0.690 | 0.749 | 0.656 | 0.647 | 0.911 | 0.681 | 0.649 | 0.807 | 0.650 | 55 |
+| ref_mean | 0.674 | 0.617 | 1.000 | 0.674 | 0.597 | 0.696 | 0.747 | 0.656 | 0.645 | 0.911 | 0.683 | 0.650 | 0.809 | 0.653 | 53 |
+| late_z | 0.671 | 0.617 | 1.000 | 0.669 | 0.601 | 0.687 | 0.747 | 0.639 | 0.646 | 0.911 | 0.678 | 0.647 | 0.793 | 0.656 | 54 |
+| bayes_z | 0.675 | 0.620 | 1.000 | 0.674 | 0.597 | 0.689 | 0.749 | 0.659 | 0.646 | 0.901 | 0.683 | 0.649 | 0.804 | 0.660 | 53 |
+| late_z_add | 0.674 | 0.619 | 1.000 | 0.673 | 0.596 | 0.689 | 0.747 | 0.659 | 0.647 | 0.912 | 0.682 | 0.649 | 0.796 | 0.654 | 55 |
+| late_z_agree | 0.672 | 0.619 | 1.000 | 0.671 | 0.598 | 0.688 | 0.752 | 0.646 | 0.646 | 0.913 | 0.681 | 0.649 | 0.791 | 0.655 | 54 |
+| late_z_mag | 0.670 | 0.618 | 1.000 | 0.669 | 0.595 | 0.687 | 0.753 | 0.641 | 0.641 | 0.913 | 0.681 | 0.647 | 0.793 | 0.652 | 54 |
+| late_z_up | 0.672 | 0.617 | 1.000 | 0.671 | 0.598 | 0.687 | 0.746 | 0.655 | 0.644 | 0.909 | 0.679 | 0.647 | 0.809 | 0.652 | 55 |
+| bayes_z_forced | 0.675 | 0.620 | 1.000 | 0.674 | 0.597 | 0.689 | 0.749 | 0.659 | 0.646 | 0.901 | 0.683 | 0.649 | 0.804 | 0.660 | 53 |
+| late_mean | 0.672 | 0.613 | 1.000 | 0.670 | 0.602 | 0.692 | 0.744 | 0.639 | 0.642 | 0.903 | 0.683 | 0.648 | 0.792 | 0.657 | 51 |
+| bayes_mean | 0.677 | 0.619 | 1.000 | 0.676 | 0.600 | 0.694 | 0.753 | 0.659 | 0.647 | 0.902 | 0.685 | 0.652 | 0.810 | 0.661 | 53 |
+| late_mean_add | 0.676 | 0.615 | 1.000 | 0.675 | 0.597 | 0.693 | 0.746 | 0.663 | 0.644 | 0.905 | 0.687 | 0.650 | 0.796 | 0.655 | 52 |
+| late_mean_agree | 0.674 | 0.618 | 1.000 | 0.672 | 0.599 | 0.695 | 0.750 | 0.645 | 0.643 | 0.913 | 0.684 | 0.651 | 0.789 | 0.658 | 52 |
+| late_mean_mag | 0.673 | 0.616 | 1.000 | 0.670 | 0.597 | 0.696 | 0.749 | 0.639 | 0.641 | 0.912 | 0.683 | 0.650 | 0.792 | 0.655 | 52 |
+| late_mean_up | 0.675 | 0.616 | 1.000 | 0.675 | 0.600 | 0.693 | 0.743 | 0.665 | 0.644 | 0.909 | 0.684 | 0.648 | 0.820 | 0.654 | 53 |
+| bayes_mean_forced | 0.677 | 0.619 | 1.000 | 0.676 | 0.600 | 0.694 | 0.753 | 0.659 | 0.647 | 0.902 | 0.685 | 0.652 | 0.810 | 0.661 | 53 |
+| any | 0.669 | 0.615 | 1.000 | 0.667 | 0.601 | 0.691 | 0.743 | 0.631 | 0.644 | 0.910 | 0.675 | 0.647 | 0.789 | 0.655 | 51 |
+
+| comparison | Δ | 95% CI | p |
+|---|---|---|---|
+| late_z_vs_ref_z_M1-sel | -0.002 | [-0.007, +0.002] | 0.8631 |
+| late_z_vs_ref_z_M1-all | -0.002 | [-0.005, +0.004] | 0.8301 |
+| late_z_vs_ref_z_harmony | -0.004 | [-0.012, -0.001] | 0.9475 |
+| late_z_vs_ref_z_M2 | {'A': 0.6706651609861479, 'B': 0.6728878675209847, 'delta': -0.0022227065348368047, 'n_pairs': 877, 'n_kinases': 106, 'pair_fraction': 1.0} | | |
+| bayes_z_vs_ref_z_M1-sel | +0.002 | [-0.001, +0.007] | 0.1944 |
+| bayes_z_vs_ref_z_M1-all | +0.001 | [-0.000, +0.007] | 0.2784 |
+| bayes_z_vs_ref_z_harmony | +0.001 | [-0.003, +0.005] | 0.4008 |
+| bayes_z_vs_ref_z_M2 | {'A': 0.674877750709319, 'B': 0.6728878675209847, 'delta': 0.0019898831883342627, 'n_pairs': 877, 'n_kinases': 106, 'pair_fraction': 1.0} | | |
+| late_z_add_vs_ref_z_M1-sel | +0.001 | [-0.003, +0.005] | 0.3518 |
+| late_z_add_vs_ref_z_M1-all | +0.000 | [-0.002, +0.007] | 0.5107 |
+| late_z_add_vs_ref_z_harmony | -0.000 | [-0.006, +0.005] | 0.5337 |
+| late_z_add_vs_ref_z_M2 | {'A': 0.6737610136640013, 'B': 0.6728878675209847, 'delta': 0.0008731461430165899, 'n_pairs': 877, 'n_kinases': 106, 'pair_fraction': 1.0} | | |
+| late_z_agree_vs_ref_z_M1-sel | -0.001 | [-0.004, +0.003] | 0.6272 |
+| late_z_agree_vs_ref_z_M1-all | -0.000 | [-0.002, +0.002] | 0.5987 |
+| late_z_agree_vs_ref_z_harmony | -0.002 | [-0.007, +0.002] | 0.8041 |
+| late_z_agree_vs_ref_z_M2 | {'A': 0.6723469476503371, 'B': 0.6728878675209847, 'delta': -0.0005409198706476381, 'n_pairs': 877, 'n_kinases': 106, 'pair_fraction': 1.0} | | |
+| late_z_mag_vs_ref_z_M1-sel | -0.003 | [-0.008, +0.002] | 0.8526 |
+| late_z_mag_vs_ref_z_M1-all | -0.002 | [-0.004, +0.001] | 0.9150 |
+| late_z_mag_vs_ref_z_harmony | -0.004 | [-0.010, +0.001] | 0.9320 |
+| late_z_mag_vs_ref_z_M2 | {'A': 0.6702416362494457, 'B': 0.6728878675209847, 'delta': -0.002646231271539068, 'n_pairs': 877, 'n_kinases': 106, 'pair_fraction': 1.0} | | |
+| late_z_up_vs_ref_z_M1-sel | -0.001 | [-0.005, +0.002] | 0.7306 |
+| late_z_up_vs_ref_z_M1-all | -0.002 | [-0.003, +0.001] | 0.9250 |
+| late_z_up_vs_ref_z_harmony | -0.002 | [-0.006, +0.001] | 0.7701 |
+| late_z_up_vs_ref_z_M2 | {'A': 0.6716895821637012, 'B': 0.6728878675209847, 'delta': -0.0011982853572835017, 'n_pairs': 877, 'n_kinases': 106, 'pair_fraction': 1.0} | | |
+| bayes_z_forced_vs_ref_z_M1-sel | +0.002 | [-0.001, +0.007] | 0.1944 |
+| bayes_z_forced_vs_ref_z_M1-all | +0.001 | [-0.000, +0.007] | 0.2784 |
+| bayes_z_forced_vs_ref_z_harmony | +0.001 | [-0.003, +0.005] | 0.4008 |
+| bayes_z_forced_vs_ref_z_M2 | {'A': 0.674877750709319, 'B': 0.6728878675209847, 'delta': 0.0019898831883342627, 'n_pairs': 877, 'n_kinases': 106, 'pair_fraction': 1.0} | | |
+| late_mean_vs_ref_mean_M1-sel | -0.002 | [-0.008, +0.003] | 0.8146 |
+| late_mean_vs_ref_mean_M1-all | -0.004 | [-0.008, +0.003] | 0.9455 |
+| late_mean_vs_ref_mean_harmony | -0.005 | [-0.014, +0.001] | 0.8946 |
+| late_mean_vs_ref_mean_M2 | {'A': 0.6719640026869427, 'B': 0.674321028334875, 'delta': -0.002357025647932276, 'n_pairs': 877, 'n_kinases': 106, 'pair_fraction': 1.0} | | |
+| bayes_mean_vs_ref_mean_M1-sel | +0.003 | [-0.001, +0.008] | 0.0790 |
+| bayes_mean_vs_ref_mean_M1-all | +0.002 | [+0.000, +0.007] | 0.1764 |
+| bayes_mean_vs_ref_mean_harmony | +0.002 | [-0.002, +0.007] | 0.1439 |
+| bayes_mean_vs_ref_mean_M2 | {'A': 0.6773518045853187, 'B': 0.674321028334875, 'delta': 0.0030307762504437896, 'n_pairs': 877, 'n_kinases': 106, 'pair_fraction': 1.0} | | |
+| late_mean_add_vs_ref_mean_M1-sel | +0.002 | [-0.004, +0.008] | 0.3188 |
+| late_mean_add_vs_ref_mean_M1-all | -0.002 | [-0.005, +0.006] | 0.7741 |
+| late_mean_add_vs_ref_mean_harmony | +0.001 | [-0.007, +0.009] | 0.4308 |
+| late_mean_add_vs_ref_mean_M2 | {'A': 0.6758469342561642, 'B': 0.674321028334875, 'delta': 0.0015259059212892057, 'n_pairs': 877, 'n_kinases': 106, 'pair_fraction': 1.0} | | |
+| late_mean_agree_vs_ref_mean_M1-sel | -0.000 | [-0.004, +0.005] | 0.5747 |
+| late_mean_agree_vs_ref_mean_M1-all | +0.000 | [-0.001, +0.002] | 0.4063 |
+| late_mean_agree_vs_ref_mean_harmony | -0.002 | [-0.008, +0.003] | 0.7611 |
+| late_mean_agree_vs_ref_mean_M2 | {'A': 0.6740298282384303, 'B': 0.674321028334875, 'delta': -0.00029120009644467704, 'n_pairs': 877, 'n_kinases': 106, 'pair_fraction': 1.0} | | |
+| late_mean_mag_vs_ref_mean_M1-sel | -0.002 | [-0.006, +0.003] | 0.7521 |
+| late_mean_mag_vs_ref_mean_M1-all | -0.001 | [-0.003, +0.001] | 0.8496 |
+| late_mean_mag_vs_ref_mean_harmony | -0.004 | [-0.010, +0.001] | 0.9085 |
+| late_mean_mag_vs_ref_mean_M2 | {'A': 0.6726500400912588, 'B': 0.674321028334875, 'delta': -0.0016709882436161116, 'n_pairs': 877, 'n_kinases': 106, 'pair_fraction': 1.0} | | |
+| late_mean_up_vs_ref_mean_M1-sel | +0.001 | [-0.003, +0.005] | 0.3158 |
+| late_mean_up_vs_ref_mean_M1-all | -0.002 | [-0.003, +0.001] | 0.9245 |
+| late_mean_up_vs_ref_mean_harmony | +0.001 | [-0.004, +0.006] | 0.3018 |
+| late_mean_up_vs_ref_mean_M2 | {'A': 0.6754566674865423, 'B': 0.674321028334875, 'delta': 0.001135639151667367, 'n_pairs': 877, 'n_kinases': 106, 'pair_fraction': 1.0} | | |
+| bayes_mean_forced_vs_ref_mean_M1-sel | +0.003 | [-0.001, +0.008] | 0.0790 |
+| bayes_mean_forced_vs_ref_mean_M1-all | +0.002 | [+0.000, +0.007] | 0.1764 |
+| bayes_mean_forced_vs_ref_mean_harmony | +0.002 | [-0.002, +0.007] | 0.1439 |
+| bayes_mean_forced_vs_ref_mean_M2 | {'A': 0.6773518045853187, 'B': 0.674321028334875, 'delta': 0.0030307762504437896, 'n_pairs': 877, 'n_kinases': 106, 'pair_fraction': 1.0} | | |
+| any_vs_ref_z_M1-sel | -0.004 | [-0.011, +0.004] | 0.8456 |
+| any_vs_ref_z_M1-all | -0.004 | [-0.009, +0.004] | 0.8971 |
+| any_vs_ref_z_harmony | -0.006 | [-0.017, +0.000] | 0.9485 |
+| any_vs_ref_z_M2 | {'A': 0.6693297185939717, 'B': 0.6728878675209847, 'delta': -0.003558148927013005, 'n_pairs': 877, 'n_kinases': 106, 'pair_fraction': 1.0} | | |
+| ref_mean_vs_ref_z_M1-sel | +0.001 | [-0.004, +0.007] | 0.3028 |
+
+Chosen per fold:
+- late_z: fold0: {"family": "late", "core": "z", "set": "psp", "mode": "add", "w": 0.5}; fold1: {"family": "late", "core": "z", "set": "psp+aloop", "mode": "agree", "w": 1.0}; fold2: {"family": "late", "core": "z", "set": "psp+aloop", "mode": "up", "w": 1.0}; fold3: {"family": "late", "core": "z", "set": "aloop", "mode": "mag", "w": 2.0}; fold4: {"family": "late", "core": "z", "set": "psp", "mode": "add", "w": 1.0}
+- bayes_z: fold0: {"family": "bayes", "core": "z", "set": "psp", "lam": 2.0}; fold1: {"family": "bayes", "core": "z", "set": "psp", "lam": 4.0}; fold2: {"family": "bayes", "core": "z", "set": "psp", "lam": 2.0}; fold3: {"family": "bayes", "core": "z", "set": "psp", "lam": 1.0}; fold4: {"family": "bayes", "core": "z", "set": "psp", "lam": 2.0}
+- late_z_add: fold0: {"family": "late", "core": "z", "set": "psp", "mode": "add", "w": 0.5}; fold1: {"family": "late", "core": "z", "set": "psp", "mode": "add", "w": 0.5}; fold2: {"family": "late", "core": "z", "set": "psp+aloop", "mode": "add", "w": 1.0}; fold3: {"family": "late", "core": "z", "set": "psp", "mode": "add", "w": 0.25}; fold4: {"family": "late", "core": "z", "set": "psp", "mode": "add", "w": 1.0}
+- late_z_agree: fold0: {"family": "late", "core": "z", "set": "psp", "mode": "agree", "w": 0.5}; fold1: {"family": "late", "core": "z", "set": "psp+aloop", "mode": "agree", "w": 1.0}; fold2: {"family": "late", "core": "z", "set": "psp+aloop", "mode": "agree", "w": 1.0}; fold3: {"family": "late", "core": "z", "set": "aloop", "mode": "agree", "w": 2.0}; fold4: {"family": "late", "core": "z", "set": "psp+aloop", "mode": "agree", "w": 1.0}
+- late_z_mag: fold0: {"family": "late", "core": "z", "set": "aloop", "mode": "mag", "w": 0.25}; fold1: {"family": "late", "core": "z", "set": "psp+aloop", "mode": "mag", "w": 1.0}; fold2: {"family": "late", "core": "z", "set": "psp+aloop", "mode": "mag", "w": 1.0}; fold3: {"family": "late", "core": "z", "set": "aloop", "mode": "mag", "w": 2.0}; fold4: {"family": "late", "core": "z", "set": "aloop", "mode": "mag", "w": 2.0}
+- late_z_up: fold0: {"family": "late", "core": "z", "set": "psp", "mode": "up", "w": 0.5}; fold1: {"family": "late", "core": "z", "set": "psp+aloop", "mode": "up", "w": 1.0}; fold2: {"family": "late", "core": "z", "set": "psp+aloop", "mode": "up", "w": 1.0}; fold3: {"family": "late", "core": "z", "set": "psp+aloop", "mode": "up", "w": 0.1}; fold4: {"family": "late", "core": "z", "set": "psp+aloop", "mode": "up", "w": 0.5}
+- bayes_z_forced: fold0: {"family": "bayes", "core": "z", "set": "psp", "lam": 2.0}; fold1: {"family": "bayes", "core": "z", "set": "psp", "lam": 4.0}; fold2: {"family": "bayes", "core": "z", "set": "psp", "lam": 2.0}; fold3: {"family": "bayes", "core": "z", "set": "psp", "lam": 1.0}; fold4: {"family": "bayes", "core": "z", "set": "psp", "lam": 2.0}
+- late_mean: fold0: {"family": "late", "core": "mean", "set": "psp", "mode": "add", "w": 2.0}; fold1: {"family": "late", "core": "mean", "set": "psp+aloop", "mode": "agree", "w": 2.0}; fold2: {"family": "late", "core": "mean", "set": "psp+aloop", "mode": "up", "w": 1.0}; fold3: {"family": "late", "core": "mean", "set": "aloop", "mode": "mag", "w": 2.0}; fold4: {"family": "late", "core": "mean", "set": "psp", "mode": "add", "w": 2.0}
+- bayes_mean: fold0: {"family": "bayes", "core": "mean", "set": "psp", "lam": 2.0}; fold1: {"family": "bayes", "core": "mean", "set": "psp", "lam": 2.0}; fold2: {"family": "bayes", "core": "mean", "set": "psp", "lam": 2.0}; fold3: {"family": "bayes", "core": "mean", "set": "psp", "lam": 2.0}; fold4: {"family": "bayes", "core": "mean", "set": "psp", "lam": 2.0}
+- late_mean_add: fold0: {"family": "late", "core": "mean", "set": "psp", "mode": "add", "w": 2.0}; fold1: {"family": "late", "core": "mean", "set": "psp", "mode": "add", "w": 0.5}; fold2: {"family": "late", "core": "mean", "set": "psp+aloop", "mode": "add", "w": 1.0}; fold3: {"family": "late", "core": "mean", "set": "psp+aloop", "mode": "add", "w": 0.5}; fold4: {"family": "late", "core": "mean", "set": "psp", "mode": "add", "w": 2.0}
+- late_mean_agree: fold0: {"family": "late", "core": "mean", "set": "psp", "mode": "agree", "w": 0.5}; fold1: {"family": "late", "core": "mean", "set": "psp+aloop", "mode": "agree", "w": 2.0}; fold2: {"family": "late", "core": "mean", "set": "psp+aloop", "mode": "agree", "w": 1.0}; fold3: {"family": "late", "core": "mean", "set": "aloop", "mode": "agree", "w": 2.0}; fold4: {"family": "late", "core": "mean", "set": "psp+aloop", "mode": "agree", "w": 1.0}
+- late_mean_mag: fold0: {"family": "late", "core": "mean", "set": "aloop", "mode": "mag", "w": 0.25}; fold1: {"family": "late", "core": "mean", "set": "psp+aloop", "mode": "mag", "w": 1.0}; fold2: {"family": "late", "core": "mean", "set": "psp+aloop", "mode": "mag", "w": 0.5}; fold3: {"family": "late", "core": "mean", "set": "aloop", "mode": "mag", "w": 2.0}; fold4: {"family": "late", "core": "mean", "set": "aloop", "mode": "mag", "w": 2.0}
+- late_mean_up: fold0: {"family": "late", "core": "mean", "set": "psp", "mode": "up", "w": 0.5}; fold1: {"family": "late", "core": "mean", "set": "psp+aloop", "mode": "up", "w": 0.5}; fold2: {"family": "late", "core": "mean", "set": "psp+aloop", "mode": "up", "w": 1.0}; fold3: {"family": "late", "core": "mean", "set": "psp+aloop", "mode": "up", "w": 0.5}; fold4: {"family": "late", "core": "mean", "set": "psp+aloop", "mode": "up", "w": 0.5}
+- bayes_mean_forced: fold0: {"family": "bayes", "core": "mean", "set": "psp", "lam": 2.0}; fold1: {"family": "bayes", "core": "mean", "set": "psp", "lam": 2.0}; fold2: {"family": "bayes", "core": "mean", "set": "psp", "lam": 2.0}; fold3: {"family": "bayes", "core": "mean", "set": "psp", "lam": 2.0}; fold4: {"family": "bayes", "core": "mean", "set": "psp", "lam": 2.0}
+- any: fold0: {"family": "late", "core": "z", "set": "psp", "mode": "add", "w": 0.5}; fold1: {"family": "late", "core": "mean", "set": "psp+aloop", "mode": "agree", "w": 2.0}; fold2: {"family": "late", "core": "mean", "set": "psp+aloop", "mode": "up", "w": 1.0}; fold3: {"family": "late", "core": "mean", "set": "aloop", "mode": "mag", "w": 2.0}; fold4: {"family": "late", "core": "mean", "set": "psp", "mode": "add", "w": 2.0}
+
+Pooled best (non-nested): {"late_z": {"set": "psp", "mode": "add", "w": 0.5, "lam": NaN, "M1-sel": 0.6765863143049601, "M1-all": 0.6206411534229479}, "late_mean": {"set": "psp", "mode": "add", "w": 2.0, "lam": NaN, "M1-sel": 0.6796161269266048, "M1-all": 0.6157365378348572}, "bayes_z": {"set": "psp", "mode": NaN, "w": NaN, "lam": 2.0, "M1-sel": 0.6764595474946071, "M1-all": 0.6208210367215133}, "bayes_mean": {"set": "psp", "mode": NaN, "w": NaN, "lam": 2.0, "M1-sel": 0.677342383981978, "M1-all": 0.6189889648301711}}
