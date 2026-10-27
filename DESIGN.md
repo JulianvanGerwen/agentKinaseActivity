@@ -1,6 +1,6 @@
-# DESIGN — Kinase activity inference from phosphoproteomics (v1, 2026-10-27)
+# DESIGN — Kinase activity inference from phosphoproteomics (v2, 2026-10-27)
 
-Status: v1 = v0 revised after review round 1 (docs/reviews/r1_*.md). Amendment log in §12. After gate G1 (GT + split + harness freeze) any change to metrics, labels, splits or tests requires a dated amendment with rationale written BEFORE its effect is seen.
+Status: v2 = v1 revised after review round 2 (docs/reviews/r2_*.md); v1 = v0 after round 1 (r1_*.md). Where §13 (v2 amendments) conflicts with §1–§11, §13 wins. Amendment log in §12. After gate G1 (GT + split + harness freeze) any change to metrics, labels, splits or tests requires a dated amendment with rationale written BEFORE its effect is seen.
 
 ## 1. Task (fixed by PROMPT.md)
 Input: one vector of site-level directional statistics (log2FC, or t/z) keyed by `{UniProt}_{residue}{pos}` (15-mer optional).
@@ -79,7 +79,7 @@ pytest: toy data with known answers for every metric and method; sign-flip and p
 ## 11. Agent organisation & guards
 PI designs, decides, integrates, keeps RESEARCH_TREE.md. Agents: GT+split builder; harness builder; baselines; method explorers (one tree branch each); independent auditors. Agents work from the DEV-only cache, never touch TEST, cite committed files, return ≤300-word summaries. Baselines split into must/could tiers and time-boxed.
 
-## 12. Amendment log
+## 12. Amendment log (round 1)
 - A1 (r1, stats): sign-adjusted score corrected to t = s·score (v0 had −s, which rewarded wrong signs).
 - A2 (r1, stats): unscored kinases contribute ½ (shift/scale invariant) instead of score 0.
 - A3 (r1, stats/data): averaging order pair→(kinase,group)→kinase→macro.
@@ -91,3 +91,22 @@ PI designs, decides, integrates, keeps RESEARCH_TREE.md. Agents: GT+split builde
 - A9 (r1, algo): runtime targets tightened to ≤5 ms/condition, ≤10 s compendium; Bayesian linear-Gaussian core; ban on per-edge/per-kinase learned weights.
 - A10 (r1, PI): extra curated KS sources; more drug-profile sources; GT-A self-site secondary GT; CLI/API deliverable and kinase–kinase analysis; baseline must/could tiers.
 - Rejected/deferred: none of the must items rejected. Deferred: 1/n weighting as primary (kept as M1-all).
+
+## 13. Amendments after review round 2 (binding; override §1–§11 where they conflict)
+- B1 Adoption rule (§7, PI N1 / stats N5): the only hard test is one-sided paired group-bootstrap p < 0.05 for ΔM1-sel > 0 on pooled DEV OOF. Point-estimate non-inferiority checks (margin −0.02): M1-all, each GT source, each harmony bin, M2 vs current best; T-unseen margin −0.01. The cumulative adopted bundle is checked on DEV-confirm (≤5 looks total).
+- B2 Build order & kill rule (§7, PI N2): (1) library variants scored with z-score and mlm; (2) Bayesian core; (3) calibration; (4) shared-function edge weights + co-regulation/factorisation expansion; (5) self-sites; (6) stacking only if complementary methods exist. Each branch has a time box set in RESEARCH_TREE.md; no DEV gain by its time box → [-] abandoned.
+- B3 Controls in TEST Holm family (stats N1): family = 6 tests on M1-sel: final vs z-score, KSEA, JUMPsem, best-other-baseline, **prior-only**; final vs z-score on M2. Prior-only control score = s_c·freq_k (freq_k = fraction of training-fold conditions where k is a direct positive; uses the oracle sign, so it is a conservative/strong control). Shift-prior control = freq_k·mean(x_c) (label-free). Both reported everywhere.
+- B4 MDE & split (stats N2/N3, PI N8): split selection distance computed on M1-sel pairs and kinases (per source × harmony bin), not on all pairs; log largest union-find group size. MDE pre-registered as 2.5·SE(ΔM1-sel) from a bootstrap of a reference pair (z-score vs prior-only) on the chosen TEST, stated at G1. If Holm fails: report estimate + CI, make no superiority claim.
+- B5 n_targets definition (stats N3, PI N7): number of direct positives in U after the dose/Kd rule, before masking, label-only; conditions with 0 direct positives are excluded from M1 (they serve as specificity controls). Assert s ≠ 0 for all positives.
+- B6 Reporting (stats N4/N6/N7): every M1 is accompanied by M1-scored and pair coverage; harmony bins assigned per (kinase, group) using PSP substrates quantified in that condition; bootstrap strata = GT source, resample unit = GT group, same resamples for all methods and endpoints. "Beats" additionally requires point ΔM2 ≥ 0.
+- B7 Frozen harness scope (PI N3): harness v1 freezes M1-sel, M1-all, M1-scored, coverage, M2, harmony, prior-only/shift-prior/random/permutation/sign-flip/oracle controls, calibration, runtime. M3, M4, M1-family, downstream-positive AUROC, GT-A, kinase–kinase analysis are descriptive (may be added after G1 without amendment, never used for selection).
+- B8 KS-source leakage (data N1–N4): from OmniPath/iPTMnet/any curated source drop every edge citing a compendium PMID or any high-throughput MS paper (list built by script from compendium PMIDs + PubMed MeSH/title heuristics, reviewed); reference-less edges kept only from a whitelist of sources (PSP, SIGNOR, manually curated DBs); drop edges supported only by MIMP/ProtMapper/text-mining-only. The kinaseSubMain "iKiP-DB" files are dropped (mislabelled); Sugiyama 2019 used directly if its provenance is clean. Collapse orthologue-duplicate edges (PI N6). Every source gets a DATA.md entry (licence; iPTMnet licence resolved or source dropped). Test: no library edge cites a compendium PMID.
+- B9 Null controls (data N5): the 16 "0 nM vs 0 nM" conditions follow their drug group; DEV-group nulls = N-fit, TEST-group nulls = N-eval.
+- B10 Sealing (data S1): FREEZE.json and TEST evaluation are written only by the PI-launched TEST script; the DEV-only cache also excludes DEV-confirm conditions; development agents are instructed to read only the DEV cache (raw data access logged in their summaries).
+- B11 Doses and off-targets (priorwork N1/N6): `results/ground_truth/condition_doses.tsv` from the Hijazi supplement and study methods; unknown dose → pre-registered default 10 µM; literature off-target table (Torin1, LY294002, Go6976, Y-27632, BI-D1870, …) added to masks. Sub-Kd decryptM target doses: target masked (not negative); covalent inhibitors use IC50 rule.
+- B12 GT rules (priorwork N3–N5, N9, N10): paradoxical-RAF rule extended to all studies via cell-line BRAF/RAS genotype + RAF-inhibitor type columns; precedence for conflicting labels: direct positive > masked > downstream > negative; stimulus labels limited to ≤4 h (later time points → masked); LCK/TGFBR2 downgraded to medium; PDPK1 symbol; `negative_control` rows = specificity controls only.
+- B13 GT-A (priorwork N2, PI N5, data S2): self-sites are removed from the input vector before every method (incl. baselines, co-regulation, method D) when computing GT-A; metric = per-kinase Spearman(score_k, own activating-site log2FC) over non-inhibitor conditions with a permutation null; macro over kinases. Descriptive only.
+- B14 Baselines (priorwork N7): each baseline run with its published default library AND on the shared-library grid that includes our final library; the better DEV configuration is the one compared on TEST.
+- B15 Kinase–kinase analysis (PI N4): gold set = kinase→kinase edges where the substrate site is a PSP regulatory site of the substrate kinase; metric = AUROC of across-compendium score correlation for gold pairs vs random kinase pairs, stratified by substrate-overlap (Jaccard) to control for shared-substrate artefacts. Descriptive.
+- B16 Family definition (data S3): Manning group/family from kinaseSubMain kinase list; T-family-unseen = no DEV positive in the same Manning family. Drug alias table `results/ground_truth/drug_aliases.tsv`.
+- B17 Cut: Phosformer as a separate KS source (kinaseSubMain found its retrain weaker than R2/R3 on their benchmark; a leakage audit would be needed); PTM-SEA etc. remain cut.
