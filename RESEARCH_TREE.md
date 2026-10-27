@@ -12,7 +12,9 @@ Key early observation: kinaseSubMain's deployed library uses (F6b) ridge deconvo
 
 ## Tree
 - [~] 1. Phase 1 — groundwork
-  - [~] 1.1 LITERATURE.md (methods, benchmarks, datasets)
+  - [x] 1.1 LITERATURE.md (594 lines; [V]/[M] verification tags)
+    - [!] benchmarKIN (Müller-Dott 2025): z-score best on perturbation (AUROC ~0.79); library choice > algorithm; naive top-k predicted KS hurts (~0.65). JUMPsem = multi-sample one-factor SEM per kinase (not single-sample).
+    - Hijazi targets profiled at 200 nM but dosed 1–10 µM → off-targets under-annotated; decryptM dose-resolved + Klaeger Kd → dose-aware GT.
   - [~] 1.2 Data profile: compendium, ground-truth candidates, PSP coverage → docs/data_profile.md, DATA.md
   - [x] 1.3 kinaseSubMain audit → docs/kinasesub_audit.md
     - [!] Their data/01-03 + kinhib file are byte-identical to ours. SAFE predicted-KS: R2 'nophospho' (DEV-trained, s0, full 350k×503 matrix) + R3 (no phospho feats) + Cantley atlas. UNSAFE: deployment release & 'clean_bench' (still uses 37 compendium studies incl. decryptM via F6a/F6b).
