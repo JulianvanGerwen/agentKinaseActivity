@@ -165,6 +165,9 @@ def load_universe() -> pd.DataFrame:
     if f.exists():
         u = pd.read_csv(f, sep="\t", dtype=str)
         u["universe_source"] = "results/ground_truth/kinase_universe.tsv"
+        if "residue_class" not in u.columns:
+            k = pd.read_csv(EXT / "ksm_index/kinase_list.tsv", sep="\t", dtype=str)
+            u["residue_class"] = u["uniprot"].map(dict(zip(k["uniprot_acc"], k["residue_class"])))
         return u[["kinase", "uniprot"] + [c for c in u.columns if c not in ("kinase", "uniprot")]]
     k = pd.read_csv(EXT / "ksm_index/kinase_list.tsv", sep="\t", dtype=str)
     k = k[k["include"] == "True"].copy()
@@ -309,10 +312,12 @@ def _known_missing():
 
 
 _HT_RE = re.compile(
-    r"phosphoproteom|large[- ]scale|proteome[- ]wide|kinome[- ]wide|genome[- ]wide|high[- ]throughput|"
-    r"systems?[- ]wide|systems[- ]level|global(?:ly)?\s+(?:phospho|analysis|quantitative|profil|survey|identification|mapping)|"
-    r"in[- ]depth|comprehensive\s+(?:phospho|analysis|map|identification|catalog|survey|characteri)|"
-    r"quantitative\s+(?:phospho)?proteomic|thousands?\s+of|\b\d[\d,]{2,}\s+(?:\w+\s+){0,2}(?:phospho|sites|proteins|peptides)|"
+    r"phosphoproteom|large[- ]scale|proteome[- ]wide|kinome[- ]wide|high[- ]throughput|"
+    r"systems?[- ]wide|global(?:ly)?\s+(?:phospho|analysis|quantitative|profil|survey|identification|mapping)|"
+    r"in[- ]depth\s+(?:phospho|proteom|analysis of the)|comprehensive\s+(?:phospho|proteom|catalog|survey|identification of phospho)|"
+    r"quantitative\s+(?:phospho)?proteomic|thousands?\s+of\s+(?:phospho|sites|proteins|peptides)|"
+    r"(?<![\w-])\d[\d,]{2,}\s+(?:(?:unique|distinct|different|novel|non-redundant|phosphorylation|phosphorylated|in vivo|class I)\s+){0,2}"
+    r"(?:sites|phosphosites|phosphopeptides|phospho-sites|proteins|phosphoproteins|peptides)\b|"
     r"phosphopeptide enrichment|SILAC|iTRAQ|\bTMT\b|tandem mass tag|label[- ]free quantif", re.I)
 _MS_RE = re.compile(r"mass spectromet|\bLC-?MS|MS/MS|\bMS\b|proteomic|SILAC|iTRAQ|\bTMT\b|tandem mass tag|orbitrap|"
                     r"\bIMAC\b|\bTiO2\b|titanium dioxide", re.I)
@@ -324,7 +329,8 @@ _HT_MESH = {"Proteomics", "Proteome", "High-Throughput Screening Assays"}
 
 def classify_ht_ms(meta: dict) -> tuple[bool, str]:
     """Pre-declared heuristic: a paper is high-throughput MS if (MS evidence) AND (HT evidence), where MS evidence =
-    MS terms in title/abstract or MS MeSH, HT evidence = HT terms in title/abstract or Proteomics/Proteome MeSH."""
+    MS terms in title/abstract or MS MeSH, HT evidence = HT terms in title/abstract (phosphoproteome, large-scale,
+    global/quantitative proteomic, SILAC/iTRAQ/TMT, '>=100 sites/proteins/phosphopeptides', ...)."""
     text = f"{meta.get('title', '')} {meta.get('abstract', '')}"
     mesh = set(meta.get("mesh", []))
     ms_t = _MS_RE.search(text)
@@ -332,7 +338,7 @@ def classify_ht_ms(meta: dict) -> tuple[bool, str]:
     ht_t = _HT_RE.search(text)
     ht_m = mesh & _HT_MESH
     is_ms = bool(ms_t) or bool(ms_m - {"Phosphoproteins", "Proteome"})
-    is_ht = bool(ht_t) or bool(ht_m)
+    is_ht = bool(ht_t)  # MeSH 'Proteomics' alone is too broad (assigned to many single-protein MS studies)
     why = []
     if ms_t:
         why.append(f"ms_text:{ms_t.group(0)}")
@@ -361,7 +367,9 @@ def build_excluded_pmids(cited: pd.DataFrame, fetch=True) -> pd.DataFrame:
             is_ht, why = classify_ht_ms(m)
             if is_ht:
                 reasons.append("ht_ms_text")
-        if n >= HT_EDGECOUNT_THRESHOLD:
+        # edge-count rule (r2_data N1) only for papers with MS evidence (or no PubMed record): many-edge
+        # low-throughput papers (e.g. tau/GSK3 biochemistry) are not HT-MS
+        if n >= HT_EDGECOUNT_THRESHOLD and (m is None or "ms_" in why):
             reasons.append("ht_ms_edgecount")
         if reasons:
             rows.append({"pmid": pm, "reason": ";".join(reasons), "n_edges_citing": int(n),
@@ -409,6 +417,9 @@ def build_psp(U, sm: SiteMapper, km: KinaseMapper):
     comp_uid = ks["peptide_UID"].astype("string").to_numpy()
     site_from_uid = pd.Series(comp_uid).map(sm.uid2key).to_numpy(dtype=object)
     ks["site"] = np.where(pd.notna(site_from_uid), site_from_uid, site)
+    bad = ~valid_site_keys(ks["site"])  # non-UniProt substrate ids (RefSeq NP_, VAR_ variants)
+    counts["psp_rows_non_uniprot_substrate_dropped"] = int(bad.sum())
+    ks = ks[~bad].copy()
     ks["vivo"] = ks["IN_VIVO_RXN"].fillna("").str.strip().eq("X")
     ks["vitro"] = ks["IN_VITRO_RXN"].fillna("").str.strip().eq("X")
     ks["human_pair"] = (ks["KIN_ORGANISM"] == "human") & (ks["SUB_ORGANISM"] == "human")
