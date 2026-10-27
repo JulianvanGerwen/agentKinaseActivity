@@ -64,6 +64,6 @@ Key finding for strategy: under the pre-registered coverage-aware primary metric
   - [-] 5.5 B5 self-sites (results/b5/b5_report.md): alone 0.726 on pairs with measured self-site (35% of M1-sel pairs); paradoxical up for PKC/PKA/ERKi/TAK1; on core +0.003 [−0.001,0.008] n.s. (half of self-sites already library edges). GT-A helper mask_self_sites.
   - [~] 5.6 B6 stacking (core-v1, B4 coreg z, promiscuity core, PhosX/KinLib, self-sites) — 3 h
   - [~] 5.7 B7 perturbation response signatures (C10 safeguards) — 3 h
-- [~] 7. Deliverable: src/kinact/core.py API + CLI + speed (CPU ≤5 ms/cond, GPU path), equivalence to bayes2
+- [x] 7. Deliverable core-v1: src/kinact/core.py + CLI `kinact score`; equivalence max|Δz| 8e-12; 4.6 ms/cond (CPU 1T, compendium avg), 2.1 ms (16T/GPU); DEV compendium 2.2–6.2 s. PSP-derived edges git-ignored, rebuilt by scripts/build_core_artifacts.py.
 - [x] 8. External test pipelines ready (docs/external_eval.md; run_external(..., confirm_test=True)); Tyr 18 exps/16 kin, Hernandez 15/7, CPTAC 7 cohorts/367 kin (gold = protein abundance, C9). No real method run.
 - [ ] 6. Sealed test + REPORT.md
