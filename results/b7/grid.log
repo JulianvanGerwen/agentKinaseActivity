@@ -1,0 +1,62 @@
+[ctx] 3s; 372 GT conds, 7 DEV nulls, lib rows 27601; GT_FREEZE 1e6f791c6b85f15d
+[b7ctx] 16s sites 189962 conds 1358
+[clean+contrast] held ['fold0', 'fold1']: 32 kinases, 247 train conds; 10s
+[clean+contrast] held ['fold0', 'fold2']: 36 kinases, 261 train conds; 20s
+[clean+contrast] held ['fold0', 'fold3']: 33 kinases, 264 train conds; 30s
+[clean+contrast] held ['fold0', 'fold4']: 40 kinases, 260 train conds; 42s
+[clean+contrast] held ['fold1', 'fold2']: 28 kinases, 283 train conds; 51s
+[clean+contrast] held ['fold1', 'fold3']: 30 kinases, 286 train conds; 60s
+[clean+contrast] held ['fold1', 'fold4']: 31 kinases, 282 train conds; 79s
+[clean+contrast] held ['fold2', 'fold3']: 28 kinases, 300 train conds; 88s
+[clean+contrast] held ['fold2', 'fold4']: 29 kinases, 296 train conds; 98s
+[clean+contrast] held ['fold3', 'fold4']: 33 kinases, 299 train conds; 107s
+[clean+contrast] held ['fold0']: 48 kinases, 344 train conds; 113s
+[clean+contrast] held ['fold1']: 40 kinases, 366 train conds; 118s
+[clean+contrast] held ['fold2']: 40 kinases, 380 train conds; 124s
+[clean+contrast] held ['fold3']: 43 kinases, 383 train conds; 129s
+[clean+contrast] held ['fold4']: 45 kinases, 379 train conds; 134s
+[all+contrast] held ['fold0', 'fold1']: 60 kinases, 247 train conds; 10s
+[all+contrast] held ['fold0', 'fold2']: 50 kinases, 261 train conds; 21s
+[all+contrast] held ['fold0', 'fold3']: 84 kinases, 264 train conds; 32s
+[all+contrast] held ['fold0', 'fold4']: 74 kinases, 260 train conds; 42s
+[all+contrast] held ['fold1', 'fold2']: 70 kinases, 283 train conds; 52s
+[all+contrast] held ['fold1', 'fold3']: 100 kinases, 286 train conds; 62s
+[all+contrast] held ['fold1', 'fold4']: 98 kinases, 282 train conds; 72s
+[all+contrast] held ['fold2', 'fold3']: 78 kinases, 300 train conds; 82s
+[all+contrast] held ['fold2', 'fold4']: 73 kinases, 296 train conds; 92s
+[all+contrast] held ['fold3', 'fold4']: 107 kinases, 299 train conds; 102s
+[all+contrast] held ['fold0']: 87 kinases, 344 train conds; 114s
+[all+contrast] held ['fold1']: 109 kinases, 366 train conds; 120s
+[all+contrast] held ['fold2']: 90 kinases, 380 train conds; 126s
+[all+contrast] held ['fold3']: 121 kinases, 383 train conds; 132s
+[all+contrast] held ['fold4']: 116 kinases, 379 train conds; 138s
+[clean-nocontrast] held ['fold0', 'fold1']: 32 kinases, 247 train conds; 11s
+[clean-nocontrast] held ['fold0', 'fold2']: 36 kinases, 261 train conds; 29s
+[clean-nocontrast] held ['fold0', 'fold3']: 33 kinases, 264 train conds; 48s
+[clean-nocontrast] held ['fold0', 'fold4']: 40 kinases, 260 train conds; 67s
+[clean-nocontrast] held ['fold1', 'fold2']: 28 kinases, 283 train conds; 80s
+[clean-nocontrast] held ['fold1', 'fold3']: 30 kinases, 286 train conds; 89s
+[clean-nocontrast] held ['fold1', 'fold4']: 31 kinases, 282 train conds; 102s
+[clean-nocontrast] held ['fold2', 'fold3']: 28 kinases, 300 train conds; 111s
+[clean-nocontrast] held ['fold2', 'fold4']: 29 kinases, 296 train conds; 121s
+[clean-nocontrast] held ['fold3', 'fold4']: 33 kinases, 299 train conds; 130s
+[clean-nocontrast] held ['fold0']: 48 kinases, 344 train conds; 136s
+[clean-nocontrast] held ['fold1']: 40 kinases, 366 train conds; 141s
+[clean-nocontrast] held ['fold2']: 40 kinases, 380 train conds; 146s
+[clean-nocontrast] held ['fold3']: 43 kinases, 383 train conds; 151s
+[clean-nocontrast] held ['fold4']: 45 kinases, 379 train conds; 157s
+[all-nocontrast] held ['fold0', 'fold1']: 60 kinases, 247 train conds; 10s
+[all-nocontrast] held ['fold0', 'fold2']: 50 kinases, 261 train conds; 22s
+[all-nocontrast] held ['fold0', 'fold3']: 84 kinases, 264 train conds; 33s
+[all-nocontrast] held ['fold0', 'fold4']: 74 kinases, 260 train conds; 43s
+[all-nocontrast] held ['fold1', 'fold2']: 70 kinases, 283 train conds; 53s
+[all-nocontrast] held ['fold1', 'fold3']: 100 kinases, 286 train conds; 63s
+[all-nocontrast] held ['fold1', 'fold4']: 98 kinases, 282 train conds; 72s
+[all-nocontrast] held ['fold2', 'fold3']: 78 kinases, 300 train conds; 82s
+[all-nocontrast] held ['fold2', 'fold4']: 73 kinases, 296 train conds; 92s
+[all-nocontrast] held ['fold3', 'fold4']: 107 kinases, 299 train conds; 101s
+[all-nocontrast] held ['fold0']: 87 kinases, 344 train conds; 108s
+[all-nocontrast] held ['fold1']: 109 kinases, 366 train conds; 114s
+[all-nocontrast] held ['fold2']: 90 kinases, 380 train conds; 120s
+[all-nocontrast] held ['fold3']: 121 kinases, 383 train conds; 126s
+[all-nocontrast] held ['fold4']: 116 kinases, 379 train conds; 132s
