@@ -43,7 +43,9 @@ Key finding for strategy: under the pre-registered coverage-aware primary metric
     - [x] 3.2c harness verification: no code bug; gap 0.78→0.52 = data processing −0.06, broader GT −0.09, per-exp/macro +0.04, ½ rule −0.15. Bootstrap composition bias → C8. Random unbiased (0.495±0.018). Prior-only strictly OOF.
     - [!] PSP z-score ≈ random on M1-sel (coverage-limited); prior-only 0.687 is the bar.
   - [x] 3.3 KS libraries: psp_all 401 kin (225 with ≥5 quantified), curated_union 439 kin (296 ≥5), Sugiyama in vitro 347 kin (342 ≥5), predicted top-500 r2np/r3 (503), cantley (396). 405 PMIDs excluded (compendium + HT-MS). 27 tests.
-- [~] 4. Baselines (z-score, KSEA, JUMPsem, decoupler ulm/mlm/wmean/norm_wmean/viper, GSEA, RoKAI, KinLib) on DEV
+- [x] 4. Baselines on DEV (results/baselines/baselines_dev.md; refs: decoupler/KSEAapp Spearman ≈1.0)
+  - best per method M1-sel: zscore curated min1 0.563 · KSEA 0.562 · PhosX-like 0.557 · KinLib enrich 0.550 · motif z 0.541 · viper/ulm/wmean/gsea ~0.53 · RoKAI 0.526 · mlm 0.522 · JUMPsem 0.507 (coverage 0.49; 6–12 s/cond).
+  - [!] All published methods ≈ chance on coverage-aware M1-sel; library/min-substrate drive gains. Candidate 'best-other-baseline' (excl. z/KSEA/JUMPsem) for G2: PhosX-like (0.557).
 - [~] 5. Method development (DEV only; adoption per DESIGN §7)
   - [x] 5.1 B1 library variants (408 configs; results/b1/b1_report.md)
     - [!] z-score + r2np top-200: M1-sel 0.664 (nested 0.638; optimism +0.026), coverage ≈1.0, M2 vs PSP-z 0.699 vs 0.633; Δ vs PSP-z +0.12 [0.07,0.16]. Still < prior-only 0.687 (n.s.). r2np > r3 > cantley > curated; Hijazi weak (0.57), decryptM 0.89 (suspicious).
