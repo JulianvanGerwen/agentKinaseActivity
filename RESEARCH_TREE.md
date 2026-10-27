@@ -14,7 +14,10 @@ Key early observation: kinaseSubMain's deployed library uses (F6b) ridge deconvo
 - [~] 1. Phase 1 — groundwork
   - [~] 1.1 LITERATURE.md (methods, benchmarks, datasets)
   - [~] 1.2 Data profile: compendium, ground-truth candidates, PSP coverage → docs/data_profile.md, DATA.md
-  - [~] 1.3 kinaseSubMain audit: reusable assets, leakage map → docs/kinasesub_audit.md
+  - [x] 1.3 kinaseSubMain audit → docs/kinasesub_audit.md
+    - [!] Their data/01-03 + kinhib file are byte-identical to ours. SAFE predicted-KS: R2 'nophospho' (DEV-trained, s0, full 350k×503 matrix) + R3 (no phospho feats) + Cantley atlas. UNSAFE: deployment release & 'clean_bench' (still uses 37 compendium studies incl. decryptM via F6a/F6b).
+    - [!] benchmarKIN available locally (230 perturbation exps: Hernandez 94, Hijazi 118, Tyr 18; 7 CPTAC cohorts) + validated harness. Independent of compendium: Tyr set, 3 Hernandez studies, CPTAC.
+    - Reusable: site universe mapping, 692 inhibitor conditions with occupancy-based targets (Klaeger/Reinecke/Davis), kinase families/paralogs, ESM kinase embeddings.
 - [ ] 2. DESIGN.md + ≤3 review rounds
 - [ ] 3. Evaluation harness + verification (toy data, controls)
 - [ ] 4. Baselines (z-score, KSEA, JUMPsem, …)

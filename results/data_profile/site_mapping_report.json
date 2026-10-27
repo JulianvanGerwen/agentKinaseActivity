@@ -1,0 +1,90 @@
+{
+ "compendium_sites": 189962,
+ "compendium_sites_with_isoform_acc": 0,
+ "compendium_multiplicity_values": {
+  "1": 189962
+ },
+ "compendium_residues": {
+  "S": 133604,
+  "T": 42354,
+  "Y": 14004
+ },
+ "compendium_windows_with_terminal_padding": 4098,
+ "compendium_sites_key_in_PSP_human": 104081,
+ "compendium_sites_key_in_PSP_human_frac": 0.5479,
+ "of_those_window_agrees": 0.9996,
+ "compendium_window_found_anywhere_in_PSP_human": 0.6048,
+ "compendium_key_not_in_PSP_but_window_is": 10815,
+ "ks_human_kinase_rows": 17784,
+ "ks_rows_by_substrate_mapping": {
+  "human": 14711,
+  "via_SITE_GRP_ID_from_mouse": 1715,
+  "via_SITE_GRP_ID_from_rat": 895,
+  "via_SITE_GRP_ID_from_cow": 206,
+  "via_SITE_GRP_ID_from_chicken": 93,
+  "via_SITE_GRP_ID_from_rabbit": 85,
+  "via_SITE_GRP_ID_from_dog": 25,
+  "via_SITE_GRP_ID_from_pig": 16,
+  "via_SITE_GRP_ID_from_frog": 13,
+  "via_SITE_GRP_ID_from_hamster": 12,
+  "via_SITE_GRP_ID_from_sheep": 4,
+  "via_SITE_GRP_ID_from_turkey": 4,
+  "via_SITE_GRP_ID_from_quail": 3,
+  "via_SITE_GRP_ID_from_ferret": 2
+ },
+ "ks_unique_human_sites": 11255,
+ "ks_unique_sites_isoform_acc": 530,
+ "ks_unique_sites_by_map_method": {
+  "exact_key": 5540,
+  "none": 5361,
+  "window_same_acc": 316,
+  "window_other_acc(not_used)": 38
+ },
+ "ks_exact_key_window_agree_frac": 1.0,
+ "ks_exact_key_window_disagree_n": 0,
+ "ks_unique_sites_in_compendium": 5856,
+ "ks_unique_sites_in_compendium_frac": 0.5203,
+ "ks_rows_in_compendium": 10164,
+ "regulatory_phospho_unique_human_sites": 11993,
+ "regulatory_sites_in_compendium": 6049,
+ "regulatory_by_map_method": {
+  "none": 5880,
+  "exact_key": 5724,
+  "window_same_acc": 325,
+  "window_other_acc(not_used)": 64
+ },
+ "examples_exact_key_window_disagree": [],
+ "quant": {},
+ "psp_date_codes": {
+  "Kinase_Substrate_Dataset": "051925",
+  "Phosphorylation_site_dataset": "051925",
+  "Regulatory_sites": "051925"
+ },
+ "psp_kinase_symbols_renamed_or_unmapped": [
+  [
+   "BCR/ABL",
+   "BCR/ABL",
+   "unmapped_kept_as_is"
+  ],
+  [
+   "STK19",
+   "WHR1",
+   "prev_symbol"
+  ],
+  [
+   "NPM/ALK",
+   "NPM/ALK",
+   "unmapped_kept_as_is"
+  ],
+  [
+   "PRPF4B",
+   "PRP4K",
+   "prev_symbol"
+  ],
+  [
+   "AATK",
+   "LMTK1",
+   "prev_symbol"
+  ]
+ ]
+}
