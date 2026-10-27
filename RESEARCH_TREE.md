@@ -77,4 +77,7 @@ Key finding for strategy: under the pre-registered coverage-aware primary metric
   - GT-A self-sites: cores most kinase-specific (80/145 kinases sig.). Kinase–kinase: AUROC 0.66–0.68 but 0.53–0.60 within substrate-overlap strata (mostly shared-substrate artefact) — honest limitation.
   - Residue-matched random library: M1-sel 0.529 (real 0.668).
 - [x] 8. External test pipelines ready (docs/external_eval.md; run_external(..., confirm_test=True)); Tyr 18 exps/16 kin, Hernandez 15/7, CPTAC 7 cohorts/367 kin (gold = protein abundance, C9). No real method run.
+- [x] 10. Pre-G2 checks (results/g2_prep/g2_prep.md)
+  - Re-split seeds 1–4: core-v3 0.6800±0.0037 (seed 0: 0.6796) — no fold-selection inflation (caveat: partitions overlap seed 0, ARI 0.68–0.75). Δ vs core-v1 +0.011..+0.019; vs prior-only −0.006±0.009.
+  - [!] DEV-confirm look #2 (179 pairs): core-v3 0.842 vs core-v1 0.803 (+0.039 [0.006,0.069], p .016) → D11 condition PASSED, core-v3 kept; vs PSP-z +0.298, KSEA +0.225, prior-only −0.014 (n.s.). 3 looks left.
 - [ ] 6. Sealed test + REPORT.md

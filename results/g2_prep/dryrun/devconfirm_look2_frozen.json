@@ -1,0 +1,46 @@
+{
+ "name": "core-v3",
+ "core": {
+  "lib_cur": "curated_union",
+  "alphas": {
+   "r2np@100": 1.0
+  },
+  "scale": "wsd",
+  "winsor": null,
+  "borrow": true,
+  "tau": 0.125,
+  "rho_f": 3.0,
+  "rho_g": 0.25,
+  "rho_e": 0.01,
+  "config_hash": "04b69b6513e3927d"
+ },
+ "signature_variant": "clean+contrast",
+ "signature_fit": "all DEV-CV GT conditions (folds 0-4)",
+ "n_train_conds": 344,
+ "n_signature_kinases": 48,
+ "n_top": 100,
+ "kappa": 0.0,
+ "ntop_kappa_rule": "argmax pooled seed-0 OOF M1-sel, B7 primary grid",
+ "b7_grid_best_row": {
+  "alpha": 1.0,
+  "n_top": 100.0,
+  "kappa": 0.0,
+  "oof_M1-sel": 0.6764440251867433
+ },
+ "alpha": 1.0,
+ "alpha_rule": "argmax pooled seed-0 OOF M1-sel of late fusion with fixed (n_top,kappa)",
+ "alpha_oof": {
+  "0.25": 0.6757567584994599,
+  "0.5": 0.6790750960874979,
+  "1.0": 0.6819291995561858
+ },
+ "rho_sig": 0.8673749464510467,
+ "E1": "v_k on site-permuted DEV-CV GT conditions (seed 0)",
+ "v_k_median": 2.2403432688454155,
+ "v_k_range": [
+  1.8629752286290076,
+  3.1490764814822616
+ ],
+ "look": 2,
+ "config_hash": "80c0833d8086aba1"
+}

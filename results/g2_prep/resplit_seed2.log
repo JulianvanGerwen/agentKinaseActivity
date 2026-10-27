@@ -1,0 +1,7 @@
+[ctx] 2s; 372 GT conds, 7 DEV nulls, lib rows 27601; GT_FREEZE 1e6f791c6b85f15d
+[b7ctx] 20s sites 189962 conds 1358
+[s2] core picks {'fold0': (0.125, 3.0, 0.25), 'fold1': (0.125, 3.0, 0.25), 'fold2': (0.125, 1.0, 0.0), 'fold3': (0.125, 3.0, 0.25), 'fold4': (0.125, 3.0, 0.25)}; core-v1 M1-sel 0.6642 (36s)
+[s2] B7 grid done (232s)
+[s2] B7 picks {'fold0': (0.25, 100, 1.0), 'fold1': (0.25, 20, 1.0), 'fold2': (0.25, 200, 0.0), 'fold3': (0.5, 100, 0.0), 'fold4': (0.5, 20, 4.0)}
+[s2] alpha {'fold0': 1.0, 'fold1': 1.0, 'fold2': 1.0, 'fold3': 1.0, 'fold4': 1.0}; v1 0.6642 v2 0.6749 v3 0.6751 (239s)
+[s2] done 248s {"core-v3": 0.6751, "core-v2": 0.6749, "core-v1": 0.6642, "B7 joint (nested)": 0.6587, "PSP z-score min3": 0.5153, "curated z-score min1": 0.5634, "prior-only": 0.6861, "z-score nested lib/min": 0.5634}

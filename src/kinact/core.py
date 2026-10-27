@@ -24,6 +24,18 @@ Speed (DESIGN §1 desideratum 4):
   * GPU: batched float64 Cholesky over patterns; G for all patterns as one sparse (p^2 x sites) @ mask product.
 Label-free fitted quantities: rho_e (config/core_v1.json; refitted and checked by scripts/build_core_artifacts.py on
 DEV null conditions only). core-v1 has no site-noise model.
+
+core-v3 (RESEARCH_TREE D11/D12; config/core_v3.json, artefacts models/core_v3 built by
+scripts/build_core_v3_artifacts.py) = core-v1 + late-fused perturbation-response signatures (B7b, DESIGN C10) +
+the E1 per-kinase permutation-null scale (B8):
+  z_sig(k,c) = [sum_s w_ks clip(y_cs, +-4) / sqrt(sum_s w_ks^2)] / rho_sig   over k's signature sites measured in c
+               (>= min_sites, else NaN); y = the same wsd-standardised input as the core
+  z(k,c)     = (z_core + alpha z_sig) / sqrt(v_k)    if both are defined (v_k: E1 scale)
+             = z_core                                if only z_core is defined (and for every non-signature kinase)
+             = z_sig / sqrt(v_sig_k)                 if only z_sig is defined
+Signatures (signed site weights) were fitted on DEV-CV GT conditions only (C10 i); rho_sig = RMS of z_sig over the
+DEV null conditions; v_k = mean (z_core + alpha z_sig)^2 over site-permuted DEV-CV GT conditions (label-free).
+`mean` / `sd` stay the core posterior; `z_core` / `z_sig` are returned as extra frames.
 """
 from __future__ import annotations
 
@@ -187,19 +199,27 @@ class ScoreResult:
     sd: pd.DataFrame
     n_substrates: pd.DataFrame
     info: dict = field(default_factory=dict)
+    z_core: pd.DataFrame | None = None          # core-v3 only: core z_vif before fusion
+    z_sig: pd.DataFrame | None = None           # core-v3 only: standardised signature z (NaN = no signature / < min)
+
+    def _stats(self) -> dict:
+        st = {"z": self.z, "mean": self.mean, "sd": self.sd, "n_substrates": self.n_substrates}
+        if self.z_core is not None:
+            st.update(z_core=self.z_core, z_sig=self.z_sig)
+        return st
 
     def long(self, dropna: bool = False) -> pd.DataFrame:
-        """One row per (condition, kinase): condition, kinase, z, mean, sd, n_substrates."""
+        """One row per (condition, kinase): condition, kinase, z, mean, sd, n_substrates (+ z_core, z_sig for
+        core-v3)."""
         cond = np.repeat(self.z.index.to_numpy(), self.z.shape[1])
         kin = np.tile(self.z.columns.to_numpy(), self.z.shape[0])
-        out = pd.DataFrame({"condition": cond, "kinase": kin, "z": self.z.to_numpy().ravel(),
-                            "mean": self.mean.to_numpy().ravel(), "sd": self.sd.to_numpy().ravel(),
-                            "n_substrates": self.n_substrates.to_numpy().ravel()})
+        out = pd.DataFrame({"condition": cond, "kinase": kin,
+                            **{k: v.to_numpy().ravel() for k, v in self._stats().items()}})
         return out.dropna(subset=["z"]).reset_index(drop=True) if dropna else out
 
     def wide(self) -> pd.DataFrame:
         """kinase rows; one condition -> columns z, mean, sd, n_substrates; several -> `<stat>:<condition>`."""
-        stats = {"z": self.z, "mean": self.mean, "sd": self.sd, "n_substrates": self.n_substrates}
+        stats = self._stats()
         if self.z.shape[0] == 1:
             out = pd.DataFrame({k: v.iloc[0] for k, v in stats.items()})
             out["n_substrates"] = out["n_substrates"].astype(int)
@@ -212,7 +232,8 @@ class ScoreResult:
 
 # ============================================================================ model
 class KinaseActivityModel:
-    """core-v1 scorer: `KinaseActivityModel.from_config()` then `.score(df_or_series)` -> ScoreResult.
+    """core-v1 / core-v3 scorer: `KinaseActivityModel.from_config(path)` then `.score(df_or_series)` -> ScoreResult.
+    core-v3 = a core-v1 model with `attach_signatures(...)` (done by from_config when the config has 'signatures').
 
     Benchmark protocol (kinact.runtime.bench_runtime): `prepare(X, lib=None)` = load/mapping + standardisation,
     `score(state)` with a prepared state = posterior."""
@@ -270,6 +291,53 @@ class KinaseActivityModel:
         self._cache = {}
         self.rho_e = float(cfg["rho_e"])
         self.min_sub = int(cfg.get("min_substrates", 1))
+        self.sig = None
+
+    # ------------------------------------------------------------------ core-v3 late fusion
+    def attach_signatures(self, signatures: pd.DataFrame, scales: pd.DataFrame | None, rho_sig: float,
+                          alpha: float, clip: float = 4.0, min_sites: int = 5):
+        """signatures: kinase, site, weight (signed). scales: kinase, v_both, v_sig (E1; None = fixed 1 + alpha^2,
+        i.e. core-v2). Kinases outside the universe are dropped."""
+        kpos = self.kinases.get_indexer(signatures["kinase"].astype(str))
+        e = signatures[kpos >= 0]
+        kpos = kpos[kpos >= 0]
+        sites = pd.Index(pd.unique(e["site"].astype(str).to_numpy()))
+        Ws = sp.coo_matrix((e["weight"].to_numpy(float), (sites.get_indexer(e["site"].astype(str)), kpos)),
+                           shape=(len(sites), len(self.kinases))).tocsc()
+        Ws.sum_duplicates()
+        has = np.zeros(len(self.kinases), bool); has[np.unique(kpos)] = True
+        if scales is None:
+            vb = np.where(has, 1.0 + alpha ** 2, np.nan); vs = np.where(has, 1.0, np.nan)
+        else:
+            sc = scales.set_index(scales["kinase"].astype(str)).reindex(self.kinases)
+            vb, vs = sc["v_both"].to_numpy(float), sc["v_sig"].to_numpy(float)
+            if np.isnan(vb[has]).any() or np.isnan(vs[has]).any():
+                raise ValueError("E1 scale missing for a signature kinase")
+        self.sig = dict(sites=sites, Ws=Ws, WsT=Ws.T.tocsr(), Ws2T=Ws.multiply(Ws).T.tocsr(),
+                        WbT=(Ws != 0).astype(np.float64).T.tocsr(), has=has, v_both=vb, v_sig=vs,
+                        rho=float(rho_sig), alpha=float(alpha), clip=float(clip), min_sites=int(min_sites))
+        return self
+
+    def sig_z(self, st: dict) -> np.ndarray:
+        """Standardised z_sig (conditions x kinases; NaN = no signature or < min_sites measured signature sites)."""
+        g = self.sig
+        Y, M = st["Ysig"], st["Msig"].astype(np.float64)
+        num = np.asarray(g["WsT"] @ (np.clip(Y, -g["clip"], g["clip"]) * M))
+        den = np.sqrt(np.asarray(g["Ws2T"] @ M))
+        cnt = np.asarray(g["WbT"] @ M)
+        with np.errstate(all="ignore"):
+            z = np.where((cnt >= g["min_sites"]) & (den > 0), num / den, np.nan)
+        return z.T / g["rho"]
+
+    def fuse(self, z_core: np.ndarray, z_sig: np.ndarray) -> np.ndarray:
+        """E1-calibrated late fusion (identical to kinact.explore.final_box.fuse_calibrated)."""
+        g = self.sig
+        zc, zs = np.asarray(z_core, np.float64), np.asarray(z_sig, np.float64)
+        both = np.isfinite(zc) & np.isfinite(zs)
+        with np.errstate(all="ignore"):
+            out = np.where(np.isfinite(zc), zc, zs / np.sqrt(g["v_sig"])[None, :])
+            fused = (zc + g["alpha"] * zs) / np.sqrt(g["v_both"])[None, :]
+        return np.where(both, fused, out)
 
     # ------------------------------------------------------------------ construction
     @classmethod
@@ -290,6 +358,19 @@ class KinaseActivityModel:
             warnings.warn(f"config rho_e={cfg['rho_e']} differs from the artefact refit {fit}")
         m = cls(cfg, edges, kin)
         m.artifacts_dir, m.manifest, m.config_path = art, man, path
+        sg = cfg.get("signatures")
+        if sg:
+            for f in (sg["file"], sg["scales_file"]):
+                if not (art / f).exists():
+                    raise FileNotFoundError(f"core-v3 artefact {art / f} missing; run scripts/build_core_v3_artifacts.py")
+            sigs = pd.read_csv(art / sg["file"], sep="\t")
+            scales = pd.read_csv(art / sg["scales_file"], sep="\t") if sg.get("e1_scale", True) else None
+            for key in ("rho_sig",):
+                fit = man.get(f"{key}_refit")
+                if fit is not None and abs(fit - float(sg[key])) > 1e-9 * max(1.0, abs(fit)):
+                    warnings.warn(f"config {key}={sg[key]} differs from the artefact refit {fit}")
+            m.attach_signatures(sigs, scales, float(sg["rho_sig"]), float(sg["alpha"]), float(sg.get("clip", 4.0)),
+                                int(sg.get("min_sites", 5)))
         return m
 
     # ------------------------------------------------------------------ input -> standardised library matrix
@@ -320,10 +401,28 @@ class KinaseActivityModel:
         Mlib[li[ok]] = fin
         info = {"n_input_sites": int(len(X)), "n_library_sites_matched": int(ok.sum()),
                 "n_unknown_sites": int((~ok).sum()), "n_conditions": int(X.shape[1])}
+        out = {"conditions": list(X.columns), "Y": Ylib, "M": Mlib, "info": info}
+        if self.sig is not None:                         # signature sites (need not be library sites)
+            ss = self.sig["sites"]
+            si = ss.get_indexer(X.index)
+            miss = si < 0
+            if miss.any():
+                sample = X.index[miss][:2000]
+                if not _normalise_keys(sample).equals(pd.Index(sample).astype(str)):
+                    si[miss] = ss.get_indexer(_normalise_keys(X.index[miss]))
+            oks = si >= 0
+            Ys = apply_scales(V[oks], med, s, rr, wz)
+            fs = np.isfinite(Ys)
+            out["Ysig"] = np.zeros((len(ss), X.shape[1])); out["Msig"] = np.zeros((len(ss), X.shape[1]), bool)
+            out["Ysig"][si[oks]] = np.where(fs, Ys, 0.0)
+            out["Msig"][si[oks]] = fs
+            info["n_signature_sites_matched"] = int(oks.sum())
+            ok = ok | oks
+            info["n_unknown_sites"] = int((~ok).sum())
         if len(X) and not ok.any():
             warnings.warn("no input site matches the kinase-substrate library (keys must be `{UniProt}_{res}{pos}`, "
                           "e.g. P31749_S473); all kinases are NaN")
-        return {"conditions": list(X.columns), "Y": Ylib, "M": Mlib, "info": info}
+        return out
 
     # ------------------------------------------------------------------ scoring
     def score(self, data, device: str = "cpu", n_jobs: int | None = None, condition: str | None = None) -> ScoreResult:
@@ -337,10 +436,19 @@ class KinaseActivityModel:
             z = mu / np.sqrt(q * (1 + self.rho_e * np.maximum(me - 1, 0)))
         rep = po["report"] & np.isfinite(z)
         mk = lambda A: pd.DataFrame(np.where(rep, A, np.nan), index=st["conditions"], columns=self.kinases)
-        return ScoreResult(z=mk(z), mean=mk(mu), sd=mk(po["sd"]),
-                           n_substrates=pd.DataFrame(po["n"], index=st["conditions"], columns=self.kinases),
-                           info={**st["info"], "n_patterns": po["n_patterns"], "n_woodbury": po["n_woodbury"],
-                                 "device": str(device), "model": self.cfg.get("name"), "rho_e": self.rho_e})
+        info = {**st["info"], "n_patterns": po["n_patterns"], "n_woodbury": po["n_woodbury"],
+                "device": str(device), "model": self.cfg.get("name"), "rho_e": self.rho_e}
+        frame = lambda A: pd.DataFrame(A, index=st["conditions"], columns=self.kinases)
+        n_sub = frame(po["n"])
+        if self.sig is None:
+            return ScoreResult(z=mk(z), mean=mk(mu), sd=mk(po["sd"]), n_substrates=n_sub, info=info)
+        if "Ysig" not in st:
+            raise ValueError("prepared state lacks signature inputs (prepared by a model without signatures)")
+        zc = np.where(rep, z, np.nan)
+        zs = self.sig_z(st)
+        info.update(alpha_sig=self.sig["alpha"], rho_sig=self.sig["rho"])
+        return ScoreResult(z=frame(self.fuse(zc, zs)), mean=mk(mu), sd=mk(po["sd"]), n_substrates=n_sub, info=info,
+                           z_core=frame(zc), z_sig=frame(zs))
 
     def posterior(self, st: dict, device: str = "cpu", n_jobs: int | None = None) -> dict:
         """Raw posterior quantities (conditions x kinases): mu, sd, q, suma, n (int), report (bool)."""
