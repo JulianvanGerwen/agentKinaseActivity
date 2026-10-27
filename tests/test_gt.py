@@ -208,3 +208,17 @@ def test_deterministic_rebuild(tmp_path):
         assert _sha(tmp_path / "results" / f) == _sha(GT / f), f
     for f in ("gt_pairs.tsv", "gt_conditions.tsv", "harmony_bins.tsv", "condition_groups.tsv"):
         assert _sha(tmp_path / "sealed" / f) == _sha(SEALED / f), f
+
+
+def test_combination_ambiguous_low_and_cellular_gate(gt):
+    """Audit 2026-10-27: decryptM combinations whose per-drug doses are ambiguous carry only low-confidence labels;
+    cellular-potency overrides are used as the dose gate (gefitinib/EGFR 54 nM)."""
+    pairs, conds = gt[0], gt[1]
+    doses = rd(GT / "condition_doses.tsv")
+    amb = set(doses.loc[doses.dose_source.str.contains("ambiguous"), "conditionID"])
+    assert amb, "no ambiguous combination conditions found"
+    pos = pairs[pairs.conditionID.isin(amb) & pairs.cls.isin(["direct", "downstream"])]
+    assert (pos.confidence == "low").all()
+    assert not conds.loc[conds.conditionID.isin(amb), "in_M1sel"].astype(str).eq("True").any()
+    g = pairs[pairs.note.str.contains("gefitinib", case=False) & (pairs.kinase == "EGFR") & (pairs.cls == "direct")]
+    assert g.note.str.contains("cellular IC50 54").any()

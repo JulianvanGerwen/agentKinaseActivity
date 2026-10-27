@@ -1,9 +1,9 @@
 {
- "T_family_unseen": 4,
- "T_unseen": 18,
- "cell_deviation": 0.032122,
- "chosen_distance": 0.032122,
- "chosen_seed": 79,
+ "T_family_unseen": 7,
+ "T_unseen": 15,
+ "cell_deviation": 0.027466,
+ "chosen_distance": 0.027466,
+ "chosen_seed": 90,
  "largest_group": {
   "group_id": "G0294",
   "n_conditions": 306,
@@ -14,35 +14,35 @@
   "split": "fold0"
  },
  "n_conditions_by_split": {
-  "devconfirm": 65,
-  "fold0": 589,
-  "fold1": 256,
-  "fold2": 204,
-  "fold3": 216,
-  "fold4": 211,
-  "test": 396
+  "devconfirm": 111,
+  "fold0": 452,
+  "fold1": 243,
+  "fold2": 224,
+  "fold3": 222,
+  "fold4": 217,
+  "test": 468
  },
  "n_feasible_candidates": 100,
  "n_groups": 308,
  "n_gt_conditions_by_split": {
-  "devconfirm": 51,
-  "fold0": 272,
-  "fold1": 140,
-  "fold2": 73,
-  "fold3": 84,
-  "fold4": 74,
-  "test": 353
+  "devconfirm": 97,
+  "fold0": 139,
+  "fold1": 113,
+  "fold2": 103,
+  "fold3": 95,
+  "fold4": 98,
+  "test": 402
  },
  "n_gt_groups": 209,
  "n_m1sel_pairs_by_split": {
-  "devconfirm": 114,
-  "fold0": 395,
-  "fold1": 342,
-  "fold2": 121,
-  "fold3": 121,
-  "fold4": 122,
-  "test": 445
+  "devconfirm": 179,
+  "fold0": 323,
+  "fold1": 149,
+  "fold2": 139,
+  "fold3": 137,
+  "fold4": 129,
+  "test": 470
  },
- "test_m1sel_kinases": 78,
- "unseen_frac": 0.2308
+ "test_m1sel_kinases": 67,
+ "unseen_frac": 0.2239
 }

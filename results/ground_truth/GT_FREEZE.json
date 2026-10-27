@@ -1,60 +1,62 @@
 {
  "created": "2026-10-27",
  "tests": {
-  "test_gt.py": "392c17e8c01bda2a09c88630537414ecf5347229a17c099d72e250f0278f3f93"
+  "test_gt.py": "2152dc22708f43e30683e86db15bbe59497cb1355145c92f02af97dd714dd64f"
  },
- "split_seed": 79,
+ "split_seed": 90,
  "gt": {
-  "gt_pairs.tsv": "b0aabca36e1e9feb39a35fd6847ac0575db8474b09ec53e22f45709ad6c79384",
-  "gt_conditions.tsv": "0b51e554dc20830732cffe42b23e94a36cb753d90ec4544c1a1f5d10b47bc22a",
+  "gt_pairs.tsv": "599064598c8068faee9e0c968487cd92d30c3ae92adf406a3da5cb9d4e4bfc47",
+  "gt_conditions.tsv": "192be6d1b2bd2a154d8af9538ac1e5e8626e6551192e2d85d9afe91b56183c67",
   "kinase_universe.tsv": "ebc4d281eeabbdccecf2124e85eab0d74df90c3883e35d88df88b200e9b74d3f",
-  "harmony_bins.tsv": "af286216cccdfc8c512820cbfc72efbff245e7e9231a36047b664e1a91555a7f",
-  "harmony_bins_group.tsv": "0bcd4d8a29272275320ff48524fbd9535c8d707933bd1b3cb57f06c777be4efe",
-  "condition_groups.tsv": "d205f931e8adfd73e4abd455b2fd37f6d66d03cf21ac78f50084154aaf02f215",
-  "test_condition_hashes.txt": "524ff08b028aef7948c5865c7c84a1438026fc0f927e9d12d08611febcdece8b",
-  "split_candidates.tsv": "23d79268b964fb2a30479b2600b1bd72fe515923ae014e5b963216fd3ae05611",
-  "split_log.json": "c74e9c4c3369800bd494c27a1a1781e54713d9184d8cb79414388d4ad00b743d",
-  "condition_doses.tsv": "d666bfb2818b04176901a58017e0fb5dabf1902d8d667731d5026763562f9284",
+  "harmony_bins.tsv": "e8153d572d7d29699aa8c912614c70619ee2c9a59b418746f97425cebfe567e4",
+  "harmony_bins_group.tsv": "d1e5a0fab3e678d07c68864a76b7cbe9537eb22ea4bdc375e0165617a57b68f5",
+  "condition_groups.tsv": "199776decd7f61e634738caf13eab49b3dcfb1928c16e225c0157473f656a7a2",
+  "test_condition_hashes.txt": "a91683124f75271b633cd70ebbac30d0d22995cbd825dace4a18715739e55b32",
+  "split_candidates.tsv": "e877478f77b02f66d835c17119e40be62c4a203d6f9fe0b9fe7445400153996f",
+  "split_log.json": "2a97054b017e23a4a26b64b9432fa24bc38d9928791c54776a23c86867036b28",
+  "condition_doses.tsv": "522f1b153e6798820fda21b782b2d8705720c0e138c17a6a03a8ba4095b8b198",
   "condition_qc.tsv": "dc76f529a8fb0d3de434e8bfe64dc8ade3bb9c5b6db6376aee6e4f764ada23a2",
   "drug_profile_sources.tsv": "18fae13389e90ffa367b20ed1ed3a9bffc987414978f8c901311c78ad4463ced",
   "paralog_pairs.tsv": "d163400d00f903146358d5d859908a024779622bddf328742e6dbd2643f6c564",
-  "build_gt_log.json": "207500eaae296510ec9d74a24958330a5476588286ea0417426e7c86fd93b207"
+  "build_gt_log.json": "d69920fc2a56b6a80635eed1541247a7c76bb5f288dd6317a99ed8d186ec4474"
  },
  "rules": {
   "cell_line_genotypes.tsv": "d380df029fc6024cb788600f936e2e469a1f1cd3cbc0c1d1a22c5172f0ae62de",
+  "combination_doses_manual.tsv": "cb2f3b97adeb0c8347337b3b930821a002fc3742f61843207d2d481a3d6befb1",
   "condition_doses_manual.tsv": "c714f306e60d9283110057eb76ed95144b62e88956133f13f9786999f5f27be3",
-  "condition_rules_manual.tsv": "b1305a81cc1d490b314066243277609a01f007e3cf10f414191e937d918b0946",
+  "condition_rules_manual.tsv": "062464b6a639dd32f0e672bf24e0c455c7baccc3a000c4b4ff22a730195dd98d",
   "drug_aliases.tsv": "894d37c81443fdbba24a38cf90d79c827446a0ba652012262300273fae10aa61",
-  "drug_potency_manual.tsv": "48f7209f62b0e13d4ddfe1f06108dd2d5b76e12608444512252a08bc0319066f",
+  "drug_cellular_potency.tsv": "97f190a8f4b520fa68cea41a4154dd53adf4d2c96fc394d7eac75ef334335ef4",
+  "drug_potency_manual.tsv": "9845b5d45134fb74d24063ba878362739c2242e8853fb7d49b51b1f916c94280",
   "drug_targets_manual.tsv": "afeb5673dee195c0584dee537ba73adf9b72b84aeceea26cdada8f2bab63e087",
   "offtarget_literature.tsv": "e61327440e174e7d0548521d31d5d8442de935e765d34d382594bbc2550c57b1",
-  "pathway_masks.tsv": "eac4f009d10f6389dfee767a527ec31617db895c1bf028231263b7138d8c0e11",
-  "stimulus_kinases.tsv": "c4de98f62314d29cf9d2b5b699700b1a6cd80143b23d7b12760a71de00d5ee27"
+  "pathway_masks.tsv": "dea26fe56b654408564ededcdc36429b358c337626279e8ac4f4d8bb5e1951f9",
+  "stimulus_kinases.tsv": "521a5bbe6d8682f3b267ca720b19209d5b3f4f4518412abd55004e8407cf94f2"
  },
  "sealed": {
-  "condition_groups.tsv": "3cfcc52304b99712972229456b12fdf9ab3a541ce4242f7974956f8b5e266407",
-  "gt_conditions.tsv": "d3372e19163acad5f044ba1b26581920171e1a2dc97ba1848de0c5530d9675ef",
-  "gt_pairs.tsv": "6ecf45055d26f75e8500e4a6f2a68863d3a70dd3d987bfa1e70856664ddc126d",
-  "harmony_bins.tsv": "f8423102637aa871d45e4df0cf3b782e25885b0a22e768dc14db520c8e18e6d6",
-  "harmony_bins_group.tsv": "64867f655ec5a5e562ef2a750b89f8192c35d62de6b8804a4910cc44b6864bc4"
+  "condition_groups.tsv": "34a6e04c415c6dac5a6c4aca55f2cbd14033518bb400d39cd14fda4c4e23159b",
+  "gt_conditions.tsv": "a9789dac7dcf5970a72c9383e731ebfe5d593e819688b8c774adb74edeb9959e",
+  "gt_pairs.tsv": "8a406c3dfc750eaefd5197cbcd7279f1111a6ec5bad273f6e6bd0e3dde2d6252",
+  "harmony_bins.tsv": "ce2e191bdd2c1095a5b81ab700687eda2ea5c9c8a5b0e593dc00bc039b9bd7e8",
+  "harmony_bins_group.tsv": "f931d212dc86ff5f704cdcd04da80df8e05890da4a8754a587493dad42f52a39"
  },
  "sealed_full": {
-  "gt_conditions_full.tsv": "0b3a8674caa20267bb9c4234cb9485416edfc92deb922fdf540dfdc55ccfe766",
-  "gt_pairs_full.tsv": "3fc7c64133e3f8116484690ad1845275932b5456b9dd8edfa56b2b7218622886",
-  "harmony_full.tsv": "4eaf36521a09d9527bda04814517eb50cdff69bda4f7578af269dc531e10ed12"
+  "gt_conditions_full.tsv": "411d8f0184f6cae921f78fa3303281b945982b10b0f3394492c56e715c4b5977",
+  "gt_pairs_full.tsv": "5284ef5a1cdad7d51163b3718acc186ad2c19ba20aa23e84969311b33f2cbba5",
+  "harmony_full.tsv": "1cae2ad27400ead39a1a4ef4967550a850f81a02029337e3575f95c7d6ae1c11"
  },
- "sealed_gt_hash": "bc513208b586fc81d4e124c503175f37c1086de338f4e72e0835b047f59d4f13",
+ "sealed_gt_hash": "82969a090d74adca4de74df8916c07cf1cad906ab9164d3e97faeecf01abbe4f",
  "scripts": {
   "gtlib.py": "6720f890a8d3210754abee631ee6f58387eea6de641f44e50659afaf77641380",
-  "build_gt.py": "76326537531e4c0281db7cb82e8784473f4370a89ec5341bad10575f8e255239",
+  "build_gt.py": "3b79bc72ea8160ad51aae2f85e43f7b734b06bc678d16564b86e45d262c6205f",
   "make_split.py": "63bced68bddd1d4dfbc2c0cf533d9a912ab36fce372272b4166c5bc515d3fc96",
   "make_dev_cache.py": "f4af2ae0965bfc4152cc08a2cdf542b043ebd0017b50622e57e631d803f4dc11",
-  "gt_report.py": "cd14fca3cd7c404e668b75e046d875671d4763d941b0ab1fc64038cbce1a8f60",
+  "gt_report.py": "7fc45ee3f2d18f7ae6feb41db1e8c8e1729d50a82c87c0115ef5405a28392156",
   "freeze_gt.py": "8266c79d7c724bec16ddd295042c8a7b38845724e6bedad46a4d28c7b8c19b5a"
  },
  "dev_cache": {
-  "quant_dev.npy": "276ba644642aa2b2fa59a2e8901f90f258ef2c84ab6ef8e59cf7706f18c2381f",
-  "conditions_dev.txt": "e56b0de1607db5b7113946dcbbc0c06bb6b7fceefd26d2e8c5fbcba1501856a4",
+  "quant_dev.npy": "d3babe0d74966424e9ada4c61c7897d11c7d9e8cdbc10b37ccca2b4e1a9ad986",
+  "conditions_dev.txt": "b42d5a7737b28fe5e97d5c92edc6964d97cfbef3895727532a6f3d584aa626fb",
   "sites_dev.txt": "fd10c50d50d66659656daa2361edeb067ee9fcbc73a3922e3a63dfaea03ade5c"
  },
  "inputs": {

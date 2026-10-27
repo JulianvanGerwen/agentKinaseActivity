@@ -81,3 +81,5 @@ S_PHASE	CDK2	direct	1	medium	cyclin E/A-CDK2 active in S phase
 MITO_DEPOL	PINK1	direct	1	high	mitochondrial depolarisation stabilises/activates PINK1 (Pickrell & Youle 2015)
 AMPK_ACT	PRKAA1	direct	1	low	metformin activates AMPK at high dose/long time only
 AMPK_ACT	PRKAA2	direct	1	low	metformin activates AMPK at high dose/long time only
+IFNG	JAK1	direct	1	medium	AUDIT 2026-10-27: IFN-gamma receptor IFNGR1/2 signals via JAK1+JAK2 (Schroder 2004 J Leukoc Biol 75:163 https://doi.org/10.1189/jlb.0603252)
+IFNG	JAK2	direct	1	medium	AUDIT 2026-10-27: IFN-gamma receptor IFNGR1/2 signals via JAK1+JAK2 (Schroder 2004); TYK2 not used by IFNGR

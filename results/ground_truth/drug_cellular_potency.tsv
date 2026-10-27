@@ -1,0 +1,7 @@
+# Pre-registered cellular-potency override (AUDIT 2026-10-27, PI decision). For a drug's PRIMARY intended target(s): if a documented cellular IC50
+# is lower than the kinobead Kd_app (or potency-table value), it is used for the decryptM dose gate (dose >= gate -> positive). Applied to every
+# drug/primary target for which a cellular IC50 could be documented; drugs whose cellular IC50 is >= Kd_app (e.g. lapatinib/EGFR,ERBB2 Rusnak 2001;
+# AZD4547/FGFR1 Gavine 2012; imatinib/ABL1 Druker 1996; MK-2206 Hirai 2010; AZD8055 Chresta 2010) need no row. Currently affects decryptM only.
+agent	kinase	cellular_IC50_nM	assay	note
+gefitinib	EGFR	54	EGF-stimulated tumour (KB) cell growth	Wakeling et al. 2002 Cancer Res 62:5749 (PMID 12384534; https://pubmed.ncbi.nlm.nih.gov/12384534/): "selectively inhibits EGF-stimulated tumor cell growth (IC50 = 0.054 uM)"; kinobead Kd_app 413 nM (Klaeger 2017). EGFR-mutant PC-9 is more sensitive (Lynch 2004 NEJM), so 54 nM is conservative there
+dasatinib	ABL1	1	Bcr-Abl-dependent Ba/F3 p210 proliferation	O'Hare et al. 2005 Cancer Res 65:4500 (PMID 15930265; https://pubmed.ncbi.nlm.nih.gov/15930265/): BMS-354825 325-fold more potent than imatinib against wild-type Bcr-Abl cells (imatinib ~260 nM -> ~0.8 nM, rounded up to 1 nM); kinobead Kd_app 5 nM

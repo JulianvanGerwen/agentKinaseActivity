@@ -274,6 +274,8 @@ def main(argv=None):
     pot = read_rules("drug_potency_manual.tsv")
     geno = read_rules("cell_line_genotypes.tsv")
     dose_man = read_rules("condition_doses_manual.tsv")
+    combo = read_rules("combination_doses_manual.tsv")          # decryptM combination dose readings (audit 2026-10-27)
+    cellpot = read_rules("drug_cellular_potency.tsv")            # cellular IC50 overrides for primary targets
     unknown_agents = sorted(set(rules["agent"]) - set(drugs.index) - {""})
     assert not unknown_agents, f"rule agents missing from drug_targets_manual.tsv: {unknown_agents}"
 
@@ -292,6 +294,7 @@ def main(argv=None):
     lit_of = lit.groupby("agent")["kinase"].apply(list).to_dict()
     lit_note = {(a, k): n for a, k, n in lit[["agent", "kinase", "note"]].itertuples(index=False)}
     pot_of = {(a, k): float(v) for a, k, v in pot[["agent", "kinase", "potency_nM"]].itertuples(index=False)}
+    cell_of = {(a, k): float(v) for a, k, v in cellpot[["agent", "kinase", "cellular_IC50_nM"]].itertuples(index=False)}
 
     # Hijazi kinhib matrix
     kin = pd.read_csv(DATA / "kinhib_inhib_comb__1.csv", index_col=0)
@@ -326,6 +329,7 @@ def main(argv=None):
 
     # ---------------------------------------------------------------- per-condition drugs, doses, time
     crec = {}
+    combo_ambig = set()
     dose_rows = []
     dm_re = re.compile(r"^(.+?)_([0-9.]+(?:e\+?\d+)?)(nM|ng/mL)$")
     for r in conds.itertuples():
@@ -346,12 +350,31 @@ def main(argv=None):
                 m = re.match(r"^(.+?)(?:_(\d+)to(\d+))?_([0-9.]+(?:e\+?\d+)?)(nM|ng/mL)$", str(r.Condition))
                 if m:
                     names = m.group(1).split("+")
-                    ratios = [float(m.group(2)), float(m.group(3))] if m.group(2) else [1.0] * len(names)
                     base = float(m.group(4)) * (ANTIBODY_NM_PER_NGML if m.group(5) == "ng/mL" else 1.0)
-                    for nm_, ra in zip(names, ratios):
-                        for a in matcher.find(nm_, r.PMID):
-                            doses[a] = (base * ra, "decryptM_label" + ("_ratio" if m.group(2) else "")
-                                        + ("_ngmL_to_nM" if m.group(5) == "ng/mL" else ""))
+                    if m.group(2):
+                        # combination "<a>to<b>" = molar ratio first:second drug. Which drug the label dose refers
+                        # to is read from combination_doses_manual.tsv: label_is_first / label_is_second /
+                        # label_is_total / ambiguous (ambiguous -> max over the three readings, labels capped low).
+                        ra, rb = float(m.group(2)), float(m.group(3))
+                        reads = {"label_is_first": (base, base * rb / ra), "label_is_second": (base * ra / rb, base),
+                                 "label_is_total": (base * ra / (ra + rb), base * rb / (ra + rb))}
+                        how_ = "ambiguous"
+                        for cr in combo.itertuples():
+                            if cr.PMID == r.PMID and re.search(cr.cond_regex, str(r.Condition)):
+                                how_ = cr.dose_reading
+                                break
+                        if how_ == "ambiguous":
+                            pair = tuple(max(v[i] for v in reads.values()) for i in (0, 1))
+                            combo_ambig.add(cid)
+                        else:
+                            pair = reads[how_]
+                        for nm_, dd in zip(names, pair):
+                            for a in matcher.find(nm_, r.PMID):
+                                doses[a] = (dd, f"decryptM_combination_{how_}" + ("_max" if how_ == "ambiguous" else ""))
+                    else:
+                        for nm_ in names:
+                            for a in matcher.find(nm_, r.PMID):
+                                doses[a] = (base, "decryptM_label" + ("_ngmL_to_nM" if m.group(5) == "ng/mL" else ""))
             else:
                 for dm in dose_man[dose_man["PMID"] == r.PMID].itertuples():
                     if re.search(dm.cond_regex, str(r.Condition)):
@@ -489,6 +512,8 @@ def main(argv=None):
                             thr, how = kd, f"Kd_app {ks}"
                         elif (a, k) in pot_of:
                             thr, how = pot_of[(a, k)], "potency table"
+                        if (a, k) in cell_of and (thr is None or cell_of[(a, k)] < thr):
+                            thr, how = cell_of[(a, k)], "cellular IC50"
                     if kind == "direct" or (kind == "downstream" and ru.relation == "downstream"):
                         if thr is None:
                             raise RuntimeError(f"decryptM {a}/{k}: no Kd_app and no potency entry")
@@ -497,8 +522,11 @@ def main(argv=None):
                             L.add(cid, k, "masked", 0, "", rid + ";SUBKD",
                                   f"decryptM dose {dose:g} nM < {how} {thr:g} nM: target masked (B11)")
                             continue
+                if cid in combo_ambig and kind in ("direct", "downstream"):
+                    conf, note = "low", f"{note}; combination per-drug doses ambiguous -> low (COMBO_AMBIG)"
                 L.add(cid, k, kind, sgn, conf, rid, note)
     log["rules_without_match"] = unmatched
+    log["combination_conditions_ambiguous"] = len(combo_ambig)
 
     # decryptM curated downstream rows without own agent: keep only if a target of a condition drug passes the dose rule
     lab = pd.DataFrame(L.rows, columns=["conditionID", "kinase", "kind", "sign", "confidence", "rule_id", "note"])

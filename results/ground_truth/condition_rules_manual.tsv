@@ -27,9 +27,9 @@ R025	32034161	^EGFRi_Lapatinib_			lapatinib			inhibitor		direct	-1	high	no	vs EG
 R026	32034161	^EGFRi_							MAPK1;MAPK3	downstream	-1	medium	no	EGFR inhibition in EGF-stimulated cells reduces ERK
 R027	32034161	^GSK3i_BIO_			GSK3i_BIO			inhibitor		direct	-1	medium	no	
 R028	32034161	^GSK3i_CHIR-99021_			CHIR99021			inhibitor		direct	-1	high	no	
-R029	32034161	^GSK3i_SB216763_			SB216763			inhibitor		direct	-1	medium	no	
+R029	32034161	^GSK3i_SB216763_1$			SB216763			inhibitor		direct	-1	medium	no	AUDIT 2026-10-27: 1 uM: medium (cellular EC50 ~3.6 uM, Coghlan 2000 Chem Biol 7:793 https://doi.org/10.1016/S1074-5521(00)00025-9); 0.1 uM split to R029b
 R030	32034161	^JNKi_JNK-IN-8_			JNKIN8			inhibitor		direct	-1	medium	no	JNK basal activity under EGF may be low
-R031	32034161	^JNKi_SP-600125_			SP600125			inhibitor		direct	-1	medium	no	
+R031	32034161	^JNKi_SP-600125_			SP600125			inhibitor		direct	-1	low	no	AUDIT 2026-10-27: SP600125 inhibits c-Jun phosphorylation in cells only at IC50 5-10 uM (Bennett 2001 PNAS 98:13681 https://doi.org/10.1073/pnas.251194298) >> 0.1/1 uM -> low
 R032	32034161	^JNKi_Tanziternib_			tanzisertib			inhibitor		direct	-1	medium	no	Tanziternib = tanzisertib (typo in metadata, inferred)
 R033	32034161	^mTORi_Everolimus_			everolimus			inhibitor		direct	-1	high	no	
 R034	32034161	^mTORi_Temsirolimus_			temsirolimus			inhibitor		direct	-1	high	no	
@@ -39,10 +39,10 @@ R037	32034161	^p38i_BIRB-796_			BIRB796			inhibitor		direct	-1	medium	no	p38 bas
 R038	32034161	^p38i_SB-203580_			SB203580			inhibitor		direct	-1	medium	no	
 R039	32034161	^p38i_SB-239063_			SB239063			inhibitor		direct	-1	medium	no	
 R040	32034161	^p38i_							MAPKAPK2	downstream	-1	medium	no	p38 -> MK2
-R041	32034161	^PI3Ki_LY294002_			LY294002			inhibitor		direct	-1	high	no	lipid kinase targets (no PSP substrates)
+R041	32034161	^PI3Ki_LY294002_			LY294002			inhibitor	PIK3CA;PIK3CB;PIK3CD;PIK3CG	direct	-1	high	no	AUDIT 2026-10-27: designated targets restricted to class I PI3K (lipid, outside U): LY294002 mTOR IC50 ~5 uM (Brunn 1996 EMBO J 15:5256 https://pubmed.ncbi.nlm.nih.gov/8895571/) >> inferred doses 0.1/1 uM; MTOR stays masked via PI3K mask
 R042	32034161	^PI3Ki_PI3-kinase-alpha-inhibitor2_			PI3Ka_inh2			inhibitor		direct	-1	high	no	
 R043	32034161	^PI3Ki_Wortmannin_			wortmannin			inhibitor		direct	-1	high	no	
-R044	32034161	^PI3Ki_							AKT1;AKT2;AKT3	downstream	-1	medium	no	PI3K -> AKT in EGF-stimulated cells
+R044	32034161	^PI3Ki_(PI3-kinase-alpha-inhibitor2|Wortmannin)_							AKT1;AKT2;AKT3	downstream	-1	medium	no	PI3K -> AKT in EGF-stimulated cells ; AUDIT 2026-10-27: LY294002 split to R044b
 R045	32034161	^PKCi_BisindolylmaleimideI_			BIM1			inhibitor		direct	-1	medium	no	basal PKC activity
 R046	32034161	^PKCi_Enzastaurin_			enzastaurin			inhibitor		direct	-1	medium	no	
 R047	32034161	^PKCi_Go-6983_			Go6983			inhibitor		direct	-1	medium	no	
@@ -51,13 +51,13 @@ R049	32034161	^RAFi_SB-590885_			SB590885			inhibitor		direct	-1	low	no	BRAF-sel
 R050	32034161	^RAFi_Sorafenib_			sorafenib			inhibitor		direct	-1	low	no	multikinase, BRAF-WT
 R051	33215756	^NCS_\d+min_ctrl_WT$				DSB		stimulus_DNA_damage		direct	1	high	no	neocarzinostatin DSBs, ATM-proficient
 R052	33215756	^NCS_\d+min_ctrl_AT$					DSB	stimulus_DNA_damage	PRKDC;ATR	direct	1	low	yes	ATM-deficient cells; DNA-PK/ATR compensation (inferred)
-R053	33215756	_ATMi_WT$			ATMi			inhibitor		direct	-1	high	no	vs NCS/HU-treated
+R053	33215756	^NCS_.*_ATMi_WT$			ATMi			inhibitor		direct	-1	high	no	vs NCS-treated (DSB -> ATM active); AUDIT 2026-10-27: HU variant split to R053b
 R054	33215756	_ATRi_(WT|AT)$			ATRi			inhibitor		direct	-1	medium	no	ATR activity after NCS moderate; HU condition higher
 R055	33215756	^HU_60min_ATRi_WT$			ATRi			inhibitor		direct	-1	high	no	HU strongly activates ATR
-R056	33215756	_DNA-PKi_(WT|AT)$			DNAPKi			inhibitor		direct	-1	high	no	vs NCS-treated
+R056	33215756	^NCS_.*_DNA-PKi_(WT|AT)$			DNAPKi			inhibitor		direct	-1	high	no	vs NCS-treated (DSB -> DNA-PK active); AUDIT 2026-10-27: HU variant split to R056b
 R057	33215756	^HU_60min_ctrl_WT$				REPSTRESS		stimulus_DNA_damage		direct	1	high	no	hydroxyurea replication stress
 R059	33819647	^Irradiated_				DSB		stimulus_DNA_damage		direct	1	high	no	IR 1h
-R060	34086370	_FGF(7|10)_(1|8)min$				FGF		stimulus_growth_factor	FGFR2	direct	1	medium	yes	FGF7/FGF10 are FGFR2b ligands; receptor expression per line not verified (inferred)
+R060	34086370	_FGF(7|10)_8min$				FGF		stimulus_growth_factor	FGFR2	direct	1	medium	yes	FGF7/FGF10 are FGFR2b ligands; receptor expression per line not verified (inferred) ; AUDIT 2026-10-27: 1-min conditions split to R060b/R060c
 R061	34086370	^FGF10_\d+min_BT549_HA-FGFR2b$				FGF		stimulus_growth_factor	FGFR2	direct	1	high	no	overexpressed FGFR2b + FGF10
 R062	34086370	^FGF1_\d+min_BT549_HA-FGFR4$				FGF		stimulus_growth_factor	FGFR4	direct	1	high	no	overexpressed FGFR4 + FGF1
 R063	34086370	^siRNA control_FGF10$				FGF		stimulus_growth_factor	FGFR2	direct	1	medium	no	T47D FGF10 40min
@@ -87,12 +87,12 @@ R087	34663829	^3h_THZ$			THZ1			inhibitor		direct	-1	medium	no
 R088	34663829	^(15min|3h)_TNF_(CDK12IN3)$	_TNF$		CDK12IN3			inhibitor		direct	-1	low	no	
 R089	34663829	^(15min|3h)_TNF_(Dina)$	_TNF$		dinaciclib			inhibitor		direct	-1	medium	no	
 R090	34663829	^(15min|3h)_TNF_(THZ)$	_TNF$		THZ1			inhibitor		direct	-1	low	no	
-R091	34663829	^(15min|3h)_TNF_(CDK12IN3|Dina|THZ)$	^(15min|3h)_(CDK12IN3|Dina|THZ)$			TNF		stimulus_cytokine		direct	1	medium	no	TNF on CDK-inhibitor background
+R091	34663829	^15min_TNF_(CDK12IN3|Dina|THZ)$	^15min_(CDK12IN3|Dina|THZ)$			TNF		stimulus_cytokine		direct	1	medium	no	TNF on CDK-inhibitor background ; AUDIT 2026-10-27: 3h split to R091b (low)
 R092	34731634	^IL4 (10min|30min|1h)$				IL4		stimulus_cytokine		direct	1	medium	yes	IL-4 receptor JAKs in PMA-differentiated THP-1 (inferred JAK usage)
 R093	34731634	^IFNg/LPS (10min|30min|1h)$				IFNG_LPS		stimulus_cytokine		direct	1	medium	no	IFNg -> JAK1/2, LPS -> IKK/p38
 R094	36781298	_metformin_24h$				AMPK_ACT		stimulus_metabolic		direct	1	low	yes	metformin may activate AMPK (dose/time dependent; inferred)
 R095	37188730	^TNF_(2m|5m|10m|30m)$				TNF		stimulus_cytokine		direct	1	high	no	BOEC TNF
-R096	37188730	^IFN_(5m|10m|30m)$				IFN		stimulus_cytokine		direct	1	medium	yes	IFN type not specified (inferred JAK1/2)
+R096	37188730	^IFN_(5m|10m|30m)$				IFNG		stimulus_cytokine		direct	1	medium	no	AUDIT 2026-10-27: IFN = IFN-gamma (Commun Biol 2023 37188730 abstract: TNFa, IFNg and TNFa+IFNg; https://pubmed.ncbi.nlm.nih.gov/37188730/) -> JAK1/JAK2
 R097	37188730	^TNFandIFN_(2m|5m|10m|30m)$				TNF		stimulus_cytokine		direct	1	high	no	; IFN component: JAK1/2 via explicit row R097b
 R098	37813859	^GLP_(Danuglipron|Semaglutide)$	^GLP_Vehicle$			CAMP_PKA		stimulus_GPCR		direct	1	medium	yes	GLP1R-expressing HEK293; Gs/cAMP -> PKA (inferred)
 R099	37813859	^(Danuglipron|Semaglutide)_(5|15|30)min$				CAMP_PKA		stimulus_GPCR		direct	1	low	yes	assumes GLP1R-expressing HEK293 (inferred)
@@ -120,7 +120,7 @@ R122	19651622	^Dasatinib 50nM$	^5nM$		dasatinib			inhibitor		direct	-1	low	no	50
 R123	20068231	^Ctr$	^mitosis$			MITOSIS		cell_cycle_reversed		direct	-1	high	no	reversed: control is mitotic
 R124	20068231	^G2$					MITOSIS	cell_cycle	CDK1	direct	1	low	no	G2 vs control (async?)
 R125	20071362	^HB-EGF$	^control$			EGF		stimulus_growth_factor		direct	1	high	no	
-R126	20071362	^HB-EGF$	^LPA$			EGF		stimulus_growth_factor		direct	1	medium	no	LPA can transactivate EGFR
+R126	20071362	^HB-EGF$	^LPA$				EGF	stimulus_growth_factor	EGFR	direct	1	medium	no	AUDIT 2026-10-27: HB-EGF vs LPA: LPA itself activates ERK/AKT (and transactivates EGFR), so only EGFR is labelled; cascade masked via EGF mask (van Corven 1989 Cell; Daub 1996 Nature 379:557 https://doi.org/10.1038/379557a0)
 R127	21406692	^PMA (0.5h|1h)$				PMA		stimulus_PKC		direct	1	high	no	phorbol ester; NB timepoint field says '5h' for 0.5h (metadata error)
 R129	21712546	^MLN8054 (0.25|1)uM$			MLN8054			inhibitor		direct	-1	high	no	
 R130	21712546	^MLN8054 5uM$						inhibitor	AURKA;AURKB	direct	-1	high	no	5 uM also hits AURKB
@@ -270,7 +270,7 @@ R230a	30459281	^Crizotinib 1h$		CLB-Bar	crizotinib			inhibitor		direct	-1	high	n
 R230b	30459281	^Crizotinib 1h$		CLB-Ge1	crizotinib			inhibitor		direct	-1	medium	no	CLB-Ge1 ALK F1174V (reduced crizotinib sensitivity)
 R230c	30459281	^Lorlatinib 1h$		CLB-Bar|CLB-Ge1	lorlatinib			inhibitor		direct	-1	high	no	
 D001	36926954	^Dasatinib_		K562	dasatinib			inhibitor		direct	-1	high	no	decryptM dose series; BCR-ABL K562; confidence adjusted by dose in script
-D002	36926954	^Dasatinib_		A431|A549	dasatinib			inhibitor		direct	-1	medium	no	SRC-family in non-ABL-driven lines
+D002	36926954	^Dasatinib_		A431|A549	dasatinib			inhibitor	ABL1;SRC;LYN;YES1;FYN;EPHA2	direct	-1	medium	no	AUDIT 2026-10-27: SRC-family/ABL/EPHA2 in non-ABL-driven epithelial lines; LCK (T-cell restricted) and KIT (not expressed in A431/A549; Human Protein Atlas https://www.proteinatlas.org/ENSG00000182866-LCK/cell+line, https://www.proteinatlas.org/ENSG00000157404-KIT/cell+line) removed from designated targets (masked as off-targets when Kd_app <= 3x dose)
 D003	36926954	^Afatinib_		A431	afatinib			inhibitor		direct	-1	high	no	EGFR-amplified A431
 D004	36926954	^Gefitinib_		A431|PC-9	gefitinib			inhibitor		direct	-1	high	no	EGFR-amplified/mutant
 D005	36926954	^(Afatinib|Gefitinib)_		A431|PC-9					MAPK1;MAPK3	downstream	-1	medium	no	EGFR-driven lines
@@ -301,7 +301,14 @@ D027a	36926954	^Trastuzumab_		BT-474|SK-BR-3|MDA-MB-175-VII	trastuzumab			antibo
 D027b	36926954	^Pertuzumab_		BT-474|SK-BR-3|MDA-MB-175-VII	pertuzumab			antibody		direct	-1	low	no	antibody; MDA-MB-175-VII (NRG1-driven) most responsive
 R177b	25907765	^Starve$	^Insulin\+aa$					stimulus_withdrawal	AKT1;AKT2	downstream	-1	high	no	AKT downstream of insulin withdrawal (r1 priorwork 
 R247b	21659604	^Starved$	^Insulin$					stimulus_withdrawal	AKT1;AKT2	downstream	-1	high	no	AKT downstream of insulin withdrawal (r1 priorwork 
-R097b	37188730	^TNFandIFN_(2m|5m|10m|30m)$				IFN		stimulus_cytokine		direct	1	medium	yes	IFN component of TNF+IFN
+R097b	37188730	^TNFandIFN_(2m|5m|10m|30m)$				IFNG		stimulus_cytokine		direct	1	medium	no	AUDIT 2026-10-27: IFN component = IFN-gamma (37188730) -> JAK1/JAK2
 R276	37236596	^UVB_(15min|2h)$				UV		stimulus_stress		direct	1	medium	no	UVB in WM3682 melanoma cells
 R277	19651622	SB202190			SB202190			inhibitor		direct	-1	low	no	p38i co-treated with EGF vs unstimulated control: p38 net change ambiguous (r1 data 
 R118b	19651622	EGF 15min.*(U0126|SB202190)|(U0126|SB202190).*EGF 15min					EGF	stimulus_growth_factor	EGFR	direct	1	high	no	EGF with MEK/p38 inhibitor: only EGFR labelled (ERK blocked by U0126)
+R060b	34086370	_FGF(7|10)_1min$					FGF	stimulus_growth_factor	FGFR2	direct	1	medium	yes	AUDIT 2026-10-27: 1 min: receptor autophosphorylation only; ERK1/2 dual phosphorylation and substrate phosphorylation lag by 2-5 min (Kholodenko 1999 JBC 274:30169 https://doi.org/10.1074/jbc.274.42.30169), so ERK labelled low (R060c)
+R060c	34086370	_FGF(7|10)_1min$					FGF	stimulus_growth_factor	MAPK1;MAPK3	direct	1	low	yes	AUDIT 2026-10-27: ERK at 1 min after FGF: activation incomplete -> low (sensitivity only)
+R091b	34663829	^3h_TNF_(CDK12IN3|Dina|THZ)$	^3h_(CDK12IN3|Dina|THZ)$			TNF		stimulus_cytokine		direct	1	low	no	AUDIT 2026-10-27: TNF 3h: TAK1/IKK activity returns towards baseline within 30-60 min (A20/IkB feedback; Hoffmann 2002 Science 298:1241 https://doi.org/10.1126/science.1071914); consistent with R081 (DMSO_TNF_3h low)
+R053b	33215756	^HU_60min_ATMi_WT$			ATMi			inhibitor		direct	-1	medium	no	AUDIT 2026-10-27: HU activates mainly ATR; ATM activity under HU is modest (Shiloh & Ziv 2013 Nat Rev Mol Cell Biol 14:197 https://doi.org/10.1038/nrm3546; Saldivar 2017 https://doi.org/10.1038/nrm.2017.67) -> medium
+R056b	33215756	^HU_60min_DNA-PKi_WT$			DNAPKi			inhibitor		direct	-1	low	no	AUDIT 2026-10-27: 60 min HU (replication stress) generates few DSBs, DNA-PK activity low -> low
+R044b	32034161	^PI3Ki_LY294002_						inhibitor	AKT1;AKT2;AKT3	downstream	-1	low	no	AUDIT 2026-10-27: LY294002 PI3K IC50 1.4 uM (Vlahos 1994 JBC 269:5241 https://pubmed.ncbi.nlm.nih.gov/8106507/); at 0.1/1 uM PI3K->AKT inhibition weak/partial -> low
+R029b	32034161	^GSK3i_SB216763_0-1$			SB216763			inhibitor		direct	-1	low	no	AUDIT 2026-10-27: 0.1 uM is ~35x below the cellular EC50 (3.6 uM, Coghlan 2000) -> low

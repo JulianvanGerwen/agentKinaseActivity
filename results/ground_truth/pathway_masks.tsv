@@ -582,3 +582,16 @@ STARVATION	PRKAA2	nutrient/insulin withdrawal
 STARVATION	EIF2AK4	nutrient/insulin withdrawal
 STARVATION	MAPK1	nutrient/insulin withdrawal
 STARVATION	MAPK3	nutrient/insulin withdrawal
+IFNG	JAK3	AUDIT 2026-10-27: IFN-gamma: JAK paralogs/cascade masked (as IFN class)
+IFNG	TYK2	AUDIT 2026-10-27: IFN-gamma: JAK paralogs/cascade masked (as IFN class)
+IFNG	MAPK1	AUDIT 2026-10-27: IFN-gamma: JAK paralogs/cascade masked (as IFN class)
+IFNG	MAPK3	AUDIT 2026-10-27: IFN-gamma: JAK paralogs/cascade masked (as IFN class)
+IFNG	AKT1	AUDIT 2026-10-27: IFN-gamma: JAK paralogs/cascade masked (as IFN class)
+STARVATION	INSR	AUDIT 2026-10-27: reversed insulin stimulation (control = insulin-treated): receptor and PDK1 axis activity higher in control, not a negative (Manning & Toker 2017 Cell 169:381 https://doi.org/10.1016/j.cell.2017.04.001)
+STARVATION	IGF1R	AUDIT 2026-10-27: reversed insulin stimulation (control = insulin-treated): receptor and PDK1 axis activity higher in control, not a negative (Manning & Toker 2017 Cell 169:381 https://doi.org/10.1016/j.cell.2017.04.001)
+STARVATION	PDPK1	AUDIT 2026-10-27: reversed insulin stimulation (control = insulin-treated): receptor and PDK1 axis activity higher in control, not a negative (Manning & Toker 2017 Cell 169:381 https://doi.org/10.1016/j.cell.2017.04.001)
+UV	MAPK11	AUDIT 2026-10-27: UV stress: p38 -> MK3/MSK1/2 and p38beta/JNK3 paralogs (Deak 1998 EMBO J 17:4426 https://doi.org/10.1093/emboj/17.15.4426)
+UV	MAPKAPK3	AUDIT 2026-10-27: UV stress: p38 -> MK3/MSK1/2 and p38beta/JNK3 paralogs (Deak 1998 EMBO J 17:4426 https://doi.org/10.1093/emboj/17.15.4426)
+UV	RPS6KA4	AUDIT 2026-10-27: UV stress: p38 -> MK3/MSK1/2 and p38beta/JNK3 paralogs (Deak 1998 EMBO J 17:4426 https://doi.org/10.1093/emboj/17.15.4426)
+UV	RPS6KA5	AUDIT 2026-10-27: UV stress: p38 -> MK3/MSK1/2 and p38beta/JNK3 paralogs (Deak 1998 EMBO J 17:4426 https://doi.org/10.1093/emboj/17.15.4426)
+UV	MAPK10	AUDIT 2026-10-27: UV stress: p38 -> MK3/MSK1/2 and p38beta/JNK3 paralogs (Deak 1998 EMBO J 17:4426 https://doi.org/10.1093/emboj/17.15.4426)

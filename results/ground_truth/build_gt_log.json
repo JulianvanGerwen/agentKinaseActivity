@@ -1,10 +1,11 @@
 {
  "U_size": 503,
+ "combination_conditions_ambiguous": 36,
  "dose_sources": {
   "condition_doses_manual": 64,
+  "decryptM_combination_ambiguous_max": 72,
   "decryptM_label": 394,
   "decryptM_label_ngmL_to_nM": 270,
-  "decryptM_label_ratio": 72,
   "default_10uM": 477,
   "hijazi_default_10uM": 183,
   "parsed_text": 84
@@ -33,14 +34,14 @@
  "n_conditions_default_dose": 459,
  "n_gt_conditions_by_role": {
   "excluded": 22,
-  "gt": 874,
+  "gt": 881,
   "null": 16,
-  "specificity": 135
+  "specificity": 128
  },
  "n_pairs_by_cls": {
-  "direct": 3790,
-  "downstream": 724,
-  "masked": 24055
+  "direct": 3759,
+  "downstream": 705,
+  "masked": 24135
  },
  "profile_sources": {
   "kinoplex": "not used: kinaseSubMain kinoplex files are a structural S/T/Y atlas, no drug-kinase affinities"

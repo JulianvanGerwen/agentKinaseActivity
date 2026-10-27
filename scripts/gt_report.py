@@ -190,7 +190,11 @@ def main():
    are shared with a positive are masked.
 7. Hijazi column AZD6432 is assumed to be AZD6482 (PI3Kbeta).
 8. decryptM antibodies (trastuzumab/pertuzumab, low confidence) dose conversion and the SHP099 indirect downstream labels.
-9. Combination decryptM labels "1to80"/"1to2" interpreted as dose ratios of (first, second) drug relative to the label dose.
+9. Combination decryptM labels "<a>to<b>" = molar ratio (first:second drug; Zecha 2023 Fig. 4E: selumetinib:MK-2206 3:1).
+   Which drug the label dose refers to is not documented -> `combination_doses_manual.tsv` marks all combinations
+   ambiguous: per-drug dose = max over readings (label = first / second / total) for masks, all labels capped low (audit 2026-10-27).
+11. Cellular-potency override (`drug_cellular_potency.tsv`, audit 2026-10-27): for a drug's primary target, a documented
+   cellular IC50 lower than Kd_app / potency-table value is used as the decryptM dose gate (gefitinib/EGFR, dasatinib/ABL1, ...).
 10. Groups: unnamed class tokens (MEKi, p38i, ...) link conditions across studies; DNA-damaging/other non-kinase drugs
     (HU, NCS, paclitaxel, coumarin ...) also link studies. Stimulus ligands (EGF, TNF) do not link studies.
 """)

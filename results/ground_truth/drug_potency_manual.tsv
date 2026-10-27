@@ -19,7 +19,7 @@ dactolisib	MTOR	21.0	IC50	PIKK: IC50 rule (Maira 2008)
 tideglusib	GSK3B	60.0	IC50	irreversible non-ATP: IC50 rule
 trastuzumab	ERBB2	5.0	Kd	antibody; dose ng/mL converted with MW 148 kDa (1 ug/mL = 6.76 nM)
 pertuzumab	ERBB2	5.0	Kd	antibody; dose ng/mL converted with MW 148 kDa (1 ug/mL = 6.76 nM)
-SHP099	*	71.0	IC50	SHP2 IC50 (Chen 2016); applies to downstream labels
+SHP099	*	250.0	IC50	AUDIT 2026-10-27: cellular p-ERK IC50 ~0.25 uM in KYSE-520/MDA-MB-468 (Chen 2016 Nature 535:148 https://doi.org/10.1038/nature18621); biochemical SHP2 IC50 0.071 uM is not the right gate for a downstream (ERK) label; applies to downstream labels
 gefitinib	EGFR	3.0	IC50	fallback when no Kd_app
 lapatinib	EGFR	10.8	IC50	fallback when no Kd_app
 lapatinib	ERBB2	9.2	IC50	fallback when no Kd_app
