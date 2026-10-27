@@ -32,8 +32,10 @@ Key early observation: kinaseSubMain's deployed library uses (F6b) ridge deconvo
   - [x] 2.3 reference tools: R 4.4.3 + JUMPsem 1.1.0 + KSEAapp 2.0 (external/envs/r), decoupler 2.3.1, gseapy (docs/reference_tools.md)
   - [x] 2.4 round 3 (final reviewer) → DESIGN v3 merged (C1–C6). Design phase closed.
 - [~] 3. G1 build
-  - [~] 3.1 GT + split + DEV-only cache (scripts/build_gt.py, make_split.py)
-  - [~] 3.2 harness src/kinact/eval.py + tests
+  - [x] 3.1 GT + split + DEV-only cache: 1,047 GT conds; M1-sel 1,660 pairs / 140 kinases; split seed 79 (TEST 396 conds, 445 M1-sel pairs, 78 kinases, 18 unseen). Hijazi doses unobtainable → 10 µM default. 16 tests pass.
+    - [~] 3.1b independent GT biology audit + fixes (pre-freeze; split may change)
+  - [x] 3.2 harness src/kinact/eval.py + tests (20 pass; paired bootstrap B=2000 0.3 s)
+    - [~] 3.2b integration: null-parsing fix, data loaders, DEV smoke run (PSP z-score, controls), MDE
   - [~] 3.3 KS libraries with leakage filters (scripts/build_libraries.py)
 - [ ] 4. Baselines (z-score, KSEA, JUMPsem, …)
 - [ ] 5. Method development
