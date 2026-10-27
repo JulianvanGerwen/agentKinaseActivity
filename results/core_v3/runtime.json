@@ -1,0 +1,92 @@
+{
+ "bench": "kinact.runtime.bench_runtime, 200 fixed DEV conditions (seed 0), warm, median of 5",
+ "core_v3": {
+  "cpu": {
+   "n_conditions": 200,
+   "n_rep": 5,
+   "phases": true,
+   "threads_1": {
+    "load_mapping_s": 0.21330794086679816,
+    "scoring_s": 1.1420261778403074,
+    "total_s": 1.3553341187071055,
+    "ms_per_condition": 6.776670593535528,
+    "compendium_extrapolated_s": 13.126410939678317
+   },
+   "threads_16": {
+    "load_mapping_s": 0.17815563501790166,
+    "scoring_s": 0.22820851090364158,
+    "total_s": 0.40636414592154324,
+    "ms_per_condition": 2.031820729607716,
+    "compendium_extrapolated_s": 3.935636753250147
+   }
+  },
+  "gpu": {
+   "n_conditions": 200,
+   "n_rep": 5,
+   "phases": true,
+   "threads_16": {
+    "load_mapping_s": 0.17576840613037348,
+    "scoring_s": 0.18944264319725335,
+    "total_s": 0.3652110493276268,
+    "ms_per_condition": 1.8260552466381341,
+    "compendium_extrapolated_s": 3.537069012738066
+   }
+  },
+  "fusion_only_200_1t_s": 0.001667761942371726,
+  "dev_compendium_1358": {
+   "cpu_1t_prepare_s": 1.1146430259104818,
+   "cpu_1t_score_s": 5.281978962011635,
+   "cpu_1t_total_s": 6.396621987922117,
+   "cpu_16t_prepare_s": 0.8263926859945059,
+   "cpu_16t_score_s": 1.30287245195359,
+   "cpu_16t_total_s": 2.129265137948096,
+   "gpu_score_s": 1.154603087110445,
+   "gpu_total_s": 1.9809957731049508,
+   "n_conditions": 1358,
+   "ms_per_condition_1t": 4.710325469751191,
+   "compendium_1937_extrapolated_1t_s": 9.123900434908057
+  }
+ },
+ "core_v1": {
+  "cpu": {
+   "n_conditions": 200,
+   "n_rep": 5,
+   "phases": true,
+   "threads_1": {
+    "load_mapping_s": 0.18736676103435457,
+    "scoring_s": 1.128201032988727,
+    "total_s": 1.3155677940230817,
+    "ms_per_condition": 6.577838970115408,
+    "compendium_extrapolated_s": 12.741274085113545
+   },
+   "threads_16": {
+    "load_mapping_s": 0.14908031118102372,
+    "scoring_s": 0.22460347693413496,
+    "total_s": 0.3736837881151587,
+    "ms_per_condition": 1.8684189405757934,
+    "compendium_extrapolated_s": 3.619127487895312
+   }
+  },
+  "gpu": {
+   "n_conditions": 200,
+   "n_rep": 5,
+   "phases": true,
+   "threads_16": {
+    "load_mapping_s": 0.14656174299307168,
+    "scoring_s": 0.1843615248799324,
+    "total_s": 0.3309232678730041,
+    "ms_per_condition": 1.6546163393650204,
+    "compendium_extrapolated_s": 3.2049918493500447
+   }
+  }
+ },
+ "hardware": {
+  "cpu_count": 128,
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "loadavg_at_end": [
+   8.45751953125,
+   12.58544921875,
+   20.22705078125
+  ]
+ }
+}

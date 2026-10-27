@@ -1,0 +1,23 @@
+[ctx] 3s; 372 GT conds, 7 DEV nulls, lib rows 27601; GT_FREEZE 1e6f791c6b85f15d
+/workspace/src/kinact/explore/edgeweights.py:116: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:203.)
+  self.k = torch.as_tensor(E["k"].to_numpy(), device=device)
+[b4b ctx] 13s edges 58487 rows 27601
+[fold0] inner fold1 lam 0.1 39s loss 0.3118->0.3062
+[fold0] inner fold2 lam 0.1 59s loss 0.3100->0.3039
+[fold0] inner fold3 lam 0.1 81s loss 0.3434->0.3338
+[fold0] inner fold4 lam 0.1 104s loss 0.3196->0.3144
+[fold0] inner fold1 lam 0.01 171s loss 0.3118->0.2981
+[fold0] inner fold2 lam 0.01 233s loss 0.3100->0.2937
+[fold0] inner fold3 lam 0.01 283s loss 0.3434->0.3187
+[fold0] inner fold4 lam 0.01 333s loss 0.3196->0.3049
+[fold0] inner fold1 lam 0.001 386s loss 0.3118->0.2939
+[fold0] inner fold2 lam 0.001 435s loss 0.3100->0.2883
+[fold0] inner fold3 lam 0.001 484s loss 0.3434->0.3120
+[fold0] inner fold4 lam 0.001 535s loss 0.3196->0.2988
+[fold0] outer lam 0.1 566s theta [-0.01   0.009  0.024  0.043  0.105  0.005  0.056 -0.047  0.039  0.048
+  0.102]
+[fold0] outer lam 0.01 655s theta [-0.02   0.008  0.049  0.055  0.257  0.009  0.165 -0.258  0.068  0.173
+  0.228]
+[fold0] outer lam 0.001 759s theta [-0.063 -0.029  0.028  0.083  0.319  0.026  0.25  -0.581  0.094  0.106
+  0.279]
+[fold0] done 815s inner {'inf': 0.685336005708208, '0.1': 0.6820570704524842, '0.01': 0.6727743791684458, '0.001': 0.6616404903984845}
