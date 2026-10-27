@@ -50,7 +50,7 @@ Key finding for strategy: under the pre-registered coverage-aware primary metric
   - [x] 5.2 B2 Bayesian core (results/b2/b2_report.md): curated_union + r2np@100 (α=1), family kernel ρ_f=3, ρ_g=0.25, τ=0.125, no noise model. Nested M1-sel 0.655 (H .644 D .768 O .674), M2 +0.033 vs PSP-z, T-unseen 0.589 (prior-only 0.324). Ablations: −K 0.617, −predicted 0.607, neither 0.553; noise model hurts; posterior-mean ranking 0.672 (post hoc). Calibration 4.6% overall but grows with substrate count (1.2%→7.6%). 8.9 ms/cond CPU-1T.
     - [!] Complementary to prior-only (prior wins H; B2 wins D and unseen kinases).
   - [~] 5.3 B2.1+B3 refine core: output statistic, calibration, r2np+r3+cantley ensemble, kernels, robustness — 3 h
-  - [~] 5.4 B4 co-regulation / factorisation / data-driven propagation (fold-safe) — 3 h
+  - [-] 5.4 B4 co-regulation expansion (results/b4/b4_report.md): on B2 core ΔM1-sel −0.010 [−0.021,−0.003] (expanded sites shared across kinases → noise); neighbour fill-in n.s.; on weighted z +0.026 (only reaches B1 level). Kept as stacking candidate (T-unseen 0.684). NOTE for G2: exclude DEV conditions sharing a control with TEST conditions from any co-regulation fit (metadata only).
   - [ ] 5.4b shared-function edge weights
   - [ ] 5.5 B5 kinase self-sites
   - [ ] 5.6 B6 stacking

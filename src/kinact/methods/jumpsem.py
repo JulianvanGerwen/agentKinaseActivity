@@ -104,6 +104,7 @@ def run_jumpsem(X: pd.DataFrame, lib, units: pd.Series | None = None, min_substr
     kin = sorted(libdf["kinase"].unique())
     native = pd.DataFrame(np.nan, index=X.columns, columns=kin)
     aligned = native.copy(); nfr = native.copy()
+    own_tmp = tmpdir is None
     tmpdir = tmpdir or tempfile.mkdtemp(prefix="jumpsem_")
     jobs = [(u, X[list(cs)], libdf, min_substrates, tmpdir)
             for u, cs in units.dropna().groupby(units.dropna()).groups.items()]
@@ -130,6 +131,9 @@ def run_jumpsem(X: pd.DataFrame, lib, units: pd.Series | None = None, min_substr
                 sgn.append(-1.0 if c < 0 else 1.0)
             aligned.loc[cs, act.index] = (act.T * np.array(sgn)).to_numpy()
     total = time.perf_counter() - t0
+    if own_tmp:
+        import shutil
+        shutil.rmtree(tmpdir, ignore_errors=True)
     log_df = pd.DataFrame(rows)
     return {"native": native, "aligned": aligned, "n": nfr, "units": log_df, "wall_s": total,
             "r_cpu_s": float(log_df["r_wall_s"].sum()) if len(log_df) else 0.0}
