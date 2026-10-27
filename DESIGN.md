@@ -1,71 +1,93 @@
-# DESIGN — Kinase activity inference from phosphoproteomics (v0 draft, 2026-10-27)
+# DESIGN — Kinase activity inference from phosphoproteomics (v1, 2026-10-27)
 
-Status: DRAFT v0, before review round 1. Changes after review go in §12 (amendment log); nothing below is silently edited after freeze.
+Status: v1 = v0 revised after review round 1 (docs/reviews/r1_*.md). Amendment log in §12. After gate G1 (GT + split + harness freeze) any change to metrics, labels, splits or tests requires a dated amendment with rationale written BEFORE its effect is seen.
 
 ## 1. Task (fixed by PROMPT.md)
-Input: one vector of site-level directional statistics (log2FC, or t/z) from a human phosphoproteomics experiment, keyed by `{UniProt}_{residue}{pos}` (15-mer optional).
-Output: for every human protein kinase that the method can score, a signed activity-change score (positive = activated), a standardised z-like scale where 0 = no evidence of change, and a coverage flag (n substrates used).
-Desiderata, in order: (1) accuracy on ground-truth (GT) perturbations, macro-averaged over kinases so well-studied kinases do not dominate; (2) number of kinases scored with non-trivial accuracy (coverage), incl. understudied ones; (3) calibration (null conditions give |z|>2 at ≈5%); (4) speed (target: <50 ms per condition for single-sample mode on CPU, whole compendium of 1,937 conditions in < 1 min).
-Primary mode is **single-sample** (one condition in, scores out). Multi-sample methods (JUMPsem) are benchmarked in their native mode per study.
+Input: one vector of site-level directional statistics (log2FC, or t/z) keyed by `{UniProt}_{residue}{pos}` (15-mer optional).
+Output: for every kinase in universe U the method can score, a signed activity-change score (positive = activated) on a calibrated z scale (0 = no evidence), plus n_substrates/coverage and a posterior SD where available.
+Desiderata: (1) accuracy on GT perturbations, macro-averaged over kinases; (2) number of kinases scored with demonstrable (above-null) accuracy, incl. understudied ones; (3) calibration (null conditions: |z|>1.96 ≈5% per kinase, independent of substrate count); (4) speed: ≤5 ms per condition end-to-end, ≤10 s for the 1,937-condition compendium (single-threaded and 16-thread, warm, median of 5; load/mapping, scoring and null timed separately; `bench_runtime.py` on 200 fixed DEV conditions for all methods).
+Deliverable: Python package + CLI (`kinact score in.tsv > out.tsv`), precomputed activity matrix for the whole compendium, and a kinase–kinase relationship analysis (do score correlations recover known kinase→kinase links?).
+Primary mode: single-sample. Multi-sample methods (JUMPsem) run natively per study.
 
 ## 2. Data
-- Compendium `data/03_*` (1,937 conditions, 178 studies, 190k sites, 4.6% dense; centred log2FC). QC: exclude conditions flagged `qc_flag` (unlogged/scaled; `results/data_profile/conditions_profile.tsv`) from evaluation; methods must be robust to missingness (no imputation).
-- PSP kinase–substrate (KS) dump (human kinases; human substrates + mouse/rat mapped via SITE_GRP_ID; in vivo/in vitro flags), PSP Regulatory_sites, Phosphorylation_site_dataset.
-- Predicted KS (leakage-audited, `docs/kinasesub_audit.md`): kinaseSubMain **R2-nophospho** (DEV-trained, no phospho quantification features), **R3** (sequence/structure neural, no phospho features), **Cantley/Kinase Library** atlas (motif only). **Banned**: kinaseSubMain deployment/release and `clean_bench` variants (they use Hijazi + compendium co-regulation/inhibitor deconvolution), SELPHI2, CoPheeKSA, PTMsigDB perturbation signatures, Hijazi's own downstream marker sets, NetworKIN versions trained on phospho data (if used, only after audit).
-- Inhibitor target profiles: `kinhib_inhib_comb__1.csv` (user-provided Hijazi target matrix: primary GT); Klaeger 2017 kinobeads Kd_app (29/61 Hijazi drugs + decryptM drugs) for off-target masking and for dose-aware GT on decryptM.
-- External (never used for development): benchmarKIN tyrosine set (18 exps), benchmarKIN Hernandez experiments not in the compendium, benchmarKIN CPTAC tumour benchmark (7 cohorts) — copies in kinaseSubMain `external/`, to be re-copied to our `external/` with checksums in DATA.md.
+- Compendium `data/03_*`. QC: exclude from evaluation only conditions with demonstrable scale errors (unlogged; ≈3–4 GT conditions) and exact-duplicate vectors (35688186 caffeine=quercetin; 22115753_1=_2 keep one). Other `qc_flag`s are reported, not excluded. No imputation.
+- Kinase universe **U = the 503 human protein kinases (include==True) of kinaseSubMain's kinase list**, HGNC-normalised. Lipid kinases (PIK3C*, PI4K*, PIP4K*, PIKFYVE…) are outside U.
+- KS libraries (all through ONE shared library builder used by every method incl. baselines):
+  - PSP KS (human kinases; human substrates + mouse/rat via SITE_GRP_ID; in vivo/in vitro flags).
+  - Additional curated / in-vitro sources from kinaseSubMain `external/`: OmniPath, iPTMnet, Sugiyama 2019, iKiP-DB (provenance + licence in DATA.md; edges whose only supporting reference is a compendium study are dropped).
+  - Predicted (leakage-audited, `docs/kinasesub_audit.md`): kinaseSubMain R2-nophospho, R3, Cantley/Kinase Library atlas. Input as top-k *measured* sites per kinase, weighted by percentile^γ.
+  - Banned: kinaseSubMain release/`clean_bench`, SELPHI2, CoPheeKSA, PTMsigDB perturbation signatures, Hijazi downstream marker sets, any kinaseSubMain setting tuned on benchmarKIN. Checksums of all used predicted files recorded in DATA.md; confirm kinaseSubMain did not select those models on Hijazi (audit note).
+- Drug–target profiles for masking and dose-aware GT, precedence: Klaeger 2017 (Kd_app) > Reinecke 2024 > Davis 2011 > kinoplex > user-provided Hijazi matrix only. Klaeger parser must expand all genes of a protein group.
+- External (never used for development): benchmarKIN tyrosine set (18 exps), the 3 Hernandez studies not in the compendium, CPTAC tumour benchmark (7 cohorts). Truly independent; reported as secondary, stratified by drug seen/unseen in DEV.
 
-## 3. Ground truth
-GT unit = (condition c, kinase k, expected sign s∈{−1,+1}). Built by `scripts/build_candidate_gt.py` from rule files; **frozen with a SHA-256 before any method is tuned (gate G1)**.
-- **GT-H (primary)**: Hijazi 177 conditions, targets = kinhib matrix, s = −1.
-- **GT-D**: decryptM dose series (340 conds): kinase k is a target at dose d iff Klaeger Kd_app(drug,k) ≤ d (pre-registered rule; confidence by d/Kd). Lowest doses with no target → negative-only conditions.
-- **GT-O**: other inhibitors (high/medium confidence), stimuli (growth factor/cytokine/GPCR/DNA damage; direct receptor kinase and canonical first-tier kinases, s=+1), genetic perturbations, cell-cycle. Low-confidence and `inferred` rows reported only as sensitivity analysis.
-- **Negatives** in condition c: all kinases in the evaluation universe U (§5) except: targets of c, kinases with Klaeger Kd_app ≤ 3× dose for that drug (masked, "unknown"), and kinases annotated as known downstream of the target (`kinases_downstream`; masked — their activity legitimately changes).
-- **Null controls**: 27 decryptM "0 nM vs 0 nM" conditions → calibration only.
-- A domain-expert agent reviews the rule files before G1 freeze.
+## 3. Ground truth (built by script from rule files; frozen with SHA-256 at G1 after expert-agent review)
+GT unit = (condition c, kinase k ∈ U, sign s). Classes per (c,k): **direct positive**, **downstream positive** (secondary only), **masked** (unknown; excluded from both), **negative**.
+- **GT-H (primary source)**: Hijazi 183 conditions. Direct positives = user kinhib matrix ∩ U, s = −1.
+- **GT-D**: decryptM. Positives = manually curated primary target list per drug (documented rule file) at doses ≥ Kd_app(drug,k) where Kd is known; allosteric inhibitors and PIKKs exempt from the Kd rule (dose ≥ published IC50 rule instead). Lowest doses below every target Kd → negative-only. Only high/medium confidence pairs enter metrics.
+- **GT-O**: other inhibitors, stimuli (receptor kinase + canonical first-tier kinases, s=+1), genetic, cell-cycle; high/medium confidence only; low/`inferred` = sensitivity analysis.
+- **Masks (all sources, incl. Hijazi/Wilkes)**: (i) pre-registered downstream/feedback mask table by target class — MEK/ERK/RAF inhibitors → ERK1/2, RSKs, MNKs, MSKs, RAFs; PI3K/PDK1/AKT inhibitors → AKT, SGK, S6K, mTOR, GSK3; mTOR → S6K, AKT, ULK1; p38 → MK2/3; plus canonical cascades for stimuli and cell-cycle; (ii) paradoxical RAF activation: in BRAF-wt cells (all Hijazi lines) RAF-inhibitor RAF positives are dropped and MEK/ERK/RSK masked; (iii) off-targets: kinases with Kd_app ≤ 3× dose (any profile source, precedence above) that are not annotated targets; (iv) negative paralogs sharing ≥80% of PSP substrates with a positive.
+- Lipid-kinase-only drugs (CAL101, TGX221, PIK294), Edelfosine and U73122 → no positives; used as **specificity controls** with PKC/AKT-axis masked where biologically indicated (PLC inhibition lowers PKC).
+- **Null controls**: 27 decryptM "0 nM vs 0 nM" conditions, split into two halves (seed 0): N-fit (allowed for empirical-null fitting) and N-eval (calibration reporting only). Site-permutation nulls for development.
+- **GT-A (secondary, label-independent)**: in non-inhibitor conditions, a kinase's own activating sites (PSP Regulatory_sites "enzymatic activity, induced") as activity proxy; the kinase's own sites removed from its library for this test. Gives evaluation for understudied kinases.
+- Validation tests before G1: every GT kinase ∈ U; no bad tokens (BCR/ABL→ABL1, Q6ZSR9 dropped, ALL/no-kinase rows handled); s ∈ {−1,+1}; masks applied; summary counts per source/confidence.
 
 ## 4. Splits and leakage control
-Leakage pathways considered: (L1) same drug in train and test (also across studies: Hijazi/Wilkes/decryptM/RPE1 share drugs); (L2) same lab/cell line/drug batch (Wilkes ≈ Hijazi); (L3) predicted KS libraries trained on test phospho data (handled by §2 bans); (L4) any learned component (site weights, co-regulation expansions, hyperparameters) fitted on conditions whose GT kinases appear in test; (L5) evaluator choices tuned on test.
-- **Grouping**: union-find over conditions linking (a) the same canonical drug in any study, (b) same study for non-drug studies, (c) Hijazi↔Wilkes 2015 per drug. Each group goes wholly to TEST or DEV.
-- **TEST (sealed, ~30% of GT conditions)**: stratified random selection of groups (seed 0), stratified by GT source (H/D/O) and by target-kinase PSP-coverage bin; plus all external sets (§2). TEST labels and conditions hashed; the evaluator refuses TEST until FREEZE.json is written (single, logged TEST run; independent reproduction).
-- **DEV**: 5-fold grouped CV over the remaining groups (seed 0). All learned components are fit inside folds only on training-fold conditions. Unsupervised use of compendium conditions (e.g. site co-regulation) may use any non-TEST, non-held-out-fold conditions — never TEST conditions or TEST-group studies.
-- **Kinase-novelty tiers** on TEST: T-seen (target kinase is a target in some DEV condition) vs T-unseen. Reported separately; a learned method must not win only on T-seen.
-- Seeds: fixed list `SEEDS = [0, 1, 2, 3, 4]` (config/seeds.json). Split uses seed 0 only.
+- **Grouping**: union-find over all 1,937 conditions linking: same canonical drug anywhere (treatment or control field), same study for non-drug studies, Hijazi↔Wilkes by drug; identical-vector duplicates. Groups stratified by majority GT source.
+- **Split selection rule (pre-registered)**: generate 100 candidate splits (seeds 0–99) with TEST ≈ 30% of GT pairs; choose the one minimising a label-only distance to targets (TEST share 25–35% of pairs per source and per PSP-coverage bin; ≥20% of TEST GT kinases unseen in DEV). Uses no method outputs. State the minimum detectable ΔM1 on the chosen TEST at G1.
+- **Physical sealing**: build a DEV-only cache (TEST conditions removed) that development agents use; pytest guard fails if any TEST condition ID appears in DEV artefacts; the evaluator refuses TEST until FREEZE.json exists.
+- **DEV**: 5-fold grouped CV (seed 0), plus a DEV-confirm hold-out of ~15% of DEV groups, evaluated at most 5 times total (logged).
+- **Unsupervised use of compendium conditions** (co-regulation, factorisation, site noise variances): allowed on non-TEST conditions excluding those sharing a control with a TEST condition; inside CV, additionally excluding the held-out fold.
+- **Kinase-novelty tiers**: T-seen / T-unseen (kinase never a positive in DEV) / T-family-unseen.
+- Seeds: `SEEDS=[0,1,2,3,4]` (config/seeds.json). Winner's-curse check before FREEZE: re-split DEV folds with seeds 1–4.
 
-## 5. Evaluation (frozen harness `kinact.eval`, built and verified before methods)
-Evaluation universe U = all human protein kinases (HGNC/Manning + PSP + kinaseSubMain list ≈ 520). Each method returns scores for a subset; **unscored kinase ⇒ score 0 (neutral) with tie-aware ranking** in the coverage-aware metrics. All scores are sign-adjusted: t = −s·score (larger = correct).
-- **M1 (primary, coverage-aware, kinase-macro)**: for each GT pair (c,k), AUROC_ck = fraction of negatives j in c with t_j < t_k (+0.5 ties). Average over conditions per kinase, then macro-average over GT kinases with ≥1 evaluable pair. Kinase-macro neutralises over-representation of popular targets.
-- **M2 (algorithm-fair, matched)**: same as M1 but U restricted to kinases scored by both methods in a pairwise comparison (Δ reported with paired CIs) — separates library coverage from algorithm quality.
-- **M3 (benchmarKIN-compatible)**: condition-centric pooled AUROC with balanced subsampling and scaled rank of targets, as in Müller-Dott 2025, for comparison with literature numbers (harness validated by reproducing PSP+z-score on benchmarKIN ≈ 0.78–0.79).
-- **M4 (kinase-centric)**: for kinase k, AUROC separating conditions where k is a target vs DEV/TEST conditions where it is a negative, within the same studies; macro over k with ≥2 target conditions. Penalises kinase-specific offsets.
-- **Harmony**: M1 stratified by PSP-substrate bins of the kinase {0, 1–4, 5–19, ≥20 quantified substrates}; report each bin and the bin-macro mean. **Coverage@0.6**: number of GT kinases with per-kinase AUROC ≥0.6.
-- **Calibration**: on null conditions and on label-shuffled/site-permuted data, fraction |z|>1.96 per kinase (target ≈5%).
-- **Runtime**: wall-clock per condition and full-compendium, same hardware, single process + note threads.
-- **Inference**: cluster bootstrap over GT groups (B=2000, seed 0) for CIs; paired bootstrap for Δ. Pre-registered superiority tests on TEST: final vs {z-score, KSEA, JUMPsem, best other baseline} on M1 (and M2 vs z-score), Holm-adjusted; "beats" = Holm p<0.05 and Δ>0.
-- **Controls in harness tests**: toy data with planted kinase effects (known answer), random-score negative control (M1≈0.5), oracle positive control (M1=1), shuffled-library control.
+## 5. Evaluation (frozen harness `kinact.eval`, verified before methods)
+Sign-adjusted score t = s·score (larger = more correct). Unscored kinases: an unscored target contributes AUROC ½; each unscored negative contributes ½ to a scored target's AUROC (shift/scale invariant).
+- **Pair AUROC**: AUROC_ck = P(t_k > t_j) over negatives j in c (+½ ties/unscored).
+- **Averaging order**: pairs → mean within (kinase, GT group) → mean over groups per kinase → macro over kinases.
+- **M1-sel (PRIMARY)**: direct positives from conditions with ≤10 direct targets in U, all GT sources (high/medium).
+- **M1-all (key secondary)**: all direct positives, pairs weighted by 1/n_targets(c) within group.
+- Also reported: M1-scored (only kinases the method scores) + pair coverage; M1 by source (H/D/O) and by sign (s=−1, s=+1); M1-family (negatives restricted to same-family kinases); downstream-positive AUROC; M2 (matched universe of kinases scored by both methods); M3 benchmarKIN-compatible (pooled condition-centric AUROC with balanced subsampling + scaled rank, validated on DEV/benchmarKIN with benchmarKIN's own target lists); M4 kinase-centric (within study, scored kinases only, TEST conditions only on TEST); GT-A AUROC.
+- **Harmony**: M1-sel per PSP-substrate bin {0, 1–4, 5–19, ≥20 quantified PSP substrates; bins from PSP only, frozen with GT hash} and the bin-macro mean.
+- **Coverage-significant**: number of GT kinases whose mean AUROC beats a rank-permutation null (BH q ≤ 0.10).
+- **Calibration**: on N-eval nulls and site-permuted data: fraction |z|>1.96 overall and per substrate-count bin.
+- **Negative controls in harness**: random scores (M1≈0.5), **prior-only control** (kinase's target frequency in training conditions, no phospho data; ≈0.63 leave-drug-out) — every learned method must beat it and must also improve M4; site-permuted input (≈0.5); sign-flip test (negating input negates scores); oracle (=1).
+- **Inference**: stratified (by source) cluster bootstrap over GT groups, B=2000, seed 0, shared resamples across methods; one-sided p. TEST family of 5 pre-registered tests, Holm: final vs z-score, KSEA, JUMPsem, best-other-baseline (chosen on DEV at G2) on M1-sel, and final vs z-score on M2. "Beats" = Holm p<0.05 AND ΔM1 ≥ 0.01 AND ΔM1 > 0 on T-unseen.
 
-## 6. Baselines (implemented in Python, each verified on toy data; R reference outputs where feasible)
-z-score (RoKAI/benchmarKIN form), KSEA (Casado mean-based z; KSEAapp variant), JUMPsem (faithful reimplementation of the R package, native per-study multi-sample), decoupler-style ulm / mlm / wmean / norm_wmean / viper, fgsea-style GSEA, Wilcoxon/KS rank tests, PTM-SEA-style ssGSEA, RoKAI with network propagation, Kinase Library motif enrichment (Johnson 2023) / PhosX-like motif-only scoring, INKA-lite if time. Each with PSP library (default), and where natural with the extended libraries.
+## 6. Baselines (shared library builder; same small DEV tuning grid as our method, e.g. library variant, min substrates)
+Must (time-boxed): z-score (benchmarKIN/RoKAI form), KSEA (Casado mean-based z; KSEAapp), JUMPsem (try R + lavaan via micromamba for 30 min to run published package; else Python reimplementation validated on toy data), decoupler ulm / mlm / wmean / norm_wmean / viper (pip decoupler as reference; Spearman ≥0.99 vs our implementation, else labelled unverified), fgsea-style GSEA, RoKAI with network propagation, Kinase Library motif enrichment / PhosX-like motif-only.
+Could: KSTAR, KARP, PhosR, IKAP. Cut: PTM-SEA, separate Wilcoxon/KS, INKA.
 
-## 7. Method development plan (DEV only; ranked by expected value)
-A. **Library**: PSP (in vivo ∪ in vitro, orthologue-mapped) + predicted KS (R2-nophospho, R3, Cantley) as *weighted* edges; weights via calibrated probability or rank; per-kinase cap/top-k; choose mixing α and cut-offs by DEV CV. Kinase families: hierarchical borrowing for understudied kinases.
-B. **Statistic**: weighted, variance-aware z (per-condition robust scale), shrinkage for small n, empirical-null calibration; multivariate deconvolution (ridge/elastic-net mlm over the weighted KS matrix) to separate kinases sharing substrates.
-C. **Learned components (with grouped CV)**: low-dimensional learned hyperparameters (α, top-k, λ); site reliability/responsiveness priors learned from non-TEST compendium variance; data-driven substrate expansion via site co-regulation across non-TEST compendium conditions (RoKAI-like propagation but data-driven); per-library weights.
-D. **Kinase self-sites**: activation-loop/regulatory sites of the kinase itself (PSP Regulatory_sites) as an auxiliary signal — tested separately because inhibitors can paradoxically increase them.
-E. **Ensembling** of complementary statistics/libraries; final speed optimisation (sparse matrix ops).
-Each idea is an experiment node in RESEARCH_TREE.md with DEV-CV M1/M2/harmony/runtime, compared to the current best by paired fold-level bootstrap. An idea is adopted only if it improves M1 without degrading harmony bins by >0.01.
+## 7. Method development (DEV only)
+- **Core model (B)**: Bayesian linear-Gaussian x_c = W·a_c + b_c + ε, per-site noise variances estimated label-free on allowed conditions, prior a ~ N(0, τ²K) with kinase–kinase kernel K (family tree / motif similarity / substrate overlap). Closed-form posterior mean and z (one solve per condition; covers shrinkage, mlm-deconvolution, family borrowing, multi-target drugs). ≤5 hyperparameters.
+- **Library (A)**: weighted union of curated + predicted edges; top-k and γ selected by nested CV.
+- **Calibration**: effective-m analytic null and/or per-condition empirical null (fitted on N-fit/site permutations only) to remove √m inflation.
+- **Learned parts (C)**: NO per-edge or per-kinase free weights. Edge weights only as a shared function of edge/site features (≤20 parameters); >50 parameters needs leave-kinase-out non-inferiority first. Data-driven substrate expansion via co-regulation / factorisation fitted only on allowed conditions (§4).
+- **Kinase self-sites (D)**: activating sites as auxiliary signal, tested separately (paradoxical behaviour under inhibitors).
+- **Ensembling (E)**: learning-to-rank stacking, pairwise within condition, ≤30 parameters, no kinase-specific params, pairs weighted to match kinase-macro M1.
+- **Adoption rule**: pooled out-of-fold predictions, group-level paired bootstrap: 95% CI lower bound of ΔM1-sel > 0, ΔM1-all ≥ 0, sign agreement on ≥2 of 3 GT sources, no harmony bin with 95% CI upper bound of Δ < 0; gains must hold on T-unseen kinases (within-CV analogue: kinases not positive in training folds). Nested CV for internal hyperparameters.
+- **Ledger**: every DEV evaluation appended to `results/dev_ledger.tsv` (config hash, commit, metrics, n configs tried per branch). Any ΔM1 ≥ 0.02 audited by a non-producing agent before adoption.
 
-## 8. Model selection and TEST protocol
-Gate G2: the final configuration (code commit + config hash) is chosen on DEV CV only and written to FREEZE.json. TEST is run once; an independent agent reproduces it. Post-TEST explorations are labelled as such and cannot change the reported final.
+## 8. Model selection and TEST
+G2: final config chosen on DEV CV + DEV-confirm, frozen in FREEZE.json (commit + config hash + GT hash). TEST run once; independent agent reproduces; report DEV→TEST drop. Post-TEST explorations labelled, cannot change the final.
 
 ## 9. Verification
-`tests/` with pytest: toy datasets with known answers for every metric and every method; leakage tests (split disjointness by drug/study; no TEST condition in any fit); GT freeze hash check; deterministic seeds. Every result that enters REPORT.md is re-checked by an agent that did not produce it.
+pytest: toy data with known answers for every metric and method; sign-flip and permutation tests; leakage tests (drug/study/control disjointness, DEV-only cache); GT/evaluator hash check at each agent start; deterministic seeds. REPORT numbers generated by script from committed result files; LITERATURE.md PMIDs/DOIs checked by script.
 
 ## 10. Compute
-64 CPU, 375 GB RAM, 4× RTX 4090. All baselines are sparse linear algebra → seconds for the compendium; JUMPsem and viper-style permutations are the slowest (timed first). GPUs only if a learned model needs them.
+64 CPU, 375 GB RAM, 4× RTX 4090. Sparse z-score over the whole compendium measured at 0.09 s (algo review). Bayesian core ≈7 ms/condition. GPUs only if needed.
 
-## 11. Agent organisation & failure-mode guards
-PI (me) designs, decides, integrates. Agents: harness+GT (one), baselines (one or two), method explorers (parallel, each owns one tree branch), independent reviewers/auditors. Guards: agents never touch TEST; all numbers cite committed files; summaries ≤300 words; every metric change is an amendment with rationale before seeing its effect.
+## 11. Agent organisation & guards
+PI designs, decides, integrates, keeps RESEARCH_TREE.md. Agents: GT+split builder; harness builder; baselines; method explorers (one tree branch each); independent auditors. Agents work from the DEV-only cache, never touch TEST, cite committed files, return ≤300-word summaries. Baselines split into must/could tiers and time-boxed.
 
 ## 12. Amendment log
-(empty)
+- A1 (r1, stats): sign-adjusted score corrected to t = s·score (v0 had −s, which rewarded wrong signs).
+- A2 (r1, stats): unscored kinases contribute ½ (shift/scale invariant) instead of score 0.
+- A3 (r1, stats/data): averaging order pair→(kinase,group)→kinase→macro.
+- A4 (r1, PI/priorwork/stats/data): primary metric restricted to conditions with ≤10 direct targets (M1-sel); all-target M1 with 1/n weighting as key secondary. Rationale: 44–70% of Hijazi kinases come only from promiscuous drugs profiled at 200 nM but dosed at 1–10 µM, least reliable labels. Decision (PI): ≤10 cutoff, not 1/n weighting, for the primary, because it is simpler and its labels are most trustworthy; coverage of understudied kinases is still measured by M1-all and harmony.
+- A5 (r1): U = 503 kinaseSubMain protein kinases; lipid kinases and bad tokens out of positives.
+- A6 (r1, priorwork/data/aiagent): downstream/feedback masks for all sources incl. Hijazi; paradoxical RAF rule; multi-source off-target masking; paralog mask; downstream pairs as secondary.
+- A7 (r1, data): drug linking across all conditions incl. controls; pre-registered 100-candidate split selection; minimal QC exclusion; duplicate vectors removed; co-regulation exclusion rule.
+- A8 (r1, stats/algo/aiagent): Coverage@0.6 replaced by permutation-null significant coverage; bootstrap/Holm/min-gain rule; DEV adoption rule, ledger, DEV-confirm set; prior-only negative control; split null controls.
+- A9 (r1, algo): runtime targets tightened to ≤5 ms/condition, ≤10 s compendium; Bayesian linear-Gaussian core; ban on per-edge/per-kinase learned weights.
+- A10 (r1, PI): extra curated KS sources; more drug-profile sources; GT-A self-site secondary GT; CLI/API deliverable and kinase–kinase analysis; baseline must/could tiers.
+- Rejected/deferred: none of the must items rejected. Deferred: 1/n weighting as primary (kept as M1-all).
