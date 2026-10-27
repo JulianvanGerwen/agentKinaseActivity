@@ -1,0 +1,12 @@
+{
+ "gt_freeze_sha256": "1e6f791c6b85f15dfe51d7eb045bf392a6b25be576b10974f7bba6c5d887baac",
+ "n_configs": 408,
+ "runtime_s": 603.5916483402252,
+ "folds": [
+  "fold0",
+  "fold1",
+  "fold2",
+  "fold3",
+  "fold4"
+ ]
+}
