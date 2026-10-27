@@ -46,11 +46,12 @@ Key finding for strategy: under the pre-registered coverage-aware primary metric
 - [~] 5. Method development (DEV only; adoption per DESIGN §7)
   - [x] 5.1 B1 library variants (408 configs; results/b1/b1_report.md)
     - [!] z-score + r2np top-200: M1-sel 0.664 (nested 0.638; optimism +0.026), coverage ≈1.0, M2 vs PSP-z 0.699 vs 0.633; Δ vs PSP-z +0.12 [0.07,0.16]. Still < prior-only 0.687 (n.s.). r2np > r3 > cantley > curated; Hijazi weak (0.57), decryptM 0.89 (suspicious).
-    - [~] 5.1a independent r2np/r3 leakage audit (decryptM 0.89) — BLOCKS adoption
+    - [x] 5.1a r2np/r3/cantley leakage audit: SAFE (docs/audit/r2np_leakage.md). decryptM high = dasatinib/Tyr composition (residue-matched random library already 0.70 on D) → quote D only with caveat; residue-matched null added as descriptive control.
   - [x] 5.2 B2 Bayesian core (results/b2/b2_report.md): curated_union + r2np@100 (α=1), family kernel ρ_f=3, ρ_g=0.25, τ=0.125, no noise model. Nested M1-sel 0.655 (H .644 D .768 O .674), M2 +0.033 vs PSP-z, T-unseen 0.589 (prior-only 0.324). Ablations: −K 0.617, −predicted 0.607, neither 0.553; noise model hurts; posterior-mean ranking 0.672 (post hoc). Calibration 4.6% overall but grows with substrate count (1.2%→7.6%). 8.9 ms/cond CPU-1T.
     - [!] Complementary to prior-only (prior wins H; B2 wins D and unseen kinases).
-  - [ ] 5.3 B3 calibration (effective-m / empirical null)
-  - [ ] 5.4 B4 shared-function edge weights; co-regulation/factorisation expansion
+  - [~] 5.3 B2.1+B3 refine core: output statistic, calibration, r2np+r3+cantley ensemble, kernels, robustness — 3 h
+  - [~] 5.4 B4 co-regulation / factorisation / data-driven propagation (fold-safe) — 3 h
+  - [ ] 5.4b shared-function edge weights
   - [ ] 5.5 B5 kinase self-sites
   - [ ] 5.6 B6 stacking
 - [ ] 6. Sealed test + REPORT.md
