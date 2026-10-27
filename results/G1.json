@@ -1,0 +1,15 @@
+{
+ "gate": "G1",
+ "date": "2026-10-27",
+ "commit": "7de8eefe9138c317e1f6e2ebaf968dad87107fc6",
+ "files": {
+  "DESIGN.md": "deadd714a6c72d5c826326cc0e48593f1d440e609e62347fb42171e074bc0c03",
+  "config/seeds.json": "ae9acbcea3df80db67663ed4c99b494c763948b3d1b8e86bdb9cefb8431fab15",
+  "results/ground_truth/GT_FREEZE.json": "1e6f791c6b85f15dfe51d7eb045bf392a6b25be576b10974f7bba6c5d887baac",
+  "src/kinact/bootstrap.py": "d93c2469e0eed63b141878a13ce8cb64eb695ce29ba508e11aca06f6811ae486",
+  "src/kinact/controls.py": "0f9022858f9852d7ed6a9616cabc01511069424fd33eca7294af1cc8691d73f9",
+  "src/kinact/eval.py": "91c0937031bd59ed89fc5b4c31bfcec47c8c1b1a1280f0058bb2cb58bbf2e6eb"
+ },
+ "mde_m1sel": 0.0605,
+ "note": "GT + split (seed 90) + harness frozen. Changes require DESIGN \u00a712 amendment."
+}
