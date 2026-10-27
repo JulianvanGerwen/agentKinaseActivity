@@ -1,0 +1,10 @@
+# restricted / large data never committed
+data/
+external/
+cache/
+*.parquet
+*.npz
+*.pkl
+logs/*.log
+__pycache__/
+*.pyc
