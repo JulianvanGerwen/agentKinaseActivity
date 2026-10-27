@@ -65,7 +65,8 @@ Key finding for strategy: under the pre-registered coverage-aware primary metric
   - [-] 5.5 B5 self-sites (results/b5/b5_report.md): alone 0.726 on pairs with measured self-site (35% of M1-sel pairs); paradoxical up for PKC/PKA/ERKi/TAK1; on core +0.003 [−0.001,0.008] n.s. (half of self-sites already library edges). GT-A helper mask_self_sites.
   - [-] 5.6 B6 stacking (results/b6/b6_report.md): only B4 coreg-z is complementary (rank corr 0.56; better in bin 0 and T-unseen). A1 = average(core z_vif, coreg z): +0.012 [−0.001,0.030] p=0.057 → NOT adopted (hard test); M1-all +0.020, harmony +0.015, T-unseen +0.036 sig., calibration 4.6%. Learned stacker −0.001. → A1 pre-registered as SECONDARY method for TEST (descriptive).
   - [-] 5.7 B7 signatures in joint posterior (results/b7/b7_report.md): +0.012 [−0.017,0.026] p=0.15; kinases with signature +0.076 (p=.003), Hijazi +0.036; T-unseen −0.026 (TYK2 via JAK-kernel borrowing) → fails C10.
-    - [~] 5.7b B7b pre-declared single variant: late fusion z_final = recalibrated(z_core + α·z_sig) only for kinases with a signature; signatures outside kernel
+    - [!] 5.7b B7b late fusion (pre-declared; results/b7b/b7b_report.md): M1-sel 0.663→0.680, Δ +0.018 [−0.000,0.023] p=0.0085; T-unseen +0.0006; all bins +; shuffled control −0.002..−0.008; calibration 6.2%/5.5%. Signature kinases +0.102. α at grid edge (1).
+      - [~] independent audit before adoption
 - [x] 7. Deliverable core-v1: src/kinact/core.py + CLI `kinact score`; equivalence max|Δz| 8e-12; 4.6 ms/cond (CPU 1T, compendium avg), 2.1 ms (16T/GPU); DEV compendium 2.2–6.2 s. PSP-derived edges git-ignored, rebuilt by scripts/build_core_artifacts.py.
 - [x] 8. External test pipelines ready (docs/external_eval.md; run_external(..., confirm_test=True)); Tyr 18 exps/16 kin, Hernandez 15/7, CPTAC 7 cohorts/367 kin (gold = protein abundance, C9). No real method run.
 - [ ] 6. Sealed test + REPORT.md
