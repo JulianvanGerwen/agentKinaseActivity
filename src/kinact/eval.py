@@ -31,6 +31,7 @@ BIN_LABELS = ("0", "1-4", "5-19", ">=20")
 
 class TestSplitLocked(RuntimeError):
     """Raised when TEST conditions are touched before FREEZE.json exists."""
+    __test__ = False
 
 
 def freeze_path(path: str | os.PathLike | None = None) -> Path:
@@ -360,6 +361,8 @@ class Evaluator:
 
     # ------------------------------------------------------------------ full evaluation
     def evaluate(self, scores: pd.DataFrame, n_perm: int = 2000, q: float = 0.10) -> dict:
+        if len(self.targets) == 0:
+            raise ValueError("no evaluable GT pairs for this split/confidence selection")
         P = self.pairs(scores)
         out: dict = {}
         for ep in ["M1-sel", "M1-all", "M1-sel-scored", "M1-all-scored"]:
