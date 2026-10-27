@@ -1,0 +1,291 @@
+{
+ "n_conditions": 1937,
+ "n_studies": 178,
+ "n_samples_celltypes_raw": 204,
+ "n_sites": 189962,
+ "n_values": 17032346,
+ "density": 0.0463,
+ "sites_per_condition": {
+  "q1": 2134.0,
+  "q5": 2875.8,
+  "q25": 5595.0,
+  "q50": 8560.0,
+  "q75": 10636.0,
+  "q95": 15854.8,
+  "q99": 25112.2,
+  "min": 1981,
+  "max": 29577,
+  "mean": 8793.2
+ },
+ "conditions_per_site": {
+  "q1": 2.0,
+  "q5": 2.0,
+  "q25": 4.0,
+  "q50": 11.0,
+  "q75": 52.0,
+  "q95": 510.95,
+  "q99": 1261.0,
+  "mean": 89.7,
+  "sites_in_1_condition": 368,
+  "sites_in_>=100": 32758,
+  "sites_in_>=50pct": 3724
+ },
+ "source_counts": {
+  "This study": 1437,
+  "qPTM": 461,
+  "Ochoa2016": 39
+ },
+ "labeling": {
+  "LFQ": 544,
+  "TMT10": 477,
+  "TMT11": 313,
+  "SILAC": 292,
+  "TMT": 113,
+  "label-free": 82,
+  "iTRAQ": 46,
+  "SIDL": 12
+ },
+ "log2FC_overall": {
+  "q1": -2.438,
+  "q5": -1.114,
+  "q25": -0.244,
+  "q50": 0.0,
+  "q75": 0.245,
+  "q95": 1.128,
+  "q99": 2.522,
+  "mean": 0.0031,
+  "sd": 1.095,
+  "min": -31.58,
+  "max": 197.84,
+  "frac_exact_zero": 0.0005,
+  "frac_abs_gt_1": 0.1195
+ },
+ "per_condition_median": {
+  "q1": -0.417,
+  "q5": -0.175,
+  "q25": -0.035,
+  "q50": -0.001,
+  "q75": 0.03,
+  "q95": 0.17,
+  "q99": 0.525,
+  "frac_abs_median_lt_0.1": 0.816,
+  "frac_abs_median_gt_0.5": 0.018
+ },
+ "per_condition_sd": {
+  "q1": 0.178,
+  "q5": 0.225,
+  "q25": 0.364,
+  "q50": 0.626,
+  "q75": 0.917,
+  "q95": 1.424,
+  "q99": 2.993
+ },
+ "studies_by_source": {
+  "qPTM": 144,
+  "This study": 27,
+  "Ochoa2016": 7
+ },
+ "dup_condition_names_within_study": 88,
+ "qc_flag_counts": {
+  "sd>3": 20,
+  "max|log2FC|>20": 26,
+  "|median|>0.5": 35,
+  "n_sites<2500": 59,
+  "any": 107,
+  "gt_conditions_flagged_sd_or_max": [
+   "25247763_qPTM_1_log2",
+   "25247763_qPTM_3_log2",
+   "27732954_qPTM_3_log2",
+   "30652415_qPTM_1_log2"
+  ]
+ },
+ "wilkes_vs_hijazi_mcf7": [
+  {
+   "drug": "MK-2206",
+   "wilkes": "26060313_Ochoa_1289_272_log2",
+   "hijazi": "31959955_179_log2",
+   "n_shared_sites": 2785,
+   "pearson": 0.017,
+   "ref_median_pearson_other_hijazi_mcf7": 0.025,
+   "identical_values_frac": 0.0
+  },
+  {
+   "drug": "Torin1",
+   "wilkes": "26060313_Ochoa_1299_272_log2",
+   "hijazi": "31959955_121_log2",
+   "n_shared_sites": 2871,
+   "pearson": 0.296,
+   "ref_median_pearson_other_hijazi_mcf7": 0.011,
+   "identical_values_frac": 0.0
+  },
+  {
+   "drug": "PF4708671",
+   "wilkes": "26060313_Ochoa_1300_272_log2",
+   "hijazi": "31959955_13_log2",
+   "n_shared_sites": 2831,
+   "pearson": 0.006,
+   "ref_median_pearson_other_hijazi_mcf7": 0.013,
+   "identical_values_frac": 0.0
+  },
+  {
+   "drug": "GDC0941",
+   "wilkes": "26060313_Ochoa_1302_272_log2",
+   "hijazi": "31959955_162_log2",
+   "n_shared_sites": 2839,
+   "pearson": 0.222,
+   "ref_median_pearson_other_hijazi_mcf7": 0.052,
+   "identical_values_frac": 0.0
+  },
+  {
+   "drug": "KU0063794",
+   "wilkes": "26060313_Ochoa_1298_272_log2",
+   "hijazi": "31959955_118_log2",
+   "n_shared_sites": 2908,
+   "pearson": 0.267,
+   "ref_median_pearson_other_hijazi_mcf7": 0.026,
+   "identical_values_frac": 0.0
+  },
+  {
+   "drug": "PD153035",
+   "wilkes": "26060313_Ochoa_1293_272_log2",
+   "hijazi": "31959955_119_log2",
+   "n_shared_sites": 2906,
+   "pearson": 0.032,
+   "ref_median_pearson_other_hijazi_mcf7": 0.028,
+   "identical_values_frac": 0.0
+  },
+  {
+   "drug": "KN93",
+   "wilkes": "26060313_Ochoa_1290_272_log2",
+   "hijazi": "31959955_178_log2",
+   "n_shared_sites": 2782,
+   "pearson": 0.02,
+   "ref_median_pearson_other_hijazi_mcf7": -0.009,
+   "identical_values_frac": 0.0
+  }
+ ],
+ "psp_n_human_kinases": 430,
+ "psp_kinases_by_n_substrate_sites_quantified": {
+  "n_psp_sites": {
+   ">=1": 430,
+   ">=3": 333,
+   ">=5": 289,
+   ">=10": 207,
+   ">=20": 135
+  },
+  "n_sites_compendium": {
+   ">=1": 383,
+   ">=3": 283,
+   ">=5": 221,
+   ">=10": 149,
+   ">=20": 82
+  },
+  "n_sites_hijazi_union": {
+   ">=1": 244,
+   ">=3": 128,
+   ">=5": 88,
+   ">=10": 52,
+   ">=20": 24
+  },
+  "median_sites_per_hijazi_condition": {
+   ">=1": 235,
+   ">=3": 115,
+   ">=5": 79,
+   ">=10": 45,
+   ">=20": 21
+  },
+  "median_sites_per_condition_all": {
+   ">=1": 223,
+   ">=3": 99,
+   ">=5": 64,
+   ">=10": 37,
+   ">=20": 18
+  }
+ },
+ "hijazi_targets": {
+  "n": 306,
+  "not_in_psp_as_kinase": 38,
+  "union_>=1": 176,
+  "union_>=3": 106,
+  "union_>=5": 78,
+  "union_>=10": 48,
+  "union_>=20": 23,
+  "median_per_condition_>=1": 168,
+  "median_per_condition_>=3": 98,
+  "median_per_condition_>=5": 71,
+  "median_per_condition_>=10": 41,
+  "median_per_condition_>=20": 21
+ },
+ "gt_pairs_evaluable": {
+  "hijazi": {
+   "pairs": 2286,
+   "kinases": 306,
+   "pairs_>=1": 1343,
+   "pairs_>=3": 852,
+   "pairs_>=5": 638,
+   "kinases_>=3_in_some_condition": 104,
+   "conditions_with_>=1_pair_>=3": 149
+  },
+  "non_hijazi": {
+   "pairs": 2499,
+   "kinases": 113,
+   "pairs_>=1": 1865,
+   "pairs_>=3": 1370,
+   "pairs_>=5": 1173,
+   "kinases_>=3_in_some_condition": 69,
+   "conditions_with_>=1_pair_>=3": 641
+  },
+  "non_hijazi_high": {
+   "pairs": 1029,
+   "kinases": 82,
+   "pairs_>=1": 785,
+   "pairs_>=3": 573,
+   "pairs_>=5": 514,
+   "kinases_>=3_in_some_condition": 52,
+   "conditions_with_>=1_pair_>=3": 284
+  }
+ },
+ "top10_kinases_by_sites": [
+  [
+   "CDK1",
+   607.0
+  ],
+  [
+   "PRKACA",
+   425.0
+  ],
+  [
+   "CDK2",
+   387.0
+  ],
+  [
+   "CSNK2A1",
+   385.0
+  ],
+  [
+   "MAPK1",
+   361.0
+  ],
+  [
+   "MAPK3",
+   296.0
+  ],
+  [
+   "AKT1",
+   259.0
+  ],
+  [
+   "PRKCA",
+   257.0
+  ],
+  [
+   "SRC",
+   243.0
+  ],
+  [
+   "GSK3B",
+   238.0
+  ]
+ ],
+ "share_of_kinase_site_annotations_top10_pct": 37.2
+}

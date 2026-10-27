@@ -1,0 +1,1025 @@
+drug	klaeger_name	kinase	in_kinhib	klaeger_kd_nM	klaeger_status
+AC220	Quizartinib	FLT3	True	102.0	kd
+AC220	Quizartinib	MYH10	False	758.0	kd
+AC220	Quizartinib	RET	True	172.0	kd
+AT13148	AT-13148	AKT1	True		n.i.
+AT13148	AT-13148	AKT2	True		n.i.
+AT13148	AT-13148	AKT3	True		n.i.
+AT13148	AT-13148	GRK2	True	170.0	kd
+AT13148	AT-13148	LATS1	True	27.0	kd
+AT13148	AT-13148	PKN1	True	25.0	kd
+AT13148	AT-13148	PKN2	True	9.0	kd
+AT13148	AT-13148	PRKACA	True	15.0	kd
+AT13148	AT-13148	PRKACB	True	14.0	kd
+AT13148	AT-13148	PRKCD	True	44.0	kd
+AT13148	AT-13148	ROCK1	True	27.0	kd
+AT13148	AT-13148	ROCK2	True	26.0	kd
+AT13148	AT-13148	RPS6KB1	True		n.i.
+AZ20		ATR	True		drug_not_profiled
+AZ20		MTOR	True		drug_not_profiled
+AZD1480	AZD-1480	ALK	True		n.d.
+AZD1480	AZD-1480	AURKA	True	306.0	kd
+AZD1480	AZD-1480	AURKB	False	1559.0	kd
+AZD1480	AZD-1480	AURKC	True		not_in_kinobeads
+AZD1480	AZD-1480	BLK	True		not_in_kinobeads
+AZD1480	AZD-1480	CAMK4	True		n.i.
+AZD1480	AZD-1480	CDK11A	True		not_in_kinobeads
+AZD1480	AZD-1480	CDK18	True		n.d.
+AZD1480	AZD-1480	CSK	True		n.i.
+AZD1480	AZD-1480	CSNK2A1	False	4868.0	kd
+AZD1480	AZD-1480	CSNK2A2	False	3956.0	kd
+AZD1480	AZD-1480	CSNK2B	False	3485.0	kd
+AZD1480	AZD-1480	DCLK1	True		not_in_kinobeads
+AZD1480	AZD-1480	DCLK2	True		not_in_kinobeads
+AZD1480	AZD-1480	DCLK3	True		not_in_kinobeads
+AZD1480	AZD-1480	EIF3J	False	4059.0	kd
+AZD1480	AZD-1480	FER	True	517.0	kd
+AZD1480	AZD-1480	FGFR1	True	777.0	kd
+AZD1480	AZD-1480	FGFR2	True		not_in_kinobeads
+AZD1480	AZD-1480	FGFR3	True		not_in_kinobeads
+AZD1480	AZD-1480	FLT1	True		not_in_kinobeads
+AZD1480	AZD-1480	FLT3	False	1685.0	kd
+AZD1480	AZD-1480	FLT4	True		not_in_kinobeads
+AZD1480	AZD-1480	GRK1	True		not_in_kinobeads
+AZD1480	AZD-1480	GRK7	True		not_in_kinobeads
+AZD1480	AZD-1480	HCK	True		n.i.
+AZD1480	AZD-1480	JAK1	True		n.i.
+AZD1480	AZD-1480	JAK2	True		n.i.
+AZD1480	AZD-1480	JAK3	True		not_in_kinobeads
+AZD1480	AZD-1480	LTK	True		not_in_kinobeads
+AZD1480	AZD-1480	MAP3K2	True		n.i.
+AZD1480	AZD-1480	MAP3K3	True		n.i.
+AZD1480	AZD-1480	MAP4K1	True		n.i.
+AZD1480	AZD-1480	MAP4K3	True		n.i.
+AZD1480	AZD-1480	MERTK	True		n.d.
+AZD1480	AZD-1480	NTRK1	True		n.i.
+AZD1480	AZD-1480	NTRK2	True		not_in_kinobeads
+AZD1480	AZD-1480	NTRK3	True		not_in_kinobeads
+AZD1480	AZD-1480	NUAK1	True		not_in_kinobeads
+AZD1480	AZD-1480	NUAK2	True		n.i.
+AZD1480	AZD-1480	PAK4	False	1884.0	kd
+AZD1480	AZD-1480	PAK5	True		not_in_kinobeads
+AZD1480	AZD-1480	PLK4	True	308.0	kd
+AZD1480	AZD-1480	PTK2	True	191.0	kd
+AZD1480	AZD-1480	PTK2B	True	1884.0	kd
+AZD1480	AZD-1480	RASSF5	False	377.0	kd
+AZD1480	AZD-1480	RET	True	238.0	kd
+AZD1480	AZD-1480	ROS1	True		not_in_kinobeads
+AZD1480	AZD-1480	SAV1	False	399.0	kd
+AZD1480	AZD-1480	SBK3	True		not_in_kinobeads
+AZD1480	AZD-1480	SLK	True	686.0	kd
+AZD1480	AZD-1480	SRC	True		n.i.
+AZD1480	AZD-1480	STK10	True	728.0	kd
+AZD1480	AZD-1480	STK16	True		n.i.
+AZD1480	AZD-1480	STK3	True	860.0	kd
+AZD1480	AZD-1480	STK35	True		not_in_kinobeads
+AZD1480	AZD-1480	STK38L	True		n.d.
+AZD1480	AZD-1480	STK4	True	861.0	kd
+AZD1480	AZD-1480	TEC	True		n.i.
+AZD1480	AZD-1480	TNK1	False	1264.0	kd
+AZD1480	AZD-1480	TNK2	True	515.0	kd
+AZD1480	AZD-1480	TYK2	True		n.i.
+AZD3759		EGFR	True		drug_not_profiled
+AZD3759		EPHA6	True		drug_not_profiled
+AZD3759		ERBB2	True		drug_not_profiled
+AZD3759		MAP3K14	True		drug_not_profiled
+AZD3759		MAP3K19	True		drug_not_profiled
+AZD3759		MAST1	True		drug_not_profiled
+AZD3759		SLK	True		drug_not_profiled
+AZD5363	AZD-5363	AKT1	True	3883.0	kd
+AZD5363	AZD-5363	AKT2	True	2490.0	kd
+AZD5363	AZD-5363	AKT3	True		n.i.
+AZD5363	AZD-5363	CLK2	True		n.i.
+AZD5363	AZD-5363	CLK4	True	513.0	kd
+AZD5363	AZD-5363	GRK2	False	4859.0	kd
+AZD5363	AZD-5363	JAK2	True		n.d.
+AZD5363	AZD-5363	JAK3	True		not_in_kinobeads
+AZD5363	AZD-5363	LATS1	False	14103.0	kd
+AZD5363	AZD-5363	LATS2	True		not_in_kinobeads
+AZD5363	AZD-5363	LIMK1	True	357.0	kd
+AZD5363	AZD-5363	LIMK2	True	477.0	kd
+AZD5363	AZD-5363	MAP2K2	True		n.i.
+AZD5363	AZD-5363	MAP2K3	True		n.i.
+AZD5363	AZD-5363	MAP3K10	True		not_in_kinobeads
+AZD5363	AZD-5363	MAP3K11	False	1999.0	kd
+AZD5363	AZD-5363	MAP3K19	True		not_in_kinobeads
+AZD5363	AZD-5363	MAP4K3	False	1900.0	kd
+AZD5363	AZD-5363	MAPK12	True		not_in_kinobeads
+AZD5363	AZD-5363	PIK3C2G	True		not_in_kinobeads
+AZD5363	AZD-5363	PIK3CD	True		not_in_kinobeads
+AZD5363	AZD-5363	PKN1	False	1577.0	kd
+AZD5363	AZD-5363	PRKAA1	False	1821.0	kd
+AZD5363	AZD-5363	PRKAB1	False	2053.0	kd
+AZD5363	AZD-5363	PRKAB2	False	912.0	kd
+AZD5363	AZD-5363	PRKACA	True	387.0	kd
+AZD5363	AZD-5363	PRKACB	True	239.0	kd
+AZD5363	AZD-5363	PRKAG1	False	2445.0	kd
+AZD5363	AZD-5363	PRKAG2	False	2711.0	kd
+AZD5363	AZD-5363	PRKCA	False	1733.0	kd
+AZD5363	AZD-5363	PRKCB	False	2431.0	kd
+AZD5363	AZD-5363	PRKCD	False	2809.0	kd
+AZD5363	AZD-5363	PRKCQ	False	4246.0	kd
+AZD5363	AZD-5363	PRKD2	False	2246.0	kd
+AZD5363	AZD-5363	PRKD3	False	2207.0	kd
+AZD5363	AZD-5363	PRKG1	True	297.0	kd
+AZD5363	AZD-5363	PRKG2	True		not_in_kinobeads
+AZD5363	AZD-5363	PRKX	True	879.0	kd
+AZD5363	AZD-5363	PRKY	True		not_in_kinobeads
+AZD5363	AZD-5363	RET	False	1107.0	kd
+AZD5363	AZD-5363	ROCK1	True	706.0	kd
+AZD5363	AZD-5363	ROCK2	True	324.0	kd
+AZD5363	AZD-5363	RPS6KB1	True		n.i.
+AZD5438	AZD-5438	AAK1	True	228.0	kd
+AZD5438	AZD-5438	BMP2K	True	826.0	kd
+AZD5438	AZD-5438	BMPR1B	True		n.i.
+AZD5438	AZD-5438	BUB1	True		n.i.
+AZD5438	AZD-5438	C2CD5	False	274.0	kd
+AZD5438	AZD-5438	CCNT1	False	0.6	kd
+AZD5438	AZD-5438	CDK1	True		(1992)
+AZD5438	AZD-5438	CDK16	True		n.i.
+AZD5438	AZD-5438	CDK2	True	721.0	kd
+AZD5438	AZD-5438	CDK3	True		n.i.
+AZD5438	AZD-5438	CDK4	True		n.i.
+AZD5438	AZD-5438	CDK5	True	627.0	kd
+AZD5438	AZD-5438	CDK7	True	2332.0	kd
+AZD5438	AZD-5438	CDK9	True	320.0	kd
+AZD5438	AZD-5438	CILK1	True		n.i.
+AZD5438	AZD-5438	CSNK1A1	False	3238.0	kd
+AZD5438	AZD-5438	CSNK1D	True	1169.0	kd
+AZD5438	AZD-5438	CSNK1E	True		n.i.
+AZD5438	AZD-5438	CSNK2A1	False	1527.0	kd
+AZD5438	AZD-5438	CSNK2A2	True	1882.0	kd
+AZD5438	AZD-5438	CSNK2B	False	2345.0	kd
+AZD5438	AZD-5438	EIF3J	False	1179.0	kd
+AZD5438	AZD-5438	FIBP	False	645.0	kd
+AZD5438	AZD-5438	GSK3A	True	55.0	kd
+AZD5438	AZD-5438	GSK3B	True	62.0	kd
+AZD5438	AZD-5438	IRAK3	True	771.0	kd
+AZD5438	AZD-5438	JAK2	True		n.d.
+AZD5438	AZD-5438	JAK3	True		not_in_kinobeads
+AZD5438	AZD-5438	LRRK2	True		not_in_kinobeads
+AZD5438	AZD-5438	MAP2K3	True		n.i.
+AZD5438	AZD-5438	MAP2K4	True		n.d.
+AZD5438	AZD-5438	MAP3K14	True		not_in_kinobeads
+AZD5438	AZD-5438	MAP3K19	True		not_in_kinobeads
+AZD5438	AZD-5438	MAP3K7	True		not_in_kinobeads
+AZD5438	AZD-5438	MAPK10	True		n.i.
+AZD5438	AZD-5438	MAPK15	True		n.i.
+AZD5438	AZD-5438	MAPK8	True	1676.0	kd
+AZD5438	AZD-5438	MAPK9	True	1898.0	kd
+AZD5438	AZD-5438	NEK10	True		not_in_kinobeads
+AZD5438	AZD-5438	PIK3C3	True		not_in_kinobeads
+AZD5438	AZD-5438	PIK3CG	True		not_in_kinobeads
+AZD5438	AZD-5438	PIP4K2C	True		n.i.
+AZD5438	AZD-5438	PIP5K1A	True		not_in_kinobeads
+AZD5438	AZD-5438	PIP5K1C	True		not_in_kinobeads
+AZD5438	AZD-5438	PRKD2	False	2314.0	kd
+AZD5438	AZD-5438	RIOK1	True		not_in_kinobeads
+AZD5438	AZD-5438	RIOK2	True		not_in_kinobeads
+AZD5438	AZD-5438	RIOK3	True		not_in_kinobeads
+AZD5438	AZD-5438	STK16	True		n.i.
+AZD5438	AZD-5438	STK17A	True		not_in_kinobeads
+AZD5438	AZD-5438	TGFBR2	True		n.i.
+AZD6244	Selumetinib	AAK1	False	1279.0	kd
+AZD6244	Selumetinib	AP2A1	False	1107.0	kd
+AZD6244	Selumetinib	BMP2K	False	1624.0	kd
+AZD6244	Selumetinib	MAP2K1	True	41.0	kd
+AZD6244	Selumetinib	MAP2K2	True	52.0	kd
+AZD6244	Selumetinib	Q6ZSR9	True	807.0	kd
+AZD6432		PIK3CB	True		drug_not_profiled
+AZD6738		ATR	True		drug_not_profiled
+AZD8055	AZD-8055	EIF2AK2	True		not_in_kinobeads
+AZD8055	AZD-8055	FECH	False	6896.0	kd
+AZD8055	AZD-8055	GRK4	True		not_in_kinobeads
+AZD8055	AZD-8055	LATS2	True		not_in_kinobeads
+AZD8055	AZD-8055	MAPK10	True		n.i.
+AZD8055	AZD-8055	MAPK12	True		not_in_kinobeads
+AZD8055	AZD-8055	MAPKAPK2	True		n.i.
+AZD8055	AZD-8055	MKNK2	True		not_in_kinobeads
+AZD8055	AZD-8055	MTOR	True		not_in_kinobeads
+AZD8055	AZD-8055	NEK2	True		n.i.
+AZD8055	AZD-8055	PDGFRA	True		not_in_kinobeads
+AZD8055	AZD-8055	PIK3CA	True		not_in_kinobeads
+AZD8055	AZD-8055	PIK3CD	True		not_in_kinobeads
+AZD8055	AZD-8055	SRPK3	True		not_in_kinobeads
+AZD8055	AZD-8055	TTK	True		n.i.
+BX912		PDPK1	True		drug_not_profiled
+Bosutinib	Bosutinib	ABL1	True	19.0	kd
+Bosutinib	Bosutinib	ABL2	True	20.0	kd
+Bosutinib	Bosutinib	BCR	False	3.0	kd
+Bosutinib	Bosutinib	BMP2K	True	870.0	kd
+Bosutinib	Bosutinib	BTK	True	25.0	kd
+Bosutinib	Bosutinib	CSK	True	195.0	kd
+Bosutinib	Bosutinib	EPHA2	True	118.0	kd
+Bosutinib	Bosutinib	EPHA4	True	59.0	kd
+Bosutinib	Bosutinib	EPHB2	True	259.0	kd
+Bosutinib	Bosutinib	EPHB3	False	1529.0	kd
+Bosutinib	Bosutinib	EPHB4	True	99.0	kd
+Bosutinib	Bosutinib	FANCI	False	96.0	kd
+Bosutinib	Bosutinib	FER	True	767.0	kd
+Bosutinib	Bosutinib	FRK	True	27.0	kd
+Bosutinib	Bosutinib	FYN	True	179.0	kd
+Bosutinib	Bosutinib	GAK	True	42.0	kd
+Bosutinib	Bosutinib	HCK	True	136.0	kd
+Bosutinib	Bosutinib	IKBKE	True	838.0	kd
+Bosutinib	Bosutinib	LCK	True	35.0	kd
+Bosutinib	Bosutinib	LYN	True	63.0	kd
+Bosutinib	Bosutinib	MAP2K1	False	3668.0	kd
+Bosutinib	Bosutinib	MAP2K2	False	1223.0	kd
+Bosutinib	Bosutinib	MAP2K5	False	1669.0	kd
+Bosutinib	Bosutinib	MAP3K1	True	107.0	kd
+Bosutinib	Bosutinib	MAP3K2	True	650.0	kd
+Bosutinib	Bosutinib	MAP3K20	False	1213.0	kd
+Bosutinib	Bosutinib	MAP3K3	False	1311.0	kd
+Bosutinib	Bosutinib	MAP3K4	False	1636.0	kd
+Bosutinib	Bosutinib	MAP4K1	True	820.0	kd
+Bosutinib	Bosutinib	MAP4K2	True	77.0	kd
+Bosutinib	Bosutinib	MAP4K3	True	58.0	kd
+Bosutinib	Bosutinib	MAP4K5	True	16.0	kd
+Bosutinib	Bosutinib	PAG1	False	118.0	kd
+Bosutinib	Bosutinib	PKMYT1	True	876.0	kd
+Bosutinib	Bosutinib	Q6ZSR9	False	1357.0	kd
+Bosutinib	Bosutinib	SIK2	True	206.0	kd
+Bosutinib	Bosutinib	SLK	True	873.0	kd
+Bosutinib	Bosutinib	SRC	True	168.0	kd
+Bosutinib	Bosutinib	STK10	True	877.0	kd
+Bosutinib	Bosutinib	TANK	False	1227.0	kd
+Bosutinib	Bosutinib	TBK1	False	1022.0	kd
+Bosutinib	Bosutinib	TBKBP1	False	2176.0	kd
+Bosutinib	Bosutinib	TNK2	True	138.0	kd
+Bosutinib	Bosutinib	WEE1	False	2026.0	kd
+Bosutinib	Bosutinib	YES1	True	172.0	kd
+CAL101	Idelalisib	PIK3CD	True		not_in_kinobeads
+CHIR99021		GSK3A	True		drug_not_profiled
+CHIR99021		GSK3B	True		drug_not_profiled
+CX4945	Silmitasertib	BMPR2	True	1056.0	kd
+CX4945	Silmitasertib	CCNB1	False	174.0	kd
+CX4945	Silmitasertib	CCNB2	False	2630.0	kd
+CX4945	Silmitasertib	CCNH	False	27893.0	kd
+CX4945	Silmitasertib	CCNI	False	141.0	kd
+CX4945	Silmitasertib	CDK1	False	3049.0	kd
+CX4945	Silmitasertib	CDK16	False	1213.0	kd
+CX4945	Silmitasertib	CDK2	False	1688.0	kd
+CX4945	Silmitasertib	CDK5	False	514.0	kd
+CX4945	Silmitasertib	CDK7	True	7124.0	kd
+CX4945	Silmitasertib	CHEK1	False	6167.0	kd
+CX4945	Silmitasertib	CILK1	True	884.0	kd
+CX4945	Silmitasertib	CLK1	True	14.0	kd
+CX4945	Silmitasertib	CLK2	True		n.d.
+CX4945	Silmitasertib	CLK3	True	10.0	kd
+CX4945	Silmitasertib	CLK4	True		n.i.
+CX4945	Silmitasertib	CSNK2A1	True	0.3	kd
+CX4945	Silmitasertib	CSNK2A2	True	1.0	kd
+CX4945	Silmitasertib	CSNK2B	False	0.2	kd
+CX4945	Silmitasertib	DAPK1	True		not_in_kinobeads
+CX4945	Silmitasertib	DAPK2	True		not_in_kinobeads
+CX4945	Silmitasertib	DAPK3	True		not_in_kinobeads
+CX4945	Silmitasertib	DCAF7	False	31.0	kd
+CX4945	Silmitasertib	DYRK1A	True	33.0	kd
+CX4945	Silmitasertib	DYRK1B	True		n.d.
+CX4945	Silmitasertib	DYRK2	True		not_in_kinobeads
+CX4945	Silmitasertib	EIF2AK1	False	1661.0	kd
+CX4945	Silmitasertib	EIF2AK4	True		not_in_kinobeads
+CX4945	Silmitasertib	EIF3J	False	0.7	kd
+CX4945	Silmitasertib	GAK	False	5155.0	kd
+CX4945	Silmitasertib	GRK1	True		not_in_kinobeads
+CX4945	Silmitasertib	GRK7	True		not_in_kinobeads
+CX4945	Silmitasertib	GSK3A	False	17301.0	kd
+CX4945	Silmitasertib	GSK3B	False	4850.0	kd
+CX4945	Silmitasertib	HIPK1	True		not_in_kinobeads
+CX4945	Silmitasertib	HIPK2	True		not_in_kinobeads
+CX4945	Silmitasertib	HIPK3	True		not_in_kinobeads
+CX4945	Silmitasertib	HIPK4	True		not_in_kinobeads
+CX4945	Silmitasertib	LAGE3	False	1022.0	kd
+CX4945	Silmitasertib	MAP2K5	True		n.i.
+CX4945	Silmitasertib	MAP3K11	False	2965.0	kd
+CX4945	Silmitasertib	MAP3K15	True		not_in_kinobeads
+CX4945	Silmitasertib	MAP3K19	True		not_in_kinobeads
+CX4945	Silmitasertib	MAPK15	True		n.i.
+CX4945	Silmitasertib	MAPKAPK2	False	5298.0	kd
+CX4945	Silmitasertib	MAPKAPK3	False	26.0	kd
+CX4945	Silmitasertib	MARK2	False	3184.0	kd
+CX4945	Silmitasertib	MAST1	True		not_in_kinobeads
+CX4945	Silmitasertib	NEK10	True		not_in_kinobeads
+CX4945	Silmitasertib	OSBPL3	False	2757.0	kd
+CX4945	Silmitasertib	OSGEP	False	1929.0	kd
+CX4945	Silmitasertib	PHKG2	True	3504.0	kd
+CX4945	Silmitasertib	PI4KB	True		not_in_kinobeads
+CX4945	Silmitasertib	PIKFYVE	True		not_in_kinobeads
+CX4945	Silmitasertib	PIM1	True	1237.0	kd
+CX4945	Silmitasertib	PIM3	True		not_in_kinobeads
+CX4945	Silmitasertib	PIP4K2C	False	1112.0	kd
+CX4945	Silmitasertib	PKN1	False	20414.0	kd
+CX4945	Silmitasertib	PLK1	False	672.0	kd
+CX4945	Silmitasertib	PRKAA1	False	15389.0	kd
+CX4945	Silmitasertib	PRKAB1	False	3117.0	kd
+CX4945	Silmitasertib	PRKAB2	False	3295.0	kd
+CX4945	Silmitasertib	PRKAG1	False	1606.0	kd
+CX4945	Silmitasertib	PRKAG2	False	344.0	kd
+CX4945	Silmitasertib	RIPK3	False	2177.0	kd
+CX4945	Silmitasertib	RPS6KA1	True	5920.0	kd
+CX4945	Silmitasertib	RPS6KA6	False	3424.0	kd
+CX4945	Silmitasertib	SLK	False	220.0	kd
+CX4945	Silmitasertib	STK10	False	96.0	kd
+CX4945	Silmitasertib	STK17A	True		not_in_kinobeads
+CX4945	Silmitasertib	STK17B	True		not_in_kinobeads
+CX4945	Silmitasertib	STK38	True		n.d.
+CX4945	Silmitasertib	TAOK1	True	2080.0	kd
+CX4945	Silmitasertib	TBK1	True		n.i.
+CX4945	Silmitasertib	TP53RK	False	1241.0	kd
+CX4945	Silmitasertib	TYK2	True	2382.0	kd
+CX4945	Silmitasertib	ULK1	False	3663.0	kd
+CX4945	Silmitasertib	ULK2	True		not_in_kinobeads
+DNA_PK_IV		PRKDC	True		drug_not_profiled
+Dabrafenib	Dabrafenib	ABL1	False	1545.0	kd
+Dabrafenib	Dabrafenib	ABL2	True	305.0	kd
+Dabrafenib	Dabrafenib	ACVR1B	True	601.0	kd
+Dabrafenib	Dabrafenib	ARAF	True	47.0	kd
+Dabrafenib	Dabrafenib	BRAF	True	22.0	kd
+Dabrafenib	Dabrafenib	CAMK4	False	2274.0	kd
+Dabrafenib	Dabrafenib	CCNB2	False	854.0	kd
+Dabrafenib	Dabrafenib	CDK1	True	364.0	kd
+Dabrafenib	Dabrafenib	CDK16	True	13.0	kd
+Dabrafenib	Dabrafenib	CDK17	True	36.0	kd
+Dabrafenib	Dabrafenib	CDK2	True	19.0	kd
+Dabrafenib	Dabrafenib	CDK4	True	126.0	kd
+Dabrafenib	Dabrafenib	CDK5	False	1068.0	kd
+Dabrafenib	Dabrafenib	CDK6	True	318.0	kd
+Dabrafenib	Dabrafenib	CSK	True	851.0	kd
+Dabrafenib	Dabrafenib	DYNLL1	False	51.0	kd
+Dabrafenib	Dabrafenib	DYNLL2	False	112.0	kd
+Dabrafenib	Dabrafenib	EIF2AK1	True	949.0	kd
+Dabrafenib	Dabrafenib	EPHB6	True	412.0	kd
+Dabrafenib	Dabrafenib	ERN1	False	1453.0	kd
+Dabrafenib	Dabrafenib	FGR	False	1549.0	kd
+Dabrafenib	Dabrafenib	FRK	True	727.0	kd
+Dabrafenib	Dabrafenib	FYN	True	817.0	kd
+Dabrafenib	Dabrafenib	IRAK1	False	1564.0	kd
+Dabrafenib	Dabrafenib	JAK2	False	3223.0	kd
+Dabrafenib	Dabrafenib	LCK	True	783.0	kd
+Dabrafenib	Dabrafenib	LIMK1	True	33.0	kd
+Dabrafenib	Dabrafenib	LIMK2	True	82.0	kd
+Dabrafenib	Dabrafenib	LYN	False	1353.0	kd
+Dabrafenib	Dabrafenib	MAP2K5	False	2294.0	kd
+Dabrafenib	Dabrafenib	MAP3K11	False	1011.0	kd
+Dabrafenib	Dabrafenib	MAP3K20	True	184.0	kd
+Dabrafenib	Dabrafenib	MELK	False	1816.0	kd
+Dabrafenib	Dabrafenib	NEK1	True	477.0	kd
+Dabrafenib	Dabrafenib	NEK9	True	53.0	kd
+Dabrafenib	Dabrafenib	PLK4	True	520.0	kd
+Dabrafenib	Dabrafenib	PRKD2	True	34.0	kd
+Dabrafenib	Dabrafenib	PRKD3	True	120.0	kd
+Dabrafenib	Dabrafenib	PTK6	False	1414.0	kd
+Dabrafenib	Dabrafenib	RAF1	True		not_in_kinobeads
+Dabrafenib	Dabrafenib	RIPK2	True	106.0	kd
+Dabrafenib	Dabrafenib	RIPK3	True	283.0	kd
+Dabrafenib	Dabrafenib	SIK2	True	649.0	kd
+Dabrafenib	Dabrafenib	SIK3	False	2005.0	kd
+Dabrafenib	Dabrafenib	TGFBR1	False	2384.0	kd
+Dabrafenib	Dabrafenib	TGFBR2	False	2534.0	kd
+Dabrafenib	Dabrafenib	TNK1	True	66.0	kd
+Dabrafenib	Dabrafenib	UBASH3B	False	653.0	kd
+Dabrafenib	Dabrafenib	ULK1	True	188.0	kd
+Dasatinib	Dasatinib	ABL1	True	5.0	kd
+Dasatinib	Dasatinib	ABL2	True	4.0	kd
+Dasatinib	Dasatinib	ACVR1B	False	1159.0	kd
+Dasatinib	Dasatinib	ACVR2B	False	2485.0	kd
+Dasatinib	Dasatinib	BCR	False	5.0	kd
+Dasatinib	Dasatinib	BCR/ABL	True		not_in_kinobeads
+Dasatinib	Dasatinib	BRAF	False	3231.0	kd
+Dasatinib	Dasatinib	BTK	True	5.0	kd
+Dasatinib	Dasatinib	CSK	True	22.0	kd
+Dasatinib	Dasatinib	CSNK1E	False	2496.0	kd
+Dasatinib	Dasatinib	DDR1	True	43.0	kd
+Dasatinib	Dasatinib	DDR2	True	70.0	kd
+Dasatinib	Dasatinib	EGFR	False	1881.0	kd
+Dasatinib	Dasatinib	EPHA1	True	15.0	kd
+Dasatinib	Dasatinib	EPHA2	True	6.0	kd
+Dasatinib	Dasatinib	EPHA4	True	7.0	kd
+Dasatinib	Dasatinib	EPHA5	True	4.0	kd
+Dasatinib	Dasatinib	EPHB2	True	4.0	kd
+Dasatinib	Dasatinib	EPHB3	True	29.0	kd
+Dasatinib	Dasatinib	EPHB4	True	4.0	kd
+Dasatinib	Dasatinib	EPHB6	True	34.0	kd
+Dasatinib	Dasatinib	FGR	True	5.0	kd
+Dasatinib	Dasatinib	FRK	True	5.0	kd
+Dasatinib	Dasatinib	FYN	True	4.0	kd
+Dasatinib	Dasatinib	GAK	True	160.0	kd
+Dasatinib	Dasatinib	HCK	True	29.0	kd
+Dasatinib	Dasatinib	KIT	True	60.0	kd
+Dasatinib	Dasatinib	LCK	True	7.0	kd
+Dasatinib	Dasatinib	LIMK1	False	1133.0	kd
+Dasatinib	Dasatinib	LIMK2	True	965.0	kd
+Dasatinib	Dasatinib	LYN	True	8.0	kd
+Dasatinib	Dasatinib	MAP2K2	False	3370.0	kd
+Dasatinib	Dasatinib	MAP2K5	False	1432.0	kd
+Dasatinib	Dasatinib	MAP3K1	False	1263.0	kd
+Dasatinib	Dasatinib	MAP3K2	False	2100.0	kd
+Dasatinib	Dasatinib	MAP3K20	True	217.0	kd
+Dasatinib	Dasatinib	MAP4K1	False	2122.0	kd
+Dasatinib	Dasatinib	MAP4K2	False	1729.0	kd
+Dasatinib	Dasatinib	MAP4K3	False	2119.0	kd
+Dasatinib	Dasatinib	MAP4K4	False	3871.0	kd
+Dasatinib	Dasatinib	MAP4K5	True	955.0	kd
+Dasatinib	Dasatinib	MAPK14	True	945.0	kd
+Dasatinib	Dasatinib	MAPKAPK2	True	538.0	kd
+Dasatinib	Dasatinib	MYLK	True	72.0	kd
+Dasatinib	Dasatinib	NLK	True	258.0	kd
+Dasatinib	Dasatinib	PAG1	False	4.0	kd
+Dasatinib	Dasatinib	PDGFRB	True	292.0	kd
+Dasatinib	Dasatinib	PKMYT1	False	1227.0	kd
+Dasatinib	Dasatinib	PKN1	True	359.0	kd
+Dasatinib	Dasatinib	PRKACB	False	1215.0	kd
+Dasatinib	Dasatinib	PRKCQ	True	711.0	kd
+Dasatinib	Dasatinib	PTK6	True	59.0	kd
+Dasatinib	Dasatinib	RET	True	955.0	kd
+Dasatinib	Dasatinib	RIPK2	True	20.0	kd
+Dasatinib	Dasatinib	SIK2	True	25.0	kd
+Dasatinib	Dasatinib	SIK3	True	147.0	kd
+Dasatinib	Dasatinib	SLK	False	2189.0	kd
+Dasatinib	Dasatinib	SRC	True	3.0	kd
+Dasatinib	Dasatinib	STK10	False	2828.0	kd
+Dasatinib	Dasatinib	SYK	False	2455.0	kd
+Dasatinib	Dasatinib	TEC	True	43.0	kd
+Dasatinib	Dasatinib	TESK1	True	65.0	kd
+Dasatinib	Dasatinib	TGFBR1	False	1723.0	kd
+Dasatinib	Dasatinib	TGFBR2	False	3121.0	kd
+Dasatinib	Dasatinib	TNK1	True	678.0	kd
+Dasatinib	Dasatinib	TNK2	True	27.0	kd
+Dasatinib	Dasatinib	TYK2	False	1401.0	kd
+Dasatinib	Dasatinib	YES1	True	4.0	kd
+FRAX486		PAK1	True		drug_not_profiled
+FRAX486		PAK2	True		drug_not_profiled
+FRAX486		PAK3	True		drug_not_profiled
+GDC0068		AKT1	True		drug_not_profiled
+GDC0068		AKT2	True		drug_not_profiled
+GDC0068		AKT3	True		drug_not_profiled
+GDC0941	Pictilisib	CSNK2A1	False	4181.0	kd
+GDC0941	Pictilisib	CSNK2A2	False	3422.0	kd
+GDC0941	Pictilisib	CSNK2B	False	3546.0	kd
+GDC0941	Pictilisib	EIF3J	False	4358.0	kd
+GDC0941	Pictilisib	MTOR	True		not_in_kinobeads
+GDC0941	Pictilisib	NQO2	False	1028.0	kd
+GDC0941	Pictilisib	PIK3C2G	True		not_in_kinobeads
+GDC0941	Pictilisib	PIK3CA	True		not_in_kinobeads
+GDC0941	Pictilisib	PIK3CB	True		not_in_kinobeads
+GDC0941	Pictilisib	PIK3CD	True		not_in_kinobeads
+GDC0941	Pictilisib	PIK3CG	True		not_in_kinobeads
+GDC0941	Pictilisib	PIKFYVE	True		not_in_kinobeads
+GDC0994	GDC-0994	AAK1	True	401.0	kd
+GDC0994	GDC-0994	ACVR1	False	5859.0	kd
+GDC0994	GDC-0994	BMP2K	False	2985.0	kd
+GDC0994	GDC-0994	C2CD5	False	48154.0	kd
+GDC0994	GDC-0994	CABLES1	False	1761.0	kd
+GDC0994	GDC-0994	CAMK1G	True	117.0	kd
+GDC0994	GDC-0994	CDK13	False	5744.0	kd
+GDC0994	GDC-0994	FIBP	False	888.0	kd
+GDC0994	GDC-0994	GAK	False	27114.0	kd
+GDC0994	GDC-0994	GRK2	False	17728.0	kd
+GDC0994	GDC-0994	GSK3A	False	2186.0	kd
+GDC0994	GDC-0994	GSK3B	True	599.0	kd
+GDC0994	GDC-0994	HIPK4	True		not_in_kinobeads
+GDC0994	GDC-0994	MAP2K3	True		n.i.
+GDC0994	GDC-0994	MAP2K4	True		n.d.
+GDC0994	GDC-0994	MAP3K19	True		not_in_kinobeads
+GDC0994	GDC-0994	MAPK1	True	22.0	kd
+GDC0994	GDC-0994	MAPK15	True		n.i.
+GDC0994	GDC-0994	MAPK3	True	19.0	kd
+GDC0994	GDC-0994	MAPK8	True		n.i.
+GDC0994	GDC-0994	MET	True	378.0	kd
+GDC0994	GDC-0994	PDGFRB	False	3988.0	kd
+GDC0994	GDC-0994	Q6ZSR9	True	466.0	kd
+GDC0994	GDC-0994	SIK3	True		n.i.
+GDC0994	GDC-0994	SRPK2	True		not_in_kinobeads
+GDC0994	GDC-0994	TAOK1	True	230.0	kd
+GF109203X		CILK1	True		drug_not_profiled
+GF109203X		CLK1	True		drug_not_profiled
+GF109203X		CLK2	True		drug_not_profiled
+GF109203X		CLK4	True		drug_not_profiled
+GF109203X		DMPK	True		drug_not_profiled
+GF109203X		DYRK1A	True		drug_not_profiled
+GF109203X		FGFR1	True		drug_not_profiled
+GF109203X		FLT3	True		drug_not_profiled
+GF109203X		GRK7	True		drug_not_profiled
+GF109203X		GSK3A	True		drug_not_profiled
+GF109203X		GSK3B	True		drug_not_profiled
+GF109203X		HIPK2	True		drug_not_profiled
+GF109203X		JAK3	True		drug_not_profiled
+GF109203X		MAP3K2	True		drug_not_profiled
+GF109203X		MAPK12	True		drug_not_profiled
+GF109203X		MAPK15	True		drug_not_profiled
+GF109203X		PAK2	True		drug_not_profiled
+GF109203X		PDGFRA	True		drug_not_profiled
+GF109203X		PIM1	True		drug_not_profiled
+GF109203X		PIM3	True		drug_not_profiled
+GF109203X		PRKCA	True		drug_not_profiled
+GF109203X		PRKCB	True		drug_not_profiled
+GF109203X		PRKCD	True		drug_not_profiled
+GF109203X		PRKCE	True		drug_not_profiled
+GF109203X		PRKCG	True		drug_not_profiled
+GF109203X		PRKCH	True		drug_not_profiled
+GF109203X		PRKCQ	True		drug_not_profiled
+GF109203X		PRKG2	True		drug_not_profiled
+GF109203X		RPS6KA6	True		drug_not_profiled
+GF109203X		RPS6KB1	True		drug_not_profiled
+GF109203X		SLK	True		drug_not_profiled
+GF109203X		STK10	True		drug_not_profiled
+GF109203X		STK16	True		drug_not_profiled
+GSK2334470		CLK4	True		drug_not_profiled
+GSK2334470		MAPK12	True		drug_not_profiled
+GSK2334470		PDPK1	True		drug_not_profiled
+GSK2334470		PRKCH	True		drug_not_profiled
+GSK2334470		STK17A	True		drug_not_profiled
+GSK2334470		STK17B	True		drug_not_profiled
+GSK2334470		STK4	True		drug_not_profiled
+GSK690693	GSK-690693	AKT1	True	554.0	kd
+GSK690693	GSK-690693	AKT2	True	356.0	kd
+GSK690693	GSK-690693	AKT3	True	1173.0	kd
+GSK690693	GSK-690693	CDC42BPB	False	1726.0	kd
+GSK690693	GSK-690693	CIT	True	793.0	kd
+GSK690693	GSK-690693	DCTPP1	False	573.0	kd
+GSK690693	GSK-690693	FECH	False	2701.0	kd
+GSK690693	GSK-690693	GSK3A	True	275.0	kd
+GSK690693	GSK-690693	GSK3B	True	428.0	kd
+GSK690693	GSK-690693	LATS1	True	74.0	kd
+GSK690693	GSK-690693	MARK2	True	351.0	kd
+GSK690693	GSK-690693	MARK3	True	204.0	kd
+GSK690693	GSK-690693	MOB1A	False	79.0	kd
+GSK690693	GSK-690693	NEK7	False	2126.0	kd
+GSK690693	GSK-690693	PAK4	True	49.0	kd
+GSK690693	GSK-690693	PDPK1	False	2910.0	kd
+GSK690693	GSK-690693	PKN1	True	39.0	kd
+GSK690693	GSK-690693	PKN2	True	892.0	kd
+GSK690693	GSK-690693	PRKACB	True	36.0	kd
+GSK690693	GSK-690693	PRKCA	True	566.0	kd
+GSK690693	GSK-690693	PRKCB	True	310.0	kd
+GSK690693	GSK-690693	PRKCD	True	73.0	kd
+GSK690693	GSK-690693	PRKCI	False	1982.0	kd
+GSK690693	GSK-690693	PRKCQ	True	10.0	kd
+GSK690693	GSK-690693	PRKG1	True	88.0	kd
+GSK690693	GSK-690693	ROCK1	False	2676.0	kd
+GSK690693	GSK-690693	ROCK2	True	956.0	kd
+GSK690693	GSK-690693	RPS6KA4	True	851.0	kd
+GSK690693	GSK-690693	SMC2	False	1106.0	kd
+Go6976		AAK1	True		drug_not_profiled
+Go6976		BMP2K	True		drug_not_profiled
+Go6976		DSTYK	True		drug_not_profiled
+Go6976		EPHA1	True		drug_not_profiled
+Go6976		FLT3	True		drug_not_profiled
+Go6976		HIPK2	True		drug_not_profiled
+Go6976		HIPK3	True		drug_not_profiled
+Go6976		JAK2	True		drug_not_profiled
+Go6976		JAK3	True		drug_not_profiled
+Go6976		LATS2	True		drug_not_profiled
+Go6976		MAP2K3	True		drug_not_profiled
+Go6976		MAP2K4	True		drug_not_profiled
+Go6976		MAP3K10	True		drug_not_profiled
+Go6976		MAP3K15	True		drug_not_profiled
+Go6976		MAP3K19	True		drug_not_profiled
+Go6976		MAP3K4	True		drug_not_profiled
+Go6976		MAP4K2	True		drug_not_profiled
+Go6976		MAPK12	True		drug_not_profiled
+Go6976		MAPK15	True		drug_not_profiled
+Go6976		MELK	True		drug_not_profiled
+Go6976		MINK1	True		drug_not_profiled
+Go6976		MKNK2	True		drug_not_profiled
+Go6976		MYO3B	True		drug_not_profiled
+Go6976		NTRK1	True		drug_not_profiled
+Go6976		NTRK2	True		drug_not_profiled
+Go6976		NTRK3	True		drug_not_profiled
+Go6976		PDPK1	True		drug_not_profiled
+Go6976		PIM3	True		drug_not_profiled
+Go6976		PIP5K1A	True		drug_not_profiled
+Go6976		PKN2	True		drug_not_profiled
+Go6976		PRKCA	True		drug_not_profiled
+Go6976		PRKCB	True		drug_not_profiled
+Go6976		PRKCD	True		drug_not_profiled
+Go6976		PRKCE	True		drug_not_profiled
+Go6976		PRKCG	True		drug_not_profiled
+Go6976		PRKCH	True		drug_not_profiled
+Go6976		PRKCI	True		drug_not_profiled
+Go6976		PRKCQ	True		drug_not_profiled
+Go6976		PRKCZ	True		drug_not_profiled
+Go6976		PRKD3	True		drug_not_profiled
+Go6976		RIOK1	True		drug_not_profiled
+Go6976		SRPK1	True		drug_not_profiled
+Go6976		STK26	True		drug_not_profiled
+Go6976		STK3	True		drug_not_profiled
+Go6976		STK4	True		drug_not_profiled
+Go6976		TNIK	True		drug_not_profiled
+Go6983		AKT3	True		drug_not_profiled
+Go6983		CDK7	True		drug_not_profiled
+Go6983		CLK1	True		drug_not_profiled
+Go6983		CLK2	True		drug_not_profiled
+Go6983		CLK4	True		drug_not_profiled
+Go6983		DMPK	True		drug_not_profiled
+Go6983		DYRK1A	True		drug_not_profiled
+Go6983		GSK3A	True		drug_not_profiled
+Go6983		GSK3B	True		drug_not_profiled
+Go6983		HIPK3	True		drug_not_profiled
+Go6983		MAP2K2	True		drug_not_profiled
+Go6983		MAP3K3	True		drug_not_profiled
+Go6983		PIM1	True		drug_not_profiled
+Go6983		PIM3	True		drug_not_profiled
+Go6983		PRKCA	True		drug_not_profiled
+Go6983		PRKCB	True		drug_not_profiled
+Go6983		PRKCD	True		drug_not_profiled
+Go6983		PRKCE	True		drug_not_profiled
+Go6983		PRKCG	True		drug_not_profiled
+Go6983		PRKCH	True		drug_not_profiled
+Go6983		PRKCQ	True		drug_not_profiled
+Go6983		PRKCZ	True		drug_not_profiled
+Go6983		PRKD3	True		drug_not_profiled
+Go6983		RPS6KB1	True		drug_not_profiled
+Go6983		SLK	True		drug_not_profiled
+H89_2HCl		PRKACA	True		drug_not_profiled
+HS173		PIK3C2B	True		drug_not_profiled
+HS173		PIK3C2G	True		drug_not_profiled
+HS173		PIK3C3	True		drug_not_profiled
+HS173		PIK3CA	True		drug_not_profiled
+HS173		PIK3CB	True		drug_not_profiled
+HS173		PIK3CD	True		drug_not_profiled
+HS173		PIK3CG	True		drug_not_profiled
+HS173		PLK1	True		drug_not_profiled
+JNJ38877605	JNJ-38877605	MET	True	2.0	kd
+JNJ38877605	JNJ-38877605	NQO2	False	323.0	kd
+JNJ38877605	JNJ-38877605	PIP4K2C	True	320.0	kd
+JNKIN8		CAMK2D	True		drug_not_profiled
+JNKIN8		DYRK2	True		drug_not_profiled
+JNKIN8		MAPK10	True		drug_not_profiled
+JNKIN8		MAPK8	True		drug_not_profiled
+JNKIN8		MAPK9	True		drug_not_profiled
+KD025		ROCK2	True		drug_not_profiled
+KN62		CAMK2A	True		drug_not_profiled
+KN62		CAMK2B	True		drug_not_profiled
+KN62		CAMK2D	True		drug_not_profiled
+KN62		CAMK2G	True		drug_not_profiled
+KN93		CAMK2A	True		drug_not_profiled
+KN93		CAMK2B	True		drug_not_profiled
+KN93		CAMK2D	True		drug_not_profiled
+KN93		CAMK2G	True		drug_not_profiled
+Ku0063794		MTOR	True		drug_not_profiled
+LEE011	Ribociclib	CAMK2D	True	293.0	kd
+LEE011	Ribociclib	CAMK2G	True	247.0	kd
+LEE011	Ribociclib	CCNT1	False	4410.0	kd
+LEE011	Ribociclib	CDK4	True		n.i.
+LEE011	Ribociclib	CDK6	True	497.0	kd
+LEE011	Ribociclib	CDK9	False	3708.0	kd
+LEE011	Ribociclib	DCAF7	False	1865.0	kd
+LEE011	Ribociclib	GAK	True	658.0	kd
+LEE011	Ribociclib	MAP3K1	False	12473.0	kd
+LEE011	Ribociclib	PRKD2	False	25019.0	kd
+LEE011	Ribociclib	Q6ZSR9	False	9311.0	kd
+LEE011	Ribociclib	SIK2	False	2492.0	kd
+LY2090314		AAK1	True		drug_not_profiled
+LY2090314		BMP2K	True		drug_not_profiled
+LY2090314		CDK14	True		drug_not_profiled
+LY2090314		CDK16	True		drug_not_profiled
+LY2090314		EPHA8	True		drug_not_profiled
+LY2090314		EPHB3	True		drug_not_profiled
+LY2090314		GSK3A	True		drug_not_profiled
+LY2090314		GSK3B	True		drug_not_profiled
+LY2090314		MAPK15	True		drug_not_profiled
+LY2090314		PIP4K2B	True		drug_not_profiled
+LY2090314		PIP5K1A	True		drug_not_profiled
+LY2090314		RIOK1	True		drug_not_profiled
+LY2090314		RIOK3	True		drug_not_profiled
+LY2090314		SRPK1	True		drug_not_profiled
+LY2090314		SRPK3	True		drug_not_profiled
+LY2584702	LY-2584702	CDK19	True		not_in_kinobeads
+LY2584702	LY-2584702	FGFR1	True		n.i.
+LY2584702	LY-2584702	MAP2K4	True		n.d.
+LY2584702	LY-2584702	MAP3K19	True		not_in_kinobeads
+LY2584702	LY-2584702	PRKCD	True		n.i.
+LY2584702	LY-2584702	RPS6KB1	True	15.0	kd
+LY2835219	Abemaciclib	AAK1	True	102.0	kd
+LY2835219	Abemaciclib	ADCK1	True	40.0	kd
+LY2835219	Abemaciclib	BMP2K	False	56032.0	kd
+LY2835219	Abemaciclib	CAMK1	True		not_in_kinobeads
+LY2835219	Abemaciclib	CAMK2A	True		not_in_kinobeads
+LY2835219	Abemaciclib	CAMK2B	True		not_in_kinobeads
+LY2835219	Abemaciclib	CAMK2D	True	19.0	kd
+LY2835219	Abemaciclib	CAMK2G	True	18.0	kd
+LY2835219	Abemaciclib	CAMKK1	True		not_in_kinobeads
+LY2835219	Abemaciclib	CAMKK2	True	2598.0	kd
+LY2835219	Abemaciclib	CCNA2	False	585.0	kd
+LY2835219	Abemaciclib	CCNB1	False	1270.0	kd
+LY2835219	Abemaciclib	CCNT1	False	236.0	kd
+LY2835219	Abemaciclib	CCNT2	False	132.0	kd
+LY2835219	Abemaciclib	CDK16	True	50.0	kd
+LY2835219	Abemaciclib	CDK17	True		n.i.
+LY2835219	Abemaciclib	CDK2	False	10487.0	kd
+LY2835219	Abemaciclib	CDK4	True	97.0	kd
+LY2835219	Abemaciclib	CDK6	True	59.0	kd
+LY2835219	Abemaciclib	CDK7	True		n.i.
+LY2835219	Abemaciclib	CDK9	True	174.0	kd
+LY2835219	Abemaciclib	CDKL2	True		not_in_kinobeads
+LY2835219	Abemaciclib	CDKL3	True		not_in_kinobeads
+LY2835219	Abemaciclib	CDKL5	True		n.i.
+LY2835219	Abemaciclib	CILK1	True	53.0	kd
+LY2835219	Abemaciclib	CIT	True	798.0	kd
+LY2835219	Abemaciclib	CLK1	True	7.0	kd
+LY2835219	Abemaciclib	CLK2	True		n.d.
+LY2835219	Abemaciclib	CLK4	True		(13)
+LY2835219	Abemaciclib	CSNK2A1	True	4.0	kd
+LY2835219	Abemaciclib	CSNK2A2	True	19.0	kd
+LY2835219	Abemaciclib	CSNK2A3	True		not_in_kinobeads
+LY2835219	Abemaciclib	CSNK2B	False	44.0	kd
+LY2835219	Abemaciclib	DAPK2	True		not_in_kinobeads
+LY2835219	Abemaciclib	DAPK3	True		not_in_kinobeads
+LY2835219	Abemaciclib	DCAF7	False	39.0	kd
+LY2835219	Abemaciclib	DCLK3	True		not_in_kinobeads
+LY2835219	Abemaciclib	DMPK	True		not_in_kinobeads
+LY2835219	Abemaciclib	DYRK1A	True	204.0	kd
+LY2835219	Abemaciclib	DYRK1B	True		n.d.
+LY2835219	Abemaciclib	DYRK2	True		not_in_kinobeads
+LY2835219	Abemaciclib	EIF2AK1	False	4836.0	kd
+LY2835219	Abemaciclib	EIF2AK4	True		not_in_kinobeads
+LY2835219	Abemaciclib	EIF3J	False	86.0	kd
+LY2835219	Abemaciclib	EIF4G1	False	1304.0	kd
+LY2835219	Abemaciclib	ERN1	True		n.i.
+LY2835219	Abemaciclib	GAK	False	2194.0	kd
+LY2835219	Abemaciclib	GSK3A	True	13.0	kd
+LY2835219	Abemaciclib	GSK3B	True	13.0	kd
+LY2835219	Abemaciclib	HASPIN	True		not_in_kinobeads
+LY2835219	Abemaciclib	HIPK1	True		not_in_kinobeads
+LY2835219	Abemaciclib	HIPK2	True		not_in_kinobeads
+LY2835219	Abemaciclib	HIPK3	True		not_in_kinobeads
+LY2835219	Abemaciclib	IRAK1	True	126.0	kd
+LY2835219	Abemaciclib	JAK3	True		not_in_kinobeads
+LY2835219	Abemaciclib	MAP2K3	True		n.i.
+LY2835219	Abemaciclib	MAP2K4	True		n.d.
+LY2835219	Abemaciclib	MAP3K15	True		not_in_kinobeads
+LY2835219	Abemaciclib	MAP3K19	True		not_in_kinobeads
+LY2835219	Abemaciclib	MAP3K7	True		not_in_kinobeads
+LY2835219	Abemaciclib	MAP4K4	False	1322.0	kd
+LY2835219	Abemaciclib	MAPK10	True		n.d.
+LY2835219	Abemaciclib	MAPK12	True		not_in_kinobeads
+LY2835219	Abemaciclib	MAPK15	True		n.i.
+LY2835219	Abemaciclib	MAPK8	True	3756.0	kd
+LY2835219	Abemaciclib	MAPK9	True		n.i.
+LY2835219	Abemaciclib	MAST1	True		not_in_kinobeads
+LY2835219	Abemaciclib	MATK	True		not_in_kinobeads
+LY2835219	Abemaciclib	MET	True		n.i.
+LY2835219	Abemaciclib	MINK1	True		n.d.
+LY2835219	Abemaciclib	NEK10	True		not_in_kinobeads
+LY2835219	Abemaciclib	PAK2	True		n.i.
+LY2835219	Abemaciclib	PHKG2	True		n.i.
+LY2835219	Abemaciclib	PIK3C3	True		not_in_kinobeads
+LY2835219	Abemaciclib	PIKFYVE	True		not_in_kinobeads
+LY2835219	Abemaciclib	PIM1	True	7.0	kd
+LY2835219	Abemaciclib	PIM2	True		n.d.
+LY2835219	Abemaciclib	PIM3	True		not_in_kinobeads
+LY2835219	Abemaciclib	PIP4K2C	True		n.i.
+LY2835219	Abemaciclib	PKN2	True		n.i.
+LY2835219	Abemaciclib	PRKCA	True	530.0	kd
+LY2835219	Abemaciclib	PRKCB	False	1624.0	kd
+LY2835219	Abemaciclib	PRKCD	True	795.0	kd
+LY2835219	Abemaciclib	PRKCE	True		n.i.
+LY2835219	Abemaciclib	PRKD2	False	2064.0	kd
+LY2835219	Abemaciclib	PRKD3	False	1841.0	kd
+LY2835219	Abemaciclib	Q6ZSR9	True	88.0	kd
+LY2835219	Abemaciclib	ROCK1	True		n.i.
+LY2835219	Abemaciclib	ROCK2	True		n.i.
+LY2835219	Abemaciclib	SGK1	True		not_in_kinobeads
+LY2835219	Abemaciclib	SGK2	True		not_in_kinobeads
+LY2835219	Abemaciclib	SGK3	True		not_in_kinobeads
+LY2835219	Abemaciclib	SIK3	True		n.i.
+LY2835219	Abemaciclib	STK10	False	2470.0	kd
+LY2835219	Abemaciclib	STK16	True	495.0	kd
+LY2835219	Abemaciclib	STK17A	True		not_in_kinobeads
+LY2835219	Abemaciclib	TAOK1	True	107.0	kd
+LY2835219	Abemaciclib	TAOK2	True		n.i.
+LY2835219	Abemaciclib	TAOK3	True	1721.0	kd
+LY2835219	Abemaciclib	TTK	True		n.i.
+MK2206	MK-2206	AKT1	True	11.0	kd
+MK2206	MK-2206	AKT2	True	21.0	kd
+MK2206	MK-2206	AKT3	True	213.0	kd
+MK2206	MK-2206	FECH	False	1069.0	kd
+MP470	Amuvatinib	CSNK1G3	True		n.i.
+MP470	Amuvatinib	FLT3	True		n.i.
+MP470	Amuvatinib	KIT	True		n.d.
+MP470	Amuvatinib	LATS2	True		not_in_kinobeads
+MP470	Amuvatinib	MAPK15	True		n.i.
+MP470	Amuvatinib	PDGFRA	True		not_in_kinobeads
+MP470	Amuvatinib	TRPM6	True		not_in_kinobeads
+NU7441		PRKDC	True		drug_not_profiled
+OSI906	Linsitinib	AURKB	False	1783.0	kd
+OSI906	Linsitinib	FECH	False	4213.0	kd
+OSI906	Linsitinib	FLT3	True	308.0	kd
+OSI906	Linsitinib	IGF1R	True	138.0	kd
+OSI906	Linsitinib	INCENP	False	4508.0	kd
+OSI906	Linsitinib	INSR	True	202.0	kd
+OSI906	Linsitinib	LATS1	True	195.0	kd
+OSI906	Linsitinib	MAP2K1	True	352.0	kd
+OSI906	Linsitinib	MAP2K2	False	1137.0	kd
+OSI906	Linsitinib	MAP2K5	False	6558.0	kd
+OSI906	Linsitinib	MAP4K2	True	67.0	kd
+OSI906	Linsitinib	MAP4K3	False	15435.0	kd
+OSI906	Linsitinib	MAP4K5	True	614.0	kd
+OSI906	Linsitinib	MAPK9	False	2149.0	kd
+OSI906	Linsitinib	MET	True	395.0	kd
+OSI906	Linsitinib	MOB1A	False	307.0	kd
+OSI906	Linsitinib	PIP4K2C	False	5572.0	kd
+OSI906	Linsitinib	RIPK2	False	1364.0	kd
+OSI906	Linsitinib	RIPK3	False	6054.0	kd
+PD153035		EGFR	True		drug_not_profiled
+PF3758309	PF-3758309	AAK1	False	3041.0	kd
+PF3758309	PF-3758309	ABL2	True	939.0	kd
+PF3758309	PF-3758309	AKT3	True		n.i.
+PF3758309	PF-3758309	AURKA	True	981.0	kd
+PF3758309	PF-3758309	AURKB	False	2076.0	kd
+PF3758309	PF-3758309	AXL	True		not_in_kinobeads
+PF3758309	PF-3758309	AZI2	False	338.0	kd
+PF3758309	PF-3758309	BCR	False	1282.0	kd
+PF3758309	PF-3758309	BLK	True		not_in_kinobeads
+PF3758309	PF-3758309	BMP2K	False	2539.0	kd
+PF3758309	PF-3758309	CAB39	False	50.0	kd
+PF3758309	PF-3758309	CAMK1D	True		not_in_kinobeads
+PF3758309	PF-3758309	CAMK2A	True		not_in_kinobeads
+PF3758309	PF-3758309	CAMK2D	True	343.0	kd
+PF3758309	PF-3758309	CAMK2G	True	275.0	kd
+PF3758309	PF-3758309	CAMK4	True	408.0	kd
+PF3758309	PF-3758309	CAMKK2	False	2862.0	kd
+PF3758309	PF-3758309	CCNH	False	5.0	kd
+PF3758309	PF-3758309	CDK16	False	3387.0	kd
+PF3758309	PF-3758309	CDK17	True	14.0	kd
+PF3758309	PF-3758309	CDK18	True	67.0	kd
+PF3758309	PF-3758309	CDK3	False	63614.0	kd
+PF3758309	PF-3758309	CDK7	True	3.0	kd
+PF3758309	PF-3758309	CDKL5	False	1930.0	kd
+PF3758309	PF-3758309	CHEK1	True	210.0	kd
+PF3758309	PF-3758309	CHEK2	True		not_in_kinobeads
+PF3758309	PF-3758309	CLK1	True	90.0	kd
+PF3758309	PF-3758309	CLK2	True		n.i.
+PF3758309	PF-3758309	CLK3	True		n.i.
+PF3758309	PF-3758309	CLK4	True	13.0	kd
+PF3758309	PF-3758309	DAPK1	True		not_in_kinobeads
+PF3758309	PF-3758309	DAPK2	True		not_in_kinobeads
+PF3758309	PF-3758309	DAPK3	True		not_in_kinobeads
+PF3758309	PF-3758309	DCLK1	True		not_in_kinobeads
+PF3758309	PF-3758309	DCLK2	True		not_in_kinobeads
+PF3758309	PF-3758309	DCLK3	True		not_in_kinobeads
+PF3758309	PF-3758309	ERCC2	False	2.0	kd
+PF3758309	PF-3758309	FER	True	802.0	kd
+PF3758309	PF-3758309	FGFR1	True	208.0	kd
+PF3758309	PF-3758309	FGR	True		n.d.
+PF3758309	PF-3758309	FLT3	False	1443.0	kd
+PF3758309	PF-3758309	FYN	True	1233.0	kd
+PF3758309	PF-3758309	GAK	False	1954.0	kd
+PF3758309	PF-3758309	GRK1	True		not_in_kinobeads
+PF3758309	PF-3758309	GRK2	False	22494.0	kd
+PF3758309	PF-3758309	GRK7	True		not_in_kinobeads
+PF3758309	PF-3758309	GSK3A	False	2088.0	kd
+PF3758309	PF-3758309	GSK3B	True	667.0	kd
+PF3758309	PF-3758309	HCK	True		n.i.
+PF3758309	PF-3758309	IKBKE	True	658.0	kd
+PF3758309	PF-3758309	LATS1	True	157.0	kd
+PF3758309	PF-3758309	LATS2	True		not_in_kinobeads
+PF3758309	PF-3758309	MAP2K3	True		n.i.
+PF3758309	PF-3758309	MAP3K11	False	1560.0	kd
+PF3758309	PF-3758309	MAP3K3	True		n.i.
+PF3758309	PF-3758309	MAP4K1	True	2300.0	kd
+PF3758309	PF-3758309	MAP4K3	False	2190.0	kd
+PF3758309	PF-3758309	MAPK1	False	1965.0	kd
+PF3758309	PF-3758309	MAPK12	True		not_in_kinobeads
+PF3758309	PF-3758309	MAPK15	True		n.i.
+PF3758309	PF-3758309	MAPK3	False	3868.0	kd
+PF3758309	PF-3758309	MAPK7	False	3885.0	kd
+PF3758309	PF-3758309	MARK1	True		not_in_kinobeads
+PF3758309	PF-3758309	MARK2	True	114.0	kd
+PF3758309	PF-3758309	MARK3	True	105.0	kd
+PF3758309	PF-3758309	MARK4	True	29.0	kd
+PF3758309	PF-3758309	MELK	True	57.0	kd
+PF3758309	PF-3758309	MERTK	True		n.d.
+PF3758309	PF-3758309	MNAT1	False	3.0	kd
+PF3758309	PF-3758309	MOB1A	False	1686.0	kd
+PF3758309	PF-3758309	MYLK3	True	349.0	kd
+PF3758309	PF-3758309	NTRK1	True		(2208)
+PF3758309	PF-3758309	NTRK2	True		not_in_kinobeads
+PF3758309	PF-3758309	NTRK3	True		not_in_kinobeads
+PF3758309	PF-3758309	NUAK1	True		not_in_kinobeads
+PF3758309	PF-3758309	NUAK2	True		n.i.
+PF3758309	PF-3758309	PAK1	True		not_in_kinobeads
+PF3758309	PF-3758309	PAK4	True	71.0	kd
+PF3758309	PF-3758309	PAK5	True		not_in_kinobeads
+PF3758309	PF-3758309	PAK6	True	3.0	kd
+PF3758309	PF-3758309	PDPK1	False	1044.0	kd
+PF3758309	PF-3758309	PHKG1	True		not_in_kinobeads
+PF3758309	PF-3758309	PHKG2	True	53.0	kd
+PF3758309	PF-3758309	PKN1	True	1167.0	kd
+PF3758309	PF-3758309	PLK4	True	668.0	kd
+PF3758309	PF-3758309	PRKAA1	True	6.0	kd
+PF3758309	PF-3758309	PRKAA2	True		not_in_kinobeads
+PF3758309	PF-3758309	PRKAB1	False	9.0	kd
+PF3758309	PF-3758309	PRKAB2	False	2.0	kd
+PF3758309	PF-3758309	PRKACA	True	935.0	kd
+PF3758309	PF-3758309	PRKACB	True	354.0	kd
+PF3758309	PF-3758309	PRKACG	True	66.0	kd
+PF3758309	PF-3758309	PRKAG1	False	6.0	kd
+PF3758309	PF-3758309	PRKAG2	False	5.0	kd
+PF3758309	PF-3758309	PRKCA	True	873.0	kd
+PF3758309	PF-3758309	PRKCB	False	5893.0	kd
+PF3758309	PF-3758309	PRKCD	True	974.0	kd
+PF3758309	PF-3758309	PRKCE	True		n.i.
+PF3758309	PF-3758309	PRKCI	False	27388.0	kd
+PF3758309	PF-3758309	PRKCQ	True	85.0	kd
+PF3758309	PF-3758309	PRKD1	True		not_in_kinobeads
+PF3758309	PF-3758309	PRKD2	True	244.0	kd
+PF3758309	PF-3758309	PRKD3	True	268.0	kd
+PF3758309	PF-3758309	PRKG1	True	808.0	kd
+PF3758309	PF-3758309	PRKX	True	312.0	kd
+PF3758309	PF-3758309	PRKY	True		not_in_kinobeads
+PF3758309	PF-3758309	PTK2B	False	1400.0	kd
+PF3758309	PF-3758309	Q6ZSR9	False	2716.0	kd
+PF3758309	PF-3758309	RET	True	728.0	kd
+PF3758309	PF-3758309	RPS6KA1	True	820.0	kd
+PF3758309	PF-3758309	RPS6KA2	True		not_in_kinobeads
+PF3758309	PF-3758309	RPS6KA3	True	100.0	kd
+PF3758309	PF-3758309	RPS6KA4	True	111.0	kd
+PF3758309	PF-3758309	RPS6KA5	False	29957.0	kd
+PF3758309	PF-3758309	RPS6KA6	True	4.0	kd
+PF3758309	PF-3758309	RPS6KB1	True	357.0	kd
+PF3758309	PF-3758309	SBK1	True		not_in_kinobeads
+PF3758309	PF-3758309	SIK1	True		not_in_kinobeads
+PF3758309	PF-3758309	SIK2	False	1267.0	kd
+PF3758309	PF-3758309	SRC	True	2085.0	kd
+PF3758309	PF-3758309	STK11	True	434.0	kd
+PF3758309	PF-3758309	STK16	True	5446.0	kd
+PF3758309	PF-3758309	STK25	True		not_in_kinobeads
+PF3758309	PF-3758309	STK3	True	2203.0	kd
+PF3758309	PF-3758309	STK33	True		not_in_kinobeads
+PF3758309	PF-3758309	STK38	True		(75)
+PF3758309	PF-3758309	STK38L	True		n.i.
+PF3758309	PF-3758309	STK4	False	4320.0	kd
+PF3758309	PF-3758309	TANK	False	316.0	kd
+PF3758309	PF-3758309	TBK1	True	377.0	kd
+PF3758309	PF-3758309	TBKBP1	False	450.0	kd
+PF3758309	PF-3758309	TEC	False	1229.0	kd
+PF3758309	PF-3758309	TLK2	True		not_in_kinobeads
+PF3758309	PF-3758309	ULK1	True		n.i.
+PF3758309	PF-3758309	ULK2	True		not_in_kinobeads
+PF3758309	PF-3758309	ULK3	True	626.0	kd
+PF3758309	PF-3758309	WEE1	False	2770.0	kd
+PF3758309	PF-3758309	YES1	False	5557.0	kd
+PF4708671		RPS6KB1	True		drug_not_profiled
+PH797804	PH-797804	MAPK11	True	102.0	kd
+PH797804	PH-797804	MAPK14	True	5.0	kd
+PIK294		PIK3CD	True		drug_not_profiled
+Ripasudil	Ripasudil	AURKB	False	1152.0	kd
+Ripasudil	Ripasudil	CCNK	False	8204.0	kd
+Ripasudil	Ripasudil	MAP2K3	False	3079.0	kd
+Ripasudil	Ripasudil	MARK2	False	6017.0	kd
+Ripasudil	Ripasudil	MARK3	False	58240.0	kd
+Ripasudil	Ripasudil	NQO2	False	3699.0	kd
+Ripasudil	Ripasudil	PKN1	True	416.0	kd
+Ripasudil	Ripasudil	PKN2	True	285.0	kd
+Ripasudil	Ripasudil	PLK4	False	8141.0	kd
+Ripasudil	Ripasudil	PRKAA1	False	3269.0	kd
+Ripasudil	Ripasudil	PRKAB1	False	2835.0	kd
+Ripasudil	Ripasudil	PRKAB2	False	951.0	kd
+Ripasudil	Ripasudil	PRKAG1	False	1807.0	kd
+Ripasudil	Ripasudil	PRKCD	False	2470.0	kd
+Ripasudil	Ripasudil	PRKD2	False	3703.0	kd
+Ripasudil	Ripasudil	PRKX	True	571.0	kd
+Ripasudil	Ripasudil	PRKY	True		not_in_kinobeads
+Ripasudil	Ripasudil	ROCK1	True	33.0	kd
+Ripasudil	Ripasudil	ROCK2	True	83.0	kd
+Ripasudil	Ripasudil	TAOK3	False	11799.0	kd
+SP600125		MAPK10	True		drug_not_profiled
+SP600125		MAPK8	True		drug_not_profiled
+SP600125		MAPK9	True		drug_not_profiled
+TAK715		CSNK1D	True		drug_not_profiled
+TAK715		CSNK1E	True		drug_not_profiled
+TAK715		MAPK11	True		drug_not_profiled
+TAK715		MAPK14	True		drug_not_profiled
+TBCA		CSNK2A1	True		drug_not_profiled
+TBCA		CSNK2A2	True		drug_not_profiled
+TGX221		PIK3CB	True		drug_not_profiled
+Tofacitinib	Tofacitinib	AURKB	True	525.0	kd
+Tofacitinib	Tofacitinib	EIF3J	False	24107.0	kd
+Tofacitinib	Tofacitinib	INCENP	False	34.0	kd
+Tofacitinib	Tofacitinib	JAK1	True		n.i.
+Tofacitinib	Tofacitinib	JAK2	True		n.d.
+Tofacitinib	Tofacitinib	JAK3	True		not_in_kinobeads
+Tofacitinib	Tofacitinib	MARK2	False	6626.0	kd
+Tofacitinib	Tofacitinib	MARK3	False	10782.0	kd
+Tofacitinib	Tofacitinib	PKN1	True	58.0	kd
+Torin1		MTOR	True		drug_not_profiled
+Trametinib	Trametinib	MAP2K1	True	62.0	kd
+Trametinib	Trametinib	MAP2K2	True	9.0	kd
+Ulixertinib	Ulixertinib	MAPK1	True	183.0	kd
+Ulixertinib	Ulixertinib	MAPK3	True	160.0	kd
+Ulixertinib	Ulixertinib	PRKD2	False	6336.0	kd
+Ulixertinib	Ulixertinib	TAOK1	True	388.0	kd
+Vemurafenib	Vemurafenib	ARAF	False	2138.0	kd
+Vemurafenib	Vemurafenib	BRAF	False	3386.0	kd
+Vemurafenib	Vemurafenib	FECH	False	1419.0	kd
+Vemurafenib	Vemurafenib	MAP2K5	True	734.0	kd
+Vemurafenib	Vemurafenib	MAP3K20	True	316.0	kd
+Vemurafenib	Vemurafenib	MAP4K5	False	1800.0	kd
+Vemurafenib	Vemurafenib	PTK6	False	1411.0	kd
+Vemurafenib	Vemurafenib	RAF1	True		not_in_kinobeads
+Vemurafenib	Vemurafenib	RIPK2	True	427.0	kd
+Vemurafenib	Vemurafenib	RIPK3	False	2079.0	kd
+Vemurafenib	Vemurafenib	TGFBR2	False	3396.0	kd

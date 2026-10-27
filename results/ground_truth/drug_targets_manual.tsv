@@ -112,3 +112,4 @@ staurosporine	Staurosporine		PAN	pan	pan-kinase; no specific GT (excluded)
 SHP099	SHP099		MAPK1;MAPK3	indirect	SHP2 phosphatase inhibitor; ERK decrease is downstream/indirect
 trastuzumab	Trastuzumab		ERBB2	antibody	antibody; ERBB2 signalling decrease (indirect, weaker)
 pertuzumab	Pertuzumab		ERBB2	antibody	antibody blocking ERBB2 dimerisation (indirect)
+CX4945	Silmitasertib (CX-4945)	Silmitasertib	CSNK2A1;CSNK2A2	CK2	

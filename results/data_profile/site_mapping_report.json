@@ -54,7 +54,11 @@
   "window_other_acc(not_used)": 64
  },
  "examples_exact_key_window_disagree": [],
- "quant": {},
+ "quant": {
+  "n_rows": 17032346,
+  "non_finite": 0,
+  "duplicates": 0
+ },
  "psp_date_codes": {
   "Kinase_Substrate_Dataset": "051925",
   "Phosphorylation_site_dataset": "051925",
