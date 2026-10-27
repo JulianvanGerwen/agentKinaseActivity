@@ -1,0 +1,192 @@
+{
+ "name": "core-v3",
+ "built": "2026-10-27T15:17:01+00:00",
+ "config_sha256": "d0bdbb7745d715045a5468ef2fa1465920ef0549d393829547f8a184ac52b084",
+ "artifact_sha256": {
+  "edges.tsv.gz": "229bce343875b14a8100c6ca37eb7adf2f7432b9d73bb3d86fda4b34bb2ba75d",
+  "kinases.tsv": "893845bcc664283b09d5d2525aeccf664fbddeec84f7e4ba5381877901415886",
+  "signatures.tsv.gz": "0a028fb088a732662c130e100405223a7da6d0ade5e9d0286f9c4da592c1a6e4",
+  "e1_scales.tsv": "a3fb18e96ba2d153137417ba775a29840c8fe820049e0b627e22f2c053f79f55",
+  "sig_selection.tsv": "e7483053374707743d9c831578f5ac29dae48b08d3250a387da4e338381569ac",
+  "signature_training_conditions.txt": "ae5ea231cf649b55759b4acd6a28ae3f701eaf7babbd907f62230677fd0a40ad"
+ },
+ "git_ignored": [
+  "edges.tsv.gz"
+ ],
+ "inputs_sha256": {
+  "GT_FREEZE.json": "1e6f791c6b85f15dfe51d7eb045bf392a6b25be576b10974f7bba6c5d887baac",
+  "gt_pairs.tsv": "599064598c8068faee9e0c968487cd92d30c3ae92adf406a3da5cb9d4e4bfc47",
+  "gt_conditions.tsv": "192be6d1b2bd2a154d8af9538ac1e5e8626e6551192e2d85d9afe91b56183c67",
+  "kinase_universe.tsv": "ebc4d281eeabbdccecf2124e85eab0d74df90c3883e35d88df88b200e9b74d3f",
+  "quant_dev.npy": "d3babe0d74966424e9ada4c61c7897d11c7d9e8cdbc10b37ccca2b4e1a9ad986",
+  "lib:curated_union": "cb89265965d7e250a59f96ada97c4e080e21c7e0583935957e61fa7ead0a490b",
+  "lib:r2np": "69b9c5884f86e54574a1ebf8c3fe42d26612e574c7bd61ad6632f6c6d3f5c6d8"
+ },
+ "n_edges": 74464,
+ "n_edges_by_source": {
+  "r2np": 46866,
+  "cur": 27598
+ },
+ "rho_e_refit": 0.01,
+ "rho_e_fit_conditions": [
+  "36926954_445_log2",
+  "36926954_493_log2",
+  "36926954_503_log2",
+  "36926954_523_log2",
+  "36926954_543_log2",
+  "36926954_563_log2",
+  "36926954_573_log2"
+ ],
+ "rho_e_fit_table": [
+  [
+   0,
+   0.08851620002889983,
+   [
+    0.9390553460596416,
+    0.8215937232998283,
+    1.037358926459304,
+    1.2338250573132448
+   ]
+  ],
+  [
+   0.002,
+   0.05951675335113364,
+   [
+    0.9390553460596416,
+    0.8137817063843448,
+    1.0212169368794257,
+    1.1353178163727535
+   ]
+  ],
+  [
+   0.005,
+   0.04060952229938823,
+   [
+    0.9390553460596416,
+    0.8080902224696941,
+    0.9979418078519834,
+    1.0591870921891544
+   ]
+  ],
+  [
+   0.01,
+   0.018853152021493607,
+   [
+    0.9390553460596416,
+    0.8013010935750486,
+    0.9550602484645602,
+    0.9048368916243971
+   ]
+  ],
+  [
+   0.02,
+   0.038897802339052746,
+   [
+    0.9390553460596416,
+    0.792190589445761,
+    0.8743319790911191,
+    0.7239199347614037
+   ]
+  ],
+  [
+   0.03,
+   0.09554597863561323,
+   [
+    0.9390553460596416,
+    0.7669042756773363,
+    0.8075317560421159,
+    0.6111836732845091
+   ]
+  ],
+  [
+   0.05,
+   0.2982038211232803,
+   [
+    0.9390553460596416,
+    0.7360633962131198,
+    0.7070221476669855,
+    0.44410999834724646
+   ]
+  ],
+  [
+   0.075,
+   0.5567751129178968,
+   [
+    0.9390553460596416,
+    0.7066549813432459,
+    0.6173029961449873,
+    0.342432726082505
+   ]
+  ],
+  [
+   0.1,
+   0.8081815141645232,
+   [
+    0.9390553460596416,
+    0.6786823214846625,
+    0.5398503464608059,
+    0.28188779429809885
+   ]
+  ],
+  [
+   0.15,
+   1.301451920322122,
+   [
+    0.9390553460596416,
+    0.6253538573000619,
+    0.45064808038823284,
+    0.2077169728838036
+   ]
+  ],
+  [
+   0.2,
+   1.848213293635018,
+   [
+    0.9390553460596416,
+    0.5895067268040456,
+    0.383330069055438,
+    0.1595100517229088
+   ]
+  ],
+  [
+   0.3,
+   2.7838543556808046,
+   [
+    0.9390553460596416,
+    0.5102382752474909,
+    0.2863776777785773,
+    0.11058722995216486
+   ]
+  ]
+ ],
+ "signatures": {
+  "variant": "clean+contrast",
+  "n_top": 100,
+  "kappa": 0.0,
+  "alpha": 1.0,
+  "n_kinases": 55,
+  "n_edges": 5500,
+  "n_training_conditions": 463,
+  "training_splits": [
+   "fold0",
+   "fold1",
+   "fold2",
+   "fold3",
+   "fold4"
+  ],
+  "selection_rule": "taken from results/g2_prep/devconfirm_look2_frozen.json (look-2 freeze, config_hash 46caff727af577b3); sig_selection.tsv descriptive only",
+  "devconfirm_look2_frozen_sha256": "4f5ab213f812e92bd524d3908941c35e491c8b4d8914db18143dcbab207f85ef",
+  "late_fusion_oof_M1-sel_descriptive": 0.6819291995561858
+ },
+ "rho_sig_refit": 0.8977178151216297,
+ "rho_sig_research_path": 0.8977178155204426,
+ "e1": {
+  "n_perm_conditions": 372,
+  "permutation": "site_permutation seed 0 within_condition, DEV-CV GT conditions (Evaluator folds 0-4 order)",
+  "min_perm_cells": 30,
+  "v_both_median": 2.1599594847024135,
+  "v_both_min": 1.619058331699491,
+  "v_both_max": 2.9603300287491474
+ },
+ "data": "cache/dev (DEV-CV folds 0-4), results/ground_truth DEV rows, cache/libraries, cache/b7 (selection)"
+}

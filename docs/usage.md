@@ -124,3 +124,55 @@ How the implementation gets its speed:
 - diag(Λ⁻¹P₀Λ⁻¹) uses the low-rank (family/group indicator) form of the prior precision.
 - Patterns are spread over a thread pool, using the torch CPU float64 path.
 - The GPU path is a batched float64 Cholesky.
+
+## core-v3 (`config/core_v3.json`; RESEARCH_TREE D11/D12)
+core-v3 = core-v1 + late-fused perturbation-response signatures (B7b) + the E1 per-kinase permutation-null scale (B8).
+```python
+model = KinaseActivityModel.from_config("config/core_v3.json")   # artefacts in models/core_v3/
+res = model.score(df)
+res.z        # fused, calibrated z (primary output)
+res.z_core   # core-v1 z_vif (identical to config/core_v1.json)
+res.z_sig    # standardised signature z (NaN: kinase without signature or < 5 measured signature sites)
+```
+CLI: `kinact score input.tsv --config config/core_v3.json -o scores.tsv` (long output gains `z_core`, `z_sig`).
+
+For a kinase k with a signature (55 kinases) and condition c:
+- `z_sig = [Σ_s w_ks clip(y_cs, ±4) / sqrt(Σ_s w_ks²)] / ρ_sig` over k's measured signature sites (≥ 5, else NaN).
+  `y` is the same wsd-standardised input as the core; signature sites need not be library sites.
+- `z = (z_core + α z_sig) / sqrt(v_k)` when both are defined (α = 1); `z = z_core` when only the core scores k;
+  `z = z_sig / sqrt(v_sig,k)` when only the signature does. Every kinase without a signature keeps `z = z_core`.
+- `mean`, `sd` and `n_substrates` stay the core posterior quantities.
+
+Artefacts (`scripts/build_core_v3_artifacts.py`; DEV-CV folds 0–4 only, nothing from DEV-confirm or TEST):
+| file | content | git |
+|---|---|---|
+| `edges.tsv.gz`, `kinases.tsv` | the core-v1 library (PSP-derived edges) | edges ignored |
+| `signatures.tsv.gz` | kinase, site, signed weight, rank, n_groups (clean+contrast fit on all DEV-CV GT conditions; C10) | committed |
+| `e1_scales.tsv` | v_k (fused) and v_sig,k from site-permuted DEV-CV GT conditions (seed 0) | committed |
+| `sig_selection.tsv` | the (n_top, κ) freeze table (below) | committed |
+| `signature_training_conditions.txt` | the 463 training conditions | committed |
+| `manifest.json` | sha256 of every artefact and input, ρ_e / ρ_sig refits | committed |
+
+Frozen values are taken from the DEV-confirm look-2 freeze (`results/g2_prep/devconfirm_look2_frozen.json`):
+- α = 1;
+- (n_top, κ) = (100, 0), the argmax of the pooled OOF M1-sel over the B7 primary grid;
+- ρ_sig = RMS of z_sig over the 7 DEV nulls.
+
+The build re-derives ρ_sig, the median of v_k, the 463 training conditions and the 55 signature kinases, and fails
+if any of them disagrees with that record. `sig_selection.tsv` (late-fusion OOF per (n_top, κ), 0.676–0.683) is
+descriptive only. As a reproduction anchor, it recovers the B7b per-fold-pick OOF of 0.681433 exactly.
+
+Equivalence (`tests/test_core_v3.py`, `scripts/bench_core_v3.py` → `results/core_v3/`):
+- vs the research path (bayes2 z_vif + `signatures_late.sig_project` + `final_box.fuse_calibrated`, float32 input as
+  in B7b/B8): max |Δz| = 1.7e-6 on the 200 bench conditions and 2.5e-6 on all 1,358 DEV conditions; identical NaN
+  pattern;
+- the signatures, ρ_sig and E1 scales are refitted independently with the research functions in the test;
+- GPU vs CPU: 6e-11.
+
+Runtime (`results/core_v3/runtime.json`, final artefacts; numbers vary with machine load):
+| setting | 200 bench conditions | DEV compendium (1,358) |
+|---|---|---|
+| CPU, 1 thread | 6.8 ms/cond | 6.4 s (4.7 ms/cond; 1,937 extrapolated 9.1 s) |
+| CPU, 16 threads | 2.0 ms/cond | 2.1 s |
+| GPU | 1.8 ms/cond | 2.0 s |
+The fusion step itself costs about 1.1 ms per 200 conditions; the E1 scale is precomputed.

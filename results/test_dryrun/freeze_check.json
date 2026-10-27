@@ -1,0 +1,17 @@
+{
+ "skipped": "dry run",
+ "working_tree": {
+  "gt_freeze_sha256": "1e6f791c6b85f15dfe51d7eb045bf392a6b25be576b10974f7bba6c5d887baac",
+  "config_sha256": "d0bdbb7745d715045a5468ef2fa1465920ef0549d393829547f8a184ac52b084",
+  "model_manifest_sha256": "969209312dd8c4a116f05493ae97fa208806d45bec24bf75689fcb9a5df86a57",
+  "code_commit": "819fb79c4724163430d29b4ebef2c39e76075e7d"
+ },
+ "modified_tracked_files": [
+  "M scripts/build_core_v3_artifacts.py",
+  " M src/kinact/cli.py"
+ ],
+ "artifacts": {
+  "n_checked": 6,
+  "mismatch": {}
+ }
+}

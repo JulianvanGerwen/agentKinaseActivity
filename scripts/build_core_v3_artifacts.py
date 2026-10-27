@@ -5,12 +5,12 @@ core-v3 = core-v1 (same library / kernel / rho_e; the core-v1 artefacts are rebu
 code) + late-fused perturbation-response signatures (B7b, alpha = 1) + the E1 per-signature-kinase permutation-null
 scale (B8). Everything is DEV-CV only (folds 0-4; cache/dev + the DEV rows of results/ground_truth):
 
-  1. (n_top, kappa) freeze rule (G2; the B7b/B8 research used per-fold nested picks, a deployed model needs one value).
-     Rule, analogous to the core-v1 rho_g freeze (argmax of pooled all-DEV M1-sel): argmax of the pooled DEV-CV
-     out-of-fold M1-sel of the B7b late fusion at alpha = 1 over the pre-declared B7 grid n_top in {20,50,100,200} x
-     kappa in {0,1,4}, every fold f scored with the core-v1 nested z_vif of fold f and the signatures fitted on the
-     4 other folds (cache/b7 outer fits, exactly the B7b/B8 inputs). The table is written to
-     models/core_v3/sig_selection.tsv; the script fails if config/core_v3.json disagrees with the argmax.
+  1. (n_top, kappa, alpha) are TAKEN from the pre-declared DEV-confirm look #2 freeze
+     (results/g2_prep/devconfirm_look2_frozen.json: n_top/kappa = argmax pooled seed-0 OOF M1-sel of the B7 primary
+     grid; alpha = argmax OOF of the late fusion), so the deployed/TEST model is exactly the DEV-confirmed one. The
+     build re-derives rho_sig and the E1 scale range and fails if they disagree with that freeze record.
+     Descriptive only: models/core_v3/sig_selection.tsv = pooled DEV-CV OOF M1-sel of the B7b late fusion at alpha=1
+     over n_top x kappa (cache/b7 outer fits); it is flat (0.676-0.683) and is NOT used for the choice.
   2. Signatures: kinact.explore.signatures.fit_signatures, variant clean+contrast (n_targets <= 10, generic-response
      contrast), on ALL DEV-CV GT training conditions (C10 i: "at TEST, fitted on DEV-CV conditions only"); DEV-confirm
      and TEST groups are not in cache/dev (drug-group disjoint by construction; run_test.py re-asserts it).
@@ -178,9 +178,14 @@ def main():
     # ---- 1. (n_top, kappa) freeze rule
     sel = selection_table(d, alpha)
     sel.to_csv(out / "sig_selection.tsv", sep="\t", index=False, float_format="%.6f")
-    best = sel.loc[sel["oof_M1-sel"].idxmax()]
-    n_top, kappa = int(best["n_top"]), float(best["kappa"])
-    print(f"[select] n_top {n_top} kappa {kappa} (OOF M1-sel {best['oof_M1-sel']:.4f})", flush=True)
+    frz = json.loads((ROOT / "results/g2_prep/devconfirm_look2_frozen.json").read_text())
+    assert frz["name"] == "core-v3" and frz["signature_variant"] == VARIANT and float(frz["alpha"]) == alpha
+    assert (frz["core"]["tau"], frz["core"]["rho_f"], frz["core"]["rho_g"], frz["core"]["rho_e"]) == \
+        (cfg["tau"], cfg["rho_f"], cfg["rho_g"], cfg["rho_e"])
+    n_top, kappa = int(frz["n_top"]), float(frz["kappa"])
+    best = sel[(sel["n_top"] == n_top) & (sel["kappa"] == kappa)].iloc[0]
+    print(f"[freeze] DEV-confirm look-2 freeze: n_top {n_top} kappa {kappa} alpha {alpha} "
+          f"(descriptive late-fusion OOF {best['oof_M1-sel']:.4f})", flush=True)
 
     # ---- 2. final signatures
     sig, tab, tr = fit_final_signatures(d, n_top, kappa)
@@ -213,6 +218,9 @@ def main():
     sc["n_cells_sig"] = np.isfinite(zs_p).sum(0)[m.sig["has"]]
     sc["n_groups"] = sc["kinase"].map(tab.groupby("kinase")["n_groups"].first())
     sc.to_csv(out / "e1_scales.tsv", sep="\t", index=False, float_format="%.9g")
+    assert abs(rho_sig - frz["rho_sig"]) < 1e-6 * frz["rho_sig"], (rho_sig, frz["rho_sig"])
+    assert abs(np.median(sc.v_both) - frz["v_k_median"]) < 1e-4 * frz["v_k_median"], (np.median(sc.v_both), frz["v_k_median"])
+    assert len(tr) == frz["n_train_conds"] and tab["kinase"].nunique() == frz["n_signature_kinases"]
     print(f"[E1] v_k median {np.median(sc.v_both):.3f} range {sc.v_both.min():.3f}-{sc.v_both.max():.3f}", flush=True)
 
     # ---- config: fill or verify
@@ -247,9 +255,10 @@ def main():
         "signatures": {"variant": VARIANT, "n_top": n_top, "kappa": kappa, "alpha": alpha,
                        "n_kinases": int(tab["kinase"].nunique()), "n_edges": int(len(tab)),
                        "n_training_conditions": len(tr), "training_splits": FOLDS,
-                       "selection_rule": "argmax pooled DEV-CV OOF M1-sel of B7b late fusion (alpha fixed) over "
-                                         "n_top x kappa (sig_selection.tsv)",
-                       "selection_best_oof_M1-sel": float(best["oof_M1-sel"])},
+                       "selection_rule": "taken from results/g2_prep/devconfirm_look2_frozen.json (look-2 freeze, "
+                                         f"config_hash {frz['config_hash']}); sig_selection.tsv descriptive only",
+                       "devconfirm_look2_frozen_sha256": sha256_file(ROOT / "results/g2_prep/devconfirm_look2_frozen.json"),
+                       "late_fusion_oof_M1-sel_descriptive": float(best["oof_M1-sel"])},
         "rho_sig_refit": float(rho_sig), "rho_sig_research_path": float(rho_ref),
         "e1": {"n_perm_conditions": int(Xp.shape[1]), "permutation": "site_permutation seed 0 within_condition, "
                "DEV-CV GT conditions (Evaluator folds 0-4 order)", "min_perm_cells": FB.MIN_PERM_CELLS,

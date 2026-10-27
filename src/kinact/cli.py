@@ -1,10 +1,11 @@
-"""Command line interface: `kinact score input.tsv -o out.tsv [--format long|wide] [--device cpu|cuda]`.
+"""Command line interface: `kinact score input.tsv -o out.tsv [--format long|wide] [--device cpu|cuda]
+[--config config/core_v3.json]`.
 
 Input (TSV/CSV, auto-detected by extension; '-' = stdin):
   wide  first column = site key `{UniProt}_{res}{pos}` (e.g. P31749_S473), other columns = conditions (log2FC or t/z);
   long  columns uniprot, residue, position, value (+ optional condition).
-Output: long (condition, kinase, z, mean, sd, n_substrates) or wide (kinase rows). z = core-v1 z_vif; unscored
-kinases are NaN (written as 'NaN').
+Output: long (condition, kinase, z, mean, sd, n_substrates [+ z_core, z_sig with core-v3]) or wide (kinase rows).
+z = core-v1 z_vif (default config) or the core-v3 fused z (--config config/core_v3.json); unscored kinases are NaN.
 """
 from __future__ import annotations
 
@@ -53,7 +54,7 @@ def cmd_score(a) -> int:
 
 
 def main(argv=None) -> int:
-    ap = argparse.ArgumentParser(prog="kinact", description="Kinase activity inference (core-v1).")
+    ap = argparse.ArgumentParser(prog="kinact", description="Kinase activity inference (core-v1 / core-v3).")
     sub = ap.add_subparsers(dest="cmd", required=True)
     s = sub.add_parser("score", help="score kinase activities from site-level statistics")
     s.add_argument("input", help="TSV/CSV input ('-' = stdin)")
@@ -61,7 +62,7 @@ def main(argv=None) -> int:
     s.add_argument("--format", choices=["long", "wide"], default="long")
     s.add_argument("--device", default="cpu", help="cpu | cuda | cuda:N")
     s.add_argument("--threads", type=int, default=None, help="CPU threads (default: BLAS thread limit)")
-    s.add_argument("--config", default=None, help="model config (default config/core_v1.json)")
+    s.add_argument("--config", default=None, help="model config (default config/core_v1.json; core-v3: config/core_v3.json)")
     s.add_argument("--drop-unscored", action="store_true", help="long format: omit NaN (unscored) rows")
     s.add_argument("-q", "--quiet", action="store_true")
     s.set_defaults(func=cmd_score)
