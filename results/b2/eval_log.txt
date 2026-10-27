@@ -1,0 +1,47 @@
+/home/plm_env/lib/python3.12/site-packages/numpy/lib/_nanfunctions_impl.py:1215: RuntimeWarning: All-NaN slice encountered
+  return fnb._ureduce(a, func=_nanmedian, keepdims=keepdims,
+{
+ "pooled_best_cfg": {
+  "tau": 0.125,
+  "rho_f": 3.0,
+  "rho_g": 0.25,
+  "alpha": 1.0,
+  "intercept": "median",
+  "borrow": "True",
+  "output": "z",
+  "noise": "False"
+ },
+ "pooled_best_M1sel": 0.6728735101796313,
+ "v_check": {
+  "M1-sel_v_lfo": 0.6566709288444527,
+  "M1-sel_v_all": 0.6594522901500395,
+  "corr_logv_fold_vs_all": {
+   "fold0": 0.9191695252759156,
+   "fold1": 0.7540146880193724,
+   "fold2": 0.8947373058201987,
+   "fold3": 0.9185428388660422,
+   "fold4": 0.9267924902939841
+  },
+  "spearman_scores": 0.9859121984229238
+ },
+ "runtime": {
+  "gpu_batched_ms_per_cond": 4.693201780319214,
+  "cpu_single_1t_ms_per_cond": 8.898828029632568,
+  "cpu_single_16t_ms_per_cond": 4.536104202270508,
+  "noise_model_fit_s_one_off": 5.233574867248535,
+  "note": "CPU path uses intercept='median' (joint intercept only in the GPU path)"
+ }
+}
+B2_free {'M1-sel': 0.655, 'M1-all': 0.604, 'M1-sel-scored': 0.655, 'coverage': 1.0, 'harmony': 0.658, 'by_source': {'D': 0.767625544321173, 'H': 0.6444641322302547, 'O': 0.6737618734439828}, 'by_sign': {'-1': 0.629738826747438, '1': 0.8004580485415111}, 'n_sig': 51, 'same_family': {'value': 0.5880321710259973, 'n_kinases': 84}, 'T-unseen': {'value': 0.5893604522779471, 'n_kinases': 28, 'n_pairs': 272}}
+B2_noborrow {'M1-sel': 0.648, 'M1-all': 0.594, 'M1-sel-scored': 0.655, 'coverage': 0.983, 'harmony': 0.65, 'by_source': {'D': 0.7670223471422892, 'H': 0.634600774900418, 'O': 0.6618652737551607}, 'by_sign': {'-1': 0.625179919463885, '1': 0.7836816541605347}, 'n_sig': 51, 'same_family': {'value': 0.5900437739474041, 'n_kinases': 81}, 'T-unseen': {'value': 0.583577649157026, 'n_kinases': 28, 'n_pairs': 272}}
+B2_borrow {'M1-sel': 0.655, 'M1-all': 0.604, 'M1-sel-scored': 0.655, 'coverage': 1.0, 'harmony': 0.658, 'by_source': {'D': 0.767625544321173, 'H': 0.6444641322302547, 'O': 0.6737618734439828}, 'by_sign': {'-1': 0.629738826747438, '1': 0.8004580485415111}, 'n_sig': 51, 'same_family': {'value': 0.5880321710259973, 'n_kinases': 84}, 'T-unseen': {'value': 0.5893604522779471, 'n_kinases': 28, 'n_pairs': 272}}
+abl_noK {'M1-sel': 0.617, 'M1-all': 0.581, 'M1-sel-scored': 0.624, 'coverage': 0.983, 'harmony': 0.626, 'by_source': {'D': 0.8544988645089884, 'H': 0.5951961787807661, 'O': 0.6167499882236307}, 'by_sign': {'-1': 0.5933594956048124, '1': 0.7626180841762574}, 'n_sig': 39, 'same_family': {'value': 0.5903375166542462, 'n_kinases': 81}, 'T-unseen': {'value': 0.5929211318074235, 'n_kinases': 28, 'n_pairs': 272}}
+abl_noise_on {'M1-sel': 0.646, 'M1-all': 0.608, 'M1-sel-scored': 0.646, 'coverage': 1.0, 'harmony': 0.645, 'by_source': {'D': 0.8970236590404594, 'H': 0.6176722176840618, 'O': 0.6527323551029953}, 'by_sign': {'-1': 0.6229610349172604, '1': 0.758274908643604}, 'n_sig': 44, 'same_family': {'value': 0.5839363919734425, 'n_kinases': 84}, 'T-unseen': {'value': 0.6403394476865735, 'n_kinases': 28, 'n_pairs': 272}}
+abl_noise_off {'M1-sel': 0.655, 'M1-all': 0.604, 'M1-sel-scored': 0.655, 'coverage': 1.0, 'harmony': 0.658, 'by_source': {'D': 0.767625544321173, 'H': 0.6444641322302547, 'O': 0.6737618734439828}, 'by_sign': {'-1': 0.629738826747438, '1': 0.8004580485415111}, 'n_sig': 51, 'same_family': {'value': 0.5880321710259973, 'n_kinases': 84}, 'T-unseen': {'value': 0.5893604522779471, 'n_kinases': 28, 'n_pairs': 272}}
+abl_mean {'M1-sel': 0.672, 'M1-all': 0.617, 'M1-sel-scored': 0.672, 'coverage': 1.0, 'harmony': 0.671, 'by_source': {'D': 0.9105131373923893, 'H': 0.6438469261026154, 'O': 0.67939827900996}, 'by_sign': {'-1': 0.6492904365440627, '1': 0.8024390561131436}, 'n_sig': 53, 'same_family': {'value': 0.5813378315908752, 'n_kinases': 84}, 'T-unseen': {'value': 0.6541397391591958, 'n_kinases': 28, 'n_pairs': 272}}
+abl_alpha0 {'M1-sel': 0.607, 'M1-all': 0.61, 'M1-sel-scored': 0.615, 'coverage': 1.0, 'harmony': 0.612, 'by_source': {'D': 0.9028547915887906, 'H': 0.575204266693903, 'O': 0.6027629550769203}, 'by_sign': {'-1': 0.5774828320762406, '1': 0.7419445850541787}, 'n_sig': 41, 'same_family': {'value': 0.5620142548439413, 'n_kinases': 84}, 'T-unseen': {'value': 0.5967941466825987, 'n_kinases': 28, 'n_pairs': 272}}
+abl_noK_alpha0 {'M1-sel': 0.553, 'M1-all': 0.536, 'M1-sel-scored': 0.623, 'coverage': 0.86, 'harmony': 0.557, 'by_source': {'D': 0.6965960892572934, 'H': 0.5515184983063244, 'O': 0.5382949092353562}, 'by_sign': {'-1': 0.543330874604679, '1': 0.6173518355624855}, 'n_sig': 37, 'same_family': {'value': 0.5878917748999639, 'n_kinases': 65}, 'T-unseen': {'value': 0.5649955146294401, 'n_kinases': 28, 'n_pairs': 272}}
+abl_tau_ge1_noK_alpha0 {'M1-sel': 0.55, 'M1-all': 0.523, 'M1-sel-scored': 0.615, 'coverage': 0.86, 'harmony': 0.558, 'by_source': {'D': 0.6341540535809528, 'H': 0.5387279100668207, 'O': 0.5505039680889453}, 'by_sign': {'-1': 0.5376390457671467, '1': 0.6235536326002147}, 'n_sig': 37, 'same_family': {'value': 0.5632488300003055, 'n_kinases': 65}, 'T-unseen': {'value': 0.5464553199663456, 'n_kinases': 28, 'n_pairs': 272}}
+zscore_psp_min3 {'M1-sel': 0.515, 'M1-all': 0.512, 'M1-sel-scored': 0.633, 'coverage': 0.578, 'harmony': 0.517, 'by_source': {'D': 0.5597186339447264, 'H': 0.5184129018772818, 'O': 0.5073126084838933}, 'by_sign': {'-1': 0.5133533022150077, '1': 0.5361821236727075}, 'n_sig': 24, 'same_family': {'value': 0.5769129654141096, 'n_kinases': 38}, 'T-unseen': {'value': 0.5123188314858335, 'n_kinases': 28, 'n_pairs': 272}}
+zscore_cur_min1 {'M1-sel': 0.563, 'M1-all': 0.543, 'M1-sel-scored': 0.65, 'coverage': 0.86, 'harmony': 0.565, 'by_source': {'D': 0.6933320614047809, 'H': 0.5571502209433362, 'O': 0.551828689271231}, 'by_sign': {'-1': 0.554012910923221, '1': 0.6274469961917508}, 'n_sig': 40, 'same_family': {'value': 0.6339763471003389, 'n_kinases': 65}, 'T-unseen': {'value': 0.5751578285121778, 'n_kinases': 28, 'n_pairs': 272}}
+prior_only {'M1-sel': 0.687, 'M1-all': 0.543, 'M1-sel-scored': 0.687, 'coverage': 1.0, 'harmony': 0.726, 'by_source': {'D': 0.5364007118153874, 'H': 0.7527354159547118, 'O': 0.7090703044388178}, 'by_sign': {'-1': 0.694900821267182, '1': 0.7693593592540798}, 'n_sig': 53, 'same_family': {'value': 0.6351982578224954, 'n_kinases': 84}, 'T-unseen': {'value': 0.32394122269998604, 'n_kinases': 28, 'n_pairs': 272}}

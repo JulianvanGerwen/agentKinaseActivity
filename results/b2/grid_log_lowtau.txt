@@ -1,0 +1,10 @@
+setup 1s; 372 conds; lib rows 27601; GT_FREEZE 1e6f791c6b85f15d
+noise=True alpha=0.0: 34s, best so far M1-sel 0.632
+noise=True alpha=0.25: 32s, best so far M1-sel 0.648
+noise=True alpha=0.5: 35s, best so far M1-sel 0.657
+noise=True alpha=1.0: 35s, best so far M1-sel 0.657
+noise=False alpha=0.0: 35s, best so far M1-sel 0.657
+noise=False alpha=0.25: 34s, best so far M1-sel 0.659
+noise=False alpha=0.5: 33s, best so far M1-sel 0.668
+noise=False alpha=1.0: 33s, best so far M1-sel 0.674
+done 329s, 2208 evaluations
