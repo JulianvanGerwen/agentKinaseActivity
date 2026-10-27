@@ -35,8 +35,9 @@ Key early observation: kinaseSubMain's deployed library uses (F6b) ridge deconvo
   - [x] 3.1 GT + split + DEV-only cache: 1,047 GT conds; M1-sel 1,660 pairs / 140 kinases; split seed 79 (TEST 396 conds, 445 M1-sel pairs, 78 kinases, 18 unseen). Hijazi doses unobtainable → 10 µM default. 16 tests pass.
     - [~] 3.1b independent GT biology audit + fixes (pre-freeze; split may change)
   - [x] 3.2 harness src/kinact/eval.py + tests (20 pass; paired bootstrap B=2000 0.3 s)
-    - [~] 3.2b integration: null-parsing fix, data loaders, DEV smoke run (PSP z-score, controls), MDE
+    - [x] 3.2b integration: loaders, smoke run. DEV: zscore M1-sel 0.521 (scored 0.666, cov 0.63); prior-only 0.706; random 0.476; MDE 0.036 (M1-sel groups) / 0.059 (all groups)
+    - [~] 3.2c independent harness verification (z-score 0.52 vs benchmarKIN ~0.78 gap; bootstrap CI anomaly; random 0.476)
   - [x] 3.3 KS libraries: psp_all 401 kin (225 with ≥5 quantified), curated_union 439 kin (296 ≥5), Sugiyama in vitro 347 kin (342 ≥5), predicted top-500 r2np/r3 (503), cantley (396). 405 PMIDs excluded (compendium + HT-MS). 27 tests.
-- [ ] 4. Baselines (z-score, KSEA, JUMPsem, …)
+- [~] 4. Baselines (z-score, KSEA, JUMPsem, decoupler ulm/mlm/wmean/norm_wmean/viper, GSEA, RoKAI, KinLib) on DEV
 - [ ] 5. Method development
 - [ ] 6. Sealed test + REPORT.md
