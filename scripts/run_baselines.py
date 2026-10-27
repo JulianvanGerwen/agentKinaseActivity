@@ -122,6 +122,7 @@ def main():
     only = set(a.only.split(",")) - {""}
     t_start = time.time()
     warnings.filterwarnings("ignore", category=FutureWarning)
+    warnings.filterwarnings("ignore", category=RuntimeWarning)
     ident = data_identity()
     print("data identity", ident, flush=True)
 

@@ -1,15 +1,15 @@
 {
- "SE_dev_dM1sel_zscore_vs_prior_only": 0.01541392778620235,
- "G_DEV_M1sel_groups": 85,
+ "SE_dev_dM1sel_zscore_vs_prior_only": 0.023923963995035182,
+ "G_DEV_M1sel_groups": 89,
  "G_TEST": 87,
  "G_TEST_note": "GT_REPORT split table: all groups in split 'test' (upper bound on M1-sel groups; no label-derived count used)",
- "MDE_2.5": 0.03808931525071193,
- "MDE_3.5_alt": 0.0533250413509967,
+ "MDE_2.5": 0.06049347401037116,
+ "MDE_3.5_alt": 0.08469086361451962,
  "alt_all_groups_ratio": {
-  "G_DEV_all_groups": 220,
-  "MDE_2.5": 0.06127806497280731
+  "G_DEV_all_groups": 216,
+  "MDE_2.5": 0.09424111116157521
  },
- "delta_estimate": -0.18402747361780325,
+ "delta_estimate": -0.17211639845395488,
  "B": 2000,
  "seed": 0,
  "folds": [

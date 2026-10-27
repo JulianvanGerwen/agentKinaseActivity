@@ -130,7 +130,9 @@ def main():
           "Notes: norm_wmean is computed analytically (infinite-permutation limit of decoupler's 1000-permutation "
           "z) and gsea uses its own permutation draws, so these differ from decoupler by Monte-Carlo noise only. "
           "mlm: decoupler raises on rank-deficient designs (e.g. two kinases with identical measured substrate sets);"
-          " those conditions are counted as 'decoupler failed' and our pseudo-inverse solution is used there. viper "
+          " those conditions are counted as 'decoupler failed' and our pseudo-inverse solution is used there; among the "
+          "full-rank conditions, rho < 0.99 occurs only on near-singular designs where decoupler's explicit inverse "
+          "returns numerically meaningless |t| (up to ~5e5; see max abs diff). viper "
           "calls decoupler's own `_func_viper` per condition (no re-implementation)."]
     (OUT / "reference_checks.md").write_text("\n".join(L) + "\n")
 
