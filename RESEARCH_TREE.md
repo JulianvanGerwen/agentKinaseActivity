@@ -25,9 +25,15 @@ Key early observation: kinaseSubMain's deployed library uses (F6b) ridge deconvo
     - Reusable: site universe mapping, 692 inhibitor conditions with occupancy-based targets (Klaeger/Reinecke/Davis), kinase families/paralogs, ESM kinase embeddings.
 - [~] 2. DESIGN.md + ≤3 review rounds
   - [x] 2.1 v0 → round 1 (6 reviewers, all 'major'): sign error in M1 caught; masks for downstream/paradoxical; M1-sel primary; Bayesian core; ban per-kinase weights; prior-only control → v1 (A1–A10)
-  - [~] 2.2 round 2 (pi, stats, priorwork, data)
-  - [~] 2.3 reference tools (R/JUMPsem/KSEAapp, decoupler) time-boxed
-- [ ] 3. Evaluation harness + verification (toy data, controls)
+  - [x] 2.2 round 2 (pi, stats, priorwork, data) → v2 (§13 B1–B17)
+    - [!] prior-only control (kinase target frequency, oracle sign) ≈0.63 > PSP z-score M1 ≈0.51–0.55 → M1 is coverage-dominated; prior-only added to TEST Holm family.
+    - [!] OmniPath/iPTMnet edges cite compendium PMIDs (leakage); kinaseSubMain 'iKiP-DB' mislabelled → filtered/dropped.
+  - [x] 2.3 reference tools: R 4.4.3 + JUMPsem 1.1.0 + KSEAapp 2.0 (external/envs/r), decoupler 2.3.1, gseapy (docs/reference_tools.md)
+  - [~] 2.4 round 3 (final, fresh reviewer)
+- [~] 3. G1 build
+  - [~] 3.1 GT + split + DEV-only cache (scripts/build_gt.py, make_split.py)
+  - [~] 3.2 harness src/kinact/eval.py + tests
+  - [~] 3.3 KS libraries with leakage filters (scripts/build_libraries.py)
 - [ ] 4. Baselines (z-score, KSEA, JUMPsem, …)
 - [ ] 5. Method development
 - [ ] 6. Sealed test + REPORT.md
