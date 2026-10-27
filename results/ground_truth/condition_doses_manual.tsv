@@ -1,0 +1,7 @@
+# Study-specific dose notations. Other doses parsed from Condition text (decryptM label, "x nM/uM");
+# Hijazi 31959955 and all unparsed inhibitor conditions: pre-registered default 10 uM (paper: 1-10 uM, per-drug doses not in SI).
+PMID	cond_regex	agent	dose_nM	note
+32034161	_0-1$	*	100	"study notation ""_0-1"" = 0.1 uM (inferred, as KSM)"
+32034161	_1$	*	1000	"study notation ""_1"" = 1 uM (inferred)"
+32034161	_0-5uM$	*	500	"study notation ""_0-5uM"" = 0.5 uM"
+32034161	_5uM$	*	5000	5 uM

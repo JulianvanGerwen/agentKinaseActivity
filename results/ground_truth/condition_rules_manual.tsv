@@ -1,308 +1,307 @@
-rule_id	PMID	cond_regex	ctl_regex	sample_regex	agent	perturbation_type	kinases	relation	expected_direction	confidence	inferred	note
-R001	28302921	^(xray|proton|carbon)$				stimulus_DNA_damage	ATM	direct	1	high	no	ionising radiation 2h activates ATM
-R002	29523821	^UV$				stimulus_DNA_damage	ATR	direct	1	medium	no	UV activates ATR (time not given)
-R003	29523821	^UV$				stimulus_stress	MAPK14	direct	1	medium	no	UV activates p38 (time not given)
-R004	29523821	^p38i \+ UV$	^UV$		p38i	inhibitor		direct	-1	high	no	p38i+UV vs UV
-R005	29970458	_serum_gefitinib_			gefitinib	inhibitor		direct	-1	medium	no	WiDr (BRAF V600E CRC) gefitinib vs serum control; EGFR feedback activity context
-R006	29970458	^(wt|PTPN11_KO)_serum_PLX4032_\d+h$			vemurafenib	inhibitor		direct	-1	high	no	WiDr is BRAF V600E
-R007	29970458	^(wt|PTPN11_KO)_serum_PLX4032_(2|6)h$					MAP2K1;MAP2K2;MAPK1;MAPK3	downstream	-1	high	no	BRAF V600E: vemurafenib suppresses MEK/ERK (early; rebound at 24-48h via EGFR feedback)
-R008	29970458	^(wt|PTPN11_KO)_serum_PLX4032_(24|48)h$					MAP2K1;MAP2K2;MAPK1;MAPK3	downstream	-1	low	no	late timepoints: EGFR-mediated ERK reactivation in CRC (Prahallad 2012) - reduced confidence
-R009	29970458	^wt_serum_PLX4032_gefitinib_			vemurafenib	inhibitor		direct	-1	high	no	combination BRAFi+EGFRi
-R010	29970458	^wt_serum_PLX4032_gefitinib_			gefitinib	inhibitor		direct	-1	medium	no	combination BRAFi+EGFRi
-R011	29970458	^wt_serum_PLX4032_gefitinib_					MAP2K1;MAP2K2;MAPK1;MAPK3	downstream	-1	high	no	combination blocks ERK reactivation
-R012	30650350	^MARK3_KO$	^WT$			knockout	MARK3	direct	-1	high	no	HAP1 MARK3 KO
-R013	30650350	^MARK3_KO_TMZ$	^WT_TMZ$			knockout	MARK3	direct	-1	high	no	HAP1 MARK3 KO (both TMZ treated)
-R014	32034161	^EGF$	^NoSerum$			stimulus_growth_factor	EGFR	direct	1	high	no	EGF 10 min vs serum-starved RPE1
-R015	32034161	^EGF$	^NoSerum$			stimulus_growth_factor	MAPK1;MAPK3	downstream	1	high	no	EGF -> ERK1/2
-R016	32034161	^(MEKi_)?Cobimetinib_			cobimetinib	inhibitor		direct	-1	high	no	vs EGF-stimulated; dose suffix 0-5uM/0-1 inferred = 0.5/0.1 uM (inferred)
-R017	32034161	^(MEKi_)?PD0325901_			PD0325901	inhibitor		direct	-1	high	no	vs EGF-stimulated
-R018	32034161	^MEKi_U0126_			U0126	inhibitor		direct	-1	high	no	vs EGF-stimulated
-R019	32034161	^((MEKi_)?Cobimetinib|(MEKi_)?PD0325901|MEKi_U0126)_					MAPK1;MAPK3	downstream	-1	high	no	MEK inhibition -> ERK1/2 activity down
-R020	32034161	^Akti_Akt-1-2_			akti_akt12	inhibitor		direct	-1	high	no	vs EGF-stimulated
-R021	32034161	^Akti_MK-2206_			MK2206	inhibitor		direct	-1	high	no	vs EGF-stimulated
-R022	32034161	^Akti_Perifosine_			perifosine	inhibitor		direct	-1	low	no	perifosine indirect/weak AKT inhibitor
-R023	32034161	^EGFRi_AG1478_			AG1478	inhibitor		direct	-1	high	no	vs EGF-stimulated
-R024	32034161	^EGFRi_Erlotinib_			erlotinib	inhibitor		direct	-1	high	no	vs EGF-stimulated
-R025	32034161	^EGFRi_Lapatinib_			lapatinib	inhibitor		direct	-1	high	no	vs EGF-stimulated
-R026	32034161	^EGFRi_					MAPK1;MAPK3	downstream	-1	medium	no	EGFR inhibition in EGF-stimulated cells reduces ERK
-R027	32034161	^GSK3i_BIO_			GSK3i_BIO	inhibitor		direct	-1	medium	no	
-R028	32034161	^GSK3i_CHIR-99021_			CHIR99021	inhibitor		direct	-1	high	no	
-R029	32034161	^GSK3i_SB216763_			SB216763	inhibitor		direct	-1	medium	no	
-R030	32034161	^JNKi_JNK-IN-8_			JNKIN8	inhibitor		direct	-1	medium	no	JNK basal activity under EGF may be low
-R031	32034161	^JNKi_SP-600125_			SP600125	inhibitor		direct	-1	medium	no	
-R032	32034161	^JNKi_Tanziternib_			tanzisertib	inhibitor		direct	-1	medium	no	"Tanziternib" = tanzisertib (typo in metadata, inferred)
-R033	32034161	^mTORi_Everolimus_			everolimus	inhibitor		direct	-1	high	no	
-R034	32034161	^mTORi_Temsirolimus_			temsirolimus	inhibitor		direct	-1	high	no	
-R035	32034161	^mTORi_Torkinib_			torkinib	inhibitor		direct	-1	high	no	
-R036	32034161	^mTORi_					RPS6KB1	downstream	-1	high	no	mTORC1 -> S6K1 T389
-R037	32034161	^p38i_BIRB-796_			BIRB796	inhibitor		direct	-1	medium	no	p38 basal activity under EGF moderate
-R038	32034161	^p38i_SB-203580_			SB203580	inhibitor		direct	-1	medium	no	
-R039	32034161	^p38i_SB-239063_			SB239063	inhibitor		direct	-1	medium	no	
-R040	32034161	^p38i_					MAPKAPK2	downstream	-1	medium	no	p38 -> MK2
-R041	32034161	^PI3Ki_LY294002_			LY294002	inhibitor		direct	-1	high	no	lipid kinase targets (no PSP substrates)
-R042	32034161	^PI3Ki_PI3-kinase-alpha-inhibitor2_			PI3Ka_inh2	inhibitor		direct	-1	high	no	
-R043	32034161	^PI3Ki_Wortmannin_			wortmannin	inhibitor		direct	-1	high	no	
-R044	32034161	^PI3Ki_					AKT1;AKT2;AKT3	downstream	-1	medium	no	PI3K -> AKT in EGF-stimulated cells
-R045	32034161	^PKCi_BisindolylmaleimideI_			BIM1	inhibitor		direct	-1	medium	no	basal PKC activity
-R046	32034161	^PKCi_Enzastaurin_			enzastaurin	inhibitor		direct	-1	medium	no	
-R047	32034161	^PKCi_Go-6983_			Go6983	inhibitor		direct	-1	medium	no	
-R048	32034161	^RAFi_LY-3009120_			LY3009120	inhibitor		direct	-1	medium	no	pan-RAF in BRAF-WT RPE1
-R049	32034161	^RAFi_SB-590885_			SB590885	inhibitor		direct	-1	low	no	BRAF-selective in BRAF-WT cells: paradoxical activation possible
-R050	32034161	^RAFi_Sorafenib_			sorafenib	inhibitor		direct	-1	low	no	multikinase, BRAF-WT
-R051	33215756	^NCS_\d+min_ctrl_WT$				stimulus_DNA_damage	ATM	direct	1	high	no	neocarzinostatin DSBs, ATM-proficient
-R052	33215756	^NCS_\d+min_ctrl_AT$				stimulus_DNA_damage	PRKDC;ATR	direct	1	low	yes	ATM-deficient cells; DNA-PK/ATR compensation (inferred)
-R053	33215756	_ATMi_WT$			ATMi	inhibitor		direct	-1	high	no	vs NCS/HU-treated
-R054	33215756	_ATRi_(WT|AT)$			ATRi	inhibitor		direct	-1	medium	no	ATR activity after NCS moderate; HU condition higher
-R055	33215756	^HU_60min_ATRi_WT$			ATRi	inhibitor		direct	-1	high	no	HU strongly activates ATR
-R056	33215756	_DNA-PKi_(WT|AT)$			DNAPKi	inhibitor		direct	-1	high	no	vs NCS-treated
-R057	33215756	^HU_60min_ctrl_WT$				stimulus_DNA_damage	ATR	direct	1	high	no	hydroxyurea replication stress
-R058	33215756	^HU_60min_ctrl_WT$				stimulus_DNA_damage	CHEK1	downstream	1	medium	no	ATR -> CHK1
-R059	33819647	^Irradiated_				stimulus_DNA_damage	ATM	direct	1	high	no	IR 1h
-R060	34086370	_FGF(7|10)_(1|8)min$				stimulus_growth_factor	FGFR2	direct	1	medium	yes	FGF7/FGF10 are FGFR2b ligands; receptor expression per line not verified (inferred)
-R061	34086370	^FGF10_\d+min_BT549_HA-FGFR2b$				stimulus_growth_factor	FGFR2	direct	1	high	no	overexpressed FGFR2b + FGF10
-R062	34086370	^FGF1_\d+min_BT549_HA-FGFR4$				stimulus_growth_factor	FGFR4	direct	1	high	no	overexpressed FGFR4 + FGF1
-R063	34086370	^siRNA control_FGF10$				stimulus_growth_factor	FGFR2	direct	1	medium	no	T47D FGF10 40min
-R064	34086370	^EGF_?R_?wt_FGF10_\d+min$				stimulus_growth_factor	FGFR2	direct	1	medium	no	T47D FGF10
-R065	34663829	^TNF_(3min|5min|8min|15min|60min)$				stimulus_cytokine	IKBKB;MAP3K7	direct	1	high	no	TNF in U937
-R066	34663829	^TNF_(3min|5min|8min|15min|60min)$				stimulus_cytokine	MAPK14;MAPK8;MAPKAPK2	downstream	1	medium	no	TNF -> p38/JNK
-R067	34663829	^TNF_(15sec|30sec|60sec|90sec)$				stimulus_cytokine	IKBKB;MAP3K7	direct	1	low	no	very early (<2 min)
-R068	34663829	^TNF_15min_(U937|A549|HT29|U2OS)$				stimulus_cytokine	IKBKB;MAP3K7	direct	1	high	no	TNF 15 min across lines
-R069	34663829	^(DMSO_TNF|15min_TNF)$				stimulus_cytokine	IKBKB;MAP3K7	direct	1	high	no	TNF 15 min vs DMSO/UT
-R070	34663829	^(7Oxo|JNKi|MEKi|p38i|TPCA|LY228820|MRT)_TNF$				stimulus_cytokine	IKBKB;MAP3K7	direct	1	low	no	TNF on inhibitor background (target may be blocked)
-R071	34663829	^7Oxo$	^DMSO$		7Oxo	inhibitor		direct	-1	medium	no	unstimulated basal
-R072	34663829	^JNKi$	^DMSO$		JNKi	inhibitor		direct	-1	low	no	unstimulated; compound unnamed
-R073	34663829	^MEKi$	^DMSO$		MEKi	inhibitor		direct	-1	high	no	unnamed MEKi; basal ERK in U937
-R074	34663829	^MEKi$	^DMSO$				MAPK1;MAPK3	downstream	-1	high	no	
-R075	34663829	^p38i$	^DMSO$		p38i	inhibitor		direct	-1	low	no	unstimulated
-R076	34663829	^TPCA$	^DMSO$		TPCA1	inhibitor		direct	-1	low	no	unstimulated
-R077	34663829	^LY228820$	^DMSO$		ralimetinib	inhibitor		direct	-1	low	no	unstimulated
-R078	34663829	^MRT$	^DMSO$		MRT	inhibitor		direct	-1	low	yes	compound identity assumed
-R079	34663829	_TNF_7Oxo$	_TNF$		7Oxo	inhibitor		direct	-1	high	no	TAK1 inhibitor on TNF-stimulated cells (fractions)
-R080	34663829	^(cyto|membrane|nucleus|total)_phospho_TNF$				stimulus_cytokine	IKBKB;MAP3K7	direct	1	high	no	TNF 15 min (subcellular fractions)
-R081	34663829	^DMSO_TNF_3h$				stimulus_cytokine	IKBKB	direct	1	low	no	3h TNF, attenuated
-R082	34663829	^15min_CDK12IN3$			CDK12IN3	inhibitor		direct	-1	low	no	15 min only
-R083	34663829	^3h_CDK12IN3$			CDK12IN3	inhibitor		direct	-1	medium	no	
-R084	34663829	^15min_Dina$			dinaciclib	inhibitor		direct	-1	medium	no	
-R085	34663829	^3h_Dina$			dinaciclib	inhibitor		direct	-1	high	no	
-R086	34663829	^15min_THZ$			THZ1	inhibitor		direct	-1	low	no	
-R087	34663829	^3h_THZ$			THZ1	inhibitor		direct	-1	medium	no	
-R088	34663829	^(15min|3h)_TNF_(CDK12IN3)$	_TNF$		CDK12IN3	inhibitor		direct	-1	low	no	
-R089	34663829	^(15min|3h)_TNF_(Dina)$	_TNF$		dinaciclib	inhibitor		direct	-1	medium	no	
-R090	34663829	^(15min|3h)_TNF_(THZ)$	_TNF$		THZ1	inhibitor		direct	-1	low	no	
-R091	34663829	^(15min|3h)_TNF_(CDK12IN3|Dina|THZ)$	^(15min|3h)_(CDK12IN3|Dina|THZ)$			stimulus_cytokine	IKBKB;MAP3K7	direct	1	medium	no	TNF on CDK-inhibitor background
-R092	34731634	^IL4 (10min|30min|1h)$				stimulus_cytokine	JAK1;JAK3	direct	1	medium	yes	IL-4 receptor JAKs in PMA-differentiated THP-1 (inferred JAK usage)
-R093	34731634	^IFNg/LPS (10min|30min|1h)$				stimulus_cytokine	JAK1;JAK2;IKBKB;MAPK14	direct	1	medium	no	IFNg -> JAK1/2, LPS -> IKK/p38
-R094	36781298	_metformin_24h$				stimulus_metabolic	PRKAA1;PRKAA2	direct	1	low	yes	metformin may activate AMPK (dose/time dependent; inferred)
-R095	37188730	^TNF_(2m|5m|10m|30m)$				stimulus_cytokine	IKBKB;MAP3K7	direct	1	high	no	BOEC TNF
-R096	37188730	^IFN_(5m|10m|30m)$				stimulus_cytokine	JAK1;JAK2	direct	1	medium	yes	IFN type not specified (inferred JAK1/2)
-R097	37188730	^TNFandIFN_(2m|5m|10m|30m)$				stimulus_cytokine	IKBKB;MAP3K7	direct	1	high	no	
-R098	37813859	^GLP_(Danuglipron|Semaglutide)$	^GLP_Vehicle$			stimulus_GPCR	PRKACA	direct	1	medium	yes	GLP1R-expressing HEK293; Gs/cAMP -> PKA (inferred)
-R099	37813859	^(Danuglipron|Semaglutide)_(5|15|30)min$				stimulus_GPCR	PRKACA	direct	1	low	yes	assumes GLP1R-expressing HEK293 (inferred)
-R100	38047086	^BRAFi_			BRAFi	inhibitor		direct	-1	medium	no	CRC organoids, BRAF status unknown, compound unnamed
-R101	38047086	^MEKi_			MEKi	inhibitor		direct	-1	high	no	CRC organoids
-R102	38047086	^MEKi_					MAPK1;MAPK3	downstream	-1	high	no	
-R103	38047086	^mTORi_			mTORi	inhibitor		direct	-1	high	no	
-R104	38047086	^PI3Ki_			PI3Ki	inhibitor		direct	-1	high	no	lipid kinases
-R105	38047086	^PI3Ki_					AKT1;AKT2;AKT3	downstream	-1	medium	no	
-R106	38047086	^TAKi_			TAKi	inhibitor		direct	-1	medium	no	basal TAK1
-R107	38047086	^TBKi_			TBKi	inhibitor		direct	-1	medium	no	basal TBK1
-R108	38047086	^TNFalpha_				stimulus_cytokine	IKBKB;MAP3K7	direct	1	medium	no	TNF 1h
-R109	29535314	doxorubicin				stimulus_DNA_damage	ATM	direct	1	high	no	doxorubicin 2h -> DSB
-R110	29535314	4-nitroquinoline				stimulus_DNA_damage	ATR	direct	1	medium	no	4NQO bulky adducts -> ATR
-R111	38593799	^Bleomycin DMSO$	^Mock DMSO$			stimulus_DNA_damage	ATM;PRKDC	direct	1	high	no	bleomycin DSBs
-R112	38593799	^Bleomycin DMSO$	^Bleomcyin DNA-PKi$		DNAPKi	inhibitor_reversed		direct	1	high	no	reversed: control is DNA-PKi-treated
-R113	38593799	^Bleomcyin DNA-Pki$	^Mock DNA-Pki$			stimulus_DNA_damage	ATM	direct	1	medium	no	bleomycin under DNA-PKi
-R114	38593799	^RF HSV-1 DMSO$	^RF HSV-1 DNA-PKi$		DNAPKi	inhibitor_reversed		direct	1	medium	no	reversed; HSV-1 infected
-R115	17081983	^EGF (5|10)min$				stimulus_growth_factor	EGFR	direct	1	high	no	HeLa
-R116	17081983	^EGF (5|10)min$				stimulus_growth_factor	MAPK1;MAPK3	downstream	1	high	no	
-R117	18691976	^M$	^S$			cell_cycle	CDK1;PLK1;AURKA;AURKB	direct	1	high	no	mitosis vs S
-R118	19651622	EGF 15min				stimulus_growth_factor	EGFR	direct	1	high	no	EGF (with or without inhibitor)
-R119	19651622	^EGF 15min$				stimulus_growth_factor	MAPK1;MAPK3	downstream	1	high	no	
-R120	19651622	U0126			U0126	inhibitor		direct	-1	low	no	vs unstimulated control while EGF added: MEK net change ambiguous
-R121	19651622	^Dasatinib (5|50)nM$	^control$		dasatinib	inhibitor		direct	-1	high	no	K562 BCR-ABL
-R122	19651622	^Dasatinib 50nM$	^5nM$		dasatinib	inhibitor		direct	-1	low	no	50 vs 5 nM, both above BCR-ABL IC50
-R123	20068231	^Ctr$	^mitosis$			cell_cycle_reversed	CDK1;PLK1;AURKA;AURKB	direct	-1	high	no	reversed: control is mitotic
-R124	20068231	^G2$				cell_cycle	CDK1	direct	1	low	no	G2 vs control (async?)
-R125	20071362	^HB-EGF$	^control$			stimulus_growth_factor	EGFR	direct	1	high	no	
-R126	20071362	^HB-EGF$	^LPA$			stimulus_growth_factor	EGFR	direct	1	medium	no	LPA can transactivate EGFR
-R127	21406692	^PMA (0.5h|1h)$				stimulus_PKC	PRKCA;PRKCB;PRKCD;PRKCE	direct	1	high	no	phorbol ester; NB timepoint field says '5h' for 0.5h (metadata error)
-R128	21406692	^PMA (0.5h|1h|6h)$				stimulus_PKC	MAPK1;MAPK3	downstream	1	medium	no	
-R129	21712546	^MLN8054 (0.25|1)uM$			MLN8054	inhibitor		direct	-1	high	no	
-R130	21712546	^MLN8054 5uM$				inhibitor	AURKA;AURKB	direct	-1	high	no	5 uM also hits AURKB
-R131	21712546	^AZD1152 1uM\+ZM447439 5uM$			AZD1152_ZM447439	inhibitor		direct	-1	high	no	
-R132	21712546	^BI2536 0.1uM			BI2536	inhibitor		direct	-1	high	no	
-R133	21712546	^Taxol$				cell_cycle	CDK1	direct	1	medium	yes	taxol mitotic arrest (inferred)
-R134	21857030	^Ctr$	^BI 4834$		BI4834	inhibitor_reversed		direct	1	medium	no	reversed: control is PLK1-inhibited
-R135	21936566	^PF-04217903 (6|24)h$		^GTL-16$	PF04217903	inhibitor		direct	-1	high	no	MET-amplified GTL-16
-R136	21936566	^PF-04217903 (6|24)h$		Resistant	PF04217903	inhibitor		direct	-1	medium	no	resistant derivative
-R137	21955146	^EGF$				stimulus_growth_factor	EGFR	direct	1	high	no	HeLa
-R138	22115753	^Erlotinib$	^control$		erlotinib	inhibitor		direct	-1	low	no	KG-1 (AML) not EGFR-driven
-R139	22199227	^Plk1\(as\) 3-MB-PP1$			PLK1as_3MBPP1	chemical_genetic		direct	-1	high	no	analog-sensitive PLK1
-R140	22199227	^Plk1\(wt\) 3-MB-PP1$				negative_control	PLK1	direct	0	high	no	WT PLK1 + 3-MB-PP1: no expected PLK1 change
-R141	22210691	^EGF 10min$				stimulus_growth_factor	EGFR	direct	1	high	no	
-R142	22210691	^EGF 10min$				stimulus_growth_factor	MAPK1;MAPK3	downstream	1	high	no	
-R143	22424773	^IR 2h$				stimulus_DNA_damage	ATM	direct	1	high	no	
-R144	22424773	etoposide 24h				stimulus_DNA_damage	ATM	direct	1	medium	no	late timepoint
-R145	22496350	^PKD1kd$				knockdown	PRKD1	direct	-1	medium	no	
-R146	22912867	^EGF 15min$				stimulus_growth_factor	EGFR	direct	1	high	no	glioblastoma initiating cells
-R147	23532336	^Ku-794 (100|1000)nM$			KU0063794	inhibitor		direct	-1	high	no	
-R148	23532336	^PI-103 1000nM$			PI103	inhibitor		direct	-1	high	no	
-R149	23828894	^KU60019 120min$			KU60019	inhibitor		direct	-1	medium	no	basal ATM
-R150	23836654	^sh-TBK1$				knockdown	TBK1	direct	-1	medium	no	
-R151	23898821	^Crizotinib$			crizotinib	inhibitor		direct	-1	high	no	NCI-H2228 EML4-ALK
-R152	24117733	^LRRK2-IN-1$			LRRK2IN1	inhibitor		direct	-1	medium	no	SH-SY5Y
-R153	24275748	^Rapamycin (7|15)min$			rapamycin	inhibitor		direct	-1	high	no	
-R154	24275748	^Rapamycin (7|15)min$					RPS6KB1	downstream	-1	high	no	
-R155	24275748	^Starvation (7|15)min$				stimulus_withdrawal	MTOR;RPS6KB1	direct	-1	medium	no	nutrient/serum starvation
-R156	24501219	^Thrombin (2|5|10)min$				stimulus_GPCR	PRKCA;PRKCB	direct	1	low	yes	PAR1 -> Gq -> PKC (inferred)
-R157	24850871	^PGE2 (5|10|20|30)min$				stimulus_GPCR	PRKACA	direct	1	medium	no	PGE2 -> EP2/EP4 -> cAMP -> PKA in T cells
-R158	25002506	^BI-D1870$			BID1870	inhibitor		direct	-1	high	no	A375 BRAF V600E
-R159	25002506	^RSK1/2 RNAi$				knockdown	RPS6KA1;RPS6KA3	direct	-1	medium	no	A375
-R160	25002506	^PD184352$			PD184352	inhibitor		direct	-1	high	no	A375 BRAF V600E
-R161	25002506	^PD184352$					MAPK1;MAPK3;RPS6KA1;RPS6KA3	downstream	-1	high	no	
-R162	25002506	^PMA, BI-D1870$			BID1870	inhibitor		direct	-1	low	no	vs unstimulated: PMA stimulation confounds
-R163	25003641	^VE-821$			VE821	inhibitor		direct	-1	medium	no	unperturbed HL-60
-R164	25056879	^TGFB (5|10|15|20)min$				stimulus_cytokine	TGFBR1;TGFBR2	direct	1	high	no	TGF-beta in HaCaT
-R165	25247763	^Ex(9|20)-KI$	^MCF10A$			mutation_knockin	AKT1;AKT2	downstream	1	medium	no	PIK3CA E545K / H1047R knock-in
-R166	25404012	^EGF$	^control$			stimulus_growth_factor	EGFR	direct	1	medium	no	H1975 (EGFR L858R/T790M)
-R167	25404012	^EGF, Erlotinib$		NCI-H3255	erlotinib	inhibitor		direct	-1	low	no	vs unstimulated; erlotinib-sensitive EGFR L858R (net vs control ambiguous)
-R168	25849741	^TNFA$	^control$			stimulus_cytokine	IKBKB	direct	1	high	no	MCF-7
-R169	25849741	^TNFA, IKKB\(WT\)$	^control$			stimulus_cytokine	IKBKB	direct	1	high	no	
-R170	25849741	^SC-514$	^control$		SC514	inhibitor		direct	-1	low	no	basal IKK
-R171	25849741	^TNFA$	^SC-514$			stimulus_cytokine	IKBKB	direct	1	medium	yes	TNF vs SC-514-treated (interpretation of contrast inferred)
-R172	25849741	^TNFA, Ctr$	^SC-514$		SC514	inhibitor_reversed		direct	1	medium	yes	assumed TNF vs TNF+SC-514 (inferred)
-R173	25850435	^AZD6244$	^control$		selumetinib	inhibitor		direct	-1	high	no	WM239A BRAF-mutant melanoma
-R174	25850435	^AZD6244$	^control$				MAPK1;MAPK3	downstream	-1	high	no	
-R175	25850435	^PLX4032$	^control$		vemurafenib	inhibitor		direct	-1	high	no	
-R176	25850435	^PLX4032$	^control$				MAP2K1;MAP2K2;MAPK1;MAPK3	downstream	-1	high	no	BRAF-mutant
-R177	25907765	^Starve$	^Insulin\+aa$			stimulus_withdrawal	MTOR;RPS6KB1;AKT1;AKT2	direct	-1	high	no	reversed stimulation: starved vs insulin+aa
-R178	25921289	^NGF (10|45)min$				stimulus_growth_factor	NTRK1	direct	1	medium	no	SH-SY5Y
-R179	26055452	^RO3306$			RO3306	inhibitor		direct	-1	high	no	
-R180	26091039	^Fam20C KO$				knockout	FAM20C	direct	-1	high	no	
-R181	26270265	^AZD1152$			AZD1152	inhibitor		direct	-1	high	no	
-R182	26270265	^VX680$			VX680	inhibitor		direct	-1	high	no	
-R183	26434776	^Imatinib$			imatinib	inhibitor		direct	-1	low	no	NCI-H929 myeloma not ABL-driven
-R184	26471730	^PINK1 WT$	^KD$			overexpression_or_rescue	PINK1	direct	1	low	yes	PINK1 activity requires mitochondrial depolarisation; KD = knockdown or kinase-dead (inferred)
-R185	24626860	^PINK1 KD$				knockdown	PINK1	direct	-1	low	yes	basal PINK1 activity low (inferred)
-R186	26546556	^Anti-CD3\+Anti-CD28 (15|30)min$				stimulus_TCR	LCK;ZAP70	direct	1	high	no	TCR stimulation
-R187	26546556	^Anti-CD3\+Anti-CD28 (15|30|60)min$		Jurkat E6.1		stimulus_TCR	MAPK1;MAPK3	downstream	1	medium	no	
-R188	26572502	^HU$	^control$			stimulus_DNA_damage	ATR	direct	1	high	no	
-R189	26572502	^VE-821\+HU$	^HU$		VE821	inhibitor		direct	-1	high	no	
-R190	27080861	^IL-23 30min$				stimulus_cytokine	JAK2;TYK2	direct	1	medium	no	
-R191	27134283	^Flavopiridol$			flavopiridol	inhibitor		direct	-1	high	no	
-R192	27134283	^RO-3306$			RO3306	inhibitor		direct	-1	high	no	
-R193	27155012	^SYK inhibition$			SYKi	inhibitor		direct	-1	high	no	B-cell lines
-R194	27155012	^CD79a KD$				knockdown	SYK	downstream	-1	low	yes	tonic BCR signalling reduced (inferred)
-R195	27155012	^BCR stimulation (2|10)min$				stimulus_BCR	SYK;LYN;BTK	direct	1	high	no	
-R196	27307491	^TNF-a-FLAG (5|15)min$	^control$			stimulus_cytokine	IKBKB;MAP3K7	direct	1	high	no	A549
-R197	27422710	^Selumetinib$			selumetinib	inhibitor		direct	-1	high	no	
-R198	27422710	^Selumetinib$					MAPK1;MAPK3	downstream	-1	high	no	
-R199	27732954	^Crizotinib$		NB-1643|NB-1	crizotinib	inhibitor		direct	-1	high	no	ALK-mutant/amplified neuroblastoma
-R200	27732954	^Crizotinib$		SH-SY5Y	crizotinib	inhibitor		direct	-1	medium	no	ALK F1174L partially crizotinib-resistant
-R201	27794612	^Gefitinib$			gefitinib	inhibitor		direct	-1	high	no	A431 EGFR-amplified
-R202	27794612	^Gefitinib\+FGF2$			gefitinib	inhibitor		direct	-1	medium	no	plus FGF2 rescue
-R203	27834733	^GDC0973\+GDC0941$			cobimetinib	inhibitor		direct	-1	high	no	
-R204	27834733	^GDC0973\+GDC0941$			pictilisib	inhibitor		direct	-1	high	no	
-R205	27834733	^GDC0973\+GDC0941$					MAPK1;MAPK3;AKT1;AKT2	downstream	-1	medium	no	
-R206	28165663	^Rapamycin$			rapamycin	inhibitor		direct	-1	high	no	
-R207	28165663	^Torin1$			torin1	inhibitor		direct	-1	high	no	
-R208	28165663	^(Rapamycin|Torin1)$					RPS6KB1	downstream	-1	high	no	
-R209	28165663	^Insulin$				stimulus_growth_factor	INSR;AKT1;AKT2	direct	1	high	no	
-R210	28188228	^PLX4032 (5|10|15|20|25|30|35|40|45|50|55|60)min$		COLO 205	vemurafenib	inhibitor		direct	-1	high	no	COLO205 BRAF V600E
-R211	28188228	^PLX4032 (10|15|20|25|30|35|40|45|50|55|60)min$		COLO 205			MAP2K1;MAP2K2;MAPK1;MAPK3	downstream	-1	high	no	
-R212	28188228	^PLX4032 0min$				negative_control	BRAF	direct	0	medium	no	time zero: no change expected
-R213	28188228	^PLX4032 (5|10|15|20|25|30|35|40|45|50|55|60)min$		HCT 116	vemurafenib	inhibitor		direct	-1	low	no	HCT116 KRAS-mutant/BRAF-WT: paradoxical pathway activation; no downstream expectation
-R214	28209619	^BT-474, Lapatinib$			lapatinib	inhibitor		direct	-1	high	no	HER2-amplified
-R215	28539327	^TNFA 10min$				stimulus_cytokine	IKBKB;MAP3K7	direct	1	high	no	
-R216	28634120	^CD3\+CD4$				stimulus_TCR	LCK;ZAP70	direct	1	medium	no	
-R217	28674419	^Mitotic$				cell_cycle	CDK1;PLK1;AURKA;AURKB	direct	1	high	no	
-R218	29020638	^HU, CHK1i$	^control$		CHK1i	inhibitor		direct	-1	medium	no	HU + CHK1i vs untreated
-R219	29052541	^M$	^G1$			cell_cycle	CDK1;PLK1;AURKA;AURKB	direct	1	high	no	
-R220	29052541	^S$	^G1$			cell_cycle	CDK2	direct	1	medium	no	
-R221	29154753	^Cyclin A High$				cell_cycle	CDK2	direct	1	medium	no	
-R222	29214152	^CX-4945$			CX4945	inhibitor		direct	-1	high	no	CK2
-R223	29255136	^SCH$	^control$		ERKi_SCH772984	inhibitor		direct	-1	high	no	WM239A; "SCH" inferred SCH772984
-R224	29255136	^TRA$	^control$		trametinib	inhibitor		direct	-1	high	no	"TRA" inferred trametinib (inferred)
-R225	29255136	^TRA$	^control$				MAPK1;MAPK3	downstream	-1	high	yes	
-R226	29622655	^Tofacitinib cocult (1.5h|24h)$	^Ctr cocult$		tofacitinib	inhibitor		direct	-1	high	no	MM1.S with stroma (IL-6/JAK)
-R227	29743597	^MASTL overexpression$				overexpression	MASTL	direct	1	medium	no	
-R228	30001349	^VE-821 30min\+IR 1h$	^IR 1h$		VE821	inhibitor		direct	-1	high	no	
-R229	30266825	^CDKL5 expressing$	^CDKL5 KO$			overexpression_or_rescue	CDKL5	direct	1	high	no	
-R231	30459281	^(Crizotinib|Lorlatinib) 1h$		SK-N-AS		negative_control	ALK	direct	0	low	no	ALK-WT/low line (weak negative control)
-R232	30459283	^DMSO$	^(Ceritinib|TAE684|Crizotinib) 30min$			inhibitor_reversed	ALK	direct	1	high	no	reversed: control is ALK-inhibited NB1 (ALK amplified)
-R233	30631047	^AMPK-DKO$				knockout	PRKAA1;PRKAA2	direct	-1	high	no	
-R234	30652415	^PKD2\+PKD3 KD$				knockdown	PRKD2;PRKD3	direct	-1	medium	no	
-R235	30652415	^PKD2 KD$				knockdown	PRKD2	direct	-1	medium	no	
-R236	30755469	^ETAA1-AAD\+TOPBP1-AID$				genetic_ATR_activator_loss	ATR	direct	-1	medium	yes	loss of both ATR activators (inferred)
-R237	30773488	^Kenpaullone$			kenpaullone	inhibitor		direct	-1	medium	no	
-R238	30901187	^Dactolisib 1h$			dactolisib	inhibitor		direct	-1	high	no	BT-474
-R239	30901187	^Omipalisib 1h$			omipalisib	inhibitor		direct	-1	high	no	
-R240	30901187	^(Dactolisib|Omipalisib) 1h$					AKT1;AKT2;RPS6KB1	downstream	-1	high	no	
-R241	30988284	^THZ531 2h$			THZ531	inhibitor		direct	-1	high	no	
-R242	31257184	^Foretinib 3h$			foretinib	inhibitor		direct	-1	medium	no	NCI-H1155 driver unknown
-R243	31636099	^Pexidartinib 30min$			pexidartinib	inhibitor		direct	-1	low	no	Karpas-299 not CSF1R-driven (ALK+ ALCL)
-R244	32142685	^AO 6h$	^control$			stimulus_mito_depolarisation	PINK1	direct	1	high	no	antimycin/oligomycin -> PINK1
-R245	32142685	^(NMS-873|CB-5083)\+AO 6h$	^(NMS-873|CB-5083)$			stimulus_mito_depolarisation	PINK1	direct	1	medium	no	AO on p97-inhibitor background
-R246	34974192	^WT-parkin (2h|6h|12h)$				stimulus_mito_depolarisation	PINK1	direct	1	low	yes	assumes HeLa-Parkin AO/depolarisation time course (inferred)
-R247	21659604	^Starved$	^Insulin$			stimulus_withdrawal	MTOR;RPS6KB1;AKT1;AKT2	direct	-1	high	no	reversed stimulation
-R248	21659604	^Torin1$	^Insulin$		torin1	inhibitor		direct	-1	high	no	
-R249	21659604	^Rapamycin$	^Insulin$		rapamycin	inhibitor		direct	-1	high	no	
-R250	21659604	^(Torin1|Rapamycin)$	^Insulin$				RPS6KB1	downstream	-1	high	no	
-R251	18669648	^Mitosis \(Nocodazole\)$				cell_cycle	CDK1;PLK1;AURKA;AURKB	direct	1	high	no	
-R252	24324209	^Iloprost				stimulus_GPCR	PRKACA	direct	1	high	no	prostacyclin analogue -> cAMP -> PKA in platelets
-R253	28060719	^ADP 30s\+Iloprost (30|60)s$				stimulus_GPCR	PRKACA	direct	1	low	no	ADP + iloprost vs control (mixed)
-R254	26060313	^AKTi \(Akt inhibitor VIII\)$			aktVIII	inhibitor		direct	-1	high	no	MCF7 1h (Cutillas lab; drug overlap with Hijazi)
-R255	26060313	^AKTi \(MK-2206\)$			MK2206	inhibitor		direct	-1	high	no	
-R256	26060313	^CAMK2i \(KN-93\)$			KN93	inhibitor		direct	-1	medium	no	
-R257	26060313	^CAMK2i \(KN-62\)$			KN62	inhibitor		direct	-1	medium	no	
-R258	26060313	^EGFRi \(PD-168393\)$			PD168393	inhibitor		direct	-1	medium	no	MCF7 low EGFR
-R259	26060313	^EGFRi \(PD-153035\)$			PD153035	inhibitor		direct	-1	medium	no	MCF7 low EGFR
-R260	26060313	^ERKi \(ERK inhibitor( II)?\)$			ERKi_generic	inhibitor		direct	-1	medium	no	
-R261	26060313	^MEKi \(GSK-1120212\)$			trametinib	inhibitor		direct	-1	high	no	
-R262	26060313	^MEKi \(U0126\)$			U0126	inhibitor		direct	-1	high	no	
-R263	26060313	^MEKi \(					MAPK1;MAPK3	downstream	-1	high	no	
-R264	26060313	^mTORi \(KU-0063794\)$			KU0063794	inhibitor		direct	-1	high	no	
-R265	26060313	^mTORi \(Torin-1\)$			torin1	inhibitor		direct	-1	high	no	
-R266	26060313	^mTORi \(					RPS6KB1	downstream	-1	high	no	
-R267	26060313	^P70S6K1i \(PF-4708671\)$			PF4708671	inhibitor		direct	-1	high	no	
-R268	26060313	^P70S6K1i \(DG2\)$			DG2	inhibitor		direct	-1	high	no	
-R269	26060313	^PI3Ki \(GDC-0941\)$			pictilisib	inhibitor		direct	-1	high	no	MCF7 PIK3CA E545K
-R270	26060313	^PI3Ki \(PI-103\)$			PI103	inhibitor		direct	-1	high	no	
-R271	26060313	^PI3Ki \(					AKT1;AKT2;AKT3	downstream	-1	high	no	PIK3CA-mutant MCF7
-R272	26060313	^PKCi \(G.*6976\)$			Go6976	inhibitor		direct	-1	medium	no	
-R273	26060313	^PKCi \(BIM-1\)$			BIM1	inhibitor		direct	-1	medium	no	
-R274	26060313	^ROCKi \(H-1152\)$			H1152	inhibitor		direct	-1	high	no	
-R275	26060313	^ROCKi \(Y-27632\)$			Y27632	inhibitor		direct	-1	high	no	
-R230a	30459281	^Crizotinib 1h$		CLB-Bar	crizotinib	inhibitor		direct	-1	high	no	CLB-Bar ALK-amplified
-R230b	30459281	^Crizotinib 1h$		CLB-Ge1	crizotinib	inhibitor		direct	-1	medium	no	CLB-Ge1 ALK F1174V (reduced crizotinib sensitivity)
-R230c	30459281	^Lorlatinib 1h$		CLB-Bar|CLB-Ge1	lorlatinib	inhibitor		direct	-1	high	no	
-D001	36926954	^Dasatinib_		K562	dasatinib	inhibitor		direct	-1	high	no	decryptM dose series; BCR-ABL K562; confidence adjusted by dose in script
-D002	36926954	^Dasatinib_		A431|A549	dasatinib	inhibitor		direct	-1	medium	no	SRC-family in non-ABL-driven lines
-D003	36926954	^Afatinib_		A431	afatinib	inhibitor		direct	-1	high	no	EGFR-amplified A431
-D004	36926954	^Gefitinib_		A431|PC-9	gefitinib	inhibitor		direct	-1	high	no	EGFR-amplified/mutant
-D005	36926954	^(Afatinib|Gefitinib)_		A431|PC-9			MAPK1;MAPK3	downstream	-1	medium	no	EGFR-driven lines
-D006	36926954	^Gefitinib\+AZD4547_1to80_		PC-9	gefitinib	inhibitor		direct	-1	high	no	dose label = gefitinib conc. assumed (inferred)
-D007	36926954	^(Gefitinib\+AZD4547_1to80|AZD4547)_		PC-9	AZD4547	inhibitor		direct	-1	low	no	PC-9 not FGFR-driven
-D008	36926954	^Imatinib_		K562	imatinib	inhibitor		direct	-1	high	no	BCR-ABL
-D009	36926954	^Imatinib_		A431	imatinib	inhibitor		direct	-1	low	no	not ABL-driven
-D010	36926954	^Lapatinib_		BT-474|SK-BR-3|MDA-MB-175-VII|PC-9	lapatinib	inhibitor		direct	-1	high	no	HER2-amp / NRG1-fusion / EGFR-mutant
-D011	36926954	^Lapatinib\+AZD4547_1to1_		PC-9	lapatinib	inhibitor		direct	-1	high	no	
-D012	36926954	^Lapatinib\+AZD4547_1to1_		PC-9	AZD4547	inhibitor		direct	-1	low	no	
-D013	36926954	^AZD8055_		A549	AZD8055	inhibitor		direct	-1	high	no	
-D014	36926954	^(AZD8055|Dactolisib)_		A549			RPS6KB1	downstream	-1	high	no	
-D015	36926954	^Dactolisib_		A549	dactolisib	inhibitor		direct	-1	high	no	
-D016	36926954	^Pictilisib_		A549	pictilisib	inhibitor		direct	-1	high	no	lipid kinases
-D017	36926954	^(Pictilisib|Dactolisib)_		A549			AKT1;AKT2	downstream	-1	medium	no	
-D018	36926954	^MK2206_		A549	MK2206	inhibitor		direct	-1	high	no	
-D019a	36926954	^Selumetinib_		A549	selumetinib	inhibitor		direct	-1	high	no	KRAS-mutant A549
-D019b	36926954	^PD325901_		A549	PD0325901	inhibitor		direct	-1	high	no	
-D019c	36926954	^Refametinib_		A549	refametinib	inhibitor		direct	-1	high	no	
-D020	36926954	^(Selumetinib|PD325901|Refametinib|Selumetinib\+MK2206_1to2|Selumetinib\+MK2206_3to1)_		A549			MAPK1;MAPK3	downstream	-1	high	no	MEK -> ERK
-D021	36926954	^Selumetinib\+MK2206_(1to2|3to1)_		A549	selumetinib	inhibitor		direct	-1	high	no	combination
-D022	36926954	^Selumetinib\+MK2206_(1to2|3to1)_		A549	MK2206	inhibitor		direct	-1	high	no	combination; dose label refers to total/first drug (inferred)
-D023	36926954	^Nintedanib_		A549	nintedanib	inhibitor		direct	-1	low	no	A549 not RTK-driven by these targets
-D024	36926954	^Tideglusib_		A549	tideglusib	inhibitor		direct	-1	medium	no	
-D025	36926954	^CUDC101_		HeLa013	CUDC101	inhibitor		direct	-1	low	no	HeLa not EGFR-driven; 4h; HDAC effects dominate
-D026	36926954	^SHP099_		KYSE-520	SHP099	inhibitor_indirect		downstream	-1	medium	no	SHP2 inhibition in EGFR-amp KYSE-520 lowers RAS/ERK
-D027a	36926954	^Trastuzumab_		BT-474|SK-BR-3|MDA-MB-175-VII	trastuzumab	antibody		direct	-1	low	no	antibody; effect on ERBB2 kinase activity weaker/indirect
-D027b	36926954	^Pertuzumab_		BT-474|SK-BR-3|MDA-MB-175-VII	pertuzumab	antibody		direct	-1	low	no	antibody; MDA-MB-175-VII (NRG1-driven) most responsive
+# Condition rules (manual). kinases blank + agent -> drug_targets_manual direct_targets; stim_class -> stimulus_kinases.tsv labels (+ rule kinases as
+# extra direct receptor); mask_class -> extra pathway_masks class. expected_direction multiplies table signs (reversed contrasts = -1/+1 flips).
+rule_id	PMID	cond_regex	ctl_regex	sample_regex	agent	stim_class	mask_class	perturbation_type	kinases	relation	expected_direction	confidence	inferred	note
+R001	28302921	^(xray|proton|carbon)$				DSB		stimulus_DNA_damage		direct	1	high	no	ionising radiation 2h activates ATM
+R002	29523821	^UV$				UV		stimulus_DNA_damage		direct	1	medium	no	UV activates ATR (time not given)
+R004	29523821	^p38i \+ UV$	^UV$		p38i			inhibitor		direct	-1	high	no	p38i+UV vs UV
+R005	29970458	_serum_gefitinib_			gefitinib			inhibitor		direct	-1	medium	no	WiDr (BRAF V600E CRC) gefitinib vs serum control; EGFR feedback activity context
+R006	29970458	^(wt|PTPN11_KO)_serum_PLX4032_\d+h$			vemurafenib			inhibitor		direct	-1	high	no	WiDr is BRAF V600E
+R007	29970458	^(wt|PTPN11_KO)_serum_PLX4032_(2|6)h$							MAP2K1;MAP2K2;MAPK1;MAPK3	downstream	-1	high	no	BRAF V600E: vemurafenib suppresses MEK/ERK (early; rebound at 24-48h via EGFR feedback)
+R008	29970458	^(wt|PTPN11_KO)_serum_PLX4032_(24|48)h$							MAP2K1;MAP2K2;MAPK1;MAPK3	downstream	-1	low	no	late timepoints: EGFR-mediated ERK reactivation in CRC (Prahallad 2012) - reduced confidence
+R009	29970458	^wt_serum_PLX4032_gefitinib_			vemurafenib			inhibitor		direct	-1	high	no	combination BRAFi+EGFRi
+R010	29970458	^wt_serum_PLX4032_gefitinib_			gefitinib			inhibitor		direct	-1	medium	no	combination BRAFi+EGFRi
+R011	29970458	^wt_serum_PLX4032_gefitinib_							MAP2K1;MAP2K2;MAPK1;MAPK3	downstream	-1	high	no	combination blocks ERK reactivation
+R012	30650350	^MARK3_KO$	^WT$					knockout	MARK3	direct	-1	high	no	HAP1 MARK3 KO
+R013	30650350	^MARK3_KO_TMZ$	^WT_TMZ$					knockout	MARK3	direct	-1	high	no	HAP1 MARK3 KO (both TMZ treated)
+R014	32034161	^EGF$	^NoSerum$			EGF		stimulus_growth_factor		direct	1	high	no	EGF 10 min vs serum-starved RPE1
+R016	32034161	^(MEKi_)?Cobimetinib_			cobimetinib			inhibitor		direct	-1	high	no	vs EGF-stimulated; dose suffix 0-5uM/0-1 inferred = 0.5/0.1 uM (inferred)
+R017	32034161	^(MEKi_)?PD0325901_			PD0325901			inhibitor		direct	-1	high	no	vs EGF-stimulated
+R018	32034161	^MEKi_U0126_			U0126			inhibitor		direct	-1	high	no	vs EGF-stimulated
+R019	32034161	^((MEKi_)?Cobimetinib|(MEKi_)?PD0325901|MEKi_U0126)_							MAPK1;MAPK3	downstream	-1	high	no	MEK inhibition -> ERK1/2 activity down
+R020	32034161	^Akti_Akt-1-2_			akti_akt12			inhibitor		direct	-1	high	no	vs EGF-stimulated
+R021	32034161	^Akti_MK-2206_			MK2206			inhibitor		direct	-1	high	no	vs EGF-stimulated
+R022	32034161	^Akti_Perifosine_			perifosine			inhibitor		direct	-1	low	no	perifosine indirect/weak AKT inhibitor
+R023	32034161	^EGFRi_AG1478_			AG1478			inhibitor		direct	-1	high	no	vs EGF-stimulated
+R024	32034161	^EGFRi_Erlotinib_			erlotinib			inhibitor		direct	-1	high	no	vs EGF-stimulated
+R025	32034161	^EGFRi_Lapatinib_			lapatinib			inhibitor		direct	-1	high	no	vs EGF-stimulated
+R026	32034161	^EGFRi_							MAPK1;MAPK3	downstream	-1	medium	no	EGFR inhibition in EGF-stimulated cells reduces ERK
+R027	32034161	^GSK3i_BIO_			GSK3i_BIO			inhibitor		direct	-1	medium	no	
+R028	32034161	^GSK3i_CHIR-99021_			CHIR99021			inhibitor		direct	-1	high	no	
+R029	32034161	^GSK3i_SB216763_			SB216763			inhibitor		direct	-1	medium	no	
+R030	32034161	^JNKi_JNK-IN-8_			JNKIN8			inhibitor		direct	-1	medium	no	JNK basal activity under EGF may be low
+R031	32034161	^JNKi_SP-600125_			SP600125			inhibitor		direct	-1	medium	no	
+R032	32034161	^JNKi_Tanziternib_			tanzisertib			inhibitor		direct	-1	medium	no	Tanziternib = tanzisertib (typo in metadata, inferred)
+R033	32034161	^mTORi_Everolimus_			everolimus			inhibitor		direct	-1	high	no	
+R034	32034161	^mTORi_Temsirolimus_			temsirolimus			inhibitor		direct	-1	high	no	
+R035	32034161	^mTORi_Torkinib_			torkinib			inhibitor		direct	-1	high	no	
+R036	32034161	^mTORi_							RPS6KB1	downstream	-1	high	no	mTORC1 -> S6K1 T389
+R037	32034161	^p38i_BIRB-796_			BIRB796			inhibitor		direct	-1	medium	no	p38 basal activity under EGF moderate
+R038	32034161	^p38i_SB-203580_			SB203580			inhibitor		direct	-1	medium	no	
+R039	32034161	^p38i_SB-239063_			SB239063			inhibitor		direct	-1	medium	no	
+R040	32034161	^p38i_							MAPKAPK2	downstream	-1	medium	no	p38 -> MK2
+R041	32034161	^PI3Ki_LY294002_			LY294002			inhibitor		direct	-1	high	no	lipid kinase targets (no PSP substrates)
+R042	32034161	^PI3Ki_PI3-kinase-alpha-inhibitor2_			PI3Ka_inh2			inhibitor		direct	-1	high	no	
+R043	32034161	^PI3Ki_Wortmannin_			wortmannin			inhibitor		direct	-1	high	no	
+R044	32034161	^PI3Ki_							AKT1;AKT2;AKT3	downstream	-1	medium	no	PI3K -> AKT in EGF-stimulated cells
+R045	32034161	^PKCi_BisindolylmaleimideI_			BIM1			inhibitor		direct	-1	medium	no	basal PKC activity
+R046	32034161	^PKCi_Enzastaurin_			enzastaurin			inhibitor		direct	-1	medium	no	
+R047	32034161	^PKCi_Go-6983_			Go6983			inhibitor		direct	-1	medium	no	
+R048	32034161	^RAFi_LY-3009120_			LY3009120			inhibitor		direct	-1	medium	no	pan-RAF in BRAF-WT RPE1
+R049	32034161	^RAFi_SB-590885_			SB590885			inhibitor		direct	-1	low	no	BRAF-selective in BRAF-WT cells: paradoxical activation possible
+R050	32034161	^RAFi_Sorafenib_			sorafenib			inhibitor		direct	-1	low	no	multikinase, BRAF-WT
+R051	33215756	^NCS_\d+min_ctrl_WT$				DSB		stimulus_DNA_damage		direct	1	high	no	neocarzinostatin DSBs, ATM-proficient
+R052	33215756	^NCS_\d+min_ctrl_AT$					DSB	stimulus_DNA_damage	PRKDC;ATR	direct	1	low	yes	ATM-deficient cells; DNA-PK/ATR compensation (inferred)
+R053	33215756	_ATMi_WT$			ATMi			inhibitor		direct	-1	high	no	vs NCS/HU-treated
+R054	33215756	_ATRi_(WT|AT)$			ATRi			inhibitor		direct	-1	medium	no	ATR activity after NCS moderate; HU condition higher
+R055	33215756	^HU_60min_ATRi_WT$			ATRi			inhibitor		direct	-1	high	no	HU strongly activates ATR
+R056	33215756	_DNA-PKi_(WT|AT)$			DNAPKi			inhibitor		direct	-1	high	no	vs NCS-treated
+R057	33215756	^HU_60min_ctrl_WT$				REPSTRESS		stimulus_DNA_damage		direct	1	high	no	hydroxyurea replication stress
+R059	33819647	^Irradiated_				DSB		stimulus_DNA_damage		direct	1	high	no	IR 1h
+R060	34086370	_FGF(7|10)_(1|8)min$				FGF		stimulus_growth_factor	FGFR2	direct	1	medium	yes	FGF7/FGF10 are FGFR2b ligands; receptor expression per line not verified (inferred)
+R061	34086370	^FGF10_\d+min_BT549_HA-FGFR2b$				FGF		stimulus_growth_factor	FGFR2	direct	1	high	no	overexpressed FGFR2b + FGF10
+R062	34086370	^FGF1_\d+min_BT549_HA-FGFR4$				FGF		stimulus_growth_factor	FGFR4	direct	1	high	no	overexpressed FGFR4 + FGF1
+R063	34086370	^siRNA control_FGF10$				FGF		stimulus_growth_factor	FGFR2	direct	1	medium	no	T47D FGF10 40min
+R064	34086370	^EGF_?R_?wt_FGF10_\d+min$				FGF		stimulus_growth_factor	FGFR2	direct	1	medium	no	T47D FGF10
+R065	34663829	^TNF_(3min|5min|8min|15min|60min)$				TNF		stimulus_cytokine		direct	1	high	no	TNF in U937
+R067	34663829	^TNF_(15sec|30sec|60sec|90sec)$				TNF		stimulus_cytokine		direct	1	low	no	very early (<2 min)
+R068	34663829	^TNF_15min_(U937|A549|HT29|U2OS)$				TNF		stimulus_cytokine		direct	1	high	no	TNF 15 min across lines
+R069	34663829	^(DMSO_TNF|15min_TNF)$				TNF		stimulus_cytokine		direct	1	high	no	TNF 15 min vs DMSO/UT
+R070	34663829	^(7Oxo|JNKi|MEKi|p38i|TPCA|LY228820|MRT)_TNF$				TNF		stimulus_cytokine		direct	1	low	no	TNF on inhibitor background (target may be blocked)
+R071	34663829	^7Oxo$	^DMSO$		7Oxo			inhibitor		direct	-1	medium	no	unstimulated basal
+R072	34663829	^JNKi$	^DMSO$		JNKi			inhibitor		direct	-1	low	no	unstimulated; compound unnamed
+R073	34663829	^MEKi$	^DMSO$		MEKi			inhibitor		direct	-1	high	no	unnamed MEKi; basal ERK in U937
+R074	34663829	^MEKi$	^DMSO$						MAPK1;MAPK3	downstream	-1	high	no	
+R075	34663829	^p38i$	^DMSO$		p38i			inhibitor		direct	-1	low	no	unstimulated
+R076	34663829	^TPCA$	^DMSO$		TPCA1			inhibitor		direct	-1	low	no	unstimulated
+R077	34663829	^LY228820$	^DMSO$		ralimetinib			inhibitor		direct	-1	low	no	unstimulated
+R078	34663829	^MRT$	^DMSO$		MRT			inhibitor		direct	-1	low	yes	compound identity assumed
+R079	34663829	_TNF_7Oxo$	_TNF$		7Oxo			inhibitor		direct	-1	high	no	TAK1 inhibitor on TNF-stimulated cells (fractions)
+R080	34663829	^(cyto|membrane|nucleus|total)_phospho_TNF$				TNF		stimulus_cytokine		direct	1	high	no	TNF 15 min (subcellular fractions)
+R081	34663829	^DMSO_TNF_3h$				TNF		stimulus_cytokine		direct	1	low	no	3h TNF, attenuated
+R082	34663829	^15min_CDK12IN3$			CDK12IN3			inhibitor		direct	-1	low	no	15 min only
+R083	34663829	^3h_CDK12IN3$			CDK12IN3			inhibitor		direct	-1	medium	no	
+R084	34663829	^15min_Dina$			dinaciclib			inhibitor		direct	-1	medium	no	
+R085	34663829	^3h_Dina$			dinaciclib			inhibitor		direct	-1	high	no	
+R086	34663829	^15min_THZ$			THZ1			inhibitor		direct	-1	low	no	
+R087	34663829	^3h_THZ$			THZ1			inhibitor		direct	-1	medium	no	
+R088	34663829	^(15min|3h)_TNF_(CDK12IN3)$	_TNF$		CDK12IN3			inhibitor		direct	-1	low	no	
+R089	34663829	^(15min|3h)_TNF_(Dina)$	_TNF$		dinaciclib			inhibitor		direct	-1	medium	no	
+R090	34663829	^(15min|3h)_TNF_(THZ)$	_TNF$		THZ1			inhibitor		direct	-1	low	no	
+R091	34663829	^(15min|3h)_TNF_(CDK12IN3|Dina|THZ)$	^(15min|3h)_(CDK12IN3|Dina|THZ)$			TNF		stimulus_cytokine		direct	1	medium	no	TNF on CDK-inhibitor background
+R092	34731634	^IL4 (10min|30min|1h)$				IL4		stimulus_cytokine		direct	1	medium	yes	IL-4 receptor JAKs in PMA-differentiated THP-1 (inferred JAK usage)
+R093	34731634	^IFNg/LPS (10min|30min|1h)$				IFNG_LPS		stimulus_cytokine		direct	1	medium	no	IFNg -> JAK1/2, LPS -> IKK/p38
+R094	36781298	_metformin_24h$				AMPK_ACT		stimulus_metabolic		direct	1	low	yes	metformin may activate AMPK (dose/time dependent; inferred)
+R095	37188730	^TNF_(2m|5m|10m|30m)$				TNF		stimulus_cytokine		direct	1	high	no	BOEC TNF
+R096	37188730	^IFN_(5m|10m|30m)$				IFN		stimulus_cytokine		direct	1	medium	yes	IFN type not specified (inferred JAK1/2)
+R097	37188730	^TNFandIFN_(2m|5m|10m|30m)$				TNF		stimulus_cytokine		direct	1	high	no	; IFN component: JAK1/2 via explicit row R097b
+R098	37813859	^GLP_(Danuglipron|Semaglutide)$	^GLP_Vehicle$			CAMP_PKA		stimulus_GPCR		direct	1	medium	yes	GLP1R-expressing HEK293; Gs/cAMP -> PKA (inferred)
+R099	37813859	^(Danuglipron|Semaglutide)_(5|15|30)min$				CAMP_PKA		stimulus_GPCR		direct	1	low	yes	assumes GLP1R-expressing HEK293 (inferred)
+R100	38047086	^BRAFi_			BRAFi			inhibitor		direct	-1	medium	no	CRC organoids, BRAF status unknown, compound unnamed
+R101	38047086	^MEKi_			MEKi			inhibitor		direct	-1	high	no	CRC organoids
+R102	38047086	^MEKi_							MAPK1;MAPK3	downstream	-1	high	no	
+R103	38047086	^mTORi_			mTORi			inhibitor		direct	-1	high	no	
+R104	38047086	^PI3Ki_			PI3Ki			inhibitor		direct	-1	high	no	lipid kinases
+R105	38047086	^PI3Ki_							AKT1;AKT2;AKT3	downstream	-1	medium	no	
+R106	38047086	^TAKi_			TAKi			inhibitor		direct	-1	medium	no	basal TAK1
+R107	38047086	^TBKi_			TBKi			inhibitor		direct	-1	medium	no	basal TBK1
+R108	38047086	^TNFalpha_				TNF		stimulus_cytokine		direct	1	medium	no	TNF 1h
+R109	29535314	doxorubicin				DSB		stimulus_DNA_damage		direct	1	high	no	doxorubicin 2h -> DSB
+R110	29535314	4-nitroquinoline				REPSTRESS		stimulus_DNA_damage		direct	1	medium	no	4NQO bulky adducts -> ATR
+R111	38593799	^Bleomycin DMSO$	^Mock DMSO$			DSB		stimulus_DNA_damage	PRKDC	direct	1	high	no	bleomycin DSBs
+R112	38593799	^Bleomycin DMSO$	^Bleomcyin DNA-PKi$		DNAPKi			inhibitor_reversed		direct	1	high	no	reversed: control is DNA-PKi-treated
+R113	38593799	^Bleomcyin DNA-Pki$	^Mock DNA-Pki$			DSB		stimulus_DNA_damage		direct	1	medium	no	bleomycin under DNA-PKi
+R114	38593799	^RF HSV-1 DMSO$	^RF HSV-1 DNA-PKi$		DNAPKi			inhibitor_reversed		direct	1	medium	no	reversed; HSV-1 infected
+R115	17081983	^EGF (5|10)min$				EGF		stimulus_growth_factor		direct	1	high	no	HeLa
+R117	18691976	^M$	^S$			MITOSIS		cell_cycle		direct	1	high	no	mitosis vs S
+R118	19651622	^EGF 15min$				EGF		stimulus_growth_factor		direct	1	high	no	EGF (with or without inhibitor)
+R120	19651622	U0126			U0126			inhibitor		direct	-1	low	no	vs unstimulated control while EGF added: MEK net change ambiguous
+R121	19651622	^Dasatinib (5|50)nM$	^control$		dasatinib			inhibitor		direct	-1	high	no	K562 BCR-ABL
+R122	19651622	^Dasatinib 50nM$	^5nM$		dasatinib			inhibitor		direct	-1	low	no	50 vs 5 nM, both above BCR-ABL IC50
+R123	20068231	^Ctr$	^mitosis$			MITOSIS		cell_cycle_reversed		direct	-1	high	no	reversed: control is mitotic
+R124	20068231	^G2$					MITOSIS	cell_cycle	CDK1	direct	1	low	no	G2 vs control (async?)
+R125	20071362	^HB-EGF$	^control$			EGF		stimulus_growth_factor		direct	1	high	no	
+R126	20071362	^HB-EGF$	^LPA$			EGF		stimulus_growth_factor		direct	1	medium	no	LPA can transactivate EGFR
+R127	21406692	^PMA (0.5h|1h)$				PMA		stimulus_PKC		direct	1	high	no	phorbol ester; NB timepoint field says '5h' for 0.5h (metadata error)
+R129	21712546	^MLN8054 (0.25|1)uM$			MLN8054			inhibitor		direct	-1	high	no	
+R130	21712546	^MLN8054 5uM$						inhibitor	AURKA;AURKB	direct	-1	high	no	5 uM also hits AURKB
+R131	21712546	^AZD1152 1uM\+ZM447439 5uM$			AZD1152_ZM447439			inhibitor		direct	-1	high	no	
+R132	21712546	^BI2536 0.1uM			BI2536			inhibitor		direct	-1	high	no	
+R133	21712546	^Taxol$				MITOSIS		cell_cycle		direct	1	medium	yes	taxol mitotic arrest (inferred)
+R134	21857030	^Ctr$	^BI 4834$		BI4834			inhibitor_reversed		direct	1	medium	no	reversed: control is PLK1-inhibited
+R135	21936566	^PF-04217903 (6|24)h$		^GTL-16$	PF04217903			inhibitor		direct	-1	high	no	MET-amplified GTL-16
+R136	21936566	^PF-04217903 (6|24)h$		Resistant	PF04217903			inhibitor		direct	-1	medium	no	resistant derivative
+R137	21955146	^EGF$				EGF		stimulus_growth_factor		direct	1	high	no	HeLa
+R138	22115753	^Erlotinib$	^control$		erlotinib			inhibitor		direct	-1	low	no	KG-1 (AML) not EGFR-driven
+R139	22199227	^Plk1\(as\) 3-MB-PP1$			PLK1as_3MBPP1			chemical_genetic		direct	-1	high	no	analog-sensitive PLK1
+R140	22199227	^Plk1\(wt\) 3-MB-PP1$						negative_control	PLK1	direct	0	high	no	WT PLK1 + 3-MB-PP1: no expected PLK1 change
+R141	22210691	^EGF 10min$				EGF		stimulus_growth_factor		direct	1	high	no	
+R143	22424773	^IR 2h$				DSB		stimulus_DNA_damage		direct	1	high	no	
+R144	22424773	etoposide 24h				DSB		stimulus_DNA_damage		direct	1	medium	no	late timepoint
+R145	22496350	^PKD1kd$						knockdown	PRKD1	direct	-1	medium	no	
+R146	22912867	^EGF 15min$				EGF		stimulus_growth_factor		direct	1	high	no	glioblastoma initiating cells
+R147	23532336	^Ku-794 (100|1000)nM$			KU0063794			inhibitor		direct	-1	high	no	
+R148	23532336	^PI-103 1000nM$			PI103			inhibitor		direct	-1	high	no	
+R149	23828894	^KU60019 120min$			KU60019			inhibitor		direct	-1	medium	no	basal ATM
+R150	23836654	^sh-TBK1$						knockdown	TBK1	direct	-1	medium	no	
+R151	23898821	^Crizotinib$			crizotinib			inhibitor		direct	-1	high	no	NCI-H2228 EML4-ALK
+R152	24117733	^LRRK2-IN-1$			LRRK2IN1			inhibitor		direct	-1	medium	no	SH-SY5Y
+R153	24275748	^Rapamycin (7|15)min$			rapamycin			inhibitor		direct	-1	high	no	
+R154	24275748	^Rapamycin (7|15)min$							RPS6KB1	downstream	-1	high	no	
+R155	24275748	^Starvation (7|15)min$					STARVATION	stimulus_withdrawal	MTOR;RPS6KB1	direct	-1	medium	no	nutrient/serum starvation
+R156	24501219	^Thrombin (2|5|10)min$					PMA	stimulus_GPCR	PRKCA;PRKCB	direct	1	low	yes	PAR1 -> Gq -> PKC (inferred)
+R157	24850871	^PGE2 (5|10|20|30)min$				CAMP_PKA		stimulus_GPCR		direct	1	medium	no	PGE2 -> EP2/EP4 -> cAMP -> PKA in T cells
+R158	25002506	^BI-D1870$			BID1870			inhibitor		direct	-1	high	no	A375 BRAF V600E
+R159	25002506	^RSK1/2 RNAi$						knockdown	RPS6KA1;RPS6KA3	direct	-1	medium	no	A375
+R160	25002506	^PD184352$			PD184352			inhibitor		direct	-1	high	no	A375 BRAF V600E
+R161	25002506	^PD184352$							MAPK1;MAPK3;RPS6KA1;RPS6KA3	downstream	-1	high	no	
+R162	25002506	^PMA, BI-D1870$			BID1870			inhibitor		direct	-1	low	no	vs unstimulated: PMA stimulation confounds
+R163	25003641	^VE-821$			VE821			inhibitor		direct	-1	medium	no	unperturbed HL-60
+R164	25056879	^TGFB (5|10|15|20)min$				TGFB		stimulus_cytokine		direct	1	high	no	TGF-beta in HaCaT
+R165	25247763	^Ex(9|20)-KI$	^MCF10A$					mutation_knockin	AKT1;AKT2	downstream	1	medium	no	PIK3CA E545K / H1047R knock-in
+R166	25404012	^EGF$	^control$			EGF		stimulus_growth_factor		direct	1	medium	no	H1975 (EGFR L858R/T790M)
+R167	25404012	^EGF, Erlotinib$		NCI-H3255	erlotinib			inhibitor		direct	-1	low	no	vs unstimulated; erlotinib-sensitive EGFR L858R (net vs control ambiguous)
+R168	25849741	^TNFA$	^control$			TNF		stimulus_cytokine		direct	1	high	no	MCF-7
+R169	25849741	^TNFA, IKKB\(WT\)$	^control$			TNF		stimulus_cytokine		direct	1	high	no	
+R170	25849741	^SC-514$	^control$		SC514			inhibitor		direct	-1	low	no	basal IKK
+R171	25849741	^TNFA$	^SC-514$			TNF		stimulus_cytokine		direct	1	medium	yes	TNF vs SC-514-treated (interpretation of contrast inferred)
+R172	25849741	^TNFA, Ctr$	^SC-514$		SC514			inhibitor_reversed		direct	1	medium	yes	assumed TNF vs TNF+SC-514 (inferred)
+R173	25850435	^AZD6244$	^control$		selumetinib			inhibitor		direct	-1	high	no	WM239A BRAF-mutant melanoma
+R174	25850435	^AZD6244$	^control$						MAPK1;MAPK3	downstream	-1	high	no	
+R175	25850435	^PLX4032$	^control$		vemurafenib			inhibitor		direct	-1	high	no	
+R176	25850435	^PLX4032$	^control$						MAP2K1;MAP2K2;MAPK1;MAPK3	downstream	-1	high	no	BRAF-mutant
+R177	25907765	^Starve$	^Insulin\+aa$				STARVATION	stimulus_withdrawal	MTOR;RPS6KB1	direct	-1	high	no	reversed stimulation: starved vs insulin+aa
+R178	25921289	^NGF (10|45)min$				NGF		stimulus_growth_factor		direct	1	medium	no	SH-SY5Y
+R179	26055452	^RO3306$			RO3306			inhibitor		direct	-1	high	no	
+R180	26091039	^Fam20C KO$						knockout	FAM20C	direct	-1	high	no	
+R181	26270265	^AZD1152$			AZD1152			inhibitor		direct	-1	high	no	
+R182	26270265	^VX680$			VX680			inhibitor		direct	-1	high	no	
+R183	26434776	^Imatinib$			imatinib			inhibitor		direct	-1	low	no	NCI-H929 myeloma not ABL-driven
+R184	26471730	^PINK1 WT$	^KD$					overexpression_or_rescue	PINK1	direct	1	low	yes	PINK1 activity requires mitochondrial depolarisation; KD = knockdown or kinase-dead (inferred)
+R185	24626860	^PINK1 KD$						knockdown	PINK1	direct	-1	low	yes	basal PINK1 activity low (inferred)
+R186	26546556	^Anti-CD3\+Anti-CD28 (15|30)min$				TCR		stimulus_TCR		direct	1	high	no	TCR stimulation
+R188	26572502	^HU$	^control$			REPSTRESS		stimulus_DNA_damage		direct	1	high	no	
+R189	26572502	^VE-821\+HU$	^HU$		VE821			inhibitor		direct	-1	high	no	
+R190	27080861	^IL-23 30min$				IL23		stimulus_cytokine		direct	1	medium	no	
+R191	27134283	^Flavopiridol$			flavopiridol			inhibitor		direct	-1	high	no	
+R192	27134283	^RO-3306$			RO3306			inhibitor		direct	-1	high	no	
+R193	27155012	^SYK inhibition$			SYKi			inhibitor		direct	-1	high	no	B-cell lines
+R194	27155012	^CD79a KD$						knockdown	SYK	downstream	-1	low	yes	tonic BCR signalling reduced (inferred)
+R195	27155012	^BCR stimulation (2|10)min$				BCR		stimulus_BCR		direct	1	high	no	
+R196	27307491	^TNF-a-FLAG (5|15)min$	^control$			TNF		stimulus_cytokine		direct	1	high	no	A549
+R197	27422710	^Selumetinib$			selumetinib			inhibitor		direct	-1	high	no	
+R198	27422710	^Selumetinib$							MAPK1;MAPK3	downstream	-1	high	no	
+R199	27732954	^Crizotinib$		NB-1643|NB-1	crizotinib			inhibitor		direct	-1	high	no	ALK-mutant/amplified neuroblastoma
+R200	27732954	^Crizotinib$		SH-SY5Y	crizotinib			inhibitor		direct	-1	medium	no	ALK F1174L partially crizotinib-resistant
+R201	27794612	^Gefitinib$			gefitinib			inhibitor		direct	-1	high	no	A431 EGFR-amplified
+R202	27794612	^Gefitinib\+FGF2$			gefitinib			inhibitor		direct	-1	medium	no	plus FGF2 rescue
+R203	27834733	^GDC0973\+GDC0941$			cobimetinib			inhibitor		direct	-1	high	no	
+R204	27834733	^GDC0973\+GDC0941$			pictilisib			inhibitor		direct	-1	high	no	
+R205	27834733	^GDC0973\+GDC0941$							MAPK1;MAPK3;AKT1;AKT2	downstream	-1	medium	no	
+R206	28165663	^Rapamycin$			rapamycin			inhibitor		direct	-1	high	no	
+R207	28165663	^Torin1$			torin1			inhibitor		direct	-1	high	no	
+R208	28165663	^(Rapamycin|Torin1)$							RPS6KB1	downstream	-1	high	no	
+R209	28165663	^Insulin$				INSULIN		stimulus_growth_factor		direct	1	high	no	
+R210	28188228	^PLX4032 (5|10|15|20|25|30|35|40|45|50|55|60)min$		COLO 205	vemurafenib			inhibitor		direct	-1	high	no	COLO205 BRAF V600E
+R211	28188228	^PLX4032 (10|15|20|25|30|35|40|45|50|55|60)min$		COLO 205					MAP2K1;MAP2K2;MAPK1;MAPK3	downstream	-1	high	no	
+R212	28188228	^PLX4032 0min$						negative_control	BRAF	direct	0	medium	no	time zero: no change expected
+R213	28188228	^PLX4032 (5|10|15|20|25|30|35|40|45|50|55|60)min$		HCT 116	vemurafenib			inhibitor		direct	-1	low	no	HCT116 KRAS-mutant/BRAF-WT: paradoxical pathway activation; no downstream expectation
+R214	28209619	^BT-474, Lapatinib$			lapatinib			inhibitor		direct	-1	high	no	HER2-amplified
+R215	28539327	^TNFA 10min$				TNF		stimulus_cytokine		direct	1	high	no	
+R216	28634120	^CD3\+CD4$				TCR		stimulus_TCR		direct	1	medium	no	
+R217	28674419	^Mitotic$				MITOSIS		cell_cycle		direct	1	high	no	
+R218	29020638	^HU, CHK1i$	^control$		CHK1i			inhibitor		direct	-1	medium	no	HU + CHK1i vs untreated
+R219	29052541	^M$	^G1$			MITOSIS		cell_cycle		direct	1	high	no	
+R220	29052541	^S$	^G1$			S_PHASE		cell_cycle		direct	1	medium	no	
+R221	29154753	^Cyclin A High$					S_PHASE	cell_cycle	CDK2	direct	1	medium	no	
+R222	29214152	^CX-4945$			CX4945			inhibitor		direct	-1	high	no	CK2
+R223	29255136	^SCH$	^control$		ERKi_SCH772984			inhibitor		direct	-1	high	no	"WM239A; ""SCH"" inferred SCH772984"
+R224	29255136	^TRA$	^control$		trametinib			inhibitor		direct	-1	high	no	TRA inferred trametinib (inferred)
+R225	29255136	^TRA$	^control$						MAPK1;MAPK3	downstream	-1	high	yes	
+R226	29622655	^Tofacitinib cocult (1.5h|24h)$	^Ctr cocult$		tofacitinib			inhibitor		direct	-1	high	no	MM1.S with stroma (IL-6/JAK)
+R227	29743597	^MASTL overexpression$						overexpression	MASTL	direct	1	medium	no	
+R228	30001349	^VE-821 30min\+IR 1h$	^IR 1h$		VE821			inhibitor		direct	-1	high	no	
+R229	30266825	^CDKL5 expressing$	^CDKL5 KO$					overexpression_or_rescue	CDKL5	direct	1	high	no	
+R231	30459281	^(Crizotinib|Lorlatinib) 1h$		SK-N-AS				negative_control	ALK	direct	0	low	no	ALK-WT/low line (weak negative control)
+R232	30459283	^DMSO$	^(Ceritinib|TAE684|Crizotinib) 30min$					inhibitor_reversed	ALK	direct	1	high	no	reversed: control is ALK-inhibited NB1 (ALK amplified)
+R233	30631047	^AMPK-DKO$						knockout	PRKAA1;PRKAA2	direct	-1	high	no	
+R234	30652415	^PKD2\+PKD3 KD$						knockdown	PRKD2;PRKD3	direct	-1	medium	no	
+R235	30652415	^PKD2 KD$						knockdown	PRKD2	direct	-1	medium	no	
+R236	30755469	^ETAA1-AAD\+TOPBP1-AID$					REPSTRESS	genetic_ATR_activator_loss	ATR	direct	-1	medium	yes	loss of both ATR activators (inferred)
+R237	30773488	^Kenpaullone$			kenpaullone			inhibitor		direct	-1	medium	no	
+R238	30901187	^Dactolisib 1h$			dactolisib			inhibitor		direct	-1	high	no	BT-474
+R239	30901187	^Omipalisib 1h$			omipalisib			inhibitor		direct	-1	high	no	
+R240	30901187	^(Dactolisib|Omipalisib) 1h$							AKT1;AKT2;RPS6KB1	downstream	-1	high	no	
+R241	30988284	^THZ531 2h$			THZ531			inhibitor		direct	-1	high	no	
+R242	31257184	^Foretinib 3h$			foretinib			inhibitor		direct	-1	medium	no	NCI-H1155 driver unknown
+R243	31636099	^Pexidartinib 30min$			pexidartinib			inhibitor		direct	-1	low	no	Karpas-299 not CSF1R-driven (ALK+ ALCL)
+R244	32142685	^AO 6h$	^control$			MITO_DEPOL		stimulus_mito_depolarisation		direct	1	high	no	antimycin/oligomycin -> PINK1
+R245	32142685	^(NMS-873|CB-5083)\+AO 6h$	^(NMS-873|CB-5083)$			MITO_DEPOL		stimulus_mito_depolarisation		direct	1	medium	no	AO on p97-inhibitor background
+R246	34974192	^WT-parkin (2h|6h|12h)$				MITO_DEPOL		stimulus_mito_depolarisation		direct	1	low	yes	assumes HeLa-Parkin AO/depolarisation time course (inferred)
+R247	21659604	^Starved$	^Insulin$				STARVATION	stimulus_withdrawal	MTOR;RPS6KB1	direct	-1	high	no	reversed stimulation
+R248	21659604	^Torin1$	^Insulin$		torin1			inhibitor		direct	-1	high	no	
+R249	21659604	^Rapamycin$	^Insulin$		rapamycin			inhibitor		direct	-1	high	no	
+R250	21659604	^(Torin1|Rapamycin)$	^Insulin$						RPS6KB1	downstream	-1	high	no	
+R251	18669648	^Mitosis \(Nocodazole\)$				MITOSIS		cell_cycle		direct	1	high	no	
+R252	24324209	^Iloprost				CAMP_PKA		stimulus_GPCR		direct	1	high	no	prostacyclin analogue -> cAMP -> PKA in platelets
+R253	28060719	^ADP 30s\+Iloprost (30|60)s$				CAMP_PKA		stimulus_GPCR		direct	1	low	no	ADP + iloprost vs control (mixed)
+R254	26060313	^AKTi \(Akt inhibitor VIII\)$			aktVIII			inhibitor		direct	-1	high	no	MCF7 1h (Cutillas lab; drug overlap with Hijazi)
+R255	26060313	^AKTi \(MK-2206\)$			MK2206			inhibitor		direct	-1	high	no	
+R256	26060313	^CAMK2i \(KN-93\)$			KN93			inhibitor		direct	-1	medium	no	
+R257	26060313	^CAMK2i \(KN-62\)$			KN62			inhibitor		direct	-1	medium	no	
+R258	26060313	^EGFRi \(PD-168393\)$			PD168393			inhibitor		direct	-1	medium	no	MCF7 low EGFR
+R259	26060313	^EGFRi \(PD-153035\)$			PD153035			inhibitor		direct	-1	medium	no	MCF7 low EGFR
+R260	26060313	^ERKi \(ERK inhibitor( II)?\)$			ERKi_generic			inhibitor		direct	-1	medium	no	
+R261	26060313	^MEKi \(GSK-1120212\)$			trametinib			inhibitor		direct	-1	high	no	
+R262	26060313	^MEKi \(U0126\)$			U0126			inhibitor		direct	-1	high	no	
+R263	26060313	^MEKi \(							MAPK1;MAPK3	downstream	-1	high	no	
+R264	26060313	^mTORi \(KU-0063794\)$			KU0063794			inhibitor		direct	-1	high	no	
+R265	26060313	^mTORi \(Torin-1\)$			torin1			inhibitor		direct	-1	high	no	
+R266	26060313	^mTORi \(							RPS6KB1	downstream	-1	high	no	
+R267	26060313	^P70S6K1i \(PF-4708671\)$			PF4708671			inhibitor		direct	-1	high	no	
+R268	26060313	^P70S6K1i \(DG2\)$			DG2			inhibitor		direct	-1	high	no	
+R269	26060313	^PI3Ki \(GDC-0941\)$			pictilisib			inhibitor		direct	-1	high	no	MCF7 PIK3CA E545K
+R270	26060313	^PI3Ki \(PI-103\)$			PI103			inhibitor		direct	-1	high	no	
+R271	26060313	^PI3Ki \(							AKT1;AKT2;AKT3	downstream	-1	high	no	PIK3CA-mutant MCF7
+R272	26060313	^PKCi \(G.*6976\)$			Go6976			inhibitor		direct	-1	medium	no	
+R273	26060313	^PKCi \(BIM-1\)$			BIM1			inhibitor		direct	-1	medium	no	
+R274	26060313	^ROCKi \(H-1152\)$			H1152			inhibitor		direct	-1	high	no	
+R275	26060313	^ROCKi \(Y-27632\)$			Y27632			inhibitor		direct	-1	high	no	
+R230a	30459281	^Crizotinib 1h$		CLB-Bar	crizotinib			inhibitor		direct	-1	high	no	CLB-Bar ALK-amplified
+R230b	30459281	^Crizotinib 1h$		CLB-Ge1	crizotinib			inhibitor		direct	-1	medium	no	CLB-Ge1 ALK F1174V (reduced crizotinib sensitivity)
+R230c	30459281	^Lorlatinib 1h$		CLB-Bar|CLB-Ge1	lorlatinib			inhibitor		direct	-1	high	no	
+D001	36926954	^Dasatinib_		K562	dasatinib			inhibitor		direct	-1	high	no	decryptM dose series; BCR-ABL K562; confidence adjusted by dose in script
+D002	36926954	^Dasatinib_		A431|A549	dasatinib			inhibitor		direct	-1	medium	no	SRC-family in non-ABL-driven lines
+D003	36926954	^Afatinib_		A431	afatinib			inhibitor		direct	-1	high	no	EGFR-amplified A431
+D004	36926954	^Gefitinib_		A431|PC-9	gefitinib			inhibitor		direct	-1	high	no	EGFR-amplified/mutant
+D005	36926954	^(Afatinib|Gefitinib)_		A431|PC-9					MAPK1;MAPK3	downstream	-1	medium	no	EGFR-driven lines
+D006	36926954	^Gefitinib\+AZD4547_1to80_		PC-9	gefitinib			inhibitor		direct	-1	high	no	dose label = gefitinib conc. assumed (inferred)
+D007	36926954	^(Gefitinib\+AZD4547_1to80|AZD4547)_		PC-9	AZD4547			inhibitor		direct	-1	low	no	PC-9 not FGFR-driven
+D008	36926954	^Imatinib_		K562	imatinib			inhibitor		direct	-1	high	no	BCR-ABL
+D009	36926954	^Imatinib_		A431	imatinib			inhibitor		direct	-1	low	no	not ABL-driven
+D010	36926954	^Lapatinib_		BT-474|SK-BR-3|MDA-MB-175-VII|PC-9	lapatinib			inhibitor		direct	-1	high	no	HER2-amp / NRG1-fusion / EGFR-mutant
+D011	36926954	^Lapatinib\+AZD4547_1to1_		PC-9	lapatinib			inhibitor		direct	-1	high	no	
+D012	36926954	^Lapatinib\+AZD4547_1to1_		PC-9	AZD4547			inhibitor		direct	-1	low	no	
+D013	36926954	^AZD8055_		A549	AZD8055			inhibitor		direct	-1	high	no	
+D014	36926954	^(AZD8055|Dactolisib)_		A549					RPS6KB1	downstream	-1	high	no	
+D015	36926954	^Dactolisib_		A549	dactolisib			inhibitor		direct	-1	high	no	
+D016	36926954	^Pictilisib_		A549	pictilisib			inhibitor		direct	-1	high	no	lipid kinases
+D017	36926954	^(Pictilisib|Dactolisib)_		A549					AKT1;AKT2	downstream	-1	medium	no	
+D018	36926954	^MK2206_		A549	MK2206			inhibitor		direct	-1	high	no	
+D019a	36926954	^Selumetinib_		A549	selumetinib			inhibitor		direct	-1	high	no	KRAS-mutant A549
+D019b	36926954	^PD325901_		A549	PD0325901			inhibitor		direct	-1	high	no	
+D019c	36926954	^Refametinib_		A549	refametinib			inhibitor		direct	-1	high	no	
+D020	36926954	^(Selumetinib|PD325901|Refametinib|Selumetinib\+MK2206_1to2|Selumetinib\+MK2206_3to1)_		A549					MAPK1;MAPK3	downstream	-1	high	no	MEK -> ERK
+D021	36926954	^Selumetinib\+MK2206_(1to2|3to1)_		A549	selumetinib			inhibitor		direct	-1	high	no	combination
+D022	36926954	^Selumetinib\+MK2206_(1to2|3to1)_		A549	MK2206			inhibitor		direct	-1	high	no	combination; dose label refers to total/first drug (inferred)
+D023	36926954	^Nintedanib_		A549	nintedanib			inhibitor		direct	-1	low	no	A549 not RTK-driven by these targets
+D024	36926954	^Tideglusib_		A549	tideglusib			inhibitor		direct	-1	medium	no	
+D025	36926954	^CUDC101_		HeLa013	CUDC101			inhibitor		direct	-1	low	no	HeLa not EGFR-driven; 4h; HDAC effects dominate
+D026	36926954	^SHP099_		KYSE-520	SHP099			inhibitor_indirect		downstream	-1	medium	no	SHP2 inhibition in EGFR-amp KYSE-520 lowers RAS/ERK
+D027a	36926954	^Trastuzumab_		BT-474|SK-BR-3|MDA-MB-175-VII	trastuzumab			antibody		direct	-1	low	no	antibody; effect on ERBB2 kinase activity weaker/indirect
+D027b	36926954	^Pertuzumab_		BT-474|SK-BR-3|MDA-MB-175-VII	pertuzumab			antibody		direct	-1	low	no	antibody; MDA-MB-175-VII (NRG1-driven) most responsive
+R177b	25907765	^Starve$	^Insulin\+aa$					stimulus_withdrawal	AKT1;AKT2	downstream	-1	high	no	AKT downstream of insulin withdrawal (r1 priorwork 
+R247b	21659604	^Starved$	^Insulin$					stimulus_withdrawal	AKT1;AKT2	downstream	-1	high	no	AKT downstream of insulin withdrawal (r1 priorwork 
+R097b	37188730	^TNFandIFN_(2m|5m|10m|30m)$				IFN		stimulus_cytokine		direct	1	medium	yes	IFN component of TNF+IFN
+R276	37236596	^UVB_(15min|2h)$				UV		stimulus_stress		direct	1	medium	no	UVB in WM3682 melanoma cells
+R277	19651622	SB202190			SB202190			inhibitor		direct	-1	low	no	p38i co-treated with EGF vs unstimulated control: p38 net change ambiguous (r1 data 
+R118b	19651622	EGF 15min.*(U0126|SB202190)|(U0126|SB202190).*EGF 15min					EGF	stimulus_growth_factor	EGFR	direct	1	high	no	EGF with MEK/p38 inhibitor: only EGFR labelled (ERK blocked by U0126)

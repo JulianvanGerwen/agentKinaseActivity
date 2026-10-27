@@ -1,0 +1,100 @@
+{
+ "U_size": 503,
+ "dose_sources": {
+  "condition_doses_manual": 64,
+  "decryptM_label": 394,
+  "decryptM_label_ngmL_to_nM": 270,
+  "decryptM_label_ratio": 72,
+  "default_10uM": 477,
+  "hijazi_default_10uM": 183,
+  "parsed_text": 84
+ },
+ "kinhib_tokens_dropped_not_in_U": {
+  "PDPK2P": 0,
+  "PI4KB": 1,
+  "PIK3C2A": 0,
+  "PIK3C2B": 1,
+  "PIK3C2G": 3,
+  "PIK3C3": 3,
+  "PIK3CA": 3,
+  "PIK3CB": 4,
+  "PIK3CD": 6,
+  "PIK3CG": 3,
+  "PIK3R1": 0,
+  "PIKFYVE": 3,
+  "PIP4K2A": 0,
+  "PIP4K2B": 1,
+  "PIP4K2C": 3,
+  "PIP5K1A": 3,
+  "PIP5K1C": 1,
+  "PRKY": 3,
+  "Q6ZSR9": 3
+ },
+ "n_conditions_default_dose": 459,
+ "n_gt_conditions_by_role": {
+  "excluded": 22,
+  "gt": 874,
+  "null": 16,
+  "specificity": 135
+ },
+ "n_pairs_by_cls": {
+  "direct": 3790,
+  "downstream": 724,
+  "masked": 24055
+ },
+ "profile_sources": {
+  "kinoplex": "not used: kinaseSubMain kinoplex files are a structural S/T/Y atlas, no drug-kinase affinities"
+ },
+ "qc_status_all_conditions": {
+  "duplicate": 7,
+  "ok": 1900,
+  "scale_error": 30
+ },
+ "rule_symbols_not_in_U": {
+  "drug_targets_manual": [
+   "LY294002:PIK3CA",
+   "LY294002:PIK3CB",
+   "LY294002:PIK3CD",
+   "LY294002:PIK3CG",
+   "PI3Ka_inh2:PIK3CA",
+   "wortmannin:PIK3CA",
+   "wortmannin:PIK3CB",
+   "wortmannin:PIK3CD",
+   "wortmannin:PIK3CG",
+   "pictilisib:PIK3CA",
+   "pictilisib:PIK3CB",
+   "pictilisib:PIK3CD",
+   "pictilisib:PIK3CG",
+   "PI103:PIK3CA",
+   "PI103:PIK3CB",
+   "PI103:PIK3CD",
+   "PI103:PIK3CG",
+   "dactolisib:PIK3CA",
+   "dactolisib:PIK3CB",
+   "dactolisib:PIK3CD",
+   "dactolisib:PIK3CG",
+   "omipalisib:PIK3CA",
+   "omipalisib:PIK3CB",
+   "omipalisib:PIK3CD",
+   "omipalisib:PIK3CG",
+   "PI3Ki:PIK3CA",
+   "PI3Ki:PIK3CB",
+   "PI3Ki:PIK3CD",
+   "PI3Ki:PIK3CG",
+   "staurosporine:PAN",
+   "AZD6482:PIK3CB",
+   "idelalisib:PIK3CD",
+   "HS173:PIK3CA",
+   "PIK294:PIK3CD",
+   "TGX221:PIK3CB"
+  ],
+  "offtarget_literature": [
+   "MAPKAPK1",
+   "PIK3C3"
+  ],
+  "pathway_masks": [
+   "GSG2"
+  ]
+ },
+ "rules_without_match": []
+}

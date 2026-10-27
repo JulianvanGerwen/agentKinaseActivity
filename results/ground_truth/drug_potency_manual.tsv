@@ -1,0 +1,52 @@
+# decryptM dose rule (DESIGN 3 GT-D, B11): target positive iff dose >= potency. ATP-competitive drugs use profile Kd_app
+# (Klaeger>Reinecke>Davis) when finite, else this table; allosteric/covalent/PIKK/antibody always use this table. Below potency -> target masked.
+# Values from memory of cited papers; flagged for expert check.
+agent	kinase	potency_nM	kind	note
+afatinib	EGFR	0.5	IC50	covalent: IC50 rule (B11)
+afatinib	ERBB2	14.0	IC50	covalent: IC50 rule (B11)
+afatinib	ERBB4	1.0	IC50	covalent: IC50 rule (B11)
+MK2206	AKT1	8.0	IC50	allosteric (Hirai 2010)
+MK2206	AKT2	12.0	IC50	allosteric (Hirai 2010)
+MK2206	AKT3	65.0	IC50	allosteric (Hirai 2010)
+selumetinib	MAP2K1	14.0	IC50	allosteric; MEK2 value approximate
+selumetinib	MAP2K2	50.0	IC50	allosteric; MEK2 value approximate
+PD0325901	MAP2K1	0.33	IC50	allosteric
+PD0325901	MAP2K2	0.33	IC50	allosteric
+refametinib	MAP2K1	19.0	IC50	allosteric
+refametinib	MAP2K2	47.0	IC50	allosteric
+AZD8055	MTOR	0.8	IC50	PIKK: IC50 rule (Chresta 2010)
+dactolisib	MTOR	21.0	IC50	PIKK: IC50 rule (Maira 2008)
+tideglusib	GSK3B	60.0	IC50	irreversible non-ATP: IC50 rule
+trastuzumab	ERBB2	5.0	Kd	antibody; dose ng/mL converted with MW 148 kDa (1 ug/mL = 6.76 nM)
+pertuzumab	ERBB2	5.0	Kd	antibody; dose ng/mL converted with MW 148 kDa (1 ug/mL = 6.76 nM)
+SHP099	*	71.0	IC50	SHP2 IC50 (Chen 2016); applies to downstream labels
+gefitinib	EGFR	3.0	IC50	fallback when no Kd_app
+lapatinib	EGFR	10.8	IC50	fallback when no Kd_app
+lapatinib	ERBB2	9.2	IC50	fallback when no Kd_app
+AZD4547	FGFR1	0.2	IC50	fallback when no Kd_app (Gavine 2012)
+AZD4547	FGFR2	2.5	IC50	fallback when no Kd_app (Gavine 2012)
+AZD4547	FGFR3	1.8	IC50	fallback when no Kd_app (Gavine 2012)
+imatinib	ABL1	250.0	IC50	fallback (cellular)
+imatinib	KIT	100.0	IC50	fallback (cellular)
+imatinib	PDGFRA	100.0	IC50	fallback (cellular)
+imatinib	PDGFRB	100.0	IC50	fallback (cellular)
+dasatinib	ABL1	0.6	IC50	fallback
+dasatinib	SRC	0.8	IC50	fallback
+dasatinib	LCK	1.0	IC50	fallback
+dasatinib	LYN	1.0	IC50	fallback
+dasatinib	YES1	1.0	IC50	fallback
+dasatinib	FYN	1.0	IC50	fallback
+dasatinib	KIT	5.0	IC50	fallback
+dasatinib	EPHA2	17.0	IC50	fallback
+nintedanib	FLT1	34.0	IC50	fallback (Hilberg 2008)
+nintedanib	KDR	21.0	IC50	fallback (Hilberg 2008)
+nintedanib	FLT4	13.0	IC50	fallback (Hilberg 2008)
+nintedanib	FGFR1	69.0	IC50	fallback (Hilberg 2008)
+nintedanib	FGFR2	37.0	IC50	fallback (Hilberg 2008)
+nintedanib	FGFR3	108.0	IC50	fallback (Hilberg 2008)
+nintedanib	PDGFRA	59.0	IC50	fallback (Hilberg 2008)
+nintedanib	PDGFRB	65.0	IC50	fallback (Hilberg 2008)
+CUDC101	EGFR	2.4	IC50	fallback (Cai 2010)
+CUDC101	ERBB2	15.7	IC50	fallback (Cai 2010)
+pictilisib	*	3	IC50	lipid-kinase-only drug: agent-level potency (PI3Kalpha IC50; Folkes 2008) gates curated AKT downstream labels
+dactolisib	*	4	IC50	agent-level potency (PI3Kalpha IC50 4 nM) gates curated downstream labels

@@ -1,0 +1,584 @@
+# Pre-registered downstream/feedback masks per target class (drug target_class) or stimulus class (DESIGN 3(i)).
+# Masked kinases are neither positives nor negatives. Curated downstream positives are NOT overridden by these masks (precedence r3 M2).
+# Symbols not in U are ignored (reported).
+mask_class	kinase	note
+MEK	MAP2K1	MEKi: ERK/RSK/MNK/MSK downstream; RAFs feedback-relieved (r1 priorwork #1)
+MEK	MAP2K2	MEKi: ERK/RSK/MNK/MSK downstream; RAFs feedback-relieved (r1 priorwork #1)
+MEK	MAPK1	MEKi: ERK/RSK/MNK/MSK downstream; RAFs feedback-relieved (r1 priorwork #1)
+MEK	MAPK3	MEKi: ERK/RSK/MNK/MSK downstream; RAFs feedback-relieved (r1 priorwork #1)
+MEK	RPS6KA1	MEKi: ERK/RSK/MNK/MSK downstream; RAFs feedback-relieved (r1 priorwork #1)
+MEK	RPS6KA2	MEKi: ERK/RSK/MNK/MSK downstream; RAFs feedback-relieved (r1 priorwork #1)
+MEK	RPS6KA3	MEKi: ERK/RSK/MNK/MSK downstream; RAFs feedback-relieved (r1 priorwork #1)
+MEK	RPS6KA6	MEKi: ERK/RSK/MNK/MSK downstream; RAFs feedback-relieved (r1 priorwork #1)
+MEK	MKNK1	MEKi: ERK/RSK/MNK/MSK downstream; RAFs feedback-relieved (r1 priorwork #1)
+MEK	MKNK2	MEKi: ERK/RSK/MNK/MSK downstream; RAFs feedback-relieved (r1 priorwork #1)
+MEK	RPS6KA4	MEKi: ERK/RSK/MNK/MSK downstream; RAFs feedback-relieved (r1 priorwork #1)
+MEK	RPS6KA5	MEKi: ERK/RSK/MNK/MSK downstream; RAFs feedback-relieved (r1 priorwork #1)
+MEK	RAF1	MEKi: ERK/RSK/MNK/MSK downstream; RAFs feedback-relieved (r1 priorwork #1)
+MEK	BRAF	MEKi: ERK/RSK/MNK/MSK downstream; RAFs feedback-relieved (r1 priorwork #1)
+MEK	ARAF	MEKi: ERK/RSK/MNK/MSK downstream; RAFs feedback-relieved (r1 priorwork #1)
+ERK	MAP2K1	ERKi: RSK/MNK/MSK downstream; MEK/RAF feedback
+ERK	MAP2K2	ERKi: RSK/MNK/MSK downstream; MEK/RAF feedback
+ERK	MAPK1	ERKi: RSK/MNK/MSK downstream; MEK/RAF feedback
+ERK	MAPK3	ERKi: RSK/MNK/MSK downstream; MEK/RAF feedback
+ERK	RPS6KA1	ERKi: RSK/MNK/MSK downstream; MEK/RAF feedback
+ERK	RPS6KA2	ERKi: RSK/MNK/MSK downstream; MEK/RAF feedback
+ERK	RPS6KA3	ERKi: RSK/MNK/MSK downstream; MEK/RAF feedback
+ERK	RPS6KA6	ERKi: RSK/MNK/MSK downstream; MEK/RAF feedback
+ERK	MKNK1	ERKi: RSK/MNK/MSK downstream; MEK/RAF feedback
+ERK	MKNK2	ERKi: RSK/MNK/MSK downstream; MEK/RAF feedback
+ERK	RPS6KA4	ERKi: RSK/MNK/MSK downstream; MEK/RAF feedback
+ERK	RPS6KA5	ERKi: RSK/MNK/MSK downstream; MEK/RAF feedback
+ERK	RAF1	ERKi: RSK/MNK/MSK downstream; MEK/RAF feedback
+ERK	BRAF	ERKi: RSK/MNK/MSK downstream; MEK/RAF feedback
+ERK	ARAF	ERKi: RSK/MNK/MSK downstream; MEK/RAF feedback
+RAF	MAP2K1	RAFi: MEK/ERK cascade + RAF paralogs (dimerisation)
+RAF	MAP2K2	RAFi: MEK/ERK cascade + RAF paralogs (dimerisation)
+RAF	MAPK1	RAFi: MEK/ERK cascade + RAF paralogs (dimerisation)
+RAF	MAPK3	RAFi: MEK/ERK cascade + RAF paralogs (dimerisation)
+RAF	RPS6KA1	RAFi: MEK/ERK cascade + RAF paralogs (dimerisation)
+RAF	RPS6KA2	RAFi: MEK/ERK cascade + RAF paralogs (dimerisation)
+RAF	RPS6KA3	RAFi: MEK/ERK cascade + RAF paralogs (dimerisation)
+RAF	RPS6KA6	RAFi: MEK/ERK cascade + RAF paralogs (dimerisation)
+RAF	MKNK1	RAFi: MEK/ERK cascade + RAF paralogs (dimerisation)
+RAF	MKNK2	RAFi: MEK/ERK cascade + RAF paralogs (dimerisation)
+RAF	RPS6KA4	RAFi: MEK/ERK cascade + RAF paralogs (dimerisation)
+RAF	RPS6KA5	RAFi: MEK/ERK cascade + RAF paralogs (dimerisation)
+RAF	RAF1	RAFi: MEK/ERK cascade + RAF paralogs (dimerisation)
+RAF	BRAF	RAFi: MEK/ERK cascade + RAF paralogs (dimerisation)
+RAF	ARAF	RAFi: MEK/ERK cascade + RAF paralogs (dimerisation)
+PI3K	AKT1	PI3Ki: AKT/SGK/S6K/mTOR/GSK3 (GSK3 up) (r1 priorwork #1)
+PI3K	AKT2	PI3Ki: AKT/SGK/S6K/mTOR/GSK3 (GSK3 up) (r1 priorwork #1)
+PI3K	AKT3	PI3Ki: AKT/SGK/S6K/mTOR/GSK3 (GSK3 up) (r1 priorwork #1)
+PI3K	SGK1	PI3Ki: AKT/SGK/S6K/mTOR/GSK3 (GSK3 up) (r1 priorwork #1)
+PI3K	SGK2	PI3Ki: AKT/SGK/S6K/mTOR/GSK3 (GSK3 up) (r1 priorwork #1)
+PI3K	SGK3	PI3Ki: AKT/SGK/S6K/mTOR/GSK3 (GSK3 up) (r1 priorwork #1)
+PI3K	RPS6KB1	PI3Ki: AKT/SGK/S6K/mTOR/GSK3 (GSK3 up) (r1 priorwork #1)
+PI3K	RPS6KB2	PI3Ki: AKT/SGK/S6K/mTOR/GSK3 (GSK3 up) (r1 priorwork #1)
+PI3K	MTOR	PI3Ki: AKT/SGK/S6K/mTOR/GSK3 (GSK3 up) (r1 priorwork #1)
+PI3K	GSK3A	PI3Ki: AKT/SGK/S6K/mTOR/GSK3 (GSK3 up) (r1 priorwork #1)
+PI3K	GSK3B	PI3Ki: AKT/SGK/S6K/mTOR/GSK3 (GSK3 up) (r1 priorwork #1)
+PI3K	PDPK1	PI3Ki: AKT/SGK/S6K/mTOR/GSK3 (GSK3 up) (r1 priorwork #1)
+PI3K	ULK1	PI3Ki: AKT/SGK/S6K/mTOR/GSK3 (GSK3 up) (r1 priorwork #1)
+PDK1	AKT1	PDK1 phosphorylates AGC kinases T-loops (AKT, S6K, SGK, RSK, PKC)
+PDK1	AKT2	PDK1 phosphorylates AGC kinases T-loops (AKT, S6K, SGK, RSK, PKC)
+PDK1	AKT3	PDK1 phosphorylates AGC kinases T-loops (AKT, S6K, SGK, RSK, PKC)
+PDK1	SGK1	PDK1 phosphorylates AGC kinases T-loops (AKT, S6K, SGK, RSK, PKC)
+PDK1	SGK2	PDK1 phosphorylates AGC kinases T-loops (AKT, S6K, SGK, RSK, PKC)
+PDK1	SGK3	PDK1 phosphorylates AGC kinases T-loops (AKT, S6K, SGK, RSK, PKC)
+PDK1	RPS6KB1	PDK1 phosphorylates AGC kinases T-loops (AKT, S6K, SGK, RSK, PKC)
+PDK1	RPS6KB2	PDK1 phosphorylates AGC kinases T-loops (AKT, S6K, SGK, RSK, PKC)
+PDK1	MTOR	PDK1 phosphorylates AGC kinases T-loops (AKT, S6K, SGK, RSK, PKC)
+PDK1	GSK3A	PDK1 phosphorylates AGC kinases T-loops (AKT, S6K, SGK, RSK, PKC)
+PDK1	GSK3B	PDK1 phosphorylates AGC kinases T-loops (AKT, S6K, SGK, RSK, PKC)
+PDK1	RPS6KA1	PDK1 phosphorylates AGC kinases T-loops (AKT, S6K, SGK, RSK, PKC)
+PDK1	RPS6KA2	PDK1 phosphorylates AGC kinases T-loops (AKT, S6K, SGK, RSK, PKC)
+PDK1	RPS6KA3	PDK1 phosphorylates AGC kinases T-loops (AKT, S6K, SGK, RSK, PKC)
+PDK1	RPS6KA6	PDK1 phosphorylates AGC kinases T-loops (AKT, S6K, SGK, RSK, PKC)
+PDK1	PRKCA	PDK1 phosphorylates AGC kinases T-loops (AKT, S6K, SGK, RSK, PKC)
+PDK1	PRKCB	PDK1 phosphorylates AGC kinases T-loops (AKT, S6K, SGK, RSK, PKC)
+PDK1	PRKCD	PDK1 phosphorylates AGC kinases T-loops (AKT, S6K, SGK, RSK, PKC)
+PDK1	PRKCE	PDK1 phosphorylates AGC kinases T-loops (AKT, S6K, SGK, RSK, PKC)
+PDK1	PRKCZ	PDK1 phosphorylates AGC kinases T-loops (AKT, S6K, SGK, RSK, PKC)
+PDK1	PRKCI	PDK1 phosphorylates AGC kinases T-loops (AKT, S6K, SGK, RSK, PKC)
+AKT	AKT1	AKTi: SGK/S6K/mTOR/GSK3 (up)
+AKT	AKT2	AKTi: SGK/S6K/mTOR/GSK3 (up)
+AKT	AKT3	AKTi: SGK/S6K/mTOR/GSK3 (up)
+AKT	SGK1	AKTi: SGK/S6K/mTOR/GSK3 (up)
+AKT	SGK2	AKTi: SGK/S6K/mTOR/GSK3 (up)
+AKT	SGK3	AKTi: SGK/S6K/mTOR/GSK3 (up)
+AKT	RPS6KB1	AKTi: SGK/S6K/mTOR/GSK3 (up)
+AKT	RPS6KB2	AKTi: SGK/S6K/mTOR/GSK3 (up)
+AKT	MTOR	AKTi: SGK/S6K/mTOR/GSK3 (up)
+AKT	GSK3A	AKTi: SGK/S6K/mTOR/GSK3 (up)
+AKT	GSK3B	AKTi: SGK/S6K/mTOR/GSK3 (up)
+AKT	ULK1	AKTi: SGK/S6K/mTOR/GSK3 (up)
+mTOR	RPS6KB1	mTORi: S6K down, AKT (mTORC2 / IRS1 feedback), ULK1 up
+mTOR	RPS6KB2	mTORi: S6K down, AKT (mTORC2 / IRS1 feedback), ULK1 up
+mTOR	AKT1	mTORi: S6K down, AKT (mTORC2 / IRS1 feedback), ULK1 up
+mTOR	AKT2	mTORi: S6K down, AKT (mTORC2 / IRS1 feedback), ULK1 up
+mTOR	AKT3	mTORi: S6K down, AKT (mTORC2 / IRS1 feedback), ULK1 up
+mTOR	SGK1	mTORi: S6K down, AKT (mTORC2 / IRS1 feedback), ULK1 up
+mTOR	ULK1	mTORi: S6K down, AKT (mTORC2 / IRS1 feedback), ULK1 up
+mTOR	ULK2	mTORi: S6K down, AKT (mTORC2 / IRS1 feedback), ULK1 up
+mTOR	GSK3A	mTORi: S6K down, AKT (mTORC2 / IRS1 feedback), ULK1 up
+mTOR	GSK3B	mTORi: S6K down, AKT (mTORC2 / IRS1 feedback), ULK1 up
+S6K	RPS6KB2	S6Ki: IRS1 feedback relief raises AKT
+S6K	AKT1	S6Ki: IRS1 feedback relief raises AKT
+S6K	AKT2	S6Ki: IRS1 feedback relief raises AKT
+S6K	AKT3	S6Ki: IRS1 feedback relief raises AKT
+S6K	MTOR	S6Ki: IRS1 feedback relief raises AKT
+S6K	GSK3A	S6Ki: IRS1 feedback relief raises AKT
+S6K	GSK3B	S6Ki: IRS1 feedback relief raises AKT
+p38	MAPKAPK2	p38i: MK2/3, MSK1/2, MNKs
+p38	MAPKAPK3	p38i: MK2/3, MSK1/2, MNKs
+p38	MAPKAPK5	p38i: MK2/3, MSK1/2, MNKs
+p38	RPS6KA4	p38i: MK2/3, MSK1/2, MNKs
+p38	RPS6KA5	p38i: MK2/3, MSK1/2, MNKs
+p38	MKNK1	p38i: MK2/3, MSK1/2, MNKs
+p38	MKNK2	p38i: MK2/3, MSK1/2, MNKs
+JNK	MAPK8	JNK paralogs (feedback)
+JNK	MAPK9	JNK paralogs (feedback)
+JNK	MAPK10	JNK paralogs (feedback)
+CDK7	CDK1	CDK7 is the CAK for CDK1/2/4/6 and phosphorylates CDK9/12 (r2 priorwork)
+CDK7	CDK2	CDK7 is the CAK for CDK1/2/4/6 and phosphorylates CDK9/12 (r2 priorwork)
+CDK7	CDK4	CDK7 is the CAK for CDK1/2/4/6 and phosphorylates CDK9/12 (r2 priorwork)
+CDK7	CDK6	CDK7 is the CAK for CDK1/2/4/6 and phosphorylates CDK9/12 (r2 priorwork)
+CDK7	CDK9	CDK7 is the CAK for CDK1/2/4/6 and phosphorylates CDK9/12 (r2 priorwork)
+CDK7	CDK12	CDK7 is the CAK for CDK1/2/4/6 and phosphorylates CDK9/12 (r2 priorwork)
+CDK7	CDK13	CDK7 is the CAK for CDK1/2/4/6 and phosphorylates CDK9/12 (r2 priorwork)
+CDK	CDK1	pan-CDK inhibition: other CDKs and cell-cycle kinases
+CDK	CDK2	pan-CDK inhibition: other CDKs and cell-cycle kinases
+CDK	CDK4	pan-CDK inhibition: other CDKs and cell-cycle kinases
+CDK	CDK6	pan-CDK inhibition: other CDKs and cell-cycle kinases
+CDK	CDK7	pan-CDK inhibition: other CDKs and cell-cycle kinases
+CDK	CDK9	pan-CDK inhibition: other CDKs and cell-cycle kinases
+CDK	CDK12	pan-CDK inhibition: other CDKs and cell-cycle kinases
+CDK	CDK13	pan-CDK inhibition: other CDKs and cell-cycle kinases
+CDK	PLK1	pan-CDK inhibition: other CDKs and cell-cycle kinases
+CDK	AURKA	pan-CDK inhibition: other CDKs and cell-cycle kinases
+CDK	AURKB	pan-CDK inhibition: other CDKs and cell-cycle kinases
+TK	MAP2K1	RTK/non-receptor TK inhibitors in driver lines lower RAS-ERK and PI3K-AKT outputs
+TK	MAP2K2	RTK/non-receptor TK inhibitors in driver lines lower RAS-ERK and PI3K-AKT outputs
+TK	MAPK1	RTK/non-receptor TK inhibitors in driver lines lower RAS-ERK and PI3K-AKT outputs
+TK	MAPK3	RTK/non-receptor TK inhibitors in driver lines lower RAS-ERK and PI3K-AKT outputs
+TK	RPS6KA1	RTK/non-receptor TK inhibitors in driver lines lower RAS-ERK and PI3K-AKT outputs
+TK	RPS6KA2	RTK/non-receptor TK inhibitors in driver lines lower RAS-ERK and PI3K-AKT outputs
+TK	RPS6KA3	RTK/non-receptor TK inhibitors in driver lines lower RAS-ERK and PI3K-AKT outputs
+TK	RPS6KA6	RTK/non-receptor TK inhibitors in driver lines lower RAS-ERK and PI3K-AKT outputs
+TK	MKNK1	RTK/non-receptor TK inhibitors in driver lines lower RAS-ERK and PI3K-AKT outputs
+TK	MKNK2	RTK/non-receptor TK inhibitors in driver lines lower RAS-ERK and PI3K-AKT outputs
+TK	RPS6KA4	RTK/non-receptor TK inhibitors in driver lines lower RAS-ERK and PI3K-AKT outputs
+TK	RPS6KA5	RTK/non-receptor TK inhibitors in driver lines lower RAS-ERK and PI3K-AKT outputs
+TK	RAF1	RTK/non-receptor TK inhibitors in driver lines lower RAS-ERK and PI3K-AKT outputs
+TK	BRAF	RTK/non-receptor TK inhibitors in driver lines lower RAS-ERK and PI3K-AKT outputs
+TK	ARAF	RTK/non-receptor TK inhibitors in driver lines lower RAS-ERK and PI3K-AKT outputs
+TK	AKT1	RTK/non-receptor TK inhibitors in driver lines lower RAS-ERK and PI3K-AKT outputs
+TK	AKT2	RTK/non-receptor TK inhibitors in driver lines lower RAS-ERK and PI3K-AKT outputs
+TK	AKT3	RTK/non-receptor TK inhibitors in driver lines lower RAS-ERK and PI3K-AKT outputs
+TK	RPS6KB1	RTK/non-receptor TK inhibitors in driver lines lower RAS-ERK and PI3K-AKT outputs
+TK	MTOR	RTK/non-receptor TK inhibitors in driver lines lower RAS-ERK and PI3K-AKT outputs
+TK	GSK3A	RTK/non-receptor TK inhibitors in driver lines lower RAS-ERK and PI3K-AKT outputs
+TK	GSK3B	RTK/non-receptor TK inhibitors in driver lines lower RAS-ERK and PI3K-AKT outputs
+EGFR	ERBB2	EGFRi: ERBB heterodimer partners
+EGFR	ERBB3	EGFRi: ERBB heterodimer partners
+EGFR	ERBB4	EGFRi: ERBB heterodimer partners
+PKC	PRKD1	PKC -> PKD, ERK/RSK
+PKC	PRKD2	PKC -> PKD, ERK/RSK
+PKC	PRKD3	PKC -> PKD, ERK/RSK
+PKC	MAPK1	PKC -> PKD, ERK/RSK
+PKC	MAPK3	PKC -> PKD, ERK/RSK
+PKC	RPS6KA1	PKC -> PKD, ERK/RSK
+PKC	RPS6KA3	PKC -> PKD, ERK/RSK
+PLC	PRKCA	PLC inhibition lowers DAG/Ca2+ -> PKC/PKD down (r1 priorwork #8)
+PLC	PRKCB	PLC inhibition lowers DAG/Ca2+ -> PKC/PKD down (r1 priorwork #8)
+PLC	PRKCG	PLC inhibition lowers DAG/Ca2+ -> PKC/PKD down (r1 priorwork #8)
+PLC	PRKCD	PLC inhibition lowers DAG/Ca2+ -> PKC/PKD down (r1 priorwork #8)
+PLC	PRKCE	PLC inhibition lowers DAG/Ca2+ -> PKC/PKD down (r1 priorwork #8)
+PLC	PRKCH	PLC inhibition lowers DAG/Ca2+ -> PKC/PKD down (r1 priorwork #8)
+PLC	PRKCQ	PLC inhibition lowers DAG/Ca2+ -> PKC/PKD down (r1 priorwork #8)
+PLC	PRKD1	PLC inhibition lowers DAG/Ca2+ -> PKC/PKD down (r1 priorwork #8)
+PLC	PRKD2	PLC inhibition lowers DAG/Ca2+ -> PKC/PKD down (r1 priorwork #8)
+PLC	PRKD3	PLC inhibition lowers DAG/Ca2+ -> PKC/PKD down (r1 priorwork #8)
+PKA	PRKACB	PKA catalytic paralogs
+PKA	PRKACG	PKA catalytic paralogs
+PKA	PRKX	PKA catalytic paralogs
+ROCK	LIMK1	ROCK -> LIMK
+ROCK	LIMK2	ROCK -> LIMK
+ROCK	ROCK1	ROCK -> LIMK
+ROCK	ROCK2	ROCK -> LIMK
+mitotic	CDK1	mitotic kinase inhibition perturbs mitotic state of the population
+mitotic	PLK1	mitotic kinase inhibition perturbs mitotic state of the population
+mitotic	AURKA	mitotic kinase inhibition perturbs mitotic state of the population
+mitotic	AURKB	mitotic kinase inhibition perturbs mitotic state of the population
+mitotic	BUB1	mitotic kinase inhibition perturbs mitotic state of the population
+mitotic	TTK	mitotic kinase inhibition perturbs mitotic state of the population
+mitotic	HASPIN	mitotic kinase inhibition perturbs mitotic state of the population
+mitotic	NEK2	mitotic kinase inhibition perturbs mitotic state of the population
+mitotic	MASTL	mitotic kinase inhibition perturbs mitotic state of the population
+DDR	ATM	DDR kinase cross-talk / compensation
+DDR	ATR	DDR kinase cross-talk / compensation
+DDR	PRKDC	DDR kinase cross-talk / compensation
+DDR	CHEK1	DDR kinase cross-talk / compensation
+DDR	CHEK2	DDR kinase cross-talk / compensation
+DDR	MAPKAPK2	DDR kinase cross-talk / compensation
+TAK1	IKBKB	TAK1i: IKK, MKKs, JNK, p38
+TAK1	CHUK	TAK1i: IKK, MKKs, JNK, p38
+TAK1	MAP2K3	TAK1i: IKK, MKKs, JNK, p38
+TAK1	MAP2K4	TAK1i: IKK, MKKs, JNK, p38
+TAK1	MAP2K6	TAK1i: IKK, MKKs, JNK, p38
+TAK1	MAP2K7	TAK1i: IKK, MKKs, JNK, p38
+TAK1	MAPK8	TAK1i: IKK, MKKs, JNK, p38
+TAK1	MAPK9	TAK1i: IKK, MKKs, JNK, p38
+TAK1	MAPK14	TAK1i: IKK, MKKs, JNK, p38
+TAK1	MAPKAPK2	TAK1i: IKK, MKKs, JNK, p38
+TAK1	MAPKAPK3	TAK1i: IKK, MKKs, JNK, p38
+TAK1	TBK1	TAK1i: IKK, MKKs, JNK, p38
+TAK1	IKBKE	TAK1i: IKK, MKKs, JNK, p38
+IKK	CHUK	IKK-related kinases
+IKK	IKBKE	IKK-related kinases
+IKK	TBK1	IKK-related kinases
+TBK1	TBK1	TBK1/IKKe
+TBK1	IKBKE	TBK1/IKKe
+TBK1	ULK1	TBK1/IKKe
+JAK	JAK1	JAK paralogs (trans-activation)
+JAK	JAK2	JAK paralogs (trans-activation)
+JAK	JAK3	JAK paralogs (trans-activation)
+JAK	TYK2	JAK paralogs (trans-activation)
+GSK3	GSK3A	GSK3 paralogs
+GSK3	GSK3B	GSK3 paralogs
+PAK	PAK1	PAK paralogs
+PAK	PAK2	PAK paralogs
+PAK	PAK3	PAK paralogs
+PAK	PAK4	PAK paralogs
+PAK	PAK5	PAK paralogs
+PAK	PAK6	PAK paralogs
+CK2	CSNK2A1	CK2 paralogs
+CK2	CSNK2A2	CK2 paralogs
+CAMK2	CAMK2A	CaMK family
+CAMK2	CAMK2B	CaMK family
+CAMK2	CAMK2D	CaMK family
+CAMK2	CAMK2G	CaMK family
+CAMK2	CAMK1	CaMK family
+CAMK2	CAMK4	CaMK family
+RSK	RPS6KA1	RSKi: ERK feedback (RSK -> SOS)
+RSK	RPS6KA2	RSKi: ERK feedback (RSK -> SOS)
+RSK	RPS6KA3	RSKi: ERK feedback (RSK -> SOS)
+RSK	RPS6KA6	RSKi: ERK feedback (RSK -> SOS)
+RSK	MAPK1	RSKi: ERK feedback (RSK -> SOS)
+RSK	MAPK3	RSKi: ERK feedback (RSK -> SOS)
+EGF	MAP2K1	growth-factor cascade (r1 priorwork #7)
+EGF	MAP2K2	growth-factor cascade (r1 priorwork #7)
+EGF	MAPK1	growth-factor cascade (r1 priorwork #7)
+EGF	MAPK3	growth-factor cascade (r1 priorwork #7)
+EGF	RPS6KA1	growth-factor cascade (r1 priorwork #7)
+EGF	RPS6KA2	growth-factor cascade (r1 priorwork #7)
+EGF	RPS6KA3	growth-factor cascade (r1 priorwork #7)
+EGF	RPS6KA6	growth-factor cascade (r1 priorwork #7)
+EGF	MKNK1	growth-factor cascade (r1 priorwork #7)
+EGF	MKNK2	growth-factor cascade (r1 priorwork #7)
+EGF	RPS6KA4	growth-factor cascade (r1 priorwork #7)
+EGF	RPS6KA5	growth-factor cascade (r1 priorwork #7)
+EGF	RAF1	growth-factor cascade (r1 priorwork #7)
+EGF	BRAF	growth-factor cascade (r1 priorwork #7)
+EGF	ARAF	growth-factor cascade (r1 priorwork #7)
+EGF	AKT1	growth-factor cascade (r1 priorwork #7)
+EGF	AKT2	growth-factor cascade (r1 priorwork #7)
+EGF	AKT3	growth-factor cascade (r1 priorwork #7)
+EGF	SGK1	growth-factor cascade (r1 priorwork #7)
+EGF	SGK2	growth-factor cascade (r1 priorwork #7)
+EGF	SGK3	growth-factor cascade (r1 priorwork #7)
+EGF	RPS6KB1	growth-factor cascade (r1 priorwork #7)
+EGF	RPS6KB2	growth-factor cascade (r1 priorwork #7)
+EGF	MTOR	growth-factor cascade (r1 priorwork #7)
+EGF	GSK3A	growth-factor cascade (r1 priorwork #7)
+EGF	GSK3B	growth-factor cascade (r1 priorwork #7)
+EGF	PDPK1	growth-factor cascade (r1 priorwork #7)
+EGF	ERBB2	growth-factor cascade (r1 priorwork #7)
+EGF	ERBB3	growth-factor cascade (r1 priorwork #7)
+EGF	ERBB4	growth-factor cascade (r1 priorwork #7)
+EGF	SRC	growth-factor cascade (r1 priorwork #7)
+FGF	MAP2K1	growth-factor cascade (r1 priorwork #7)
+FGF	MAP2K2	growth-factor cascade (r1 priorwork #7)
+FGF	MAPK1	growth-factor cascade (r1 priorwork #7)
+FGF	MAPK3	growth-factor cascade (r1 priorwork #7)
+FGF	RPS6KA1	growth-factor cascade (r1 priorwork #7)
+FGF	RPS6KA2	growth-factor cascade (r1 priorwork #7)
+FGF	RPS6KA3	growth-factor cascade (r1 priorwork #7)
+FGF	RPS6KA6	growth-factor cascade (r1 priorwork #7)
+FGF	MKNK1	growth-factor cascade (r1 priorwork #7)
+FGF	MKNK2	growth-factor cascade (r1 priorwork #7)
+FGF	RPS6KA4	growth-factor cascade (r1 priorwork #7)
+FGF	RPS6KA5	growth-factor cascade (r1 priorwork #7)
+FGF	RAF1	growth-factor cascade (r1 priorwork #7)
+FGF	BRAF	growth-factor cascade (r1 priorwork #7)
+FGF	ARAF	growth-factor cascade (r1 priorwork #7)
+FGF	AKT1	growth-factor cascade (r1 priorwork #7)
+FGF	AKT2	growth-factor cascade (r1 priorwork #7)
+FGF	AKT3	growth-factor cascade (r1 priorwork #7)
+FGF	SGK1	growth-factor cascade (r1 priorwork #7)
+FGF	SGK2	growth-factor cascade (r1 priorwork #7)
+FGF	SGK3	growth-factor cascade (r1 priorwork #7)
+FGF	RPS6KB1	growth-factor cascade (r1 priorwork #7)
+FGF	RPS6KB2	growth-factor cascade (r1 priorwork #7)
+FGF	MTOR	growth-factor cascade (r1 priorwork #7)
+FGF	GSK3A	growth-factor cascade (r1 priorwork #7)
+FGF	GSK3B	growth-factor cascade (r1 priorwork #7)
+FGF	PDPK1	growth-factor cascade (r1 priorwork #7)
+FGF	ERBB2	growth-factor cascade (r1 priorwork #7)
+FGF	ERBB3	growth-factor cascade (r1 priorwork #7)
+FGF	ERBB4	growth-factor cascade (r1 priorwork #7)
+FGF	SRC	growth-factor cascade (r1 priorwork #7)
+NGF	MAP2K1	growth-factor cascade (r1 priorwork #7)
+NGF	MAP2K2	growth-factor cascade (r1 priorwork #7)
+NGF	MAPK1	growth-factor cascade (r1 priorwork #7)
+NGF	MAPK3	growth-factor cascade (r1 priorwork #7)
+NGF	RPS6KA1	growth-factor cascade (r1 priorwork #7)
+NGF	RPS6KA2	growth-factor cascade (r1 priorwork #7)
+NGF	RPS6KA3	growth-factor cascade (r1 priorwork #7)
+NGF	RPS6KA6	growth-factor cascade (r1 priorwork #7)
+NGF	MKNK1	growth-factor cascade (r1 priorwork #7)
+NGF	MKNK2	growth-factor cascade (r1 priorwork #7)
+NGF	RPS6KA4	growth-factor cascade (r1 priorwork #7)
+NGF	RPS6KA5	growth-factor cascade (r1 priorwork #7)
+NGF	RAF1	growth-factor cascade (r1 priorwork #7)
+NGF	BRAF	growth-factor cascade (r1 priorwork #7)
+NGF	ARAF	growth-factor cascade (r1 priorwork #7)
+NGF	AKT1	growth-factor cascade (r1 priorwork #7)
+NGF	AKT2	growth-factor cascade (r1 priorwork #7)
+NGF	AKT3	growth-factor cascade (r1 priorwork #7)
+NGF	SGK1	growth-factor cascade (r1 priorwork #7)
+NGF	SGK2	growth-factor cascade (r1 priorwork #7)
+NGF	SGK3	growth-factor cascade (r1 priorwork #7)
+NGF	RPS6KB1	growth-factor cascade (r1 priorwork #7)
+NGF	RPS6KB2	growth-factor cascade (r1 priorwork #7)
+NGF	MTOR	growth-factor cascade (r1 priorwork #7)
+NGF	GSK3A	growth-factor cascade (r1 priorwork #7)
+NGF	GSK3B	growth-factor cascade (r1 priorwork #7)
+NGF	PDPK1	growth-factor cascade (r1 priorwork #7)
+NGF	ERBB2	growth-factor cascade (r1 priorwork #7)
+NGF	ERBB3	growth-factor cascade (r1 priorwork #7)
+NGF	ERBB4	growth-factor cascade (r1 priorwork #7)
+NGF	SRC	growth-factor cascade (r1 priorwork #7)
+INSULIN	MAP2K1	growth-factor cascade (r1 priorwork #7)
+INSULIN	MAP2K2	growth-factor cascade (r1 priorwork #7)
+INSULIN	MAPK1	growth-factor cascade (r1 priorwork #7)
+INSULIN	MAPK3	growth-factor cascade (r1 priorwork #7)
+INSULIN	RPS6KA1	growth-factor cascade (r1 priorwork #7)
+INSULIN	RPS6KA2	growth-factor cascade (r1 priorwork #7)
+INSULIN	RPS6KA3	growth-factor cascade (r1 priorwork #7)
+INSULIN	RPS6KA6	growth-factor cascade (r1 priorwork #7)
+INSULIN	MKNK1	growth-factor cascade (r1 priorwork #7)
+INSULIN	MKNK2	growth-factor cascade (r1 priorwork #7)
+INSULIN	RPS6KA4	growth-factor cascade (r1 priorwork #7)
+INSULIN	RPS6KA5	growth-factor cascade (r1 priorwork #7)
+INSULIN	RAF1	growth-factor cascade (r1 priorwork #7)
+INSULIN	BRAF	growth-factor cascade (r1 priorwork #7)
+INSULIN	ARAF	growth-factor cascade (r1 priorwork #7)
+INSULIN	AKT1	growth-factor cascade (r1 priorwork #7)
+INSULIN	AKT2	growth-factor cascade (r1 priorwork #7)
+INSULIN	AKT3	growth-factor cascade (r1 priorwork #7)
+INSULIN	SGK1	growth-factor cascade (r1 priorwork #7)
+INSULIN	SGK2	growth-factor cascade (r1 priorwork #7)
+INSULIN	SGK3	growth-factor cascade (r1 priorwork #7)
+INSULIN	RPS6KB1	growth-factor cascade (r1 priorwork #7)
+INSULIN	RPS6KB2	growth-factor cascade (r1 priorwork #7)
+INSULIN	MTOR	growth-factor cascade (r1 priorwork #7)
+INSULIN	GSK3A	growth-factor cascade (r1 priorwork #7)
+INSULIN	GSK3B	growth-factor cascade (r1 priorwork #7)
+INSULIN	PDPK1	growth-factor cascade (r1 priorwork #7)
+INSULIN	ERBB2	growth-factor cascade (r1 priorwork #7)
+INSULIN	ERBB3	growth-factor cascade (r1 priorwork #7)
+INSULIN	ERBB4	growth-factor cascade (r1 priorwork #7)
+INSULIN	SRC	growth-factor cascade (r1 priorwork #7)
+INSULIN	IGF1R	insulin: IGF1R hybrid receptors; AMPK/ULK1 nutrient axis
+INSULIN	PRKAA1	insulin: IGF1R hybrid receptors; AMPK/ULK1 nutrient axis
+INSULIN	PRKAA2	insulin: IGF1R hybrid receptors; AMPK/ULK1 nutrient axis
+INSULIN	ULK1	insulin: IGF1R hybrid receptors; AMPK/ULK1 nutrient axis
+TNF	MAP2K3	TNF cascade (r1 priorwork #7)
+TNF	MAP2K4	TNF cascade (r1 priorwork #7)
+TNF	MAP2K6	TNF cascade (r1 priorwork #7)
+TNF	MAP2K7	TNF cascade (r1 priorwork #7)
+TNF	MAPK8	TNF cascade (r1 priorwork #7)
+TNF	MAPK9	TNF cascade (r1 priorwork #7)
+TNF	MAPK10	TNF cascade (r1 priorwork #7)
+TNF	MAPK11	TNF cascade (r1 priorwork #7)
+TNF	MAPK12	TNF cascade (r1 priorwork #7)
+TNF	MAPK13	TNF cascade (r1 priorwork #7)
+TNF	MAPK14	TNF cascade (r1 priorwork #7)
+TNF	MAPKAPK2	TNF cascade (r1 priorwork #7)
+TNF	MAPKAPK3	TNF cascade (r1 priorwork #7)
+TNF	TBK1	TNF cascade (r1 priorwork #7)
+TNF	IKBKE	TNF cascade (r1 priorwork #7)
+TNF	CHUK	TNF cascade (r1 priorwork #7)
+TNF	RIPK1	TNF cascade (r1 priorwork #7)
+TNF	MAP3K8	TNF cascade (r1 priorwork #7)
+TNF	RPS6KA4	TNF cascade (r1 priorwork #7)
+TNF	RPS6KA5	TNF cascade (r1 priorwork #7)
+TNF	MAPK1	TNF cascade (r1 priorwork #7)
+TNF	MAPK3	TNF cascade (r1 priorwork #7)
+IFNG_LPS	MAP2K3	IFNg/LPS cascades
+IFNG_LPS	MAP2K4	IFNg/LPS cascades
+IFNG_LPS	MAP2K6	IFNg/LPS cascades
+IFNG_LPS	MAP2K7	IFNg/LPS cascades
+IFNG_LPS	MAPK8	IFNg/LPS cascades
+IFNG_LPS	MAPK9	IFNg/LPS cascades
+IFNG_LPS	MAPK11	IFNg/LPS cascades
+IFNG_LPS	MAPK14	IFNg/LPS cascades
+IFNG_LPS	MAPKAPK2	IFNg/LPS cascades
+IFNG_LPS	MAPKAPK3	IFNg/LPS cascades
+IFNG_LPS	TBK1	IFNg/LPS cascades
+IFNG_LPS	IKBKE	IFNg/LPS cascades
+IFNG_LPS	CHUK	IFNg/LPS cascades
+IFNG_LPS	IRAK1	IFNg/LPS cascades
+IFNG_LPS	IRAK4	IFNg/LPS cascades
+IFNG_LPS	RIPK1	IFNg/LPS cascades
+IFNG_LPS	MAP3K8	IFNg/LPS cascades
+IFNG_LPS	MAPK1	IFNg/LPS cascades
+IFNG_LPS	MAPK3	IFNg/LPS cascades
+IFNG_LPS	TYK2	IFNg/LPS cascades
+IFNG_LPS	JAK3	IFNg/LPS cascades
+IL4	JAK1	cytokine/JAK cascades
+IL4	JAK2	cytokine/JAK cascades
+IL4	JAK3	cytokine/JAK cascades
+IL4	TYK2	cytokine/JAK cascades
+IL4	MAPK1	cytokine/JAK cascades
+IL4	MAPK3	cytokine/JAK cascades
+IL4	AKT1	cytokine/JAK cascades
+IFN	JAK1	cytokine/JAK cascades
+IFN	JAK2	cytokine/JAK cascades
+IFN	JAK3	cytokine/JAK cascades
+IFN	TYK2	cytokine/JAK cascades
+IFN	MAPK1	cytokine/JAK cascades
+IFN	MAPK3	cytokine/JAK cascades
+IFN	AKT1	cytokine/JAK cascades
+IL23	JAK1	cytokine/JAK cascades
+IL23	JAK2	cytokine/JAK cascades
+IL23	JAK3	cytokine/JAK cascades
+IL23	TYK2	cytokine/JAK cascades
+IL23	MAPK1	cytokine/JAK cascades
+IL23	MAPK3	cytokine/JAK cascades
+IL23	AKT1	cytokine/JAK cascades
+TGFB	ACVR1B	TGF-beta non-canonical (TAK1, p38)
+TGFB	ACVR1	TGF-beta non-canonical (TAK1, p38)
+TGFB	MAP3K7	TGF-beta non-canonical (TAK1, p38)
+TGFB	MAPK14	TGF-beta non-canonical (TAK1, p38)
+TGFB	MAPK8	TGF-beta non-canonical (TAK1, p38)
+TGFB	TGFBR1	TGF-beta non-canonical (TAK1, p38)
+TGFB	TGFBR2	TGF-beta non-canonical (TAK1, p38)
+TCR	LCK	TCR cascade
+TCR	FYN	TCR cascade
+TCR	ZAP70	TCR cascade
+TCR	ITK	TCR cascade
+TCR	PRKCQ	TCR cascade
+TCR	MAP2K1	TCR cascade
+TCR	MAP2K2	TCR cascade
+TCR	MAPK1	TCR cascade
+TCR	MAPK3	TCR cascade
+TCR	RPS6KA1	TCR cascade
+TCR	RPS6KA3	TCR cascade
+TCR	PAK1	TCR cascade
+TCR	PAK2	TCR cascade
+TCR	AKT1	TCR cascade
+TCR	MAP4K1	TCR cascade
+BCR	SYK	BCR cascade
+BCR	LYN	BCR cascade
+BCR	BTK	BCR cascade
+BCR	BLK	BCR cascade
+BCR	FYN	BCR cascade
+BCR	PRKCB	BCR cascade
+BCR	MAP2K1	BCR cascade
+BCR	MAP2K2	BCR cascade
+BCR	MAPK1	BCR cascade
+BCR	MAPK3	BCR cascade
+BCR	AKT1	BCR cascade
+BCR	AKT2	BCR cascade
+PMA	PRKCA	PKC -> PKD, RAF-ERK
+PMA	PRKCB	PKC -> PKD, RAF-ERK
+PMA	PRKCG	PKC -> PKD, RAF-ERK
+PMA	PRKCD	PKC -> PKD, RAF-ERK
+PMA	PRKCE	PKC -> PKD, RAF-ERK
+PMA	PRKCH	PKC -> PKD, RAF-ERK
+PMA	PRKCQ	PKC -> PKD, RAF-ERK
+PMA	PRKD1	PKC -> PKD, RAF-ERK
+PMA	PRKD2	PKC -> PKD, RAF-ERK
+PMA	PRKD3	PKC -> PKD, RAF-ERK
+PMA	MAP2K1	PKC -> PKD, RAF-ERK
+PMA	MAP2K2	PKC -> PKD, RAF-ERK
+PMA	MAPK1	PKC -> PKD, RAF-ERK
+PMA	MAPK3	PKC -> PKD, RAF-ERK
+PMA	RPS6KA1	PKC -> PKD, RAF-ERK
+PMA	RPS6KA2	PKC -> PKD, RAF-ERK
+PMA	RPS6KA3	PKC -> PKD, RAF-ERK
+PMA	RPS6KA6	PKC -> PKD, RAF-ERK
+PMA	MKNK1	PKC -> PKD, RAF-ERK
+PMA	MKNK2	PKC -> PKD, RAF-ERK
+PMA	RPS6KA4	PKC -> PKD, RAF-ERK
+PMA	RPS6KA5	PKC -> PKD, RAF-ERK
+PMA	RAF1	PKC -> PKD, RAF-ERK
+PMA	BRAF	PKC -> PKD, RAF-ERK
+PMA	ARAF	PKC -> PKD, RAF-ERK
+CAMP_PKA	PRKACB	PKA catalytic paralogs
+CAMP_PKA	PRKACG	PKA catalytic paralogs
+CAMP_PKA	PRKX	PKA catalytic paralogs
+DSB	ATM	DNA damage response cross-talk
+DSB	ATR	DNA damage response cross-talk
+DSB	PRKDC	DNA damage response cross-talk
+DSB	CHEK1	DNA damage response cross-talk
+DSB	CHEK2	DNA damage response cross-talk
+DSB	MAPKAPK2	DNA damage response cross-talk
+DSB	MAPK14	DNA damage response cross-talk
+REPSTRESS	ATM	DNA damage response cross-talk
+REPSTRESS	ATR	DNA damage response cross-talk
+REPSTRESS	PRKDC	DNA damage response cross-talk
+REPSTRESS	CHEK1	DNA damage response cross-talk
+REPSTRESS	CHEK2	DNA damage response cross-talk
+REPSTRESS	MAPKAPK2	DNA damage response cross-talk
+UV	ATM	UV stress cascades
+UV	ATR	UV stress cascades
+UV	PRKDC	UV stress cascades
+UV	CHEK1	UV stress cascades
+UV	CHEK2	UV stress cascades
+UV	MAPKAPK2	UV stress cascades
+UV	MAPK8	UV stress cascades
+UV	MAPK9	UV stress cascades
+UV	MAPK14	UV stress cascades
+UV	MAP2K3	UV stress cascades
+UV	MAP2K4	UV stress cascades
+UV	MAP2K6	UV stress cascades
+UV	MAP2K7	UV stress cascades
+MITOSIS	CDK2	mitosis vs interphase: whole mitotic network (r1 priorwork #7)
+MITOSIS	NEK2	mitosis vs interphase: whole mitotic network (r1 priorwork #7)
+MITOSIS	NEK6	mitosis vs interphase: whole mitotic network (r1 priorwork #7)
+MITOSIS	NEK7	mitosis vs interphase: whole mitotic network (r1 priorwork #7)
+MITOSIS	NEK9	mitosis vs interphase: whole mitotic network (r1 priorwork #7)
+MITOSIS	TTK	mitosis vs interphase: whole mitotic network (r1 priorwork #7)
+MITOSIS	BUB1	mitosis vs interphase: whole mitotic network (r1 priorwork #7)
+MITOSIS	HASPIN	mitosis vs interphase: whole mitotic network (r1 priorwork #7)
+MITOSIS	MASTL	mitosis vs interphase: whole mitotic network (r1 priorwork #7)
+MITOSIS	WEE1	mitosis vs interphase: whole mitotic network (r1 priorwork #7)
+MITOSIS	PKMYT1	mitosis vs interphase: whole mitotic network (r1 priorwork #7)
+MITOSIS	CHEK1	mitosis vs interphase: whole mitotic network (r1 priorwork #7)
+MITOSIS	CDK1	mitosis vs interphase: whole mitotic network (r1 priorwork #7)
+MITOSIS	PLK1	mitosis vs interphase: whole mitotic network (r1 priorwork #7)
+MITOSIS	AURKA	mitosis vs interphase: whole mitotic network (r1 priorwork #7)
+MITOSIS	AURKB	mitosis vs interphase: whole mitotic network (r1 priorwork #7)
+MITOSIS	AURKC	mitosis vs interphase: whole mitotic network (r1 priorwork #7)
+MITOSIS	CDC7	mitosis vs interphase: whole mitotic network (r1 priorwork #7)
+MITOSIS	GSG2	mitosis vs interphase: whole mitotic network (r1 priorwork #7)
+MITOSIS	MAPK1	mitosis vs interphase: whole mitotic network (r1 priorwork #7)
+MITOSIS	MAPK3	mitosis vs interphase: whole mitotic network (r1 priorwork #7)
+S_PHASE	CDK1	cell-cycle network
+S_PHASE	CDK2	cell-cycle network
+S_PHASE	CDK4	cell-cycle network
+S_PHASE	CDK6	cell-cycle network
+S_PHASE	CDC7	cell-cycle network
+S_PHASE	CHEK1	cell-cycle network
+S_PHASE	ATR	cell-cycle network
+S_PHASE	WEE1	cell-cycle network
+S_PHASE	PKMYT1	cell-cycle network
+MITO_DEPOL	PINK1	PINK1 / energy stress
+MITO_DEPOL	PRKAA1	PINK1 / energy stress
+MITO_DEPOL	PRKAA2	PINK1 / energy stress
+AMPK_ACT	PRKAA1	AMPK axis
+AMPK_ACT	PRKAA2	AMPK axis
+AMPK_ACT	MTOR	AMPK axis
+AMPK_ACT	RPS6KB1	AMPK axis
+AMPK_ACT	ULK1	AMPK axis
+AMPK_ACT	STK11	AMPK axis
+STARVATION	MTOR	nutrient/insulin withdrawal
+STARVATION	RPS6KB1	nutrient/insulin withdrawal
+STARVATION	RPS6KB2	nutrient/insulin withdrawal
+STARVATION	AKT1	nutrient/insulin withdrawal
+STARVATION	AKT2	nutrient/insulin withdrawal
+STARVATION	AKT3	nutrient/insulin withdrawal
+STARVATION	SGK1	nutrient/insulin withdrawal
+STARVATION	GSK3A	nutrient/insulin withdrawal
+STARVATION	GSK3B	nutrient/insulin withdrawal
+STARVATION	ULK1	nutrient/insulin withdrawal
+STARVATION	ULK2	nutrient/insulin withdrawal
+STARVATION	PRKAA1	nutrient/insulin withdrawal
+STARVATION	PRKAA2	nutrient/insulin withdrawal
+STARVATION	EIF2AK4	nutrient/insulin withdrawal
+STARVATION	MAPK1	nutrient/insulin withdrawal
+STARVATION	MAPK3	nutrient/insulin withdrawal

@@ -1,0 +1,83 @@
+# Pre-registered stimulus -> kinase labels (PI decision 2026-10-27, r3 M3). cls direct = receptor + canonical near-certain first-tier kinases (enter M1);
+# cls downstream = further cascade (secondary positives only). Final sign = rule expected_direction x sign; confidence = min(rule, table).
+# Stimulus labels apply only at <=4 h treatment (later -> masked).
+stim_class	kinase	cls	sign	confidence	note
+EGF	EGFR	direct	1	high	ligand-induced EGFR autophosphorylation within 1-5 min (Ullrich & Schlessinger 1990)
+EGF	MAPK1	direct	1	high	EGF->RAS->RAF->MEK->ERK1/2: robust activation peaking 5-15 min in all EGFR-expressing lines (Marshall 1995)
+EGF	MAPK3	direct	1	high	EGF->RAS->RAF->MEK->ERK1/2: robust activation peaking 5-15 min in all EGFR-expressing lines (Marshall 1995)
+EGF	MAP2K1	downstream	1	medium	MEK1/2 activated with ERK; few PSP substrates -> kept secondary
+EGF	MAP2K2	downstream	1	medium	MEK1/2 activated with ERK; few PSP substrates -> kept secondary
+EGF	RPS6KA1	downstream	1	medium	ERK->RSK (Anjum & Blenis 2008)
+EGF	RPS6KA3	downstream	1	medium	ERK->RSK (Anjum & Blenis 2008)
+EGF	AKT1	downstream	1	medium	EGFR->PI3K->AKT, cell-line dependent magnitude
+FGF	MAPK1	direct	1	medium	FGFR->FRS2->RAS->ERK1/2, canonical first-tier output (Ornitz & Itoh 2015); receptor named per rule
+FGF	MAPK3	direct	1	medium	FGFR->FRS2->RAS->ERK1/2, canonical first-tier output (Ornitz & Itoh 2015); receptor named per rule
+FGF	MAP2K1	downstream	1	medium	MEK1/2
+FGF	MAP2K2	downstream	1	medium	MEK1/2
+NGF	NTRK1	direct	1	medium	NGF->TrkA autophosphorylation
+NGF	MAPK1	direct	1	medium	TrkA->ERK1/2 sustained activation (Marshall 1995)
+NGF	MAPK3	direct	1	medium	TrkA->ERK1/2 sustained activation (Marshall 1995)
+INSULIN	INSR	direct	1	high	insulin receptor autophosphorylation
+INSULIN	AKT1	direct	1	high	INSR->IRS->PI3K->AKT within minutes (Manning & Toker 2017)
+INSULIN	AKT2	direct	1	high	INSR->IRS->PI3K->AKT within minutes (Manning & Toker 2017)
+INSULIN	MTOR	downstream	1	medium	AKT->TSC2/PRAS40->mTORC1->S6K
+INSULIN	RPS6KB1	downstream	1	medium	AKT->TSC2/PRAS40->mTORC1->S6K
+INSULIN	GSK3A	downstream	-1	medium	AKT phosphorylates GSK3 S21/S9 -> inhibition
+INSULIN	GSK3B	downstream	-1	medium	AKT phosphorylates GSK3 S21/S9 -> inhibition
+INSULIN	MAPK1	downstream	1	low	weak ERK activation by insulin
+INSULIN	MAPK3	downstream	1	low	weak ERK activation by insulin
+TNF	MAP3K7	direct	1	high	TNFR1->TAK1->IKKbeta within 5 min (Hayden & Ghosh 2008)
+TNF	IKBKB	direct	1	high	TNFR1->TAK1->IKKbeta within 5 min (Hayden & Ghosh 2008)
+TNF	CHUK	direct	1	medium	IKKalpha in IKK complex
+TNF	MAPK8	downstream	1	medium	TAK1->MKK4/7/3/6->JNK/p38->MK2
+TNF	MAPK14	downstream	1	medium	TAK1->MKK4/7/3/6->JNK/p38->MK2
+TNF	MAPKAPK2	downstream	1	medium	TAK1->MKK4/7/3/6->JNK/p38->MK2
+IL4	JAK1	direct	1	medium	IL-4R type I uses JAK1/JAK3 (Kelly-Welch 2003)
+IL4	JAK3	direct	1	medium	IL-4R type I uses JAK1/JAK3 (Kelly-Welch 2003)
+IFNG_LPS	JAK1	direct	1	medium	IFNgR -> JAK1/JAK2
+IFNG_LPS	JAK2	direct	1	medium	IFNgR -> JAK1/JAK2
+IFNG_LPS	IKBKB	direct	1	medium	LPS/TLR4 -> TAK1 -> IKK, p38
+IFNG_LPS	MAP3K7	direct	1	medium	LPS/TLR4 -> TAK1 -> IKK, p38
+IFNG_LPS	MAPK14	direct	1	medium	LPS/TLR4 -> TAK1 -> IKK, p38
+IFN	JAK1	direct	1	medium	JAK1 is used by type I and type II IFN receptors (type unspecified in metadata)
+IFN	JAK2	direct	1	low	JAK2 (type II) or TYK2 (type I): type unknown
+IFN	TYK2	direct	1	low	JAK2 (type II) or TYK2 (type I): type unknown
+IL23	JAK2	direct	1	medium	IL-23R/IL-12Rb1 -> JAK2/TYK2
+IL23	TYK2	direct	1	medium	IL-23R/IL-12Rb1 -> JAK2/TYK2
+TGFB	TGFBR1	direct	1	high	TGFBR2 phosphorylates/activates TGFBR1 (ALK5) on ligand binding (Massague 2012)
+TGFB	TGFBR2	direct	1	medium	TGFBR2 is constitutively active; ligand changes complex formation more than kinase activity -> medium (r1 priorwork #7)
+TCR	ZAP70	direct	1	high	TCR -> LCK -> ZAP70 activation (Au-Yeung 2009)
+TCR	LCK	direct	1	medium	LCK largely constitutively active; activity change modest -> medium (r1 priorwork #7)
+TCR	MAPK1	downstream	1	medium	TCR -> RasGRP/SOS -> ERK
+TCR	MAPK3	downstream	1	medium	TCR -> RasGRP/SOS -> ERK
+BCR	SYK	direct	1	high	BCR -> LYN/SYK/BTK within minutes
+BCR	LYN	direct	1	high	BCR -> LYN/SYK/BTK within minutes
+BCR	BTK	direct	1	high	BCR -> LYN/SYK/BTK within minutes
+BCR	MAPK1	downstream	1	medium	BCR -> ERK
+BCR	MAPK3	downstream	1	medium	BCR -> ERK
+PMA	PRKCA	direct	1	high	phorbol ester binds C1 domains of classical/novel PKCs directly
+PMA	PRKCB	direct	1	high	phorbol ester binds C1 domains of classical/novel PKCs directly
+PMA	PRKCD	direct	1	high	phorbol ester binds C1 domains of classical/novel PKCs directly
+PMA	PRKCE	direct	1	high	phorbol ester binds C1 domains of classical/novel PKCs directly
+PMA	PRKD1	downstream	1	medium	PKC phosphorylates PKD activation loop
+PMA	PRKD2	downstream	1	medium	PKC phosphorylates PKD activation loop
+PMA	PRKD3	downstream	1	medium	PKC phosphorylates PKD activation loop
+PMA	MAPK1	downstream	1	medium	PKC -> RAF -> ERK
+PMA	MAPK3	downstream	1	medium	PKC -> RAF -> ERK
+CAMP_PKA	PRKACA	direct	1	medium	Gs-coupled receptor -> cAMP -> PKA catalytic subunit release
+DSB	ATM	direct	1	high	double-strand breaks activate ATM within minutes (Shiloh & Ziv 2013)
+DSB	CHEK2	direct	1	medium	ATM -> CHK2 T68 within minutes
+REPSTRESS	ATR	direct	1	high	replication stress / bulky adducts activate ATR-ATRIP (Saldivar 2017)
+REPSTRESS	CHEK1	direct	1	medium	ATR -> CHK1 S345
+UV	ATR	direct	1	medium	UV -> ATR
+UV	MAPK14	direct	1	medium	UV stress -> p38/JNK (stress-activated MAPKs)
+UV	MAPK8	direct	1	medium	UV stress -> p38/JNK (stress-activated MAPKs)
+UV	CHEK1	downstream	1	medium	ATR -> CHK1
+MITOSIS	CDK1	direct	1	high	mitotic kinases active in M vs interphase
+MITOSIS	PLK1	direct	1	high	mitotic kinases active in M vs interphase
+MITOSIS	AURKA	direct	1	high	mitotic kinases active in M vs interphase
+MITOSIS	AURKB	direct	1	high	mitotic kinases active in M vs interphase
+S_PHASE	CDK2	direct	1	medium	cyclin E/A-CDK2 active in S phase
+MITO_DEPOL	PINK1	direct	1	high	mitochondrial depolarisation stabilises/activates PINK1 (Pickrell & Youle 2015)
+AMPK_ACT	PRKAA1	direct	1	low	metformin activates AMPK at high dose/long time only
+AMPK_ACT	PRKAA2	direct	1	low	metformin activates AMPK at high dose/long time only

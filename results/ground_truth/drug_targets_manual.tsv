@@ -1,115 +1,163 @@
-agent	canonical_name	klaeger_name	direct_targets	target_class	note
-p38i	p38 inhibitor (unspecified)		MAPK14;MAPK11	p38	compound not named in metadata; p38alpha/beta assumed (inferred)
-gefitinib	Gefitinib	Gefitinib	EGFR	EGFR	primary target
-erlotinib	Erlotinib	Erlotinib	EGFR	EGFR	primary target
-AG1478	Tyrphostin AG1478		EGFR	EGFR	primary target (literature)
-lapatinib	Lapatinib	Lapatinib	EGFR;ERBB2	EGFR	primary targets
-afatinib	Afatinib	Afatinib	EGFR;ERBB2;ERBB4	EGFR	covalent pan-ERBB
-PD168393	PD-168393		EGFR	EGFR	covalent EGFR (literature)
-PD153035	PD-153035		EGFR	EGFR	primary target
-CUDC101	CUDC-101	CUDC-101	EGFR;ERBB2	EGFR	dual HDAC/EGFR/HER2 inhibitor
-vemurafenib	Vemurafenib (PLX4032)	Vemurafenib	BRAF	RAF	downstream MEK/ERK decrease only in BRAF-V600 cells (paradoxical activation in RAS-mutant/WT)
-SB590885	SB-590885		BRAF	RAF	BRAF-selective (literature); paradox in BRAF-WT
-LY3009120	LY-3009120		ARAF;BRAF;RAF1	RAF	pan-RAF dimer inhibitor (literature)
-sorafenib	Sorafenib	Sorafenib	RAF1;BRAF	RAF	multi-kinase; Klaeger designated RAF1,BRAF
-cobimetinib	Cobimetinib	Cobimetinib	MAP2K1;MAP2K2	MEK	allosteric MEK
-PD0325901	PD-0325901	PD-325901	MAP2K1;MAP2K2	MEK	allosteric MEK
-U0126	U0126		MAP2K1;MAP2K2	MEK	MEK (literature)
-trametinib	Trametinib	Trametinib	MAP2K1;MAP2K2	MEK	allosteric MEK
-selumetinib	Selumetinib (AZD6244)	Selumetinib	MAP2K1;MAP2K2	MEK	allosteric MEK
-refametinib	Refametinib	Refametinib	MAP2K1;MAP2K2	MEK	allosteric MEK
-PD184352	PD184352 (CI-1040)		MAP2K1;MAP2K2	MEK	MEK (literature)
-MEKi	MEK inhibitor (unspecified)		MAP2K1;MAP2K2	MEK	compound not named in metadata (inferred)
-ERKi_SCH772984	SCH772984		MAPK1;MAPK3	ERK	"SCH" in 29255136 inferred = SCH772984 (inferred)
-ERKi_generic	ERK inhibitor / ERK inhibitor II (Calbiochem)		MAPK1;MAPK3	ERK	older ERK inhibitors with poor selectivity (FR180204-like); lower confidence
-akti_akt12	Akt-1-2 (Akti-1/2)		AKT1;AKT2	AKT	allosteric (literature)
-MK2206	MK-2206	MK-2206	AKT1;AKT2;AKT3	AKT	allosteric AKT
-perifosine	Perifosine	Perifosine	AKT1;AKT2;AKT3	AKT	alkylphospholipid, indirect AKT inhibitor (PH-domain); lower confidence
-aktVIII	Akt inhibitor VIII		AKT1;AKT2;AKT3	AKT	allosteric (literature)
-GSK3i_BIO	BIO (6-bromoindirubin-3'-oxime)		GSK3A;GSK3B	GSK3	also CDKs at higher conc.
-CHIR99021	CHIR-99021		GSK3A;GSK3B	GSK3	selective
-SB216763	SB-216763		GSK3A;GSK3B	GSK3	
-tideglusib	Tideglusib	Tideglusib	GSK3B	GSK3	irreversible, weak in cells
-kenpaullone	Kenpaullone		GSK3B;CDK1;CDK2;CDK5	GSK3	paullone
-JNKIN8	JNK-IN-8		MAPK8;MAPK9;MAPK10	JNK	covalent
-SP600125	SP600125		MAPK8;MAPK9;MAPK10	JNK	promiscuous
-tanzisertib	Tanzisertib (CC-930)	Tanzisertib	MAPK8;MAPK9;MAPK10	JNK	
-JNKi	JNK inhibitor (unspecified)		MAPK8;MAPK9;MAPK10	JNK	compound not named in metadata (inferred)
-everolimus	Everolimus	Certican	MTOR	mTOR	rapalog; mTORC1 only
-temsirolimus	Temsirolimus	Torisel	MTOR	mTOR	rapalog; mTORC1 only
-rapamycin	Rapamycin	Rapamycin	MTOR	mTOR	rapalog; mTORC1 only
-torkinib	Torkinib (PP242)		MTOR	mTOR	ATP-competitive mTORC1/2
-torin1	Torin1		MTOR	mTOR	ATP-competitive mTORC1/2
-KU0063794	KU-0063794		MTOR	mTOR	ATP-competitive mTORC1/2
-AZD8055	AZD8055	AZD-8055	MTOR	mTOR	ATP-competitive mTORC1/2
-mTORi	mTOR inhibitor (unspecified)		MTOR	mTOR	compound not named (inferred)
-BIRB796	BIRB-796 (doramapimod)		MAPK14;MAPK11;MAPK12;MAPK13	p38	pan-p38 (literature)
-SB203580	SB-203580		MAPK14;MAPK11	p38	
-SB202190	SB-202190		MAPK14;MAPK11	p38	
-SB239063	SB-239063		MAPK14;MAPK11	p38	
-ralimetinib	Ralimetinib (LY2228820)		MAPK14;MAPK11	p38	"LY228820" in metadata inferred = LY2228820 (inferred)
-LY294002	LY294002		PIK3CA;PIK3CB;PIK3CD;PIK3CG;MTOR	PI3K	pan-PI3K (lipid kinases; no PSP substrates)
-PI3Ka_inh2	PI3-kinase alpha inhibitor 2		PIK3CA	PI3K	
-wortmannin	Wortmannin		PIK3CA;PIK3CB;PIK3CD;PIK3CG	PI3K	covalent pan-PI3K
-pictilisib	Pictilisib (GDC-0941)	Pictilisib	PIK3CA;PIK3CB;PIK3CD;PIK3CG	PI3K	
-PI103	PI-103		PIK3CA;PIK3CB;PIK3CD;PIK3CG;MTOR	PI3K	
-dactolisib	Dactolisib (BEZ235)	Dactolisib	PIK3CA;PIK3CB;PIK3CD;PIK3CG;MTOR	PI3K	dual PI3K/mTOR
-omipalisib	Omipalisib (GSK2126458)	Omipalisib	PIK3CA;PIK3CB;PIK3CD;PIK3CG;MTOR	PI3K	dual PI3K/mTOR
-PI3Ki	PI3K inhibitor (unspecified)		PIK3CA;PIK3CB;PIK3CD;PIK3CG	PI3K	compound not named (inferred)
-BIM1	Bisindolylmaleimide I (GF109203X)		PRKCA;PRKCB;PRKCG;PRKCD;PRKCE	PKC	
-enzastaurin	Enzastaurin	Enzastaurin	PRKCB	PKC	
-Go6983	Go 6983		PRKCA;PRKCB;PRKCG;PRKCD;PRKCZ	PKC	
-Go6976	Go 6976		PRKCA;PRKCB	PKC	classical PKC; also PKD
-PF4708671	PF-4708671		RPS6KB1	S6K	
-DG2	DG2		RPS6KB1	S6K	
-KN93	KN-93		CAMK2A;CAMK2B;CAMK2D;CAMK2G	CAMK2	
-KN62	KN-62		CAMK2A;CAMK2B;CAMK2D;CAMK2G	CAMK2	
-H1152	H-1152		ROCK1;ROCK2	ROCK	
-Y27632	Y-27632		ROCK1;ROCK2	ROCK	
-ATRi	ATR inhibitor (unspecified)		ATR	DDR	compound not named (inferred)
-VE821	VE-821		ATR	DDR	
-ATMi	ATM inhibitor (unspecified)		ATM	DDR	compound not named (inferred)
-KU60019	KU-60019		ATM	DDR	
-DNAPKi	DNA-PK inhibitor (unspecified)		PRKDC	DDR	compound not named (inferred)
-CHK1i	CHK1 inhibitor (unspecified)		CHEK1	DDR	compound not named (inferred)
-MLN8054	MLN8054	MLN-8054	AURKA	mitotic	AURKB at >=5 uM
-AZD1152	Barasertib (AZD1152)	Barasertib	AURKB	mitotic	
-AZD1152_ZM447439	Barasertib + ZM447439		AURKB;AURKA	mitotic	ZM447439 Aurora A/B
-VX680	Tozasertib (VX-680)	Tozasertib	AURKA;AURKB;AURKC	mitotic	
-BI2536	BI 2536	BI-2536	PLK1	mitotic	
-BI4834	BI 4834		PLK1	mitotic	PLK1 inhibitor (literature)
-PLK1as_3MBPP1	3-MB-PP1 on analog-sensitive PLK1		PLK1	chemical-genetic	only in Plk1(as) cells
-RO3306	RO-3306		CDK1	CDK	
-flavopiridol	Flavopiridol (alvocidib)	Alvocidib	CDK9;CDK1;CDK2;CDK4;CDK6;CDK7	CDK	pan-CDK, CDK9 most potent
-THZ531	THZ531		CDK12;CDK13	CDK	covalent
-THZ1	THZ1		CDK7;CDK12;CDK13	CDK	"THZ" in 34663829 inferred = THZ1 (inferred)
-CDK12IN3	CDK12-IN-3		CDK12	CDK	
-dinaciclib	Dinaciclib	Dinaciclib	CDK1;CDK2;CDK5;CDK9	CDK	"Dina" inferred = dinaciclib (inferred)
-dasatinib	Dasatinib	Dasatinib	ABL1;SRC;LYN;LCK;YES1;FYN;KIT;EPHA2	SRC/ABL	BCR-ABL dependent in K562
-imatinib	Imatinib	Imatinib	ABL1;KIT;PDGFRA;PDGFRB	ABL	
-crizotinib	Crizotinib	Crizotinib	ALK;MET;ROS1	ALK/MET	
-lorlatinib	Lorlatinib		ALK;ROS1	ALK	
-ceritinib	Ceritinib	Ceritinib	ALK	ALK	
-TAE684	NVP-TAE684		ALK	ALK	
-PF04217903	PF-04217903	PF-04217903	MET	MET	
-foretinib	Foretinib	Foretinib	MET;KDR	MET	
-pexidartinib	Pexidartinib	Pexidartinib	CSF1R;KIT;FLT3	CSF1R	
-ibrutinib	Ibrutinib	Ibrutinib	BTK	BTK	
-SYKi	SYK inhibitor (unspecified)		SYK	SYK	compound not named (inferred)
-LRRK2IN1	LRRK2-IN-1		LRRK2	LRRK2	
-tofacitinib	Tofacitinib	Tofacitinib	JAK1;JAK2;JAK3	JAK	
-BID1870	BI-D1870		RPS6KA1;RPS6KA2;RPS6KA3;RPS6KA6	RSK	
-SC514	SC-514		IKBKB	IKK	
-TPCA1	TPCA-1		IKBKB	IKK	"TPCA" inferred = TPCA-1 (inferred)
-7Oxo	5Z-7-oxozeaenol		MAP3K7	TAK1	covalent TAK1
-TAKi	TAK1 inhibitor (unspecified)		MAP3K7	TAK1	compound not named (inferred)
-TBKi	TBK1 inhibitor (unspecified)		TBK1;IKBKE	TBK1	compound not named (inferred)
-MRT	MRT67307 (assumed)		TBK1;IKBKE	TBK1	"MRT" in 34663829 assumed MRT67307 (TBK1/IKKe); could be MRT68921 (ULK1) - low confidence (inferred)
-BRAFi	BRAF inhibitor (unspecified)		BRAF	RAF	compound not named (inferred)
-AZD4547	AZD4547	AZD-4547	FGFR1;FGFR2;FGFR3	FGFR	
-nintedanib	Nintedanib	Nintedanib	FLT1;KDR;FLT4;FGFR1;FGFR2;FGFR3;PDGFRA;PDGFRB	RTK	
-staurosporine	Staurosporine		PAN	pan	pan-kinase; no specific GT (excluded)
-SHP099	SHP099		MAPK1;MAPK3	indirect	SHP2 phosphatase inhibitor; ERK decrease is downstream/indirect
-trastuzumab	Trastuzumab		ERBB2	antibody	antibody; ERBB2 signalling decrease (indirect, weaker)
-pertuzumab	Pertuzumab		ERBB2	antibody	antibody blocking ERBB2 dimerisation (indirect)
-CX4945	Silmitasertib (CX-4945)	Silmitasertib	CSNK2A1;CSNK2A2	CK2	
+agent	canonical_name	klaeger_name	profile_names	direct_targets	target_class	mechanism	raf_type	note
+p38i	p38 inhibitor (unspecified)			MAPK14;MAPK11	p38	atp		compound not named in metadata; p38alpha/beta assumed (inferred)
+gefitinib	Gefitinib	Gefitinib		EGFR	TK;EGFR	atp		primary target
+erlotinib	Erlotinib	Erlotinib		EGFR	TK;EGFR	atp		primary target
+AG1478	Tyrphostin AG1478			EGFR	TK;EGFR	atp		primary target (literature)
+lapatinib	Lapatinib	Lapatinib		EGFR;ERBB2	TK;EGFR	atp		primary targets
+afatinib	Afatinib	Afatinib		EGFR;ERBB2;ERBB4	TK;EGFR	covalent		covalent pan-ERBB
+PD168393	PD-168393			EGFR	TK;EGFR	covalent		covalent EGFR (literature)
+PD153035	PD-153035			EGFR	TK;EGFR	atp		primary target
+CUDC101	CUDC-101	CUDC-101		EGFR;ERBB2	TK;EGFR	atp		dual HDAC/EGFR/HER2 inhibitor
+vemurafenib	Vemurafenib (PLX4032)	Vemurafenib		BRAF	RAF	atp	paradox	downstream MEK/ERK decrease only in BRAF-V600 cells (paradoxical activation in RAS-mutant/WT)
+SB590885	SB-590885			BRAF	RAF	atp	paradox	BRAF-selective (literature); paradox in BRAF-WT
+LY3009120	LY-3009120			ARAF;BRAF;RAF1	RAF	atp	panraf	pan-RAF dimer inhibitor (literature)
+sorafenib	Sorafenib	Sorafenib		RAF1;BRAF	RAF	atp	typeII	multi-kinase; Klaeger designated RAF1,BRAF
+cobimetinib	Cobimetinib	Cobimetinib		MAP2K1;MAP2K2	MEK	allosteric		allosteric MEK
+PD0325901	PD-0325901	PD-325901		MAP2K1;MAP2K2	MEK	allosteric		allosteric MEK
+U0126	U0126			MAP2K1;MAP2K2	MEK	allosteric		MEK (literature)
+trametinib	Trametinib	Trametinib		MAP2K1;MAP2K2	MEK	allosteric		allosteric MEK
+selumetinib	Selumetinib (AZD6244)	Selumetinib		MAP2K1;MAP2K2	MEK	allosteric		allosteric MEK
+refametinib	Refametinib	Refametinib		MAP2K1;MAP2K2	MEK	allosteric		allosteric MEK
+PD184352	PD184352 (CI-1040)			MAP2K1;MAP2K2	MEK	allosteric		MEK (literature)
+MEKi	MEK inhibitor (unspecified)			MAP2K1;MAP2K2	MEK	allosteric		compound not named in metadata (inferred)
+ERKi_SCH772984	SCH772984			MAPK1;MAPK3	ERK	atp		SCH in 29255136 inferred = SCH772984 (inferred)
+ERKi_generic	ERK inhibitor / ERK inhibitor II (Calbiochem)			MAPK1;MAPK3	ERK	atp		older ERK inhibitors with poor selectivity (FR180204-like); lower confidence
+akti_akt12	Akt-1-2 (Akti-1/2)			AKT1;AKT2	AKT	allosteric		allosteric (literature)
+MK2206	MK-2206	MK-2206		AKT1;AKT2;AKT3	AKT	allosteric		allosteric AKT
+perifosine	Perifosine	Perifosine		AKT1;AKT2;AKT3	AKT	indirect		alkylphospholipid, indirect AKT inhibitor (PH-domain); lower confidence
+aktVIII	Akt inhibitor VIII			AKT1;AKT2;AKT3	AKT	allosteric		allosteric (literature)
+GSK3i_BIO	BIO (6-bromoindirubin-3'-oxime)			GSK3A;GSK3B	GSK3	atp		also CDKs at higher conc.
+CHIR99021	CHIR-99021			GSK3A;GSK3B	GSK3	atp		selective
+SB216763	SB-216763			GSK3A;GSK3B	GSK3	atp		
+tideglusib	Tideglusib	Tideglusib		GSK3B	GSK3	covalent		irreversible, weak in cells
+kenpaullone	Kenpaullone			GSK3B;CDK1;CDK2;CDK5	GSK3	atp		paullone
+JNKIN8	JNK-IN-8			MAPK8;MAPK9;MAPK10	JNK	covalent		covalent
+SP600125	SP600125			MAPK8;MAPK9;MAPK10	JNK	atp		promiscuous
+tanzisertib	Tanzisertib (CC-930)	Tanzisertib		MAPK8;MAPK9;MAPK10	JNK	atp		
+JNKi	JNK inhibitor (unspecified)			MAPK8;MAPK9;MAPK10	JNK	atp		compound not named in metadata (inferred)
+everolimus	Everolimus	Certican		MTOR	mTOR	allosteric		rapalog; mTORC1 only
+temsirolimus	Temsirolimus	Torisel		MTOR	mTOR	allosteric		rapalog; mTORC1 only
+rapamycin	Rapamycin	Rapamycin		MTOR	mTOR	allosteric		rapalog; mTORC1 only
+torkinib	Torkinib (PP242)			MTOR	mTOR	pikk		ATP-competitive mTORC1/2
+torin1	Torin1			MTOR	mTOR	pikk		ATP-competitive mTORC1/2
+KU0063794	KU-0063794			MTOR	mTOR	pikk		ATP-competitive mTORC1/2
+AZD8055	AZD8055	AZD-8055		MTOR	mTOR	pikk		ATP-competitive mTORC1/2
+mTORi	mTOR inhibitor (unspecified)			MTOR	mTOR	pikk		compound not named (inferred)
+BIRB796	BIRB-796 (doramapimod)			MAPK14;MAPK11;MAPK12;MAPK13	p38	atp		pan-p38 (literature)
+SB203580	SB-203580			MAPK14;MAPK11	p38	atp		
+SB202190	SB-202190			MAPK14;MAPK11	p38	atp		
+SB239063	SB-239063			MAPK14;MAPK11	p38	atp		
+ralimetinib	Ralimetinib (LY2228820)			MAPK14;MAPK11	p38	atp		LY228820 in metadata inferred = LY2228820 (inferred)
+LY294002	LY294002			PIK3CA;PIK3CB;PIK3CD;PIK3CG;MTOR	PI3K;mTOR	pikk		pan-PI3K (lipid kinases; no PSP substrates)
+PI3Ka_inh2	PI3-kinase alpha inhibitor 2			PIK3CA	PI3K	lipid_only		
+wortmannin	Wortmannin			PIK3CA;PIK3CB;PIK3CD;PIK3CG	PI3K	covalent		covalent pan-PI3K
+pictilisib	Pictilisib (GDC-0941)	Pictilisib		PIK3CA;PIK3CB;PIK3CD;PIK3CG	PI3K	lipid_only		
+PI103	PI-103			PIK3CA;PIK3CB;PIK3CD;PIK3CG;MTOR	PI3K;mTOR	pikk		
+dactolisib	Dactolisib (BEZ235)	Dactolisib		PIK3CA;PIK3CB;PIK3CD;PIK3CG;MTOR	PI3K;mTOR	pikk		dual PI3K/mTOR
+omipalisib	Omipalisib (GSK2126458)	Omipalisib		PIK3CA;PIK3CB;PIK3CD;PIK3CG;MTOR	PI3K;mTOR	pikk		dual PI3K/mTOR
+PI3Ki	PI3K inhibitor (unspecified)			PIK3CA;PIK3CB;PIK3CD;PIK3CG	PI3K	lipid_only		compound not named (inferred)
+BIM1	Bisindolylmaleimide I (GF109203X)			PRKCA;PRKCB;PRKCG;PRKCD;PRKCE	PKC	atp		
+enzastaurin	Enzastaurin	Enzastaurin		PRKCB	PKC	atp		
+Go6983	Go 6983			PRKCA;PRKCB;PRKCG;PRKCD;PRKCZ	PKC	atp		
+Go6976	Go 6976			PRKCA;PRKCB	PKC	atp		classical PKC; also PKD
+PF4708671	PF-4708671			RPS6KB1	S6K	atp		
+DG2	DG2			RPS6KB1	S6K	atp		
+KN93	KN-93			CAMK2A;CAMK2B;CAMK2D;CAMK2G	CAMK2	atp		
+KN62	KN-62			CAMK2A;CAMK2B;CAMK2D;CAMK2G	CAMK2	atp		
+H1152	H-1152			ROCK1;ROCK2	ROCK	atp		
+Y27632	Y-27632			ROCK1;ROCK2	ROCK	atp		
+ATRi	ATR inhibitor (unspecified)			ATR	DDR	pikk		compound not named (inferred)
+VE821	VE-821			ATR	DDR	pikk		
+ATMi	ATM inhibitor (unspecified)			ATM	DDR	pikk		compound not named (inferred)
+KU60019	KU-60019			ATM	DDR	pikk		
+DNAPKi	DNA-PK inhibitor (unspecified)			PRKDC	DDR	pikk		compound not named (inferred)
+CHK1i	CHK1 inhibitor (unspecified)			CHEK1	DDR	atp		compound not named (inferred)
+MLN8054	MLN8054	MLN-8054		AURKA	mitotic	atp		AURKB at >=5 uM
+AZD1152	Barasertib (AZD1152)	Barasertib		AURKB	mitotic	atp		
+AZD1152_ZM447439	Barasertib + ZM447439			AURKB;AURKA	mitotic	atp		ZM447439 Aurora A/B
+VX680	Tozasertib (VX-680)	Tozasertib		AURKA;AURKB;AURKC	mitotic	atp		
+BI2536	BI 2536	BI-2536		PLK1	mitotic	atp		
+BI4834	BI 4834			PLK1	mitotic	atp		PLK1 inhibitor (literature)
+PLK1as_3MBPP1	3-MB-PP1 on analog-sensitive PLK1			PLK1	mitotic	chemical_genetic		only in Plk1(as) cells
+RO3306	RO-3306			CDK1	CDK;mitotic	atp		
+flavopiridol	Flavopiridol (alvocidib)	Alvocidib		CDK9;CDK1;CDK2;CDK4;CDK6;CDK7	CDK;CDK7	atp		pan-CDK, CDK9 most potent
+THZ531	THZ531			CDK12;CDK13	CDK	covalent		covalent
+THZ1	THZ1			CDK7;CDK12;CDK13	CDK;CDK7	covalent		THZ in 34663829 inferred = THZ1 (inferred)
+CDK12IN3	CDK12-IN-3			CDK12	CDK	atp		
+dinaciclib	Dinaciclib	Dinaciclib		CDK1;CDK2;CDK5;CDK9	CDK	atp		Dina inferred = dinaciclib (inferred)
+dasatinib	Dasatinib	Dasatinib		ABL1;SRC;LYN;LCK;YES1;FYN;KIT;EPHA2	TK	atp		BCR-ABL dependent in K562
+imatinib	Imatinib	Imatinib		ABL1;KIT;PDGFRA;PDGFRB	TK	atp		
+crizotinib	Crizotinib	Crizotinib		ALK;MET;ROS1	TK	atp		
+lorlatinib	Lorlatinib			ALK;ROS1	TK	atp		
+ceritinib	Ceritinib	Ceritinib		ALK	TK	atp		
+TAE684	NVP-TAE684			ALK	TK	atp		
+PF04217903	PF-04217903	PF-04217903		MET	TK	atp		
+foretinib	Foretinib	Foretinib		MET;KDR	TK	atp		
+pexidartinib	Pexidartinib	Pexidartinib		CSF1R;KIT;FLT3	TK	atp		
+ibrutinib	Ibrutinib	Ibrutinib		BTK	TK	covalent		
+SYKi	SYK inhibitor (unspecified)			SYK	TK	atp		compound not named (inferred)
+LRRK2IN1	LRRK2-IN-1			LRRK2	LRRK2	atp		
+tofacitinib	Tofacitinib	Tofacitinib		JAK1;JAK2;JAK3	JAK	atp		
+BID1870	BI-D1870			RPS6KA1;RPS6KA2;RPS6KA3;RPS6KA6	RSK	atp		
+SC514	SC-514			IKBKB	IKK	atp		
+TPCA1	TPCA-1			IKBKB	IKK	atp		TPCA inferred = TPCA-1 (inferred)
+7Oxo	5Z-7-oxozeaenol			MAP3K7	TAK1	covalent		covalent TAK1
+TAKi	TAK1 inhibitor (unspecified)			MAP3K7	TAK1	atp		compound not named (inferred)
+TBKi	TBK1 inhibitor (unspecified)			TBK1;IKBKE	TBK1	atp		compound not named (inferred)
+MRT	MRT67307 (assumed)			TBK1;IKBKE	TBK1	atp		MRT in 34663829 assumed MRT67307 (TBK1/IKKe); could be MRT68921 (ULK1) - low confidence (inferred)
+BRAFi	BRAF inhibitor (unspecified)			BRAF	RAF	atp	paradox	compound not named (inferred)
+AZD4547	AZD4547	AZD-4547		FGFR1;FGFR2;FGFR3	TK	atp		
+nintedanib	Nintedanib	Nintedanib		FLT1;KDR;FLT4;FGFR1;FGFR2;FGFR3;PDGFRA;PDGFRB	TK	atp		
+staurosporine	Staurosporine			PAN	pan	pan		pan-kinase; no specific GT (excluded)
+SHP099	SHP099			MAPK1;MAPK3	TK	indirect		SHP2 phosphatase inhibitor; ERK decrease is downstream/indirect
+trastuzumab	Trastuzumab			ERBB2	TK;EGFR	antibody		antibody; ERBB2 signalling decrease (indirect, weaker)
+pertuzumab	Pertuzumab			ERBB2	TK;EGFR	antibody		antibody blocking ERBB2 dimerisation (indirect)
+CX4945	Silmitasertib (CX-4945)	Silmitasertib		CSNK2A1;CSNK2A2	CK2	atp		
+quizartinib	Quizartinib (AC220)	Quizartinib		FLT3	TK	atp		Hijazi drug; FLT3
+edelfosine	Edelfosine				PLC	non_kinase		alkyl-lysophospholipid; PLC/PI-PLC inhibition lowers DAG -> PKC (specificity control)
+U73122	U73122				PLC	non_kinase		PLC inhibitor (specificity control; PKC/PKD axis masked)
+TAK715	TAK-715			MAPK14;MAPK11	p38	atp		p38alpha inhibitor; also CK1d/e (Hijazi list)
+TBCA	TBCA			CSNK2A1;CSNK2A2	CK2	atp		CK2 inhibitor
+AT13148	AT-13148	AT-13148		AKT1;AKT2;AKT3;ROCK1;ROCK2;PRKACA;RPS6KB1	AKT	atp		multi-AGC inhibitor
+AZ20	AZ20			ATR	DDR	pikk		ATR inhibitor
+ceralasertib	Ceralasertib (AZD6738)			ATR	DDR	pikk		ATR inhibitor
+bosutinib	Bosutinib	Bosutinib		SRC;ABL1	TK	atp		SRC/ABL
+dabrafenib	Dabrafenib	Dabrafenib		BRAF;ARAF;RAF1	RAF	atp	paradox	type I 1/2 BRAF inhibitor; paradoxical activation in BRAF-WT cells
+NU7026	DNA-PK inhibitor IV			PRKDC	DDR	pikk		Hijazi DNA_PK_IV
+H89	H-89			PRKACA	PKA	atp		PKA inhibitor; promiscuous (literature off-target table)
+belumosudil	Belumosudil (KD025)			ROCK2	ROCK	atp		ROCK2-selective
+NU7441	NU7441			PRKDC	DDR	pikk		DNA-PK inhibitor
+ripasudil	Ripasudil	Ripasudil		ROCK1;ROCK2	ROCK	atp		
+AZD1480	AZD1480	AZD-1480		JAK2;JAK1	JAK	atp		JAK1/2
+capivasertib	Capivasertib (AZD5363)	AZD-5363		AKT1;AKT2;AKT3	AKT	atp		ATP-competitive AKT
+BX912	BX-912			PDPK1	PDK1	atp		PDK1
+ipatasertib	Ipatasertib (GDC-0068)			AKT1;AKT2;AKT3	AKT	atp		ATP-competitive AKT
+GSK2334470	GSK2334470			PDPK1	PDK1	atp		PDK1
+LY2090314	LY2090314			GSK3A;GSK3B	GSK3	atp		GSK3
+AZD3759	AZD3759			EGFR	TK;EGFR	atp		brain-penetrant EGFR
+GSK690693	GSK690693	GSK-690693		AKT1;AKT2;AKT3	AKT	atp		pan-AKT ATP-competitive
+JNJ38877605	JNJ-38877605	JNJ-38877605		MET	TK	atp		MET
+ribociclib	Ribociclib (LEE011)	Ribociclib		CDK4;CDK6	CDK46	atp		CDK4/6
+abemaciclib	Abemaciclib (LY2835219)	Abemaciclib		CDK4;CDK6	CDK46	atp		CDK4/6; promiscuous
+amuvatinib	Amuvatinib (MP-470)	Amuvatinib		KIT;PDGFRA;FLT3	TK	atp		
+linsitinib	Linsitinib (OSI-906)	Linsitinib		IGF1R;INSR	TK	atp		IGF1R/INSR
+AZD5438	AZD5438	AZD-5438		CDK1;CDK2;CDK9	CDK	atp		
+FRAX486	FRAX486			PAK1;PAK2;PAK3	PAK	atp		group I PAK
+PF3758309	PF-3758309	PF-3758309		PAK4	PAK	atp		PAK4; very promiscuous
+ravoxertinib	Ravoxertinib (GDC-0994)	GDC-0994		MAPK1;MAPK3	ERK	atp		ERK1/2
+LY2584702	LY2584702	LY-2584702		RPS6KB1	S6K	atp		S6K1
+PH797804	PH-797804	PH-797804		MAPK14;MAPK11	p38	atp		p38
+ulixertinib	Ulixertinib	Ulixertinib		MAPK1;MAPK3	ERK	atp		ERK1/2
+AZD6482	AZD6482 (Hijazi label AZD6432)	AZD-6482		PIK3CB	PI3K	lipid_only		PI3Kbeta; Hijazi column AZD6432 assumed = AZD6482 (Klaeger/Hijazi SI name)
+idelalisib	Idelalisib (CAL-101)	Idelalisib		PIK3CD	PI3K	lipid_only		PI3Kdelta
+HS173	HS-173			PIK3CA	PI3K	lipid_only		PI3Kalpha; kinhib also lists PLK1
+PIK294	PIK-294			PIK3CD	PI3K	lipid_only		PI3Kdelta
+TGX221	TGX-221			PIK3CB	PI3K	lipid_only		PI3Kbeta
+encorafenib	Encorafenib	Encorafenib		BRAF	RAF	atp	paradox	not in compendium; listed for RAF typing
+PLX4720	PLX4720			BRAF	RAF	atp	paradox	not in compendium; listed for RAF typing
+olaparib	Olaparib					non_kinase		PARP inhibitor (no kinase GT)
+ZM447439	ZM447439			AURKA;AURKB	mitotic	atp		
+cortistatinA	Cortistatin A			CDK8;CDK19	CDK	atp		not annotated in GT (no rule)
+NM_PP1_1	1-NM-PP1					chemical_genetic		analog-sensitive kinase ligand; target not given in metadata
+CB5083	CB-5083					non_kinase		p97 inhibitor
+NMS873	NMS-873					non_kinase		p97 inhibitor

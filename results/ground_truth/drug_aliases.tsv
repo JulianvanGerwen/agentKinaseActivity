@@ -1,0 +1,296 @@
+alias	agent	is_class	pmid	note
+gefitinib	gefitinib	0		agent key
+erlotinib	erlotinib	0		agent key
+AG1478	AG1478	0		agent key
+lapatinib	lapatinib	0		agent key
+afatinib	afatinib	0		agent key
+PD168393	PD168393	0		agent key
+PD153035	PD153035	0		agent key
+CUDC101	CUDC101	0		agent key
+vemurafenib	vemurafenib	0		agent key
+SB590885	SB590885	0		agent key
+LY3009120	LY3009120	0		agent key
+sorafenib	sorafenib	0		agent key
+cobimetinib	cobimetinib	0		agent key
+PD0325901	PD0325901	0		agent key
+PD-325901	PD0325901	0		Klaeger name
+U0126	U0126	0		agent key
+trametinib	trametinib	0		agent key
+selumetinib	selumetinib	0		agent key
+refametinib	refametinib	0		agent key
+PD184352	PD184352	0		agent key
+ERKi_SCH772984	ERKi_SCH772984	0		agent key
+ERKi_generic	ERKi_generic	0		agent key
+akti_akt12	akti_akt12	0		agent key
+MK2206	MK2206	0		agent key
+perifosine	perifosine	0		agent key
+aktVIII	aktVIII	0		agent key
+GSK3i_BIO	GSK3i_BIO	0		agent key
+CHIR99021	CHIR99021	0		agent key
+SB216763	SB216763	0		agent key
+tideglusib	tideglusib	0		agent key
+kenpaullone	kenpaullone	0		agent key
+JNKIN8	JNKIN8	0		agent key
+SP600125	SP600125	0		agent key
+tanzisertib	tanzisertib	0		agent key
+everolimus	everolimus	0		agent key
+Certican	everolimus	0		Klaeger name
+temsirolimus	temsirolimus	0		agent key
+Torisel	temsirolimus	0		Klaeger name
+rapamycin	rapamycin	0		agent key
+torkinib	torkinib	0		agent key
+torin1	torin1	0		agent key
+KU0063794	KU0063794	0		agent key
+AZD8055	AZD8055	0		agent key
+BIRB796	BIRB796	0		agent key
+SB203580	SB203580	0		agent key
+SB202190	SB202190	0		agent key
+SB239063	SB239063	0		agent key
+ralimetinib	ralimetinib	0		agent key
+LY294002	LY294002	0		agent key
+PI3Ka_inh2	PI3Ka_inh2	0		agent key
+wortmannin	wortmannin	0		agent key
+pictilisib	pictilisib	0		agent key
+PI103	PI103	0		agent key
+dactolisib	dactolisib	0		agent key
+omipalisib	omipalisib	0		agent key
+BIM1	BIM1	0		agent key
+enzastaurin	enzastaurin	0		agent key
+Go6983	Go6983	0		agent key
+Go6976	Go6976	0		agent key
+PF4708671	PF4708671	0		agent key
+DG2	DG2	0		agent key
+KN93	KN93	0		agent key
+KN62	KN62	0		agent key
+H1152	H1152	0		agent key
+Y27632	Y27632	0		agent key
+VE821	VE821	0		agent key
+KU60019	KU60019	0		agent key
+MLN8054	MLN8054	0		agent key
+AZD1152	AZD1152	0		agent key
+Barasertib	AZD1152	0		Klaeger name
+AZD1152_ZM447439	AZD1152_ZM447439	0		agent key
+VX680	VX680	0		agent key
+Tozasertib	VX680	0		Klaeger name
+BI2536	BI2536	0		agent key
+BI4834	BI4834	0		agent key
+PLK1as_3MBPP1	PLK1as_3MBPP1	0		agent key
+RO3306	RO3306	0		agent key
+flavopiridol	flavopiridol	0		agent key
+Alvocidib	flavopiridol	0		Klaeger name
+THZ531	THZ531	0		agent key
+THZ1	THZ1	0		agent key
+CDK12IN3	CDK12IN3	0		agent key
+dinaciclib	dinaciclib	0		agent key
+dasatinib	dasatinib	0		agent key
+imatinib	imatinib	0		agent key
+crizotinib	crizotinib	0		agent key
+lorlatinib	lorlatinib	0		agent key
+ceritinib	ceritinib	0		agent key
+TAE684	TAE684	0		agent key
+PF04217903	PF04217903	0		agent key
+foretinib	foretinib	0		agent key
+pexidartinib	pexidartinib	0		agent key
+ibrutinib	ibrutinib	0		agent key
+LRRK2IN1	LRRK2IN1	0		agent key
+tofacitinib	tofacitinib	0		agent key
+BID1870	BID1870	0		agent key
+SC514	SC514	0		agent key
+TPCA1	TPCA1	0		agent key
+7Oxo	7Oxo	0		agent key
+MRT	MRT	0	34663829	agent key
+AZD4547	AZD4547	0		agent key
+nintedanib	nintedanib	0		agent key
+staurosporine	staurosporine	0		agent key
+SHP099	SHP099	0		agent key
+trastuzumab	trastuzumab	0		agent key
+pertuzumab	pertuzumab	0		agent key
+CX4945	CX4945	0		agent key
+Silmitasertib	CX4945	0		Klaeger name
+quizartinib	quizartinib	0		agent key
+edelfosine	edelfosine	0		agent key
+U73122	U73122	0		agent key
+TAK715	TAK715	0		agent key
+TBCA	TBCA	0		agent key
+AT13148	AT13148	0		agent key
+AZ20	AZ20	0		agent key
+ceralasertib	ceralasertib	0		agent key
+bosutinib	bosutinib	0		agent key
+dabrafenib	dabrafenib	0		agent key
+NU7026	NU7026	0		agent key
+H89	H89	0		agent key
+belumosudil	belumosudil	0		agent key
+NU7441	NU7441	0		agent key
+ripasudil	ripasudil	0		agent key
+AZD1480	AZD1480	0		agent key
+capivasertib	capivasertib	0		agent key
+AZD-5363	capivasertib	0		Klaeger name
+BX912	BX912	0		agent key
+ipatasertib	ipatasertib	0		agent key
+GSK2334470	GSK2334470	0		agent key
+LY2090314	LY2090314	0		agent key
+AZD3759	AZD3759	0		agent key
+GSK690693	GSK690693	0		agent key
+JNJ38877605	JNJ38877605	0		agent key
+ribociclib	ribociclib	0		agent key
+abemaciclib	abemaciclib	0		agent key
+amuvatinib	amuvatinib	0		agent key
+linsitinib	linsitinib	0		agent key
+AZD5438	AZD5438	0		agent key
+FRAX486	FRAX486	0		agent key
+PF3758309	PF3758309	0		agent key
+ravoxertinib	ravoxertinib	0		agent key
+GDC-0994	ravoxertinib	0		Klaeger name
+LY2584702	LY2584702	0		agent key
+PH797804	PH797804	0		agent key
+ulixertinib	ulixertinib	0		agent key
+AZD6482	AZD6482	0		agent key
+idelalisib	idelalisib	0		agent key
+HS173	HS173	0		agent key
+PIK294	PIK294	0		agent key
+TGX221	TGX221	0		agent key
+encorafenib	encorafenib	0		agent key
+PLX4720	PLX4720	0		agent key
+olaparib	olaparib	0		agent key
+ZM447439	ZM447439	0		agent key
+cortistatinA	cortistatinA	0		agent key
+NM_PP1_1	NM_PP1_1	0		agent key
+CB5083	CB5083	0		agent key
+NMS873	NMS873	0		agent key
+AC220	quizartinib	0		compendium/Hijazi spelling or synonym
+GF109203X	BIM1	0		compendium/Hijazi spelling or synonym
+Bisindolylmaleimide I	BIM1	0		compendium/Hijazi spelling or synonym
+G-6976	Go6976	0		compendium/Hijazi spelling or synonym
+AZD6738	ceralasertib	0		compendium/Hijazi spelling or synonym
+DNA_PK_IV	NU7026	0		compendium/Hijazi spelling or synonym
+H89_2HCl	H89	0		compendium/Hijazi spelling or synonym
+KD025	belumosudil	0		compendium/Hijazi spelling or synonym
+GDC0068	ipatasertib	0		compendium/Hijazi spelling or synonym
+LEE011	ribociclib	0		compendium/Hijazi spelling or synonym
+LY2835219	abemaciclib	0		compendium/Hijazi spelling or synonym
+MP470	amuvatinib	0		compendium/Hijazi spelling or synonym
+OSI906	linsitinib	0		compendium/Hijazi spelling or synonym
+Ku-794	KU0063794	0		compendium/Hijazi spelling or synonym
+AZD6244	selumetinib	0		compendium/Hijazi spelling or synonym
+ARRY-886	selumetinib	0		compendium/Hijazi spelling or synonym
+AZD6432	AZD6482	0		compendium/Hijazi spelling or synonym
+CAL101	idelalisib	0		compendium/Hijazi spelling or synonym
+GDC0941	pictilisib	0		compendium/Hijazi spelling or synonym
+Akt-1-2	akti_akt12	0		compendium/Hijazi spelling or synonym
+Akt inhibitor VIII	aktVIII	0		compendium/Hijazi spelling or synonym
+ERK inhibitor	ERKi_generic	0		compendium/Hijazi spelling or synonym
+ERK inhibitor II	ERKi_generic	0		compendium/Hijazi spelling or synonym
+GSK-1120212	trametinib	0		compendium/Hijazi spelling or synonym
+PLX4032	vemurafenib	0		compendium/Hijazi spelling or synonym
+GDC0973	cobimetinib	0		compendium/Hijazi spelling or synonym
+CI-1040	PD184352	0		compendium/Hijazi spelling or synonym
+SCH772984	ERKi_SCH772984	0		compendium/Hijazi spelling or synonym
+Akti-1/2	akti_akt12	0		compendium/Hijazi spelling or synonym
+BIO	GSK3i_BIO	0		compendium/Hijazi spelling or synonym
+Tanziternib	tanzisertib	0		compendium/Hijazi spelling or synonym
+CC-930	tanzisertib	0		compendium/Hijazi spelling or synonym
+PP242	torkinib	0		compendium/Hijazi spelling or synonym
+Doramapimod	BIRB796	0		compendium/Hijazi spelling or synonym
+LY228820	ralimetinib	0		compendium/Hijazi spelling or synonym
+LY2228820	ralimetinib	0		compendium/Hijazi spelling or synonym
+PI3-kinase-alpha-inhibitor2	PI3Ka_inh2	0		compendium/Hijazi spelling or synonym
+BEZ235	dactolisib	0		compendium/Hijazi spelling or synonym
+GSK2126458	omipalisib	0		compendium/Hijazi spelling or synonym
+3-MB-PP1	PLK1as_3MBPP1	0		compendium/Hijazi spelling or synonym
+Dina	dinaciclib	0	34663829	compendium/Hijazi spelling or synonym
+THZ	THZ1	0	34663829	compendium/Hijazi spelling or synonym
+TPCA	TPCA1	0		compendium/Hijazi spelling or synonym
+5Z-7-oxozeaenol	7Oxo	0		compendium/Hijazi spelling or synonym
+MRT67307	MRT	0		compendium/Hijazi spelling or synonym
+SYK inhibition	SYKi	0		compendium/Hijazi spelling or synonym
+NVP-TAE684	TAE684	0		compendium/Hijazi spelling or synonym
+SKI-606	bosutinib	0		compendium/Hijazi spelling or synonym
+CP-690550	tofacitinib	0		compendium/Hijazi spelling or synonym
+BIBW-2992	afatinib	0		compendium/Hijazi spelling or synonym
+STI571	imatinib	0		compendium/Hijazi spelling or synonym
+Cortistatin	cortistatinA	0		compendium/Hijazi spelling or synonym
+1-NM-PP1	NM_PP1_1	0		compendium/Hijazi spelling or synonym
+SCH	ERKi_SCH772984	0	29255136	"""SCH"" in 29255136 inferred = SCH772984"
+TRA	trametinib	0	29255136	"""TRA"" in 29255136 inferred = trametinib"
+p38i	p38i	1		class token (unnamed compound)
+MEKi	MEKi	1		class token (unnamed compound)
+JNKi	JNKi	1		class token (unnamed compound)
+mTORi	mTORi	1		class token (unnamed compound)
+PI3Ki	PI3Ki	1		class token (unnamed compound)
+ATRi	ATRi	1		class token (unnamed compound)
+ATMi	ATMi	1		class token (unnamed compound)
+DNA-PKi	DNAPKi	1		class token (unnamed compound)
+CHK1i	CHK1i	1		class token (unnamed compound)
+TAKi	TAKi	1		class token (unnamed compound)
+TBKi	TBKi	1		class token (unnamed compound)
+BRAFi	BRAFi	1		class token (unnamed compound)
+MAPKi	MAPKi_unspecified	1		class token (unnamed compound)
+PRL3i	PRL3i_unspecified	1		class token (unnamed compound)
+AKTi	AKTi_unspecified	1		class token (unnamed compound)
+EGFRi	EGFRi_unspecified	1		class token (unnamed compound)
+ROCKi	ROCKi_unspecified	1		class token (unnamed compound)
+PKCi	PKCi_unspecified	1		class token (unnamed compound)
+PP2Ai	PP2Ai_unspecified	1		class token (unnamed compound)
+CAMK2i	CAMK2i_unspecified	1		class token (unnamed compound)
+ERKi	ERKi_unspecified	1		class token (unnamed compound)
+GSK3i	GSK3i_unspecified	1		class token (unnamed compound)
+RAFi	RAFi_unspecified	1		class token (unnamed compound)
+P70S6K1i	S6Ki_unspecified	1		class token (unnamed compound)
+Bortezomib	bortezomib	0		non-kinase compound (grouping only)
+Velcade	bortezomib	0		non-kinase compound (grouping only)
+Carfilzomib	carfilzomib	0		non-kinase compound (grouping only)
+Rituximab	rituximab	0		non-kinase compound (grouping only)
+A485	A485	0		non-kinase compound (grouping only)
+A486	A486	0		non-kinase compound (grouping only)
+Curcumin	curcumin	0		non-kinase compound (grouping only)
+Cytarabine	cytarabine	0		non-kinase compound (grouping only)
+Methotrexat	methotrexate	0		non-kinase compound (grouping only)
+Methotrexate	methotrexate	0		non-kinase compound (grouping only)
+Paclitaxel	paclitaxel	0		non-kinase compound (grouping only)
+Taxol	paclitaxel	0		non-kinase compound (grouping only)
+Romidepsin	romidepsin	0		non-kinase compound (grouping only)
+Vorinostat	vorinostat	0		non-kinase compound (grouping only)
+Etoposide	etoposide	0		non-kinase compound (grouping only)
+Doxorubicin	doxorubicin	0		non-kinase compound (grouping only)
+4-nitroquinoline	4NQO	0		non-kinase compound (grouping only)
+4-nitroquinoline 1-oxide	4NQO	0		non-kinase compound (grouping only)
+Bleomycin	bleomycin	0		non-kinase compound (grouping only)
+Bleomcyin	bleomycin	0		non-kinase compound (grouping only)
+Cisplatin	cisplatin	0		non-kinase compound (grouping only)
+carbo	carboplatin	0		non-kinase compound (grouping only)
+TMZ	temozolomide	0		non-kinase compound (grouping only)
+Temozolomide	temozolomide	0		non-kinase compound (grouping only)
+Noscapine	noscapine	0		non-kinase compound (grouping only)
+Nocodazole	nocodazole	0		non-kinase compound (grouping only)
+Thymidine	thymidine	0		non-kinase compound (grouping only)
+Pervanadate	pervanadate	0		non-kinase compound (grouping only)
+Genistein	genistein	0		non-kinase compound (grouping only)
+Tamoxifen	tamoxifen	0		non-kinase compound (grouping only)
+Iloprost	iloprost	0		non-kinase compound (grouping only)
+Dexmedetomidine	dexmedetomidine	0		non-kinase compound (grouping only)
+Propofol	propofol	0		non-kinase compound (grouping only)
+Doxycycline	doxycycline	0		non-kinase compound (grouping only)
+Nicotine	nicotine	0		non-kinase compound (grouping only)
+caffeine	caffeine	0		non-kinase compound (grouping only)
+coumarin	coumarin	0		non-kinase compound (grouping only)
+quercetin	quercetin	0		non-kinase compound (grouping only)
+24D	24D	0		non-kinase compound (grouping only)
+metformin	metformin	0		non-kinase compound (grouping only)
+Danuglipron	danuglipron	0		non-kinase compound (grouping only)
+Semaglutide	semaglutide	0		non-kinase compound (grouping only)
+Dyngo	dyngo	0		non-kinase compound (grouping only)
+Okadaic acid	okadaic_acid	0		non-kinase compound (grouping only)
+Cantharidic acid	cantharidic_acid	0		non-kinase compound (grouping only)
+Ginsenoside	ginsenoside_rg3	0		non-kinase compound (grouping only)
+Palmitic Acid	palmitic_acid	0		non-kinase compound (grouping only)
+maraviroc	maraviroc	0		non-kinase compound (grouping only)
+RG7356	RG7356	0		non-kinase compound (grouping only)
+TRC-794	TRC794	0		non-kinase compound (grouping only)
+AZ123	AZ123	0		non-kinase compound (grouping only)
+A-bungarotoxin	a_bungarotoxin	0		non-kinase compound (grouping only)
+Hydroxyurea	hydroxyurea	0		non-kinase compound (grouping only)
+NCS	neocarzinostatin	0		non-kinase compound (grouping only)
+neocarzinostatin	neocarzinostatin	0		non-kinase compound (grouping only)
+HU	hydroxyurea	0	26572502	hydroxyurea abbreviation (study-specific)
+HU	hydroxyurea	0	33215756	hydroxyurea abbreviation (study-specific)
+HU	hydroxyurea	0	29020638	hydroxyurea abbreviation (study-specific)

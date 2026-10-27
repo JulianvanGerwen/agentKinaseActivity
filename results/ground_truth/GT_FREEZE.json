@@ -1,0 +1,65 @@
+{
+ "created": "2026-10-27",
+ "tests": {
+  "test_gt.py": "392c17e8c01bda2a09c88630537414ecf5347229a17c099d72e250f0278f3f93"
+ },
+ "split_seed": 79,
+ "gt": {
+  "gt_pairs.tsv": "b0aabca36e1e9feb39a35fd6847ac0575db8474b09ec53e22f45709ad6c79384",
+  "gt_conditions.tsv": "0b51e554dc20830732cffe42b23e94a36cb753d90ec4544c1a1f5d10b47bc22a",
+  "kinase_universe.tsv": "ebc4d281eeabbdccecf2124e85eab0d74df90c3883e35d88df88b200e9b74d3f",
+  "harmony_bins.tsv": "af286216cccdfc8c512820cbfc72efbff245e7e9231a36047b664e1a91555a7f",
+  "harmony_bins_group.tsv": "0bcd4d8a29272275320ff48524fbd9535c8d707933bd1b3cb57f06c777be4efe",
+  "condition_groups.tsv": "d205f931e8adfd73e4abd455b2fd37f6d66d03cf21ac78f50084154aaf02f215",
+  "test_condition_hashes.txt": "524ff08b028aef7948c5865c7c84a1438026fc0f927e9d12d08611febcdece8b",
+  "split_candidates.tsv": "23d79268b964fb2a30479b2600b1bd72fe515923ae014e5b963216fd3ae05611",
+  "split_log.json": "c74e9c4c3369800bd494c27a1a1781e54713d9184d8cb79414388d4ad00b743d",
+  "condition_doses.tsv": "d666bfb2818b04176901a58017e0fb5dabf1902d8d667731d5026763562f9284",
+  "condition_qc.tsv": "dc76f529a8fb0d3de434e8bfe64dc8ade3bb9c5b6db6376aee6e4f764ada23a2",
+  "drug_profile_sources.tsv": "18fae13389e90ffa367b20ed1ed3a9bffc987414978f8c901311c78ad4463ced",
+  "paralog_pairs.tsv": "d163400d00f903146358d5d859908a024779622bddf328742e6dbd2643f6c564",
+  "build_gt_log.json": "207500eaae296510ec9d74a24958330a5476588286ea0417426e7c86fd93b207"
+ },
+ "rules": {
+  "cell_line_genotypes.tsv": "d380df029fc6024cb788600f936e2e469a1f1cd3cbc0c1d1a22c5172f0ae62de",
+  "condition_doses_manual.tsv": "c714f306e60d9283110057eb76ed95144b62e88956133f13f9786999f5f27be3",
+  "condition_rules_manual.tsv": "b1305a81cc1d490b314066243277609a01f007e3cf10f414191e937d918b0946",
+  "drug_aliases.tsv": "894d37c81443fdbba24a38cf90d79c827446a0ba652012262300273fae10aa61",
+  "drug_potency_manual.tsv": "48f7209f62b0e13d4ddfe1f06108dd2d5b76e12608444512252a08bc0319066f",
+  "drug_targets_manual.tsv": "afeb5673dee195c0584dee537ba73adf9b72b84aeceea26cdada8f2bab63e087",
+  "offtarget_literature.tsv": "e61327440e174e7d0548521d31d5d8442de935e765d34d382594bbc2550c57b1",
+  "pathway_masks.tsv": "eac4f009d10f6389dfee767a527ec31617db895c1bf028231263b7138d8c0e11",
+  "stimulus_kinases.tsv": "c4de98f62314d29cf9d2b5b699700b1a6cd80143b23d7b12760a71de00d5ee27"
+ },
+ "sealed": {
+  "condition_groups.tsv": "3cfcc52304b99712972229456b12fdf9ab3a541ce4242f7974956f8b5e266407",
+  "gt_conditions.tsv": "d3372e19163acad5f044ba1b26581920171e1a2dc97ba1848de0c5530d9675ef",
+  "gt_pairs.tsv": "6ecf45055d26f75e8500e4a6f2a68863d3a70dd3d987bfa1e70856664ddc126d",
+  "harmony_bins.tsv": "f8423102637aa871d45e4df0cf3b782e25885b0a22e768dc14db520c8e18e6d6",
+  "harmony_bins_group.tsv": "64867f655ec5a5e562ef2a750b89f8192c35d62de6b8804a4910cc44b6864bc4"
+ },
+ "sealed_full": {
+  "gt_conditions_full.tsv": "0b3a8674caa20267bb9c4234cb9485416edfc92deb922fdf540dfdc55ccfe766",
+  "gt_pairs_full.tsv": "3fc7c64133e3f8116484690ad1845275932b5456b9dd8edfa56b2b7218622886",
+  "harmony_full.tsv": "4eaf36521a09d9527bda04814517eb50cdff69bda4f7578af269dc531e10ed12"
+ },
+ "sealed_gt_hash": "bc513208b586fc81d4e124c503175f37c1086de338f4e72e0835b047f59d4f13",
+ "scripts": {
+  "gtlib.py": "6720f890a8d3210754abee631ee6f58387eea6de641f44e50659afaf77641380",
+  "build_gt.py": "76326537531e4c0281db7cb82e8784473f4370a89ec5341bad10575f8e255239",
+  "make_split.py": "63bced68bddd1d4dfbc2c0cf533d9a912ab36fce372272b4166c5bc515d3fc96",
+  "make_dev_cache.py": "f4af2ae0965bfc4152cc08a2cdf542b043ebd0017b50622e57e631d803f4dc11",
+  "gt_report.py": "cd14fca3cd7c404e668b75e046d875671d4763d941b0ab1fc64038cbce1a8f60",
+  "freeze_gt.py": "8266c79d7c724bec16ddd295042c8a7b38845724e6bedad46a4d28c7b8c19b5a"
+ },
+ "dev_cache": {
+  "quant_dev.npy": "276ba644642aa2b2fa59a2e8901f90f258ef2c84ab6ef8e59cf7706f18c2381f",
+  "conditions_dev.txt": "e56b0de1607db5b7113946dcbbc0c06bb6b7fceefd26d2e8c5fbcba1501856a4",
+  "sites_dev.txt": "fd10c50d50d66659656daa2361edeb067ee9fcbc73a3922e3a63dfaea03ade5c"
+ },
+ "inputs": {
+  "cache/conditions.parquet": "758c8adeb5ef03ca2b34aac1c5fcf1b4177c51a8df69d43422b242a7148d0354",
+  "cache/quant_wide_f32.npy": "7a298c16f941fc38b337942798b483bad972d8eacdd197a2d478ed9b3c841408",
+  "cache/psp_ks_human.parquet": "9883b6ddcd4c7a00a39de26adb8f0e423e96034a7e39f339de4244cc71030c9d"
+ }
+}

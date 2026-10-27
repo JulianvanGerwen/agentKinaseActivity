@@ -1,0 +1,14 @@
+# Cell-line genotypes for the paradoxical-RAF rule (B12). Lines not listed = unknown (paradox rule applies).
+sample_regex	BRAF	RAS	note
+^(HL60|HL-60)$	WT	NRAS_Q61L	Hijazi HL60 (NRAS Q61L)
+^(MCF7|MCF-7)$	WT	WT	MCF7 BRAF/RAS WT (PIK3CA E545K)
+^NTERA2$	WT	WT	NTERA2 BRAF/RAS WT
+RPE1	WT	WT	hTERT-RPE1
+^WiDr$	V600	WT	WiDr BRAF V600E
+^COLO ?205$	V600	WT	COLO205 BRAF V600E
+^HCT ?116$	WT	KRAS_G13D	HCT116
+^WM239A$	V600	WT	WM239A BRAF-mutant melanoma (V600D)
+^A-?375$	V600	WT	A375 BRAF V600E
+^A-?549$	WT	KRAS_G12S	A549
+CRC patient-derived organoid	unknown	unknown	organoid genotypes not in metadata
+^HEK-?293	WT	WT	HEK293

@@ -1,0 +1,206 @@
+# Literature off-targets masked at every dose (B11, r1 priorwork #4). From memory of cited papers; flagged for expert check.
+agent	kinase	note
+torin1	PRKDC	Torin1 inhibits PIKKs (DNA-PK, ATM, ATR) at sub-uM (Liu et al. 2012 Cancer Res)
+torin1	ATM	Torin1 inhibits PIKKs (DNA-PK, ATM, ATR) at sub-uM (Liu et al. 2012 Cancer Res)
+torin1	ATR	Torin1 inhibits PIKKs (DNA-PK, ATM, ATR) at sub-uM (Liu et al. 2012 Cancer Res)
+torin1	SMG1	Torin1 inhibits PIKKs (DNA-PK, ATM, ATR) at sub-uM (Liu et al. 2012 Cancer Res)
+torkinib	PRKDC	PP242 off-targets (Apsel et al. 2008)
+torkinib	RET	PP242 off-targets (Apsel et al. 2008)
+torkinib	JAK2	PP242 off-targets (Apsel et al. 2008)
+LY294002	CSNK2A1	LY294002 off-targets (Gharbi et al. 2007 Biochem J)
+LY294002	CSNK2A2	LY294002 off-targets (Gharbi et al. 2007 Biochem J)
+LY294002	PIM1	LY294002 off-targets (Gharbi et al. 2007 Biochem J)
+LY294002	PIM3	LY294002 off-targets (Gharbi et al. 2007 Biochem J)
+LY294002	PRKDC	LY294002 off-targets (Gharbi et al. 2007 Biochem J)
+LY294002	ATM	LY294002 off-targets (Gharbi et al. 2007 Biochem J)
+LY294002	ATR	LY294002 off-targets (Gharbi et al. 2007 Biochem J)
+LY294002	GSK3B	LY294002 off-targets (Gharbi et al. 2007 Biochem J)
+LY294002	PLK1	LY294002 off-targets (Gharbi et al. 2007 Biochem J)
+wortmannin	PLK1	wortmannin inhibits PLK1/3 and PIKKs (Liu et al. 2005)
+wortmannin	PLK3	wortmannin inhibits PLK1/3 and PIKKs (Liu et al. 2005)
+wortmannin	MTOR	wortmannin inhibits PLK1/3 and PIKKs (Liu et al. 2005)
+wortmannin	PRKDC	wortmannin inhibits PLK1/3 and PIKKs (Liu et al. 2005)
+wortmannin	ATM	wortmannin inhibits PLK1/3 and PIKKs (Liu et al. 2005)
+wortmannin	ATR	wortmannin inhibits PLK1/3 and PIKKs (Liu et al. 2005)
+PI103	PRKDC	PI-103 inhibits DNA-PK (Knight 2006)
+PI103	ATR	PI-103 inhibits DNA-PK (Knight 2006)
+PI103	ATM	PI-103 inhibits DNA-PK (Knight 2006)
+dactolisib	PRKDC	BEZ235 inhibits PIKKs (Mukherjee 2012)
+dactolisib	ATR	BEZ235 inhibits PIKKs (Mukherjee 2012)
+dactolisib	ATM	BEZ235 inhibits PIKKs (Mukherjee 2012)
+omipalisib	PRKDC	PIKK cross-reactivity
+Go6976	PRKD1	Go6976 inhibits PKD and CHK1/2 (Gschwendt 1996; Kohn 2003)
+Go6976	PRKD2	Go6976 inhibits PKD and CHK1/2 (Gschwendt 1996; Kohn 2003)
+Go6976	PRKD3	Go6976 inhibits PKD and CHK1/2 (Gschwendt 1996; Kohn 2003)
+Go6976	CHEK1	Go6976 inhibits PKD and CHK1/2 (Gschwendt 1996; Kohn 2003)
+Go6976	CHEK2	Go6976 inhibits PKD and CHK1/2 (Gschwendt 1996; Kohn 2003)
+Go6976	JAK2	Go6976 inhibits PKD and CHK1/2 (Gschwendt 1996; Kohn 2003)
+Go6976	FLT3	Go6976 inhibits PKD and CHK1/2 (Gschwendt 1996; Kohn 2003)
+Go6976	NTRK1	Go6976 inhibits PKD and CHK1/2 (Gschwendt 1996; Kohn 2003)
+Go6976	NTRK2	Go6976 inhibits PKD and CHK1/2 (Gschwendt 1996; Kohn 2003)
+Go6976	NTRK3	Go6976 inhibits PKD and CHK1/2 (Gschwendt 1996; Kohn 2003)
+Go6983	PRKD1	Go6983 off-targets
+Go6983	PRKD2	Go6983 off-targets
+Go6983	PRKD3	Go6983 off-targets
+Go6983	GSK3A	Go6983 off-targets
+Go6983	GSK3B	Go6983 off-targets
+BIM1	GSK3A	GF109203X off-targets (Davies et al. 2000; Bain et al. 2007)
+BIM1	GSK3B	GF109203X off-targets (Davies et al. 2000; Bain et al. 2007)
+BIM1	RPS6KA1	GF109203X off-targets (Davies et al. 2000; Bain et al. 2007)
+BIM1	RPS6KA3	GF109203X off-targets (Davies et al. 2000; Bain et al. 2007)
+BIM1	RPS6KB1	GF109203X off-targets (Davies et al. 2000; Bain et al. 2007)
+BIM1	PIM1	GF109203X off-targets (Davies et al. 2000; Bain et al. 2007)
+BIM1	PIM3	GF109203X off-targets (Davies et al. 2000; Bain et al. 2007)
+BIM1	MAPKAPK2	GF109203X off-targets (Davies et al. 2000; Bain et al. 2007)
+BIM1	PHKG2	GF109203X off-targets (Davies et al. 2000; Bain et al. 2007)
+enzastaurin	GSK3B	enzastaurin cross-reactivity
+enzastaurin	PRKCA	enzastaurin cross-reactivity
+enzastaurin	PRKCG	enzastaurin cross-reactivity
+enzastaurin	PRKCE	enzastaurin cross-reactivity
+Y27632	PKN1	Y-27632 inhibits PRK2/PRKX and MRCK (Davies et al. 2000)
+Y27632	PKN2	Y-27632 inhibits PRK2/PRKX and MRCK (Davies et al. 2000)
+Y27632	PRKX	Y-27632 inhibits PRK2/PRKX and MRCK (Davies et al. 2000)
+Y27632	CDC42BPA	Y-27632 inhibits PRK2/PRKX and MRCK (Davies et al. 2000)
+Y27632	CDC42BPB	Y-27632 inhibits PRK2/PRKX and MRCK (Davies et al. 2000)
+Y27632	CIT	Y-27632 inhibits PRK2/PRKX and MRCK (Davies et al. 2000)
+H1152	PRKACA	H-1152 cross-reactivity (Tamura et al. 2005)
+H1152	PRKX	H-1152 cross-reactivity (Tamura et al. 2005)
+H1152	PRKG1	H-1152 cross-reactivity (Tamura et al. 2005)
+H1152	AURKA	H-1152 cross-reactivity (Tamura et al. 2005)
+H1152	CIT	H-1152 cross-reactivity (Tamura et al. 2005)
+H1152	PKN1	H-1152 cross-reactivity (Tamura et al. 2005)
+H89	ROCK1	H-89 off-targets (Davies et al. 2000)
+H89	ROCK2	H-89 off-targets (Davies et al. 2000)
+H89	RPS6KA5	H-89 off-targets (Davies et al. 2000)
+H89	RPS6KA4	H-89 off-targets (Davies et al. 2000)
+H89	RPS6KB1	H-89 off-targets (Davies et al. 2000)
+H89	PRKACB	H-89 off-targets (Davies et al. 2000)
+H89	PRKX	H-89 off-targets (Davies et al. 2000)
+H89	AKT1	H-89 off-targets (Davies et al. 2000)
+H89	MAPKAPK1	H-89 off-targets (Davies et al. 2000)
+BID1870	PLK1	BI-D1870 off-targets (Bain et al. 2007)
+BID1870	AURKB	BI-D1870 off-targets (Bain et al. 2007)
+BID1870	MELK	BI-D1870 off-targets (Bain et al. 2007)
+BID1870	PIM3	BI-D1870 off-targets (Bain et al. 2007)
+BID1870	STK3	BI-D1870 off-targets (Bain et al. 2007)
+SB203580	RIPK2	SB203580 off-targets (Bain et al. 2007)
+SB203580	GAK	SB203580 off-targets (Bain et al. 2007)
+SB203580	CSNK1D	SB203580 off-targets (Bain et al. 2007)
+SB203580	CSNK1E	SB203580 off-targets (Bain et al. 2007)
+SB203580	PDPK1	SB203580 off-targets (Bain et al. 2007)
+SB203580	GSK3B	SB203580 off-targets (Bain et al. 2007)
+SB202190	RIPK2	pyridinyl-imidazole p38i off-targets (Bain et al. 2007)
+SB202190	GAK	pyridinyl-imidazole p38i off-targets (Bain et al. 2007)
+SB202190	CSNK1D	pyridinyl-imidazole p38i off-targets (Bain et al. 2007)
+SB202190	CSNK1E	pyridinyl-imidazole p38i off-targets (Bain et al. 2007)
+SB202190	GSK3B	pyridinyl-imidazole p38i off-targets (Bain et al. 2007)
+SB239063	RIPK2	pyridinyl-imidazole class
+SB239063	CSNK1D	pyridinyl-imidazole class
+SB239063	CSNK1E	pyridinyl-imidazole class
+SP600125	DYRK1A	SP600125 is promiscuous (Bain et al. 2003, 2007)
+SP600125	HIPK2	SP600125 is promiscuous (Bain et al. 2003, 2007)
+SP600125	PIM1	SP600125 is promiscuous (Bain et al. 2003, 2007)
+SP600125	PIM3	SP600125 is promiscuous (Bain et al. 2003, 2007)
+SP600125	SGK1	SP600125 is promiscuous (Bain et al. 2003, 2007)
+SP600125	RPS6KB1	SP600125 is promiscuous (Bain et al. 2003, 2007)
+SP600125	PRKAA1	SP600125 is promiscuous (Bain et al. 2003, 2007)
+SP600125	PRKAA2	SP600125 is promiscuous (Bain et al. 2003, 2007)
+SP600125	CHEK1	SP600125 is promiscuous (Bain et al. 2003, 2007)
+SP600125	CSNK1D	SP600125 is promiscuous (Bain et al. 2003, 2007)
+SP600125	CDK2	SP600125 is promiscuous (Bain et al. 2003, 2007)
+SP600125	MAPKAPK5	SP600125 is promiscuous (Bain et al. 2003, 2007)
+SP600125	MAP2K4	SP600125 is promiscuous (Bain et al. 2003, 2007)
+SP600125	PHKG2	SP600125 is promiscuous (Bain et al. 2003, 2007)
+KN93	CAMK1	KN-93 inhibits CaMKI/IV
+KN93	CAMK4	KN-93 inhibits CaMKI/IV
+KN93	CAMK1D	KN-93 inhibits CaMKI/IV
+KN93	CAMK1G	KN-93 inhibits CaMKI/IV
+KN93	FYN	KN-93 inhibits CaMKI/IV
+KN62	CAMK1	KN-62 inhibits CaMKI/IV
+KN62	CAMK4	KN-62 inhibits CaMKI/IV
+KN62	CAMK1D	KN-62 inhibits CaMKI/IV
+KN62	CAMK1G	KN-62 inhibits CaMKI/IV
+U0126	MAP2K5	U0126 inhibits MEK5
+PD184352	MAP2K5	PD184352 inhibits MEK5 at uM
+7Oxo	MAP2K1	covalent 5Z-7-oxozeaenol hits Cys-containing kinases (Wu et al. 2013 ACS Chem Biol)
+7Oxo	MAP2K2	covalent 5Z-7-oxozeaenol hits Cys-containing kinases (Wu et al. 2013 ACS Chem Biol)
+7Oxo	MAP2K4	covalent 5Z-7-oxozeaenol hits Cys-containing kinases (Wu et al. 2013 ACS Chem Biol)
+7Oxo	MAP2K7	covalent 5Z-7-oxozeaenol hits Cys-containing kinases (Wu et al. 2013 ACS Chem Biol)
+7Oxo	MAPK1	covalent 5Z-7-oxozeaenol hits Cys-containing kinases (Wu et al. 2013 ACS Chem Biol)
+7Oxo	MAPK3	covalent 5Z-7-oxozeaenol hits Cys-containing kinases (Wu et al. 2013 ACS Chem Biol)
+7Oxo	FLT3	covalent 5Z-7-oxozeaenol hits Cys-containing kinases (Wu et al. 2013 ACS Chem Biol)
+7Oxo	PDGFRA	covalent 5Z-7-oxozeaenol hits Cys-containing kinases (Wu et al. 2013 ACS Chem Biol)
+7Oxo	PDGFRB	covalent 5Z-7-oxozeaenol hits Cys-containing kinases (Wu et al. 2013 ACS Chem Biol)
+7Oxo	KIT	covalent 5Z-7-oxozeaenol hits Cys-containing kinases (Wu et al. 2013 ACS Chem Biol)
+7Oxo	KDR	covalent 5Z-7-oxozeaenol hits Cys-containing kinases (Wu et al. 2013 ACS Chem Biol)
+BI2536	PLK2	BI 2536 inhibits PLK2/3
+BI2536	PLK3	BI 2536 inhibits PLK2/3
+BI4834	PLK2	PLK family
+BI4834	PLK3	PLK family
+RO3306	CDK2	RO-3306 Ki CDK2 340 nM
+GSK3i_BIO	CDK1	BIO inhibits CDKs/JAKs at sub-uM
+GSK3i_BIO	CDK2	BIO inhibits CDKs/JAKs at sub-uM
+GSK3i_BIO	CDK5	BIO inhibits CDKs/JAKs at sub-uM
+GSK3i_BIO	JAK1	BIO inhibits CDKs/JAKs at sub-uM
+GSK3i_BIO	TYK2	BIO inhibits CDKs/JAKs at sub-uM
+kenpaullone	LCK	paullone cross-reactivity
+kenpaullone	CDK9	paullone cross-reactivity
+PD168393	ERBB2	covalent pan-ERBB
+PD168393	ERBB4	covalent pan-ERBB
+PD153035	ERBB2	weak ERBB2
+AG1478	ERBB2	weak ERBB2
+DG2	RPS6KA1	DG2 partial RSK inhibition
+DG2	RPS6KA3	DG2 partial RSK inhibition
+PF4708671	RPS6KB2	PF-4708671 weaker on S6K2/MSK1 (Pearce et al. 2010)
+PF4708671	RPS6KA4	PF-4708671 weaker on S6K2/MSK1 (Pearce et al. 2010)
+PF4708671	RPS6KA5	PF-4708671 weaker on S6K2/MSK1 (Pearce et al. 2010)
+CDK12IN3	CDK13	CDK12/13 near-identical kinase domains
+dinaciclib	CDK12	dinaciclib inhibits CDK12
+dinaciclib	CDK13	dinaciclib inhibits CDK12
+THZ531	CDK7	THZ531 weaker on CDK7/9
+THZ531	CDK9	THZ531 weaker on CDK7/9
+MRT	ULK1	MRT67307 inhibits ULK1/2 and MARKs (Petherick 2015); MRT68921 alternative
+MRT	ULK2	MRT67307 inhibits ULK1/2 and MARKs (Petherick 2015); MRT68921 alternative
+MRT	MARK1	MRT67307 inhibits ULK1/2 and MARKs (Petherick 2015); MRT68921 alternative
+MRT	MARK2	MRT67307 inhibits ULK1/2 and MARKs (Petherick 2015); MRT68921 alternative
+MRT	MARK3	MRT67307 inhibits ULK1/2 and MARKs (Petherick 2015); MRT68921 alternative
+MRT	MARK4	MRT67307 inhibits ULK1/2 and MARKs (Petherick 2015); MRT68921 alternative
+MRT	NUAK1	MRT67307 inhibits ULK1/2 and MARKs (Petherick 2015); MRT68921 alternative
+MRT	SIK2	MRT67307 inhibits ULK1/2 and MARKs (Petherick 2015); MRT68921 alternative
+ralimetinib	EGFR	LY2228820 inhibits EGFR (2022 reports)
+LRRK2IN1	DCLK1	LRRK2-IN-1 off-targets (Deng et al. 2011)
+LRRK2IN1	DCLK2	LRRK2-IN-1 off-targets (Deng et al. 2011)
+LRRK2IN1	MAPK7	LRRK2-IN-1 off-targets (Deng et al. 2011)
+ceritinib	IGF1R	ceritinib IGF1R/INSR
+ceritinib	INSR	ceritinib IGF1R/INSR
+TAE684	IGF1R	TAE684 IGF1R/INSR
+TAE684	INSR	TAE684 IGF1R/INSR
+TPCA1	JAK1	TPCA-1 reported JAK1 inhibition
+ERKi_generic	GSK3B	older ERK inhibitors are poorly selective (assumption)
+ERKi_generic	MAPK8	older ERK inhibitors are poorly selective (assumption)
+ERKi_generic	MAPK9	older ERK inhibitors are poorly selective (assumption)
+ERKi_generic	MAPK14	older ERK inhibitors are poorly selective (assumption)
+ERKi_generic	CDK2	older ERK inhibitors are poorly selective (assumption)
+MLN8054	AURKB	AURKB at >=5 uM (applied by dose-agnostic mask)
+ZM447439	AURKC	Aurora family
+AZD1152	AURKA	Aurora family at high dose
+AZD1152	AURKC	Aurora family at high dose
+VX680	FLT3	tozasertib off-targets
+VX680	ABL1	tozasertib off-targets
+VX680	JAK2	tozasertib off-targets
+VX680	AURKC	tozasertib off-targets
+flavopiridol	GSK3B	flavopiridol cross-reactivity
+flavopiridol	CDK12	flavopiridol cross-reactivity
+flavopiridol	CDK13	flavopiridol cross-reactivity
+THZ1	CDK9	THZ1 weaker on CDK9
+SC514	IKBKE	IKK family
+SC514	TBK1	IKK family
+tideglusib	GSK3A	GSK3 paralog
+CHIR99021	CDK2	CHIR at >1 uM (Bain 2007)
+CHIR99021	MAPK1	CHIR at >1 uM (Bain 2007)
+SB216763	CDK2	weak
+JNKIN8	IRAK1	JNK-IN-8 covalent off-targets (Zhang 2012)
+JNKIN8	PIK3C3	JNK-IN-8 covalent off-targets (Zhang 2012)
+perifosine	PDPK1	PH-domain lipid analog affects PDK1 recruitment
+trametinib	MAP2K5	assumption: MEK5 at uM
+H89	PRKD1	assumption
