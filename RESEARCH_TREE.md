@@ -52,6 +52,6 @@ Key finding for strategy: under the pre-registered coverage-aware primary metric
   - [~] 5.3 B2.1+B3 refine core: output statistic, calibration, r2np+r3+cantley ensemble, kernels, robustness — 3 h
   - [-] 5.4 B4 co-regulation expansion (results/b4/b4_report.md): on B2 core ΔM1-sel −0.010 [−0.021,−0.003] (expanded sites shared across kinases → noise); neighbour fill-in n.s.; on weighted z +0.026 (only reaches B1 level). Kept as stacking candidate (T-unseen 0.684). NOTE for G2: exclude DEV conditions sharing a control with TEST conditions from any co-regulation fit (metadata only).
   - [ ] 5.4b shared-function edge weights
-  - [ ] 5.5 B5 kinase self-sites
+  - [-] 5.5 B5 self-sites (results/b5/b5_report.md): alone 0.726 on pairs with measured self-site (35% of M1-sel pairs); paradoxical up for PKC/PKA/ERKi/TAK1; on core +0.003 [−0.001,0.008] n.s. (half of self-sites already library edges). GT-A helper mask_self_sites.
   - [ ] 5.6 B6 stacking
 - [ ] 6. Sealed test + REPORT.md

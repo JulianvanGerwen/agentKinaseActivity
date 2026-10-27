@@ -2273,6 +2273,98 @@
    "n_units_failed": 0,
    "n_conditions_in_units": 1184,
    "n_conditions_with_scores": 1184
+  },
+  "jumpsem__curated_union__min3": {
+   "method": "jumpsem",
+   "library": "curated_union",
+   "cfg": "min3",
+   "default": false,
+   "metrics": {
+    "M1-sel": 0.5057041009850015,
+    "M1-all": 0.5023673296051692,
+    "M1-sel-scored": 0.5608629872072838,
+    "M1-all-scored": 0.5362040464515733,
+    "coverage_M1-sel": 0.49372862029646525,
+    "coverage_M1-all": 0.4900314795383001,
+    "harmony": 0.5050626885559322,
+    "harmony_per_bin": {
+     "0": 0.502290403833475,
+     "1-4": 0.5098578642855648,
+     "5-19": 0.5004441256544688,
+     ">=20": 0.5076583604502198
+    },
+    "by_source": {
+     "D": 0.5303692221478812,
+     "H": 0.5107604697746067,
+     "O": 0.500120686438318
+    },
+    "by_sign": {
+     "-1": 0.5070825219235864,
+     "1": 0.5024906035272733
+    },
+    "tie_share_M1-sel": 0.004618937644341801,
+    "n_significant": 11,
+    "n_kinases_M1sel": 106,
+    "coverage_scored_kinase_cond": 0.2399637494795111
+   },
+   "runtime": {
+    "full_dev_wall_s": 1586.335925761843,
+    "r_cpu_s_sum_units": 14639.147140205605,
+    "n_conditions_full": 1184,
+    "ms_per_condition_1t": 12364.14454409257,
+    "compendium_s_1t": 23949.34798190731,
+    "bench": "not bench_runtime (transductive per study): summed single-threaded Rscript wall time over study units / # conditions in units; full run with 48 parallel units"
+   },
+   "n_units": 98,
+   "n_units_failed": 0,
+   "n_conditions_in_units": 1184,
+   "n_conditions_with_scores": 1184
+  },
+  "jumpsem_aligned__curated_union__min3": {
+   "method": "jumpsem_aligned",
+   "library": "curated_union",
+   "cfg": "min3",
+   "default": false,
+   "metrics": {
+    "M1-sel": 0.5068327472579611,
+    "M1-all": 0.5065632766802618,
+    "M1-sel-scored": 0.57755423879597,
+    "M1-all-scored": 0.5786763877356086,
+    "coverage_M1-sel": 0.49372862029646525,
+    "coverage_M1-all": 0.4900314795383001,
+    "harmony": 0.50672482952218,
+    "harmony_per_bin": {
+     "0": 0.502246803797449,
+     "1-4": 0.5083340382078161,
+     "5-19": 0.5052884300926825,
+     ">=20": 0.5110300459907723
+    },
+    "by_source": {
+     "D": 0.5512006005598222,
+     "H": 0.5059353336324923,
+     "O": 0.5079062315377407
+    },
+    "by_sign": {
+     "-1": 0.5079723200670915,
+     "1": 0.5040981111098217
+    },
+    "tie_share_M1-sel": 0.004618937644341801,
+    "n_significant": 10,
+    "n_kinases_M1sel": 106,
+    "coverage_scored_kinase_cond": 0.2399637494795111
+   },
+   "runtime": {
+    "full_dev_wall_s": 1586.335925761843,
+    "r_cpu_s_sum_units": 14639.147140205605,
+    "n_conditions_full": 1184,
+    "ms_per_condition_1t": 12364.14454409257,
+    "compendium_s_1t": 23949.34798190731,
+    "bench": "not bench_runtime (transductive per study): summed single-threaded Rscript wall time over study units / # conditions in units; full run with 48 parallel units"
+   },
+   "n_units": 98,
+   "n_units_failed": 0,
+   "n_conditions_in_units": 1184,
+   "n_conditions_with_scores": 1184
   }
  }
 }

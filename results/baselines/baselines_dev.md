@@ -6,42 +6,134 @@ Evaluation: `kinact.eval.Evaluator` on DEV folds 0-4 (no devconfirm/test), harmo
 
 | # | method | library | cfg | M1-sel | M1-all | M1-sel-scored | cov | harmony | H | D | O | sign − | sign + | n sig | ms/cond 1t | ms/cond 16t |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | zscore | curated_union | min1 | 0.563 | 0.543 | 0.650 | 0.860 | 0.565 | 0.557 | 0.693 | 0.552 | 0.554 | 0.627 | 40 | 1.738 | 1.736 |
-| 2 | zscore | psp_all | min1 | 0.545 | 0.534 | 0.630 | 0.822 | 0.547 | 0.546 | 0.653 | 0.526 | 0.537 | 0.602 | 37 | 1.696 | 1.692 |
-| 3 | zscore | psp_human_only | min1 | 0.543 | 0.530 | 0.644 | 0.771 | 0.544 | 0.548 | 0.631 | 0.527 | 0.536 | 0.593 | 35 | 1.719 | 1.700 |
-| 4 | ulm | curated_union* | min3 | 0.529 | 0.519 | 0.659 | 0.717 | 0.530 | 0.526 | 0.607 | 0.521 | 0.526 | 0.553 | 32 | 1.737 | 1.738 |
-| 5 | zscore | curated_union | min3 | 0.529 | 0.519 | 0.659 | 0.717 | 0.530 | 0.528 | 0.607 | 0.520 | 0.526 | 0.554 | 34 | 1.738 | 1.736 |
-| 6 | zscore | curated_union | min5 | 0.516 | 0.510 | 0.653 | 0.523 | 0.517 | 0.517 | 0.548 | 0.511 | 0.515 | 0.530 | 29 | 1.738 | 1.736 |
-| 7 | zscore | psp_all | min3 | 0.515 | 0.512 | 0.633 | 0.578 | 0.517 | 0.518 | 0.560 | 0.507 | 0.513 | 0.536 | 24 | 1.696 | 1.692 |
-| 8 | ulm | psp_all | min3 | 0.515 | 0.512 | 0.632 | 0.578 | 0.517 | 0.517 | 0.560 | 0.507 | 0.513 | 0.536 | 25 | 1.695 | 1.696 |
-| 9 | zscore | psp_human_only* | min3 | 0.513 | 0.510 | 0.654 | 0.514 | 0.514 | 0.516 | 0.551 | 0.507 | 0.511 | 0.531 | 26 | 1.719 | 1.700 |
-| 10 | ulm | psp_human_only | min3 | 0.513 | 0.509 | 0.651 | 0.514 | 0.514 | 0.515 | 0.551 | 0.507 | 0.511 | 0.531 | 24 | 1.672 | 1.683 |
-| 11 | zscore | psp_all | min5 | 0.509 | 0.506 | 0.663 | 0.448 | 0.510 | 0.511 | 0.531 | 0.505 | 0.509 | 0.521 | 23 | 1.696 | 1.692 |
-| 12 | zscore | psp_human_only | min5 | 0.508 | 0.505 | 0.664 | 0.415 | 0.509 | 0.510 | 0.523 | 0.504 | 0.507 | 0.517 | 23 | 1.719 | 1.700 |
+| 1 | zscore | curated_union | min1 | 0.563 | 0.543 | 0.650 | 0.860 | 0.565 | 0.557 | 0.693 | 0.552 | 0.554 | 0.627 | 40 | 1.990 | 1.983 |
+| 2 | ksea | curated_union | min1 | 0.562 | 0.542 | 0.644 | 0.860 | 0.564 | 0.554 | 0.693 | 0.552 | 0.552 | 0.623 | 39 | 1.742 | 1.746 |
+| 3 | phosx_like | cantley-site-top15 | min3 | 0.557 | 0.539 | 0.593 | 0.880 | 0.555 | 0.527 | 0.644 | 0.531 | 0.545 | 0.627 | 16 | 481.507 | 36.589 |
+| 4 | phosx_like | cantley-site-top10* | min3 | 0.555 | 0.539 | 0.597 | 0.856 | 0.554 | 0.526 | 0.624 | 0.533 | 0.544 | 0.625 | 15 | 438.986 | 81.023 |
+| 5 | kl_enrich | cantley-site-top15* | thr0.5_min3 | 0.550 | 0.541 | 0.583 | 0.880 | 0.548 | 0.526 | 0.587 | 0.527 | 0.542 | 0.609 | 17 | 11.882 | 11.873 |
+| 6 | zscore | psp_all | min1 | 0.545 | 0.534 | 0.630 | 0.822 | 0.547 | 0.546 | 0.653 | 0.526 | 0.537 | 0.602 | 37 | 1.701 | 1.698 |
+| 7 | zscore | psp_human_only | min1 | 0.543 | 0.530 | 0.644 | 0.771 | 0.544 | 0.548 | 0.631 | 0.527 | 0.536 | 0.593 | 35 | 1.702 | 1.684 |
+| 8 | ksea | psp_all | min1 | 0.543 | 0.534 | 0.622 | 0.822 | 0.545 | 0.544 | 0.653 | 0.524 | 0.535 | 0.599 | 34 | 1.949 | 1.923 |
+| 9 | ksea | psp_human_only | min1 | 0.541 | 0.529 | 0.635 | 0.771 | 0.541 | 0.546 | 0.632 | 0.525 | 0.534 | 0.590 | 34 | 1.909 | 1.919 |
+| 10 | motif_zscore | cantley-top200 | min3 | 0.541 | 0.529 | 0.591 | 0.808 | 0.541 | 0.516 | 0.599 | 0.533 | 0.532 | 0.604 | 15 | 2.363 | 2.361 |
+| 11 | kl_enrich | cantley-site-top15 | thr1.0_min3 | 0.540 | 0.537 | 0.566 | 0.880 | 0.538 | 0.519 | 0.589 | 0.521 | 0.536 | 0.587 | 15 | 11.882 | 11.873 |
+| 12 | viper | curated_union* | min3 | 0.531 | 0.520 | 0.667 | 0.717 | 0.532 | 0.527 | 0.605 | 0.526 | 0.528 | 0.556 | 32 | 16.942 | 4.096 |
+| 13 | ksea | curated_union | min3 | 0.529 | 0.519 | 0.659 | 0.717 | 0.530 | 0.526 | 0.607 | 0.521 | 0.526 | 0.553 | 32 | 1.742 | 1.746 |
+| 14 | norm_wmean | curated_union* | min3 | 0.529 | 0.519 | 0.659 | 0.717 | 0.530 | 0.526 | 0.607 | 0.521 | 0.526 | 0.553 | 32 | 1.986 | 1.989 |
+| 15 | ulm | curated_union* | min3 | 0.529 | 0.519 | 0.659 | 0.717 | 0.530 | 0.526 | 0.607 | 0.521 | 0.526 | 0.553 | 32 | 1.963 | 1.965 |
+| 16 | zscore | curated_union | min3 | 0.529 | 0.519 | 0.659 | 0.717 | 0.530 | 0.528 | 0.607 | 0.520 | 0.526 | 0.554 | 34 | 1.990 | 1.983 |
+| 17 | wmean | curated_union* | min3 | 0.528 | 0.518 | 0.656 | 0.717 | 0.530 | 0.523 | 0.604 | 0.523 | 0.525 | 0.550 | 28 | 2.234 | 2.262 |
+| 18 | gsea | curated_union* | min3 | 0.528 | 0.518 | 0.653 | 0.717 | 0.529 | 0.524 | 0.602 | 0.520 | 0.525 | 0.548 | 31 | 156.027 | 12.617 |
+| 19 | rokai | curated_union | min3 | 0.526 | 0.519 | 0.645 | 0.717 | 0.529 | 0.525 | 0.601 | 0.518 | 0.522 | 0.557 | 29 | 131.905 | 22.240 |
+| 20 | motif_zscore | cantley-top100* | min3 | 0.524 | 0.518 | 0.581 | 0.672 | 0.523 | 0.516 | 0.553 | 0.515 | 0.522 | 0.556 | 12 | 2.044 | 2.040 |
+| 21 | mlm | curated_union* | min3 | 0.522 | 0.511 | 0.624 | 0.717 | 0.526 | 0.519 | 0.578 | 0.518 | 0.517 | 0.555 | 29 | 4.434 | 4.750 |
+| 22 | viper | psp_all | min3 | 0.517 | 0.512 | 0.646 | 0.578 | 0.518 | 0.518 | 0.558 | 0.511 | 0.515 | 0.538 | 25 | 12.725 | 3.758 |
+| 23 | rokai | psp_all | min3 | 0.516 | 0.512 | 0.642 | 0.578 | 0.518 | 0.518 | 0.559 | 0.511 | 0.514 | 0.538 | 21 | 103.113 | 17.131 |
+| 24 | ksea | curated_union | min5 | 0.516 | 0.510 | 0.656 | 0.523 | 0.517 | 0.517 | 0.548 | 0.511 | 0.515 | 0.531 | 28 | 1.742 | 1.746 |
+| 25 | zscore | curated_union | min5 | 0.516 | 0.510 | 0.653 | 0.523 | 0.517 | 0.517 | 0.548 | 0.511 | 0.515 | 0.530 | 29 | 1.990 | 1.983 |
+| 26 | zscore | psp_all | min3 | 0.515 | 0.512 | 0.633 | 0.578 | 0.517 | 0.518 | 0.560 | 0.507 | 0.513 | 0.536 | 24 | 1.701 | 1.698 |
+| 27 | ksea | psp_all | min3 | 0.515 | 0.512 | 0.632 | 0.578 | 0.517 | 0.517 | 0.560 | 0.507 | 0.513 | 0.536 | 25 | 1.949 | 1.923 |
+| 28 | norm_wmean | psp_all | min3 | 0.515 | 0.512 | 0.632 | 0.578 | 0.517 | 0.517 | 0.560 | 0.507 | 0.513 | 0.536 | 25 | 1.918 | 1.929 |
+| 29 | ulm | psp_all | min3 | 0.515 | 0.512 | 0.632 | 0.578 | 0.517 | 0.517 | 0.560 | 0.507 | 0.513 | 0.536 | 25 | 1.935 | 1.935 |
+| 30 | mlm | psp_all | min3 | 0.515 | 0.508 | 0.632 | 0.578 | 0.517 | 0.514 | 0.558 | 0.511 | 0.512 | 0.537 | 22 | 3.210 | 3.586 |
+| 31 | wmean | psp_all | min3 | 0.515 | 0.511 | 0.626 | 0.578 | 0.516 | 0.517 | 0.557 | 0.507 | 0.513 | 0.534 | 20 | 2.033 | 1.951 |
+| 32 | gsea | psp_all | min3 | 0.515 | 0.511 | 0.627 | 0.578 | 0.516 | 0.517 | 0.557 | 0.507 | 0.513 | 0.532 | 25 | 117.396 | 9.555 |
+| 33 | viper | psp_human_only | min3 | 0.513 | 0.509 | 0.654 | 0.514 | 0.514 | 0.515 | 0.549 | 0.508 | 0.510 | 0.532 | 26 | 10.509 | 2.521 |
+| 34 | zscore | psp_human_only* | min3 | 0.513 | 0.510 | 0.654 | 0.514 | 0.514 | 0.516 | 0.551 | 0.507 | 0.511 | 0.531 | 26 | 1.702 | 1.684 |
+| 35 | mlm | psp_human_only | min3 | 0.513 | 0.507 | 0.651 | 0.514 | 0.515 | 0.512 | 0.542 | 0.511 | 0.510 | 0.530 | 25 | 3.103 | 3.282 |
+| 36 | norm_wmean | psp_human_only | min3 | 0.513 | 0.509 | 0.651 | 0.514 | 0.514 | 0.515 | 0.551 | 0.507 | 0.511 | 0.531 | 24 | 1.891 | 1.891 |
+| 37 | ulm | psp_human_only | min3 | 0.513 | 0.509 | 0.651 | 0.514 | 0.514 | 0.515 | 0.551 | 0.507 | 0.511 | 0.531 | 24 | 1.899 | 1.897 |
+| 38 | ksea | psp_human_only* | min3 | 0.513 | 0.509 | 0.651 | 0.514 | 0.514 | 0.515 | 0.551 | 0.507 | 0.511 | 0.531 | 24 | 1.909 | 1.919 |
+| 39 | wmean | psp_human_only | min3 | 0.513 | 0.509 | 0.651 | 0.514 | 0.514 | 0.515 | 0.549 | 0.507 | 0.511 | 0.529 | 23 | 2.026 | 1.970 |
+| 40 | gsea | psp_human_only | min3 | 0.513 | 0.509 | 0.645 | 0.514 | 0.513 | 0.514 | 0.549 | 0.507 | 0.511 | 0.528 | 23 | 98.630 | 8.065 |
+| 41 | motif_zscore | cantley-top50 | min3 | 0.510 | 0.510 | 0.572 | 0.391 | 0.510 | 0.503 | 0.518 | 0.509 | 0.511 | 0.525 | 3 | 1.871 | 1.873 |
+| 42 | rokai | rokai_ks* | min3 | 0.510 | 0.506 | 0.686 | 0.450 | 0.511 | 0.509 | 0.535 | 0.507 | 0.508 | 0.523 | 21 | 89.368 | 19.371 |
+| 43 | ksea | psp_all | min5 | 0.509 | 0.506 | 0.665 | 0.448 | 0.510 | 0.510 | 0.531 | 0.505 | 0.509 | 0.521 | 23 | 1.949 | 1.923 |
+| 44 | zscore | psp_all | min5 | 0.509 | 0.506 | 0.663 | 0.448 | 0.510 | 0.511 | 0.531 | 0.505 | 0.509 | 0.521 | 23 | 1.701 | 1.698 |
+| 45 | zscore | psp_human_only | min5 | 0.508 | 0.505 | 0.664 | 0.415 | 0.509 | 0.510 | 0.523 | 0.504 | 0.507 | 0.517 | 23 | 1.702 | 1.684 |
+| 46 | ksea | psp_human_only | min5 | 0.508 | 0.505 | 0.664 | 0.415 | 0.509 | 0.510 | 0.523 | 0.504 | 0.507 | 0.518 | 22 | 1.909 | 1.919 |
+| 47 | jumpsem_aligned | curated_union | min3 | 0.507 | 0.507 | 0.578 | 0.494 | 0.507 | 0.506 | 0.551 | 0.508 | 0.508 | 0.504 | 10 | 12364.145 | NA |
+| 48 | jumpsem | curated_union | min3 | 0.506 | 0.502 | 0.561 | 0.494 | 0.505 | 0.511 | 0.530 | 0.500 | 0.507 | 0.502 | 11 | 12364.145 | NA |
+| 49 | jumpsem_aligned | psp_all | min3 | 0.504 | 0.505 | 0.565 | 0.426 | 0.504 | 0.506 | 0.531 | 0.502 | 0.505 | 0.501 | 10 | 7325.058 | NA |
+| 50 | jumpsem | psp_all | min3 | 0.504 | 0.503 | 0.575 | 0.426 | 0.504 | 0.507 | 0.514 | 0.502 | 0.505 | 0.500 | 10 | 7325.058 | NA |
+| 51 | jumpsem_aligned | psp_human_only* | min3 | 0.503 | 0.502 | 0.560 | 0.381 | 0.503 | 0.506 | 0.522 | 0.501 | 0.503 | 0.501 | 7 | 6105.979 | NA |
+| 52 | jumpsem | psp_human_only* | min3 | 0.502 | 0.502 | 0.555 | 0.381 | 0.502 | 0.503 | 0.507 | 0.501 | 0.502 | 0.499 | 1 | 6105.979 | NA |
 
 ## Harmony per bin (M1-sel)
 
 | method | library | cfg | 0 | 1-4 | 5-19 | >=20 |
 |---|---|---|---|---|---|---|
 | zscore | curated_union | min1 | 0.521 | 0.573 | 0.594 | 0.572 |
+| ksea | curated_union | min1 | 0.522 | 0.572 | 0.588 | 0.573 |
+| phosx_like | cantley-site-top15 | min3 | 0.545 | 0.557 | 0.566 | 0.553 |
+| phosx_like | cantley-site-top10 | min3 | 0.540 | 0.548 | 0.569 | 0.557 |
+| kl_enrich | cantley-site-top15 | thr0.5_min3 | 0.534 | 0.537 | 0.572 | 0.549 |
 | zscore | psp_all | min1 | 0.514 | 0.557 | 0.562 | 0.557 |
 | zscore | psp_human_only | min1 | 0.506 | 0.559 | 0.557 | 0.554 |
+| ksea | psp_all | min1 | 0.515 | 0.557 | 0.555 | 0.555 |
+| ksea | psp_human_only | min1 | 0.506 | 0.558 | 0.553 | 0.549 |
+| motif_zscore | cantley-top200 | min3 | 0.525 | 0.546 | 0.543 | 0.550 |
+| kl_enrich | cantley-site-top15 | thr1.0_min3 | 0.541 | 0.536 | 0.554 | 0.522 |
+| viper | curated_union | min3 | 0.508 | 0.523 | 0.550 | 0.547 |
+| ksea | curated_union | min3 | 0.510 | 0.521 | 0.548 | 0.541 |
+| norm_wmean | curated_union | min3 | 0.510 | 0.521 | 0.548 | 0.541 |
 | ulm | curated_union | min3 | 0.510 | 0.521 | 0.548 | 0.541 |
 | zscore | curated_union | min3 | 0.510 | 0.521 | 0.549 | 0.540 |
+| wmean | curated_union | min3 | 0.511 | 0.522 | 0.549 | 0.536 |
+| gsea | curated_union | min3 | 0.509 | 0.520 | 0.547 | 0.538 |
+| rokai | curated_union | min3 | 0.510 | 0.515 | 0.553 | 0.538 |
+| motif_zscore | cantley-top100 | min3 | 0.503 | 0.531 | 0.520 | 0.537 |
+| mlm | curated_union | min3 | 0.505 | 0.510 | 0.542 | 0.548 |
+| viper | psp_all | min3 | 0.501 | 0.508 | 0.533 | 0.531 |
+| rokai | psp_all | min3 | 0.501 | 0.507 | 0.537 | 0.528 |
+| ksea | curated_union | min5 | 0.500 | 0.507 | 0.533 | 0.527 |
 | zscore | curated_union | min5 | 0.500 | 0.507 | 0.533 | 0.527 |
 | zscore | psp_all | min3 | 0.501 | 0.508 | 0.531 | 0.527 |
+| ksea | psp_all | min3 | 0.501 | 0.507 | 0.531 | 0.528 |
+| norm_wmean | psp_all | min3 | 0.501 | 0.507 | 0.531 | 0.528 |
 | ulm | psp_all | min3 | 0.501 | 0.507 | 0.531 | 0.528 |
+| mlm | psp_all | min3 | 0.501 | 0.505 | 0.531 | 0.530 |
+| wmean | psp_all | min3 | 0.501 | 0.507 | 0.530 | 0.525 |
+| gsea | psp_all | min3 | 0.501 | 0.507 | 0.530 | 0.525 |
+| viper | psp_human_only | min3 | 0.501 | 0.505 | 0.527 | 0.523 |
 | zscore | psp_human_only | min3 | 0.501 | 0.506 | 0.527 | 0.524 |
+| mlm | psp_human_only | min3 | 0.501 | 0.503 | 0.528 | 0.527 |
+| norm_wmean | psp_human_only | min3 | 0.501 | 0.506 | 0.527 | 0.523 |
 | ulm | psp_human_only | min3 | 0.501 | 0.506 | 0.527 | 0.523 |
+| ksea | psp_human_only | min3 | 0.501 | 0.506 | 0.527 | 0.523 |
+| wmean | psp_human_only | min3 | 0.501 | 0.505 | 0.527 | 0.522 |
+| gsea | psp_human_only | min3 | 0.501 | 0.505 | 0.526 | 0.521 |
+| motif_zscore | cantley-top50 | min3 | 0.502 | 0.507 | 0.509 | 0.520 |
+| rokai | rokai_ks | min3 | 0.501 | 0.504 | 0.518 | 0.520 |
+| ksea | psp_all | min5 | 0.500 | 0.504 | 0.520 | 0.518 |
 | zscore | psp_all | min5 | 0.500 | 0.504 | 0.520 | 0.518 |
 | zscore | psp_human_only | min5 | 0.500 | 0.502 | 0.517 | 0.516 |
+| ksea | psp_human_only | min5 | 0.500 | 0.502 | 0.517 | 0.515 |
+| jumpsem_aligned | curated_union | min3 | 0.502 | 0.508 | 0.505 | 0.511 |
+| jumpsem | curated_union | min3 | 0.502 | 0.510 | 0.500 | 0.508 |
+| jumpsem_aligned | psp_all | min3 | 0.501 | 0.502 | 0.509 | 0.505 |
+| jumpsem | psp_all | min3 | 0.501 | 0.504 | 0.507 | 0.503 |
+| jumpsem_aligned | psp_human_only | min3 | 0.501 | 0.501 | 0.506 | 0.504 |
+| jumpsem | psp_human_only | min3 | 0.501 | 0.502 | 0.503 | 0.501 |
 
 ## Best config per method (M1-sel) and published-default config
 
 | method | best library/cfg | best M1-sel | default library/cfg | default M1-sel |
 |---|---|---|---|---|
 | zscore | curated_union / min1 | 0.563 | psp_human_only / min3 | 0.513 |
+| ksea | curated_union / min1 | 0.562 | psp_human_only / min3 | 0.513 |
+| phosx_like | cantley-site-top15 / min3 | 0.557 | cantley-site-top10 / min3 | 0.555 |
+| kl_enrich | cantley-site-top15 / thr0.5_min3 | 0.550 | cantley-site-top15 / thr0.5_min3 | 0.550 |
+| motif_zscore | cantley-top200 / min3 | 0.541 | cantley-top100 / min3 | 0.524 |
+| viper | curated_union / min3 | 0.531 | curated_union / min3 | 0.531 |
+| norm_wmean | curated_union / min3 | 0.529 | curated_union / min3 | 0.529 |
 | ulm | curated_union / min3 | 0.529 | curated_union / min3 | 0.529 |
+| wmean | curated_union / min3 | 0.528 | curated_union / min3 | 0.528 |
+| gsea | curated_union / min3 | 0.528 | curated_union / min3 | 0.528 |
+| rokai | curated_union / min3 | 0.526 | rokai_ks / min3 | 0.510 |
+| mlm | curated_union / min3 | 0.522 | curated_union / min3 | 0.522 |
+| jumpsem_aligned | curated_union / min3 | 0.507 | psp_human_only / min3 | 0.503 |
+| jumpsem | curated_union / min3 | 0.506 | psp_human_only / min3 | 0.502 |
 
 ## Notes
 
@@ -50,4 +142,5 @@ Evaluation: `kinact.eval.Evaluator` on DEV folds 0-4 (no devconfirm/test), harmo
 - RoKAI: published functional network (KS + STRING PPI + PTMcode co-evolution/structure distance) from github.com/serhan-yilmaz/RoKAI, propagation re-implemented from the MATLAB source (not run against MATLAB: no MATLAB licence); inference = RoKAI z-score on refined values. `rokai_ks` = RoKAI's own (2020 PSP) KS layer.
 - Motif-only: Cantley atlas library (`cache/libraries/cantley.parquet`). motif_zscore = RoKAI z over each kinase's top-k sites; phosx_like = per-site top-n kinase assignment + GSEA NES; kl_enrich = KL-style one-sided hypergeometric up-vs-unchanged / down-vs-unchanged at |log2FC| ≥ thr.
 - JUMPsem 1.1.0 run natively in R per study unit (PMID × cell line × control; units < 4 conditions pooled per PMID; otherwise NaN), complete-case sites within the unit, qc_status == ok conditions only. `jumpsem` = native output (sign set by lavaan's marker indicator, i.e. arbitrary); `jumpsem_aligned` = post-hoc sign alignment with the mean centred substrate log2FC (deviation from the package). Per-unit logs: `results/baselines/jumpsem_units__<lib>.tsv`.
-- Total script wall time 1.0 min.
+- JUMPsem coverage: 98 units, 0 failed, 1184 conditions in units, 1184 with ≥1 score.
+- Total script wall time 73.6 min.
