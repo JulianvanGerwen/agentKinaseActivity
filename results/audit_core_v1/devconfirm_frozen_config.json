@@ -1,0 +1,20 @@
+{
+ "name": "core-v1",
+ "lib_cur": "curated_union",
+ "alphas": {
+  "r2np@100": 1.0
+ },
+ "scale": "wsd",
+ "winsor": null,
+ "borrow": true,
+ "tau": 0.125,
+ "rho_f": 3.0,
+ "rho_g": 0.25,
+ "output_primary": "z_vif",
+ "output_secondary": "z_post",
+ "rho_e_source": "7 DEV role=null conditions (folds 0-4)",
+ "rho_g_selection": "pooled all-DEV M1-sel, z_vif, rho_g in {0,0.25,1}",
+ "dev_pooled_M1sel": 0.6678952151802726,
+ "rho_e": 0.01,
+ "config_hash": "04b69b6513e3927d"
+}
