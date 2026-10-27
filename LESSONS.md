@@ -5,3 +5,5 @@
 - Parallel independent reviewers converge quickly: 6 r1 reviews in ~7 min wall-clock flagged the same top issues (downstream masks, promiscuous-drug labels) from different angles.
 - Never commit draft label tables before the split exists: candidate_gt.tsv (incl. future TEST labels) is in git history (commit before G1); sealing is therefore by convention — agents must not read git history of results/ground_truth.
 - Ask builders to list "judgement calls made from memory" explicitly (GT agent flagged 10 → targeted expert audit instead of re-reviewing everything).
+- Independent expert audit of GT before freeze pays: 12 rule errors (4 high) found in a builder's from-memory tables; 10% of sampled conditions were wrong.
+- Concurrent agents on a cache that is being regenerated: tell them early and require them to report the GT hash their numbers correspond to.

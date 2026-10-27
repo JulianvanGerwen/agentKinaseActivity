@@ -33,7 +33,7 @@ Key early observation: kinaseSubMain's deployed library uses (F6b) ridge deconvo
   - [x] 2.4 round 3 (final reviewer) → DESIGN v3 merged (C1–C6). Design phase closed.
 - [~] 3. G1 build
   - [x] 3.1 GT + split + DEV-only cache: 1,047 GT conds; M1-sel 1,660 pairs / 140 kinases; split seed 79 (TEST 396 conds, 445 M1-sel pairs, 78 kinases, 18 unseen). Hijazi doses unobtainable → 10 µM default. 16 tests pass.
-    - [~] 3.1b independent GT biology audit + fixes (pre-freeze; split may change)
+    - [x] 3.1b GT audit: 12 issues (4 high) fixed, sample pass 89.7% pre-fix; combination doses ambiguous → low; cellular-potency override (gefitinib/EGFR, dasatinib/ABL1). FINAL split seed 90: TEST 468 conds / 470 M1-sel pairs / 67 kinases (15 unseen); DEV-CV 877 pairs; devconfirm 119. GT_FREEZE sha 1e6f791c…
   - [x] 3.2 harness src/kinact/eval.py + tests (20 pass; paired bootstrap B=2000 0.3 s)
     - [x] 3.2b integration: loaders, smoke run. DEV: zscore M1-sel 0.521 (scored 0.666, cov 0.63); prior-only 0.706; random 0.476; MDE 0.036 (M1-sel groups) / 0.059 (all groups)
     - [~] 3.2c independent harness verification (z-score 0.52 vs benchmarKIN ~0.78 gap; bootstrap CI anomaly; random 0.476)
