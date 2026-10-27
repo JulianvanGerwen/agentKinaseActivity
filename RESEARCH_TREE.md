@@ -42,5 +42,11 @@ Key finding for strategy: under the pre-registered coverage-aware primary metric
     - [!] PSP z-score ≈ random on M1-sel (coverage-limited); prior-only 0.687 is the bar.
   - [x] 3.3 KS libraries: psp_all 401 kin (225 with ≥5 quantified), curated_union 439 kin (296 ≥5), Sugiyama in vitro 347 kin (342 ≥5), predicted top-500 r2np/r3 (503), cantley (396). 405 PMIDs excluded (compendium + HT-MS). 27 tests.
 - [~] 4. Baselines (z-score, KSEA, JUMPsem, decoupler ulm/mlm/wmean/norm_wmean/viper, GSEA, RoKAI, KinLib) on DEV
-- [ ] 5. Method development
+- [~] 5. Method development (DEV only; adoption per DESIGN §7)
+  - [~] 5.1 B1 library variants (PSP/curated/Sugiyama/predicted top-k, γ, mixtures) — time box 2 h
+  - [~] 5.2 B2 Bayesian linear-Gaussian core (noise model, family kernel, closed form) — time box 3 h
+  - [ ] 5.3 B3 calibration (effective-m / empirical null)
+  - [ ] 5.4 B4 shared-function edge weights; co-regulation/factorisation expansion
+  - [ ] 5.5 B5 kinase self-sites
+  - [ ] 5.6 B6 stacking
 - [ ] 6. Sealed test + REPORT.md
