@@ -77,8 +77,11 @@ def _run_unit(args):
     env = dict(os.environ, LC_ALL="C.UTF-8", PATH=f"{RSCRIPT.parent}:{os.environ.get('PATH', '')}",
                OMP_NUM_THREADS="1", OPENBLAS_NUM_THREADS="1")
     t0 = time.perf_counter()
-    p = subprocess.run([str(RSCRIPT), str(RUNNER), str(d / "in.csv"), str(d / "db.csv"), str(d / "act.tsv")],
-                       capture_output=True, text=True, env=env, timeout=7200)
+    try:
+        p = subprocess.run([str(RSCRIPT), str(RUNNER), str(d / "in.csv"), str(d / "db.csv"), str(d / "act.tsv")],
+                           capture_output=True, text=True, env=env, timeout=7200)
+    except subprocess.TimeoutExpired:                # a hung unit must not abort the whole run (logged, unit NaN)
+        return uid, None, None, time.perf_counter() - t0, "R timeout (7200 s)"
     wall = time.perf_counter() - t0
     out = d / "act.tsv"
     if p.returncode != 0 or not out.exists() or out.read_text().startswith("#error"):

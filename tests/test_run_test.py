@@ -106,3 +106,89 @@ def test_external_block_synthetic(rt, monkeypatch):
             rt.write_ledger(Path(d), R, dry=False)
             txt = (Path(d) / "LEDGER.md").read_text()
         assert "## External sets" in txt and "tumour | core-v1 | M1-kinase" in txt
+
+
+def test_verify_freeze_refuses_on_input_mismatch(rt):
+    want = {"gt_hash": "a"}
+    rt.verify_freeze(dict(want), want, [], {"mismatch": {}}, {"mismatch": {}})
+    with pytest.raises(SystemExit, match="input_mismatch"):
+        rt.verify_freeze(dict(want), want, [], {"mismatch": {}},
+                         {"mismatch": {"cache/quant_wide_f32.npy": {"frozen": "x", "disk": "y"}}})
+
+
+def test_frozen_inputs_match(rt):
+    if not (ROOT / "cache/quant_wide_f32.npy").exists():
+        pytest.skip("compendium cache not present")
+    r = rt.check_frozen_inputs()
+    assert r["n_checked"] > 20 and r["mismatch"] == {}
+
+
+def _toy_ev():
+    import pandas as pd
+    from kinact.eval import Evaluator
+    kins = [f"K{i}" for i in range(8)]
+    conds = [f"c{i}" for i in range(12)]
+    tgt = {c: kins[i % 4] for i, c in enumerate(conds)}
+    tgt["c0"] = "K7"                                   # K7: the only 'unseen' kinase, in a single group g0
+    gp = pd.DataFrame({"conditionID": conds, "kinase": [tgt[c] for c in conds], "cls": "direct", "sign": -1,
+                       "confidence": "high"})
+    gc = pd.DataFrame({"conditionID": conds, "split": "x", "role": "gt", "n_targets": 1, "in_M1sel": True,
+                       "group_id": [f"g{i // 2}" for i in range(12)], "source": "H"})
+    return Evaluator(gp, gc, kins, train_pos_kinases=kins[:4], zero_policy="ignore"), conds, kins
+
+
+def test_masked_delta_drops_resamples_without_subset(rt):
+    import numpy as np
+    import pandas as pd
+    ev, conds, kins = _toy_ev()
+    rng = np.random.default_rng(1)
+    A = pd.DataFrame(rng.normal(size=(12, 8)), index=conds, columns=kins); A.loc["c0", "K7"] = -9.0
+    Bm = pd.DataFrame(rng.normal(size=(12, 8)), index=conds, columns=kins)
+    plan = rt.bs.BootstrapPlan.from_evaluator(ev, B=400, seed=0)
+    uns = lambda P: P["kinase"].eq("K7").to_numpy()
+    d = rt.delta(ev, A, Bm, "M1-sel", plan, uns)
+    n_drawn = int((plan.W[:, list(plan.groups).index("g0")] > 0).sum())
+    assert d["n_resamples"] == n_drawn < plan.B
+    # single (kinase, group) unit: every drawn resample reproduces the point estimate exactly -> degenerate CI
+    assert abs(d["ci_low"] - d["estimate"]) < 1e-12 and abs(d["ci_high"] - d["estimate"]) < 1e-12
+    none = rt.delta(ev, A, Bm, "M1-sel", plan, lambda P: np.zeros(len(P), bool))
+    assert none["n_resamples"] == 0 and np.isnan(none["p_one_sided"])
+
+
+def test_secondary_block_records_failure(rt):
+    def boom():
+        raise RuntimeError("R died")
+    r = rt.secondary_block("external", boom, lambda *a: None)
+    assert "R died" in r["error"] and "Traceback" in r["traceback"]
+    assert rt.secondary_block("x", lambda: {"ok": 1}, lambda *a: None) == {"ok": 1}
+
+
+def test_ledger_tolerates_failed_secondary_blocks(rt, tmp_path):
+    import json
+    dry = ROOT / "results/test_dryrun/test_results.json"
+    if not dry.exists():
+        pytest.skip("no dry-run results")
+    R = json.loads(dry.read_text())
+    R["runtime"] = {"error": "RuntimeError('x')", "traceback": ""}
+    R["external"] = {"error": "RuntimeError('y')", "traceback": ""}
+    rt.write_ledger(tmp_path, R, dry=False)
+    txt = (tmp_path / "LEDGER.md").read_text()
+    assert txt.count("FAILED") == 2
+
+
+def test_jumpsem_timeout_is_recorded(monkeypatch, tmp_path):
+    import subprocess
+
+    import numpy as np
+    import pandas as pd
+    import importlib
+    J = importlib.import_module("kinact.methods.jumpsem")
+
+    def hang(*a, **k):
+        raise subprocess.TimeoutExpired(cmd="Rscript", timeout=7200)
+    monkeypatch.setattr(J.subprocess, "run", hang)
+    sites = [f"P{i:05d}_S{i}" for i in range(10)]
+    Xu = pd.DataFrame(np.random.default_rng(0).normal(size=(10, 4)), index=sites, columns=list("abcd"))
+    lib = pd.DataFrame({"kinase": "K1", "site": sites})
+    uid, act, extra, wall, err = J._run_unit(("u", Xu, lib, 3, str(tmp_path)))
+    assert act is None and "timeout" in err

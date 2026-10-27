@@ -122,14 +122,46 @@ def check_manifest_artifacts() -> dict:
     return {"n_checked": len(man["artifact_sha256"]), "mismatch": bad}
 
 
-def verify_freeze(F: dict, want: dict, dirty: list, art: dict) -> None:
-    """Raise SystemExit unless every expected hash is present in FREEZE.json and equal, the tracked tree is clean
-    and every model artefact matches its manifest hash."""
+def check_frozen_inputs() -> dict:
+    """Re-hash on disk every file whose sha256 is recorded in GT_FREEZE.json (visible GT/rule tables, DEV cache,
+    compendium inputs) and in the model manifest's inputs (libraries, DEV cache); these are git-ignored or outside
+    the dirty-tree check, but the run reads them (DEV positives, prior-only freq, QC, harmony bins, X, libraries).
+    Comparator-only libraries and the external sets have no frozen hash: they are logged (`logged_only`)."""
+    gf = json.loads((ROOT / "results/ground_truth/GT_FREEZE.json").read_text())
+    gtd, cache = ROOT / "results/ground_truth", ROOT / "cache"
+    want = {}
+    for sec, base in (("gt", gtd), ("rules", gtd), ("dev_cache", cache / "dev")):
+        want.update({str((base / f).relative_to(ROOT)): h for f, h in gf.get(sec, {}).items()})
+    want.update(gf.get("inputs", {}))
+    man = json.loads(MANIFEST.read_text())
+    for k, h in man.get("inputs_sha256", {}).items():
+        if k.startswith("lib:"):
+            p = cache / "libraries" / f"{k[4:]}.parquet"
+        elif k == "quant_dev.npy":
+            p = cache / "dev" / k
+        else:
+            p = gtd / k
+        want[str(p.relative_to(ROOT))] = h
+    bad = {}
+    for f, h in want.items():
+        p = ROOT / f
+        got = sha256(p) if p.exists() else "missing"
+        if got != h:
+            bad[f] = {"frozen": h, "disk": got}
+    logged = {str(p.relative_to(ROOT)): sha256(p) for d in (cache / "libraries", cache / "external")
+              if d.exists() for p in sorted(d.iterdir()) if p.is_file()}
+    return {"n_checked": len(want), "mismatch": bad, "logged_only": logged}
+
+
+def verify_freeze(F: dict, want: dict, dirty: list, art: dict, inputs: dict | None = None) -> None:
+    """Raise SystemExit unless every expected hash is present in FREEZE.json and equal, the tracked tree is clean,
+    every model artefact matches its manifest hash and every frozen input file matches its recorded hash."""
     mism = {k: {"FREEZE": F.get(k), "working_tree": v} for k, v in want.items() if F.get(k) != v}
-    if mism or dirty or art["mismatch"]:
+    inp = (inputs or {}).get("mismatch", {})
+    if mism or dirty or art["mismatch"] or inp:
         raise SystemExit("REFUSED: FREEZE.json does not match the working tree:\n"
                          + json.dumps({"hash_mismatch": mism, "modified_tracked_files": dirty,
-                                       "artifact_mismatch": art["mismatch"]}, indent=1))
+                                       "artifact_mismatch": art["mismatch"], "input_mismatch": inp}, indent=1))
 
 
 def check_freeze() -> dict:
@@ -141,8 +173,9 @@ def check_freeze() -> dict:
     F = json.loads(FREEZE.read_text())
     want = expected_hashes(include_sealed=True)
     art = check_manifest_artifacts()
-    verify_freeze(F, want, dirty_tracked(), art)
-    return {"FREEZE.json": F, "FREEZE_sha256": sha256(FREEZE), "verified": want, "artifacts": art}
+    inputs = check_frozen_inputs()
+    verify_freeze(F, want, dirty_tracked(), art, inputs)
+    return {"FREEZE.json": F, "FREEZE_sha256": sha256(FREEZE), "verified": want, "artifacts": art, "inputs": inputs}
 
 
 def versions() -> dict:
@@ -335,9 +368,20 @@ def delta(ev, A, Bm, ep, plan, mask=None) -> dict:
     assert (ma == mb).all()
     ra = bs.metric_replicates(ev, Pa[ma], ep, plan); rb = bs.metric_replicates(ev, Pb[mb], ep, plan)
     pt = ev.metric(Pa[ma], ep)["value"] - ev.metric(Pb[mb], ep)["value"]
-    s = bs._summ(pt, ra - rb)
+    # metric_replicates returns 0 (not NaN) for a resample that draws none of the subset's groups, which for small
+    # subsets (T-unseen) piles Δ* = 0 into the distribution; such resamples are undefined and are dropped here.
+    rows = ev.endpoint_rows(Pa[ma], ep)[0]
+    gi = pd.Index(plan.groups).get_indexer(rows["group"].astype(str).unique())
+    drawn = plan.W[:, gi].sum(1) > 0 if len(gi) else np.zeros(plan.B, bool)
+    d = (ra - rb)[drawn]
+    if not len(d):
+        nan = float("nan")
+        return {"estimate": pt, "se": nan, "ci_low": nan, "ci_high": nan, "p_one_sided": nan,
+                "n_pairs_M1sel": int((ma & Pa["in_M1sel"]).sum()), "n_resamples": 0}
+    s = bs._summ(pt, d)
     return {"estimate": pt, "se": s["se"], "ci_low": s["ci_low"], "ci_high": s["ci_high"],
-            "p_one_sided": bs.shifted_null_p(pt, ra - rb), "n_pairs_M1sel": int((ma & Pa["in_M1sel"]).sum())}
+            "p_one_sided": bs.shifted_null_p(pt, d), "n_pairs_M1sel": int((ma & Pa["in_M1sel"]).sum()),
+            "n_resamples": int(drawn.sum())}
 
 
 def method_metrics(sp_: Split, S: pd.DataFrame, mk: dict, n_perm=2000) -> tuple[dict, pd.DataFrame]:
@@ -560,6 +604,8 @@ def f3(x):
 
 
 def fd(d):
+    if d.get("n_resamples") == 0 or not np.isfinite(d["estimate"]):
+        return "NA" if not np.isfinite(d["estimate"]) else f"{d['estimate']:+.3f} [NA]"
     return f"{d['estimate']:+.3f} [{d['ci_low']:+.3f}, {d['ci_high']:+.3f}]"
 
 
@@ -622,12 +668,17 @@ def write_ledger(out: Path, R: dict, dry: bool):
                      + " / ".join(f"{b}: {f3(pb.get(b))}" for b in ['0', '1-4', '5-19', '>=20'])
                      + f" | {f3(sk.get('frac_exceed'))} ({sk.get('n_cells', '-')}) |")
     rt = R["runtime"]
-    L += ["", "## Runtime", "", f"- {rt['bench']}: CPU 1t {rt['cpu']['threads_1']['ms_per_condition']:.2f} ms/cond, "
-          f"16t {rt['cpu']['threads_16']['ms_per_condition']:.2f} ms/cond"
-          + (f", GPU {rt['gpu']['threads_16']['ms_per_condition']:.2f} ms/cond" if "gpu" in rt else ""),
-          f"- compendium ({rt['compendium']['n_conditions']} conditions, prepare + score, median of 3): "
-          f"1t {rt['compendium']['cpu_1t_total_s']:.1f} s, 16t {rt['compendium']['cpu_16t_total_s']:.1f} s"]
-    if "external" in R:
+    if "error" in rt:
+        L += ["", "## Runtime", "", f"- FAILED: `{rt['error']}` (traceback in test_results.json)"]
+    else:
+        L += ["", "## Runtime", "", f"- {rt['bench']}: CPU 1t {rt['cpu']['threads_1']['ms_per_condition']:.2f} ms/cond, "
+              f"16t {rt['cpu']['threads_16']['ms_per_condition']:.2f} ms/cond"
+              + (f", GPU {rt['gpu']['threads_16']['ms_per_condition']:.2f} ms/cond" if "gpu" in rt else ""),
+              f"- compendium ({rt['compendium']['n_conditions']} conditions, prepare + score, median of 3): "
+              f"1t {rt['compendium']['cpu_1t_total_s']:.1f} s, 16t {rt['compendium']['cpu_16t_total_s']:.1f} s"]
+    if "external" in R and "error" in R["external"]:
+        L += ["", "## External sets", "", f"- FAILED: `{R['external']['error']}` (traceback in test_results.json)"]
+    elif "external" in R:
         L += ["", "## External sets (secondary; benchmarKIN; run_external(confirm_test=True))", "",
               "| method | tyrosine M1-sel | tyr benchmarKIN | hernandez_new M1-sel | hern benchmarKIN | tumour M1-kinase | tumour benchmarKIN |",
               "|---|---|---|---|---|---|---|"]
@@ -636,6 +687,12 @@ def write_ledger(out: Path, R: dict, dry: bool):
             L.append(f"| {name} | {f3(g('tyrosine', 'M1-sel'))} | {f3(r['tyrosine']['benchmarkin']['auroc_mean'])} | "
                      f"{f3(g('hernandez_new', 'M1-sel'))} | {f3(r['hernandez_new']['benchmarkin']['auroc_mean'])} | "
                      f"{f3(r['tumour']['M1']['M1-kinase'])} | {f3(r['tumour']['benchmarkin']['auroc_mean'])} |")
+        L += ["", "Drug seen / unseen in DEV (DESIGN §2; unweighted all-pairs macro, `M1-all_drug_*` in kinact.external_eval):",
+              "", "| method | tyrosine seen | tyrosine unseen | hernandez_new seen | hernandez_new unseen |", "|---|---|---|---|---|"]
+        for name, r in R["external"]["results"].items():
+            dv = lambda s, k: (r[s]["M1"].get(f"M1-all_drug_{k}") or {})
+            L.append(f"| {name} | " + " | ".join(f"{f3(dv(s, k).get('value'))} ({dv(s, k).get('n_pairs', 0)})"
+                                                for s in ("tyrosine", "hernandez_new") for k in ("seen", "unseen")) + " |")
         L += ["", "Paired bootstrap (final − comparator; B = 2000, seed 0, C8):", "", "| set | comparator | endpoint | Δ [95% CI] | p |",
               "|---|---|---|---|---|"]
         for sname, d in R["external"]["paired_vs_final"].items():
@@ -647,6 +704,16 @@ def write_ledger(out: Path, R: dict, dry: bool):
 
 
 # =============================================================================================== main
+def secondary_block(name: str, fn, log) -> dict:
+    """Run a secondary (non-Holm) block; an exception is recorded instead of aborting the single TEST run."""
+    try:
+        return fn()
+    except Exception as e:                                                   # noqa: BLE001
+        import traceback
+        log(f"{name} block FAILED: {e!r} (recorded; primary results unaffected)")
+        return {"error": repr(e), "traceback": traceback.format_exc()}
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("--dry-run-dev", action="store_true", help="smoke test on DEV-confirm; no TEST data, no externals")
@@ -669,11 +736,14 @@ def main():
     # ---------------- FREEZE guard (before ANY sealed file is read)
     if dry:
         freeze = {"skipped": "dry run", "working_tree": expected_hashes(include_sealed=False),
-                  "modified_tracked_files": dirty_tracked(), "artifacts": check_manifest_artifacts()}
+                  "modified_tracked_files": dirty_tracked(), "artifacts": check_manifest_artifacts(),
+                  "inputs": check_frozen_inputs()}
     else:
         freeze = check_freeze()
-        if (out / "test_results.json").exists():
-            raise SystemExit(f"REFUSED: {out / 'test_results.json'} exists — the TEST run is done once")
+        for f in ("test_results.json", "test_results.partial.json"):    # partial = primary results already seen
+            if (out / f).exists():
+                raise SystemExit(f"REFUSED: {out / f} exists — the TEST run is done once (a re-run after a crash "
+                                 "is a PI decision: move the file aside and log why)")
     out.mkdir(parents=True, exist_ok=True)
     (out / "per_kinase").mkdir(exist_ok=True); (out / "scores").mkdir(exist_ok=True)
     (out / "freeze_check.json").write_text(json.dumps(freeze, indent=1, default=str))
@@ -700,9 +770,12 @@ def main():
     R["split"] = sp_.name
     R["a1_fit"] = aux["A1"]
     R["jumpsem_units"] = aux["jumpsem_units"].to_dict(orient="records")
-    R["runtime"] = runtime_block(sp_, log) if not a.skip_runtime else {"skipped": True}
+    # checkpoint of the primary results BEFORE the secondary blocks (a crash/OOM there must not lose the one TEST run)
+    (out / "test_results.partial.json").write_text(json.dumps(to_jsonable(R), indent=1, default=str))
+    R["runtime"] = (secondary_block("runtime", lambda: runtime_block(sp_, log), log) if not a.skip_runtime
+                    else {"skipped": True})
     if not dry:
-        R["external"] = external_block(log)
+        R["external"] = secondary_block("external", lambda: external_block(log), log)
     R["provenance"] = {"hashes": {**(freeze.get("verified") or freeze.get("working_tree")),
                                   "FREEZE_sha256": freeze.get("FREEZE_sha256", "n/a (dry run)")},
                        "versions": vers, "argv": sys.argv, "seed": SEED, "B": B,
