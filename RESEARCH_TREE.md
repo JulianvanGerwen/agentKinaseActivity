@@ -63,5 +63,5 @@ Key finding for strategy: under the pre-registered coverage-aware primary metric
   - [-] 5.5 B5 self-sites (results/b5/b5_report.md): alone 0.726 on pairs with measured self-site (35% of M1-sel pairs); paradoxical up for PKC/PKA/ERKi/TAK1; on core +0.003 [−0.001,0.008] n.s. (half of self-sites already library edges). GT-A helper mask_self_sites.
   - [ ] 5.6 B6 stacking
 - [~] 7. Deliverable: src/kinact/core.py API + CLI + speed (CPU ≤5 ms/cond, GPU path), equivalence to bayes2
-- [~] 8. External test pipelines (benchmarKIN Tyr, Hernandez non-compendium, CPTAC) — data/harness only, no real method run until TEST
+- [x] 8. External test pipelines ready (docs/external_eval.md; run_external(..., confirm_test=True)); Tyr 18 exps/16 kin, Hernandez 15/7, CPTAC 7 cohorts/367 kin (gold = protein abundance, C9). No real method run.
 - [ ] 6. Sealed test + REPORT.md
