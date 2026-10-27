@@ -56,15 +56,21 @@ def psp_bin(n) -> np.ndarray:
     return out
 
 
+def read_gt_tsv(path) -> pd.DataFrame:
+    """Read a GT/split TSV without pandas' default NA strings ("null", "NA", "None", "nan" stay
+    literal strings, e.g. role == "null"); only truly empty fields become NaN."""
+    return pd.read_csv(path, sep="\t", keep_default_na=False, na_values=[""])
+
+
 def load_gt(gt_dir: str | os.PathLike = DEFAULT_ROOT / "results/ground_truth"):
     """Agent-visible (DEV + devconfirm) GT: (gt_pairs, gt_conditions, universe, bins|None).
-    Accepts gt_pairs.tsv or gt_pairs_dev.tsv naming. TEST rows: see load_sealed_test()."""
+    Accepts gt_pairs.tsv or gt_pairs_dev.tsv naming; all readers keep literal "null"/"NA" strings. TEST rows: see load_sealed_test()."""
     gt_dir = Path(gt_dir)
 
     def rd(stem, required=True):
         for n in (f"{stem}.tsv", f"{stem}_dev.tsv"):
             if (gt_dir / n).exists():
-                return pd.read_csv(gt_dir / n, sep="\t")
+                return read_gt_tsv(gt_dir / n)
         if required:
             raise FileNotFoundError(gt_dir / f"{stem}.tsv")
         return None
@@ -499,9 +505,11 @@ def load_sealed_test(sealed_dir: str | os.PathLike = SEALED_DIR,
     if want != got:
         raise TestSplitLocked(f"sealed GT hash mismatch: FREEZE {want} vs files {got}")
     sd = Path(sealed_dir)
-    rd = lambda n: pd.read_csv(sd / n, sep="\t") if (sd / n).exists() else None
+    rd = lambda n: read_gt_tsv(sd / n) if (sd / n).exists() else None
     return {"gt_pairs": rd("gt_pairs.tsv"), "gt_conditions": rd("gt_conditions.tsv"),
-            "harmony_bins": rd("harmony_bins.tsv")}
+            "harmony_bins": rd("harmony_bins.tsv"),
+            "harmony_bins_group": rd("harmony_bins_group.tsv"),
+            "condition_groups": rd("condition_groups.tsv")}
 
 
 # --------------------------------------------------------------------------------------

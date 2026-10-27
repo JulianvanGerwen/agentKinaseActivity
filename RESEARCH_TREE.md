@@ -36,7 +36,7 @@ Key early observation: kinaseSubMain's deployed library uses (F6b) ridge deconvo
     - [~] 3.1b independent GT biology audit + fixes (pre-freeze; split may change)
   - [x] 3.2 harness src/kinact/eval.py + tests (20 pass; paired bootstrap B=2000 0.3 s)
     - [~] 3.2b integration: null-parsing fix, data loaders, DEV smoke run (PSP z-score, controls), MDE
-  - [~] 3.3 KS libraries with leakage filters (scripts/build_libraries.py)
+  - [x] 3.3 KS libraries: psp_all 401 kin (225 with ≥5 quantified), curated_union 439 kin (296 ≥5), Sugiyama in vitro 347 kin (342 ≥5), predicted top-500 r2np/r3 (503), cantley (396). 405 PMIDs excluded (compendium + HT-MS). 27 tests.
 - [ ] 4. Baselines (z-score, KSEA, JUMPsem, …)
 - [ ] 5. Method development
 - [ ] 6. Sealed test + REPORT.md

@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 """Profile the phosphoproteomics compendium + PSP coverage. Writes docs/data_profile.md and
-results/data_profile/*.tsv|json. Requires scripts/prep_data.py and scripts/build_candidate_gt.py to have run."""
+results/data_profile/*.tsv|json. Requires scripts/prep_data.py and scripts/build_candidate_gt.py to have run.
+LEGACY: the candidate GT annotation sections read the retired pre-G1 draft files, now moved to
+cache/sealed/draft_candidate_v0/ (sealed; not for development use). They are no longer in results/ground_truth/, so this script
+fails at the annotation step unless re-pointed deliberately (not part of the pipeline). The kinact harness does not depend on this script."""
 import json
 from pathlib import Path
 

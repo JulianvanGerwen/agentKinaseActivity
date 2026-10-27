@@ -372,3 +372,22 @@ def test_speed_paired_bootstrap_1000x500():
     dt = time.perf_counter() - t0
     print(f"\n[timing] index+plan+paired ΔM1-sel B=2000 1000x500: {dt:.2f}s; SE={d['se']:.4f}")
     assert dt < 60
+
+
+def test_gt_readers_keep_null_role(tmp_path):
+    """Regression: role == "null" must not be parsed as NaN by any GT-file reader."""
+    from kinact.eval import load_gt, read_gt_tsv
+    (tmp_path / "gt_pairs.tsv").write_text(
+        "conditionID\tkinase\tcls\tsign\tconfidence\trule_id\tnote\nc1\tA\tdirect\t-1\thigh\tr\tNA\n")
+    (tmp_path / "gt_conditions.tsv").write_text(
+        "conditionID\tPMID\tsource\tgroup_id\tn_targets\tin_M1sel\trole\tsplit\n"
+        "c1\t1\tO\tG1\t1\tTrue\tgt\tfold0\nc2\t1\tD\tG1\t0\tFalse\tnull\tfold0\n")
+    (tmp_path / "kinase_universe.tsv").write_text("kinase\nA\nNA\nnull\n")
+    P, C, U, _ = load_gt(tmp_path)
+    assert list(C["role"]) == ["gt", "null"]
+    assert not C["role"].isna().any()
+    assert P["note"].iloc[0] == "NA"
+    assert list(U["kinase"]) == ["A", "NA", "null"]
+    assert P["sign"].dtype.kind == "i" and C["n_targets"].dtype.kind == "i"
+    (tmp_path / "x.tsv").write_text("a\tb\n1\t\n")
+    assert read_gt_tsv(tmp_path / "x.tsv")["b"].isna().all()  # empty stays NaN

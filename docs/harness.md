@@ -7,7 +7,7 @@ Install: `/home/plm_env/bin/python -m pip install -e /workspace`. Tests: `python
   `Evaluator(..., zero_policy="raise")` (the default) raises if a condition has no NaN and more than 50% exact 0.0 (a likely NaN→0 bug).
   It also warns when a kinase's score is constant across conditions. Controls that emit legitimate zeros (oracle, prior-only) use `zero_policy="ignore"`.
 - `gt_pairs` (conditionID, kinase, cls, sign, confidence), `gt_conditions` (conditionID, source, group_id, n_targets, in_M1sel, role, split), universe U.
-  `load_gt()` reads `results/ground_truth/` (DEV + devconfirm). It accepts `gt_pairs.tsv` or `gt_pairs_dev.tsv`, plus `harmony_bins.tsv` if present.
+  `load_gt()` reads `results/ground_truth/` (DEV + devconfirm) via `read_gt_tsv` (keep_default_na=False: role "null" stays a string). It accepts `gt_pairs.tsv` or `gt_pairs_dev.tsv`, plus `harmony_bins.tsv` if present (`harmony_bins_group.tsv` can be passed as `bins` too). The harness never reads `cache/sealed/draft_candidate_v0/`.
 - Harmony bins:
   - `harmony_bins.tsv` keyed by (kinase, group_id) with a frozen `bin` column; or
   - per (conditionID, kinase) with `n_psp_quantified`. The bin is then computed per (kinase, group) as the median over the group's positive conditions, with bins 0 | 1–4 | 5–19 | ≥20.
@@ -88,4 +88,4 @@ ledger.append("zscore", config_dict, "dev", ledger_metrics, branch="1-library", 
 
 ## Timings (64-core node; single process)
 - 1000 conditions × 500 kinases (synthetic): GT indexing + plan + paired ΔM1-sel at B=2000 takes 0.3 s.
-- candidate_gt adapter (780 conditions, 3,644 pairs, 371 groups): full `evaluate` with n_perm=2000 takes 0.18 s; paired Δ (M1-sel, M1-all or M2) at B=2000 takes about 0.06 s each.
+- Synthetic-scale GT (780 conditions, 3,644 pairs, 371 groups; measured on the retired draft layout): full `evaluate` with n_perm=2000 takes 0.18 s; paired Δ (M1-sel, M1-all or M2) at B=2000 takes about 0.06 s each.
