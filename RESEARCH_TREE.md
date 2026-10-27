@@ -8,6 +8,7 @@ Design closed after 3 review rounds (DESIGN v3 + C7/C8). G1 frozen (results/G1.j
 Key finding for strategy: under the pre-registered coverage-aware primary metric (unscored = ½), PSP z-score scores M1-sel 0.515 (scored-only 0.633, coverage 0.58) — barely above random (Δ +0.010, n.s.) — while the popularity prior-only control scores 0.687. Winning therefore requires accurate scores for MANY kinases (incl. understudied ones), i.e. extended/predicted libraries + a statistic that ranks well across kinases with very different substrate counts. Next: baselines finishing; then method branch 1 (library variants) and 2 (Bayesian core).
 
 ## Decision log
+- D10: Near diminishing returns (fresh-reviewer verdict): remaining ideas ≤ +0.01 ≪ TEST MDE 0.06. Plan: B7b audit → one final idea box → seeds 1–4 re-split check → DEV-confirm look → G2 → TEST.
 - D9: Near-misses (A1 p=0.057) are NOT adopted by relaxing the rule post hoc; instead pre-registered as secondary TEST analyses.
 - D8: Amendment C10 (pre-registered) allows per-kinase perturbation signatures in B7 with strict safeguards; rationale: data-driven KS evidence is in scope (brief: 'other sources of KS relationships'), popularity priors remain banned.
 - D7: core-v1 ships z_vif (calibrated) not z_post: −0.007 M1-sel is within the −0.02 non-inferiority margin; calibration is a design desideratum; DEV-confirm look 1 pre-declared z_vif primary. Reference number for further branches = 0.663.
