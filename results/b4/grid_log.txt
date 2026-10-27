@@ -1,0 +1,23 @@
+setup 3s GT_FREEZE 1e6f791c6b85f15d
+0 {'kind': 'none'} 3.7s | M1-sel z/mean/wz 0.673/0.674/0.634 | best 0.674
+10 {'kind': 'expand', 'seed': 'cur', 'q': 0, 'm': 25, 'sign': 'pos', 'beta': 0.25, 'rmin': 0.0, 'weight': 'rs'} 2.0s | M1-sel z/mean/wz 0.676/0.677/0.643 | best 0.679
+20 {'kind': 'expand', 'seed': 'cur', 'q': 0, 'm': 100, 'sign': 'signed', 'beta': 0.5, 'rmin': 0.0, 'weight': 'rs'} 2.2s | M1-sel z/mean/wz 0.673/0.675/0.647 | best 0.679
+30 {'kind': 'expand', 'seed': 'cur', 'q': 0, 'm': 200, 'sign': 'pos', 'beta': 1.0, 'rmin': 0.0, 'weight': 'rs'} 2.4s | M1-sel z/mean/wz 0.671/0.672/0.652 | best 0.682
+40 {'kind': 'expand', 'seed': 'cur', 'q': 1, 'm': 25, 'sign': 'pos', 'beta': 0.25, 'rmin': 0.0, 'weight': 'rs'} 2.0s | M1-sel z/mean/wz 0.674/0.676/0.639 | best 0.682
+50 {'kind': 'expand', 'seed': 'cur', 'q': 1, 'm': 100, 'sign': 'signed', 'beta': 0.5, 'rmin': 0.0, 'weight': 'rs'} 2.4s | M1-sel z/mean/wz 0.671/0.672/0.640 | best 0.682
+60 {'kind': 'expand', 'seed': 'cur', 'q': 1, 'm': 200, 'sign': 'pos', 'beta': 1.0, 'rmin': 0.0, 'weight': 'rs'} 2.3s | M1-sel z/mean/wz 0.665/0.666/0.650 | best 0.682
+70 {'kind': 'expand', 'seed': 'cur', 'q': 3, 'm': 25, 'sign': 'pos', 'beta': 0.25, 'rmin': 0.0, 'weight': 'rs'} 2.0s | M1-sel z/mean/wz 0.674/0.675/0.633 | best 0.682
+80 {'kind': 'expand', 'seed': 'cur', 'q': 3, 'm': 100, 'sign': 'signed', 'beta': 0.5, 'rmin': 0.0, 'weight': 'rs'} 2.5s | M1-sel z/mean/wz 0.674/0.674/0.638 | best 0.682
+90 {'kind': 'expand', 'seed': 'cur', 'q': 3, 'm': 200, 'sign': 'pos', 'beta': 1.0, 'rmin': 0.0, 'weight': 'rs'} 2.4s | M1-sel z/mean/wz 0.665/0.665/0.640 | best 0.682
+100 {'kind': 'expand', 'seed': 'cur+r2np', 'q': 0, 'm': 25, 'sign': 'pos', 'beta': 0.25, 'rmin': 0.0, 'weight': 'rs'} 2.0s | M1-sel z/mean/wz 0.676/0.677/0.647 | best 0.682
+110 {'kind': 'expand', 'seed': 'cur+r2np', 'q': 0, 'm': 100, 'sign': 'signed', 'beta': 0.5, 'rmin': 0.0, 'weight': 'rs'} 2.3s | M1-sel z/mean/wz 0.679/0.680/0.653 | best 0.682
+120 {'kind': 'expand', 'seed': 'cur+r2np', 'q': 0, 'm': 200, 'sign': 'pos', 'beta': 1.0, 'rmin': 0.0, 'weight': 'rs'} 2.5s | M1-sel z/mean/wz 0.674/0.678/0.663 | best 0.682
+130 {'kind': 'expand', 'seed': 'cur+r2np', 'q': 1, 'm': 25, 'sign': 'pos', 'beta': 0.25, 'rmin': 0.0, 'weight': 'rs'} 2.1s | M1-sel z/mean/wz 0.674/0.676/0.642 | best 0.682
+140 {'kind': 'expand', 'seed': 'cur+r2np', 'q': 1, 'm': 100, 'sign': 'signed', 'beta': 0.5, 'rmin': 0.0, 'weight': 'rs'} 2.4s | M1-sel z/mean/wz 0.673/0.675/0.644 | best 0.682
+150 {'kind': 'expand', 'seed': 'cur+r2np', 'q': 1, 'm': 200, 'sign': 'pos', 'beta': 1.0, 'rmin': 0.0, 'weight': 'rs'} 2.3s | M1-sel z/mean/wz 0.665/0.667/0.646 | best 0.682
+160 {'kind': 'expand', 'seed': 'cur+r2np', 'q': 3, 'm': 25, 'sign': 'pos', 'beta': 0.25, 'rmin': 0.0, 'weight': 'rs'} 2.1s | M1-sel z/mean/wz 0.672/0.674/0.640 | best 0.682
+170 {'kind': 'expand', 'seed': 'cur+r2np', 'q': 3, 'm': 100, 'sign': 'signed', 'beta': 0.5, 'rmin': 0.0, 'weight': 'rs'} 2.5s | M1-sel z/mean/wz 0.675/0.677/0.644 | best 0.682
+180 {'kind': 'expand', 'seed': 'cur+r2np', 'q': 3, 'm': 200, 'sign': 'pos', 'beta': 1.0, 'rmin': 0.0, 'weight': 'rs'} 2.5s | M1-sel z/mean/wz 0.669/0.672/0.643 | best 0.682
+190 {'kind': 'impute', 'q': 0, 'rmin': 0.5, 'min_nbr': 3, 'gamma': 0.25} 3.9s | M1-sel z/mean/wz 0.670/0.671/0.648 | best 0.682
+200 {'kind': 'impute', 'q': 3, 'rmin': 0.5, 'min_nbr': 1, 'gamma': 0.5} 4.1s | M1-sel z/mean/wz 0.642/0.642/0.632 | best 0.682
+done 515s, 615 evaluations
