@@ -8,6 +8,7 @@ Design closed after 3 review rounds (DESIGN v3 + C7/C8). G1 frozen (results/G1.j
 Key finding for strategy: under the pre-registered coverage-aware primary metric (unscored = ½), PSP z-score scores M1-sel 0.515 (scored-only 0.633, coverage 0.58) — barely above random (Δ +0.010, n.s.) — while the popularity prior-only control scores 0.687. Winning therefore requires accurate scores for MANY kinases (incl. understudied ones), i.e. extended/predicted libraries + a statistic that ranks well across kinases with very different substrate counts. Next: baselines finishing; then method branch 1 (library variants) and 2 (Bayesian core).
 
 ## Decision log
+- D5: Do NOT add any kinase-popularity prior (literature counts etc.) to close the gap to prior-only: it exploits annotation/drug-target bias the brief warns against. Prior-only remains a reported control; T-unseen and harmony carry the evidence.
 - D4: G1 frozen at commit 7de8eef. MDE ≈0.06.
 - D3: ½ rule confirmed (coverage is part of the objective; M2 ≥ 0 required in 'beats'). Bootstrap bias fixed by C8 before any method comparison.
 - D2: Stimulus first-tier kinases (e.g. EGF→ERK1/2) are DIRECT positives via a pre-registered table — they are the activity changes users most need detected; deeper cascades = downstream (secondary).
@@ -46,7 +47,8 @@ Key finding for strategy: under the pre-registered coverage-aware primary metric
   - [x] 5.1 B1 library variants (408 configs; results/b1/b1_report.md)
     - [!] z-score + r2np top-200: M1-sel 0.664 (nested 0.638; optimism +0.026), coverage ≈1.0, M2 vs PSP-z 0.699 vs 0.633; Δ vs PSP-z +0.12 [0.07,0.16]. Still < prior-only 0.687 (n.s.). r2np > r3 > cantley > curated; Hijazi weak (0.57), decryptM 0.89 (suspicious).
     - [~] 5.1a independent r2np/r3 leakage audit (decryptM 0.89) — BLOCKS adoption
-  - [~] 5.2 B2 Bayesian linear-Gaussian core (noise model, family kernel, closed form) — time box 3 h
+  - [x] 5.2 B2 Bayesian core (results/b2/b2_report.md): curated_union + r2np@100 (α=1), family kernel ρ_f=3, ρ_g=0.25, τ=0.125, no noise model. Nested M1-sel 0.655 (H .644 D .768 O .674), M2 +0.033 vs PSP-z, T-unseen 0.589 (prior-only 0.324). Ablations: −K 0.617, −predicted 0.607, neither 0.553; noise model hurts; posterior-mean ranking 0.672 (post hoc). Calibration 4.6% overall but grows with substrate count (1.2%→7.6%). 8.9 ms/cond CPU-1T.
+    - [!] Complementary to prior-only (prior wins H; B2 wins D and unseen kinases).
   - [ ] 5.3 B3 calibration (effective-m / empirical null)
   - [ ] 5.4 B4 shared-function edge weights; co-regulation/factorisation expansion
   - [ ] 5.5 B5 kinase self-sites
