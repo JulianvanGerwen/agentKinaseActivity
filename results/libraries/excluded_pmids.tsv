@@ -1,0 +1,406 @@
+pmid	reason	n_edges_citing	year	journal	title	evidence
+9771888	ht_ms_edgecount	228	1998	FEBS Lett	Tau is phosphorylated by GSK-3 at several sites found in Alzheimer disease and its biological activity markedly inhibited only after it is prephosphorylated by A-kinase.	ms_mesh:Chromatography, Liquid
+9832145	ht_ms_edgecount	270	1998	J Neurochem	New phosphorylation sites identified in hyperphosphorylated tau (paired helical filament-tau) from Alzheimer's disease brain using nanoelectrospray mass spectrometry.	ms_text:mass spectromet;ms_mesh:Mass Spectrometry
+12096113	ht_ms_text	3	2002	Mol Cell Proteomics	A strategy for the rapid identification of phosphorylation sites in the phosphoproteome.	ms_text:mass spectromet;ht_text:phosphoproteom
+12893264	ht_ms_text	2	2003	Biochem Biophys Res Commun	A sphingosine-dependent protein kinase that specifically phosphorylates 14-3-3 (SDK1) is identified as the kinase domain of PKCdelta: a preliminary note.	ms_text:LC-MS;ht_text:large-scale
+14729942	ht_ms_text	6	2004	Mol Cell Proteomics	Identification of phosphoproteins and their phosphorylation sites in the WEHI-231 B lymphoma cell line.	ms_text:mass spectromet;ms_mesh:Chromatography, Liquid|Phosphoproteins|Proteomics|Spectrometry, Mass, Matrix-Assisted Laser Desorption-Ionization;ht_text:proteome-wide;ht_mesh:Proteomics
+14768064	ht_ms_text	6	2004	Eur J Immunol	Identification of pro-interleukin 16 as a novel target of MAP kinases in activated T lymphocytes.	ms_text:proteomic;ms_mesh:Spectrometry, Mass, Matrix-Assisted Laser Desorption-Ionization;ht_text:phosphoproteom
+15138294	ht_ms_text	2	2004	J Cell Biol	Regulation of cell migration and survival by focal adhesion targeting of Lasp-1.	ms_text:proteomic;ht_text:Large-scale
+15144186	ht_ms_text	85	2004	Anal Chem	Robust phosphoproteomic profiling of tyrosine phosphorylation sites from human T cells using immobilized metal affinity chromatography and tandem mass spectrometry.	ms_text:proteomic;ms_mesh:Mass Spectrometry|Proteomics;ht_text:phosphoproteom;ht_mesh:Proteomics
+15253667	ht_ms_text	10	2004	Anal Chem	Open tubular immobilized metal ion affinity chromatography combined with MALDI MS and MS/MS for identification of protein phosphorylation sites.	ms_text:MS;ht_text:phosphopeptide enrichment
+15302935	ht_ms_text;ht_ms_edgecount	229	2004	Proc Natl Acad Sci U S A	Large-scale characterization of HeLa cell nuclear phosphoproteins.	ms_text:MS;ms_mesh:Mass Spectrometry|Phosphoproteins;ht_text:Large-scale
+15316024	ht_ms_text	1	2004	J Biol Chem	Tyrosine phosphoproteomics of fibroblast growth factor signaling: a role for insulin receptor substrate-4.	ms_text:proteomic;ms_mesh:Mass Spectrometry|Phosphoproteins|Proteome;ht_text:phosphoproteom;ht_mesh:Proteome
+15345747	ht_ms_text	20	2004	Mol Cell Proteomics	Phosphoproteomic analysis of the developing mouse brain.	ms_text:proteomic;ms_mesh:Mass Spectrometry|Proteome;ht_text:Phosphoproteom;ht_mesh:Proteome
+15572359	ht_ms_text	2	2005	J Biol Chem	Proteomic analysis of in vivo phosphorylated synaptic proteins.	ms_text:Proteomic;ms_mesh:Phosphoproteins|Proteomics;ht_text:global phospho;ht_mesh:Proteomics
+15592455	ht_ms_text	122	2005	Nat Biotechnol	Immunoaffinity profiling of tyrosine phosphorylation in cancer cells.	ms_text:proteomic;ms_mesh:Chromatography, Liquid|Mass Spectrometry|Proteomics;ht_text:global phospho;ht_mesh:Proteomics
+15822905	ht_ms_text	24	2005	J Proteome Res	Phosphoproteomic analysis of synaptosomes from human cerebral cortex.	ms_text:proteomic;ms_mesh:Phosphoproteins|Proteomics;ht_text:Phosphoproteom;ht_mesh:Proteomics
+15951569	ht_ms_text	56	2005	Mol Cell Proteomics	Time-resolved mass spectrometry of tyrosine phosphorylation sites in the epidermal growth factor receptor signaling network reveals dynamic modules.	ms_text:mass spectromet;ms_mesh:Chromatography, Liquid|Mass Spectrometry;ht_text:iTRAQ
+15980451	ht_ms_text	4	2005	Nucleic Acids Res	GPS: a comprehensive www server for phosphorylation sites prediction.	ms_text:mass spectromet;ms_mesh:Phosphoproteins;ht_text:large-scale
+16055503	ht_ms_text	1	2005	Mol Biol Cell	Phosphoproteome profiling of transforming growth factor (TGF)-beta signaling: abrogation of TGFbeta1-dependent phosphorylation of transcription factor-II-I (TFII-I) enhances cooperation of TFII-I and 	ms_text:proteomic;ms_mesh:Proteome;ht_text:Phosphoproteom;ht_mesh:Proteome
+16083285	ht_ms_text	63	2005	J Proteome Res	Global phosphoproteome of HT-29 human colon adenocarcinoma cells.	ms_text:IMAC;ms_mesh:Mass Spectrometry|Proteome;ht_text:Global phospho;ht_mesh:Proteome
+16093479	ht_ms_text	3	2005	Mol Cell Proteomics	Regulation of co-repressive activity of and HDAC recruitment to RIP140 by site-specific phosphorylation.	ms_text:proteomic;ms_mesh:Mass Spectrometry|Proteomics;ht_text:comprehensive proteom;ht_mesh:Proteomics
+16094384	ht_ms_text	41	2005	Nat Methods	Quantitative phosphoproteome analysis using a dendrimer conjugation chemistry and tandem mass spectrometry.	ms_text:mass spectromet;ms_mesh:Mass Spectrometry|Phosphoproteins|Proteome;ht_text:phosphoproteom;ht_mesh:Proteome
+16097034	ht_ms_text	5	2005	Proteomics	Global phosphoproteome analysis on human HepG2 hepatocytes using reversed-phase diagonal LC.	ms_text:proteomic;ms_mesh:Phosphoproteins|Proteomics;ht_text:Global phospho;ht_mesh:Proteomics
+16097765	ht_ms_text	2	2005	Anal Chem	Mapping of phosphorylation sites by a multi-protease approach with specific phosphopeptide enrichment and NanoLC-MS/MS analysis.	ms_text:MS/MS;ms_mesh:Chromatography, Liquid|Tandem Mass Spectrometry;ht_text:phosphopeptide enrichment
+16212419	ht_ms_text	2	2005	J Proteome Res	Phosphoproteome analysis of HeLa cells using stable isotope labeling with amino acids in cell culture (SILAC).	ms_text:SILAC;ms_mesh:Isotope Labeling|Mass Spectrometry|Proteome|Proteomics;ht_text:Phosphoproteom;ht_mesh:Proteome|Proteomics
+16396499	ht_ms_text	1	2006	J Proteome Res	Phosphoproteomic analysis of rat liver by high capacity IMAC and LC-MS/MS.	ms_text:proteomic;ms_mesh:Chromatography, Liquid|Mass Spectrometry|Phosphoproteins|Proteomics;ht_text:Phosphoproteom;ht_mesh:Proteomics
+16464493	ht_ms_text	6	2006	Leuk Res	Phosphoproteomic analysis of AML cell lines identifies leukemic oncogenes.	ms_text:proteomic;ms_mesh:Chromatography, Liquid|Mass Spectrometry|Proteomics;ht_text:Phosphoproteom;ht_mesh:Proteomics
+16497976	ht_ms_text;ht_ms_edgecount	287	2006	Blood	A common phosphotyrosine signature for the Bcr-Abl kinase.	ms_text:mass spectromet;ms_mesh:Proteomics;ht_text:phosphoproteom;ht_mesh:Proteomics
+16565220	ht_ms_text	91	2006	Proc Natl Acad Sci U S A	Phosphoproteome analysis of the human mitotic spindle.	ms_text:mass spectromet;ms_mesh:Mass Spectrometry|Phosphoproteins|Proteome;ht_text:Phosphoproteom;ht_mesh:Proteome
+16602700	ht_ms_text	1	2006	J Proteome Res	Beyond linker histones and high mobility group proteins: global profiling of perchloric acid soluble proteins.	ms_text:mass spectromet;ms_mesh:Chromatography, Liquid|Mass Spectrometry|Proteome;ht_text:global profil;ht_mesh:Proteome
+16637659	ht_ms_text	4	2006	J Am Chem Soc	Uncovering quantitative protein interaction networks for mouse PDZ domains using protein microarrays.	ms_mesh:Spectrometry, Mass, Matrix-Assisted Laser Desorption-Ionization;ht_text:high-throughput
+16729043	ht_ms_text	19	2005	Mol Syst Biol	Phosphotyrosine interactome of the ErbB-receptor kinase family.	ms_text:proteomic;ht_text:quantitative proteomic
+16807684	ht_ms_text	1	2006	Pituitary	Phosphoproteomic analysis of the human pituitary.	ms_text:proteomic;ms_mesh:Chromatography, Liquid|Phosphoproteins|Proteomics|Tandem Mass Spectrometry;ht_text:Phosphoproteom;ht_mesh:Proteomics
+16964243	ht_ms_text	149	2006	Nat Biotechnol	A probability-based approach for high-throughput protein phosphorylation analysis and site localization.	ms_text:mass spectromet;ms_mesh:Mass Spectrometry;ht_text:high-throughput
+17016520	ht_ms_text;ht_ms_edgecount	269	2006	Mol Syst Biol	Effects of HER2 overexpression on cell signaling networks governing proliferation and migration.	ms_text:mass spectromet;ms_mesh:Mass Spectrometry;ht_text:phosphoproteom
+17053785	ht_ms_text	2	2006	EMBO J	Tyrosine phosphorylated Par3 regulates epithelial tight junction assembly promoted by EGFR signaling.	ms_text:proteomic;ms_mesh:Proteomics;ht_text:phosphoproteom;ht_mesh:Proteomics
+17081983	compendium;ht_ms_text;ht_ms_edgecount	752	2006	Cell	Global, in vivo, and site-specific phosphorylation dynamics in signaling networks.	ms_text:mass spectromet;ms_mesh:Mass Spectrometry|Proteome;ht_text:6,600 phosphorylation sites;ht_mesh:Proteome
+17114649	ht_ms_text	3	2007	Mol Cell Proteomics	Qualitative and quantitative analyses of protein phosphorylation in naive and stimulated mouse synaptosomal preparations.	ms_text:mass spectromet;ms_mesh:Chromatography, Liquid|Mass Spectrometry|Proteomics|Tandem Mass Spectrometry;ht_text:phosphopeptide enrichment;ht_mesh:Proteomics
+17164333	ht_ms_text	1	2006	Proc Natl Acad Sci U S A	Phosphorylation of the ATP-binding loop directs oncogenicity of drug-resistant BCR-ABL mutants.	ms_mesh:Mass Spectrometry|Proteomics;ht_text:global phospho;ht_mesh:Proteomics
+17192257	ht_ms_text;ht_ms_edgecount	185	2007	Mol Cell Proteomics	Proteomics analysis of protein kinases by target class-selective prefractionation and tandem mass spectrometry.	ms_text:Proteomic;ms_mesh:Chromatography, Liquid|Proteomics|Tandem Mass Spectrometry;ht_text:200 different phosphorylation sites;ht_mesh:Proteomics
+17242355	ht_ms_text	5	2007	Proc Natl Acad Sci U S A	Large-scale phosphorylation analysis of mouse liver.	ms_text:MS;ms_mesh:Mass Spectrometry|Proteomics;ht_text:Large-scale;ht_mesh:Proteomics
+17287340	ht_ms_text;ht_ms_edgecount	277	2007	Proc Natl Acad Sci U S A	Global proteomic profiling of phosphopeptides using electron transfer dissociation tandem mass spectrometry.	ms_text:proteomic;ms_mesh:Proteomics|Tandem Mass Spectrometry;ht_text:global phospho;ht_mesh:Proteomics
+17322306	ht_ms_text	51	2007	Mol Cell Proteomics	Phosphopeptide enrichment by aliphatic hydroxy acid-modified metal oxide chromatography for nano-LC-MS/MS in proteomics applications.	ms_text:LC-MS;ms_mesh:Chromatography, Liquid|Mass Spectrometry|Proteomics;ht_text:Phosphopeptide enrichment;ht_mesh:Proteomics
+17389395	ht_ms_text;ht_ms_edgecount	294	2007	Proc Natl Acad Sci U S A	Multiple reaction monitoring for robust quantitative proteomic analysis of cellular signaling networks.	ms_text:proteomic;ms_mesh:Mass Spectrometry|Proteome|Proteomics;ht_text:quantitative proteomic;ht_mesh:Proteome|Proteomics
+17446864	ht_ms_text	12	2007	EMBO J	Proteomic screen defines the Polo-box domain interactome and identifies Rock2 as a Plk1 substrate.	ms_text:Proteomic;ms_mesh:Proteome|Tandem Mass Spectrometry;ht_text:622 proteins;ht_mesh:Proteome
+17487921	ht_ms_text	4	2007	Electrophoresis	Toward a global characterization of the phosphoproteome in prostate cancer cells: identification of phosphoproteins in the LNCaP cell line.	ms_text:LC-MS;ms_mesh:Phosphoproteins|Proteome|Spectrometry, Mass, Electrospray Ionization;ht_text:phosphoproteom;ht_mesh:Proteome
+17525332	ht_ms_text	19	2007	Science	ATM and ATR substrate analysis reveals extensive protein networks responsive to DNA damage.	ms_text:proteomic;ms_mesh:Isotope Labeling|Proteome;ht_text:large-scale;ht_mesh:Proteome
+17564427	ht_ms_text	6	2007	J Proteome Res	A systematic MS-based approach for identifying in vitro substrates of PKA and PKG in rat uteri.	ms_text:MS;ms_mesh:Mass Spectrometry|Proteomics;ht_text:phosphoproteom;ht_mesh:Proteomics
+17570479	ht_ms_text;ht_ms_edgecount	4253	2007	Cell	Systematic discovery of in vivo phosphorylation networks.	ms_mesh:Phosphoproteins|Proteomics;ht_text:proteome-wide;ht_mesh:Proteomics
+17693683	ht_ms_text	27	2007	Mol Cell Proteomics	Quantitative phosphoproteome profiling of Wnt3a-mediated signaling network: indicating the involvement of ribonucleoside-diphosphate reductase M2 subunit phosphorylation at residue serine 20 in canoni	ms_text:LC-MS;ms_mesh:Isotope Labeling|Phosphoproteins|Proteome;ht_text:phosphoproteom;ht_mesh:Proteome
+17697330	ht_ms_text	1	2007	Mol Cancer	Phosphorylation of Ser78 of Hsp27 correlated with HER-2/neu status and lymph node positivity in breast cancer.	ms_text:proteomic;ms_mesh:Proteome;ht_text:phosphoproteom;ht_mesh:Proteome
+17924679	ht_ms_text	148	2007	J Proteome Res	Improved titanium dioxide enrichment of phosphopeptides from HeLa cells and high confident phosphopeptide identification by cross-validation of MS/MS and MS/MS/MS spectra.	ms_text:titanium dioxide;ms_mesh:Mass Spectrometry|Proteomics;ht_text:phosphoproteom;ht_mesh:Proteomics
+17939756	ht_ms_text	1	2007	Assay Drug Dev Technol	An enzyme-linked immunosorbent assay for protein kinase D activity using phosphorylation site-specific antibodies.	ms_mesh:Mass Spectrometry;ht_text:high-throughput
+18077418	ht_ms_text	35	2007	Proc Natl Acad Sci U S A	Profiling of UV-induced ATM/ATR signaling pathways.	ms_text:mass spectromet;ht_text:570 sites
+18083107	ht_ms_text	73	2007	Cell	Global survey of phosphotyrosine signaling identifies oncogenic kinases in lung cancer.	ms_text:proteomic;ht_text:Global survey
+18088087	ht_ms_text	143	2008	J Proteome Res	Phosphoproteome of resting human platelets.	ms_mesh:Phosphoproteins|Proteome|Tandem Mass Spectrometry;ht_text:Phosphoproteom;ht_mesh:Proteome
+18187866	ht_ms_text	8	2008	Anal Sci	Automated phosphoproteome analysis for cultured cancer cells by two-dimensional nanoLC-MS using a calcined titania/C18 biphasic column.	ms_text:MS;ms_mesh:Mass Spectrometry|Phosphoproteins|Proteome;ht_text:phosphoproteom;ht_mesh:Proteome
+18212344	ht_ms_text;ht_ms_edgecount	224	2008	Mol Cell Proteomics	Hydrophilic interaction chromatography reduces the complexity of the phosphoproteome and improves global phosphopeptide isolation and detection.	ms_text:Proteomic;ms_mesh:Chromatography, Liquid|Proteome|Proteomics;ht_text:phosphoproteom;ht_mesh:Proteome|Proteomics
+18220336	ht_ms_text	37	2008	J Proteome Res	Combining protein-based IMAC, peptide-based IMAC, and MudPIT for efficient phosphoproteomic analysis.	ms_text:IMAC;ms_mesh:Phosphoproteins|Proteome|Tandem Mass Spectrometry;ht_text:phosphoproteom;ht_mesh:Proteome
+18283219	ht_ms_text	2	2008	Mol Cell Proteomics	A high throughput proteomics screen identifies novel substrates of death-associated protein kinase.	ms_text:proteomic;ms_mesh:Mass Spectrometry|Proteomics;ht_text:high throughput;ht_mesh:Proteomics
+18318008	ht_ms_text	2	2008	Proteomics	Large-scale phosphoproteome analysis of human liver tissue by enrichment and fractionation of phosphopeptides with strong anion exchange chromatography.	ms_text:IMAC;ms_mesh:Chromatography, Liquid|Proteome|Tandem Mass Spectrometry;ht_text:Large-scale;ht_mesh:Proteome
+18452278	ht_ms_text;ht_ms_edgecount	345	2008	J Proteome Res	Motif-specific sampling of phosphoproteomes.	ms_text:proteomic;ms_mesh:Phosphoproteins|Proteome|Proteomics;ht_text:phosphoproteom;ht_mesh:Proteome|Proteomics
+18491316	ht_ms_text	96	2008	Proteomics	Phosphoproteome analysis of the human Chang liver cells using SCX and a complementary mass spectrometric strategy.	ms_text:mass spectromet;ms_mesh:Chromatography, Liquid|Mass Spectrometry|Phosphoproteins|Proteomics;ht_text:Phosphoproteom;ht_mesh:Proteomics
+18510355	ht_ms_text	38	2008	J Proteome Res	Phosphoproteomic analysis of human brain by calcium phosphate precipitation and mass spectrometry.	ms_text:proteomic;ms_mesh:Chromatography, Liquid|Proteome|Tandem Mass Spectrometry;ht_text:Phosphoproteom;ht_mesh:Proteome
+18578522	ht_ms_text	106	2008	J Proteome Res	TiO(2)-based phosphoproteomic analysis of the plasma membrane and the effects of phosphatase inhibitor treatment.	ms_text:proteomic;ms_mesh:Tandem Mass Spectrometry;ht_text:phosphoproteom
+18669648	compendium;ht_ms_text;ht_ms_edgecount	1277	2008	Proc Natl Acad Sci U S A	A quantitative atlas of mitotic phosphorylation.	ms_text:mass spectromet;ms_mesh:Mass Spectrometry|Proteomics;ht_text:phosphopeptide enrichment;ht_mesh:Proteomics
+18691976	compendium;ht_ms_text;ht_ms_edgecount	650	2008	Mol Cell	Kinase-selective enrichment enables quantitative phosphoproteomics of the kinome across the cell cycle.	ms_text:proteomic;ms_mesh:Phosphoproteins|Proteomics;ht_text:quantitative phosphoproteomic;ht_mesh:Proteomics
+18702456	ht_ms_text	10	2008	Anal Chem	Characterization of the human cerebrospinal fluid phosphoproteome by titanium dioxide affinity chromatography and mass spectrometry.	ms_text:titanium dioxide;ms_mesh:Chromatography, Liquid|Phosphoproteins|Proteome|Spectrometry, Mass, Matrix-Assisted Laser Desorption-Ionization;ht_text:phosphoproteom;ht_mesh:Proteome
+18707149	ht_ms_text	134	2008	J Proteome Res	Immobilized metal affinity chromatography revisited: pH/acid control toward high selectivity in phosphoproteomics.	ms_text:proteomic;ms_mesh:Phosphoproteins|Proteome|Tandem Mass Spectrometry;ht_text:phosphoproteom;ht_mesh:Proteome
+18721752	ht_ms_text	9	2008	Chem Biol	System-wide investigation of ErbB4 reveals 19 sites of Tyr phosphorylation that are unusually selective in their recruitment properties.	ms_text:mass spectromet;ht_text:System-wide
+18767875	ht_ms_edgecount	293	2008	J Proteome Res	Successive and selective release of phosphorylated peptides captured by hydroxy acid-modified metal oxide chromatography.	ms_mesh:Proteome;ht_text:phosphoproteom;ht_mesh:Proteome
+18845612	ht_ms_text	1	2008	J Physiol	AMPK-independent pathways regulate skeletal muscle fatty acid oxidation.	ms_text:proteomic;ht_text:phosphoproteom
+18847512	ht_ms_text	2	2008	Genome Biol	Identification of CDK2 substrates in human cell lysates.	ms_text:mass spectromet;ms_mesh:Mass Spectrometry;ht_text:phosphoproteom
+19007248	ht_ms_text	129	2008	Anal Chem	Evaluation of the low-specificity protease elastase for large-scale phosphoproteome analysis.	ms_text:Orbitrap;ms_mesh:Chromatography, Liquid|Mass Spectrometry|Proteome;ht_text:large-scale;ht_mesh:Proteome
+19144319	ht_ms_text	6	2009	Immunity	The phagosomal proteome in interferon-gamma-activated macrophages.	ms_text:proteomic;ms_mesh:Mass Spectrometry|Proteome|Proteomics;ht_text:quantitative proteomic;ht_mesh:Proteome|Proteomics
+19291795	ht_ms_text	2	2009	Int J Cancer	Proteomic and phosphoproteomic alterations in benign, premalignant and tumor human breast epithelial cells and xenograft lesions: biomarkers of progression.	ms_text:Proteomic;ms_mesh:Proteomics;ht_text:phosphoproteom;ht_mesh:Proteomics
+19346560	ht_ms_text	1	2009	Mol Cell Proteomics	The phosphoproteome of bloodstream form Trypanosoma brucei, causative agent of African sleeping sickness.	ms_text:proteomic;ms_mesh:Mass Spectrometry|Phosphoproteins|Proteome|Proteomics;ht_text:phosphoproteom;ht_mesh:Proteome|Proteomics
+19367720	ht_ms_text	5	2008	J Proteome Res	Phosphorylation analysis of primary human T lymphocytes using sequential IMAC and titanium oxide enrichment.	ms_text:IMAC;ms_mesh:Chromatography, Liquid|Mass Spectrometry|Proteomics;ht_text:large-scale;ht_mesh:Proteomics
+19369195	ht_ms_text	88	2009	Mol Cell Proteomics	Large-scale proteomics analysis of the human kinome.	ms_text:proteomic;ms_mesh:Mass Spectrometry|Proteome|Proteomics;ht_text:Large-scale;ht_mesh:Proteome|Proteomics
+19413330	ht_ms_edgecount	605	2009	Anal Chem	Lys-N and trypsin cover complementary parts of the phosphoproteome in a refined SCX-based approach.	ms_mesh:Proteome;ht_text:phosphoproteom;ht_mesh:Proteome
+19415658	ht_ms_text;ht_ms_edgecount	266	2009	Proteomics	Phosphoproteomic analysis of distinct tumor cell lines in response to nocodazole treatment.	ms_text:proteomic;ms_mesh:Chromatography, Liquid|Mass Spectrometry|Phosphoproteins|Proteomics;ht_text:Phosphoproteom;ht_mesh:Proteomics
+19534553	ht_ms_text	44	2009	J Proteome Res	An extensive survey of tyrosine phosphorylation revealing new sites in human mammary epithelial cells.	ms_text:mass spectromet;ms_mesh:Chromatography, Liquid|Phosphoproteins|Proteome|Tandem Mass Spectrometry;ht_text:716 unique peptides;ht_mesh:Proteome
+19562805	ht_ms_text	43	2009	Proteomics	Quantitative analysis of phosphopeptides in search of the disease biomarker from the hepatocellular carcinoma specimen.	ms_text:TiO2;ms_mesh:Isotope Labeling|Mass Spectrometry|Proteome;ht_text:high-throughput;ht_mesh:Proteome
+19616514	ht_ms_text	2	2009	Biochem Biophys Res Commun	Programmed cell death protein 5 (PDCD5) is phosphorylated by CK2 in vitro and in 293T cells.	ms_text:proteomic;ht_text:phosphoproteom
+19632164	ht_ms_text	1	2009	Mol Oncol	Identification of c-Src tyrosine kinase substrates in platelet-derived growth factor receptor signaling.	ms_text:SILAC;ms_mesh:Chromatography, Liquid|Isotope Labeling|Tandem Mass Spectrometry;ht_text:SILAC
+19651622	compendium;ht_ms_text;ht_ms_edgecount	821	2009	Mol Cell Proteomics	Global effects of kinase inhibitors on signaling networks revealed by quantitative phosphoproteomics.	ms_text:proteomic;ms_mesh:Phosphoproteins|Proteome|Proteomics;ht_text:quantitative phosphoproteomic;ht_mesh:Proteome|Proteomics
+19664994	ht_ms_text;ht_ms_edgecount	214	2009	Cell Stem Cell	Phosphoproteomic analysis of human embryonic stem cells.	ms_text:proteomic;ms_mesh:Phosphoproteins|Proteome|Proteomics;ht_text:Phosphoproteom;ht_mesh:Proteome|Proteomics
+19664995	ht_ms_text;ht_ms_edgecount	245	2009	Cell Stem Cell	Phosphorylation dynamics during early differentiation of human embryonic stem cells.	ms_text:mass spectromet;ms_mesh:Phosphoproteins|Proteome;ht_text:5222 proteins;ht_mesh:Proteome
+19690332	ht_ms_text	130	2009	Sci Signal	Quantitative phosphoproteomic analysis of T cell receptor signaling reveals system-wide modulation of protein-protein interactions.	ms_text:proteomic;ms_mesh:Phosphoproteins|Proteomics;ht_text:Quantitative phosphoproteomic;ht_mesh:Proteomics
+19691289	compendium;ht_ms_text	85	2009	J Proteome Res	Quantitative analysis of the human spindle phosphoproteome at distinct mitotic stages.	ms_text:mass spectromet;ms_mesh:Phosphoproteins|Proteome;ht_text:phosphoproteom;ht_mesh:Proteome
+19767751	ht_ms_text	21	2009	Nat Struct Mol Biol	Phosphoproteomics reveals new ERK MAP kinase targets and links ERK to nucleoporin-mediated nuclear transport.	ms_text:proteomic;ms_mesh:Phosphoproteins|Proteomics;ht_text:Phosphoproteom;ht_mesh:Proteomics
+19789182	ht_ms_text	6	2009	J Cell Sci	Tyrosine phosphorylation of nuclear-membrane protein emerin by Src, Abl and other kinases.	ms_text:proteomic;ms_mesh:Mass Spectrometry;ht_text:Phosphoproteom
+19824718	ht_ms_text	2	2009	J Proteome Res	An initial characterization of the serum phosphoproteome.	ms_text:mass spectromet;ms_mesh:Chromatography, Liquid|Phosphoproteins|Proteome|Proteomics|Tandem Mass Spectrometry;ht_text:phosphoproteom;ht_mesh:Proteome|Proteomics
+19901323	ht_ms_text;ht_ms_edgecount	230	2009	Proc Natl Acad Sci U S A	Multiple myeloma phosphotyrosine proteomic profile associated with FGFR3 expression, ligand activation, and drug inhibition.	ms_text:proteomic;ms_mesh:Mass Spectrometry|Proteome;ht_text:Label-free quantif;ht_mesh:Proteome
+19920251	ht_ms_text	1	2009	Sci Signal	Tyrosine phosphorylation inhibits PKM2 to promote the Warburg effect and tumor growth.	ms_text:proteomic;ms_mesh:Proteomics;ht_text:phosphoproteom;ht_mesh:Proteomics
+20051463	ht_ms_text	1	2010	Mol Cell Proteomics	Global phosphoproteomics identifies a major role for AKT and 14-3-3 in regulating EDC3.	ms_text:proteomic;ms_mesh:Phosphoproteins|Proteomics;ht_text:Global phospho;ht_mesh:Proteomics
+20058876	ht_ms_text;ht_ms_edgecount	179	2010	Anal Chem	Exploring the human leukocyte phosphoproteome using a microfluidic reversed-phase-TiO2-reversed-phase high-performance liquid chromatography phosphochip coupled to a quadrupole time-of-flight mass spe	ms_text:TiO2;ms_mesh:Proteome|Spectrometry, Mass, Electrospray Ionization;ht_text:phosphoproteom;ht_mesh:Proteome
+20059949	ht_ms_text	2	2009	Dev Cell	Cell cycle control of wnt receptor activation.	ms_mesh:Proteomics;ht_text:kinome-wide;ht_mesh:Proteomics
+20068231	compendium;ht_ms_text;ht_ms_edgecount	1447	2010	Sci Signal	Quantitative phosphoproteomics reveals widespread full phosphorylation site occupancy during mitosis.	ms_text:proteomic;ms_mesh:Mass Spectrometry|Phosphoproteins|Proteome|Proteomics;ht_text:Quantitative phosphoproteomic;ht_mesh:Proteome|Proteomics
+20071362	compendium	0				compendium PMID
+20116462	ht_ms_text	1	2010	J Proteomics	Phosphoproteomic characterization of PYK2 signaling pathways involved in osteogenesis.	ms_text:proteomic;ms_mesh:Phosphoproteins|Proteome;ht_text:Phosphoproteom;ht_mesh:Proteome
+20166139	ht_ms_text;ht_ms_edgecount	331	2010	Electrophoresis	Phosphoproteome analysis of human liver tissue by long-gradient nanoflow LC coupled with multiple stage MS analysis.	ms_text:MS;ms_mesh:Chromatography, Liquid|Phosphoproteins|Proteome|Proteomics|Tandem Mass Spectrometry;ht_text:Phosphoproteom;ht_mesh:Proteome|Proteomics
+20187088	ht_ms_text	20	2010	Rapid Commun Mass Spectrom	A comprehensive and non-prefractionation on the protein level approach for the human urinary proteome: touching phosphorylation in urine.	ms_text:proteomic;ms_mesh:Chromatography, Liquid|Phosphoproteins|Proteome|Tandem Mass Spectrometry;ht_text:1310 non-redundant proteins;ht_mesh:Proteome
+20190765	ht_ms_text	1	2010	Nat Chem Biol	A chemical and phosphoproteomic characterization of dasatinib action in lung cancer.	ms_text:proteomic;ms_mesh:Mass Spectrometry|Phosphoproteins|Proteomics;ht_text:phosphoproteom;ht_mesh:Proteomics
+20230923	ht_ms_text	71	2010	J Proteomics	Phosphoproteomic analysis of primary human multiple myeloma cells.	ms_text:proteomic;ms_mesh:Phosphoproteins|Proteome;ht_text:Phosphoproteom;ht_mesh:Proteome
+20307106	ht_ms_text	2	2010	J Proteome Res	Activation of aortic endothelial cells by oxidized phospholipids: a phosphoproteomic analysis.	ms_text:proteomic;ms_mesh:Phosphoproteins|Proteome|Proteomics;ht_text:phosphoproteom;ht_mesh:Proteome|Proteomics
+20363803	compendium	0				compendium PMID
+20506281	ht_ms_text	3	2010	J Cell Biochem	Fyn promotes phosphorylation of collapsin response mediator protein 1 at tyrosine 504, a novel, isoform-specific regulatory site.	ms_text:proteomic;ms_mesh:Phosphoproteins;ht_text:large-scale
+20519438	ht_ms_text	2	2010	Mol Biol Cell	Phosphorylation controls autoinhibition of cytoplasmic linker protein-170.	ms_text:proteomic;ms_mesh:Proteome;ht_text:phosphoproteom;ht_mesh:Proteome
+20604938	ht_ms_text	1	2010	BMC Genomics	Causal reasoning identifies mechanisms of sensitivity for a novel AKT kinase inhibitor, GSK690693.	ms_text:proteomic;ms_mesh:Phosphoproteins|Proteome;ht_text:phosphoproteom;ht_mesh:Proteome
+20661426	ht_ms_text	1	2010	PLoS One	Elucidating the CXCL12/CXCR4 signaling network in chronic lymphocytic leukemia through phosphoproteomics analysis.	ms_text:proteomic;ms_mesh:Mass Spectrometry|Proteomics;ht_text:phosphoproteom;ht_mesh:Proteomics
+20713729	ht_ms_text	1	2010	Proc Natl Acad Sci U S A	Quantitative phosphoproteomic analysis reveals cAMP/vasopressin-dependent signaling pathways in native renal thick ascending limb cells.	ms_text:proteomic;ms_mesh:Mass Spectrometry|Phosphoproteins|Proteome|Proteomics;ht_text:Quantitative phosphoproteomic;ht_mesh:Proteome|Proteomics
+20724476	ht_ms_text	3	2010	J Biol Chem	p38 MAP kinase and MAPKAP kinases MK2/3 cooperatively phosphorylate epithelial keratins.	ms_text:proteomic;ht_text:phosphoproteom
+21049007	ht_ms_text	3	2010	PLoS One	Profiling Y561-dependent and -independent substrates of CSF-1R in epithelial cells.	ms_text:mass spectromet;ms_mesh:Chromatography, Liquid|Tandem Mass Spectrometry;ht_text:SILAC
+21097543	ht_ms_text	3	2011	Mol Cell Proteomics	Identification of phosphoproteins associated with human neutrophil granules following chemotactic peptide stimulation.	ms_text:proteomic;ms_mesh:Phosphoproteins;ht_text:243 unique phosphopeptides
+21152398	ht_ms_text	1	2010	PLoS One	Phosphoproteomics profiling of human skin fibroblast cells reveals pathways and proteins affected by low doses of ionizing radiation.	ms_text:proteomic;ms_mesh:Mass Spectrometry|Phosphoproteins|Proteome|Proteomics;ht_text:Phosphoproteom;ht_mesh:Proteome|Proteomics
+21406692	compendium	0				compendium PMID
+21442024	ht_ms_text	6	2010	Genes Cancer	Critical role of Shp2 in tumor growth involving regulation of c-Myc.	ms_text:proteomic;ht_text:phosphoproteom
+21489406	ht_ms_text	1	2011	Biol Psychiatry	Type 1 equilibrative nucleoside transporter regulates ethanol drinking through accumbal N-methyl-D-aspartate receptor signaling.	ms_text:iTRAQ;ht_text:iTRAQ
+21499296	ht_ms_text	1	2011	Oncogene	Phosphoproteomic mass spectrometry profiling links Src family kinases to escape from HER2 tyrosine kinase inhibition.	ms_text:proteomic;ms_mesh:Mass Spectrometry|Phosphoproteins|Proteomics;ht_text:Phosphoproteom;ht_mesh:Proteomics
+21632985	ht_ms_text	2	2011	Sci Transl Med	A HIF-regulated VHL-PTP1B-Src signaling axis identifies a therapeutic target in renal cell carcinoma.	ms_text:proteomic;ht_text:quantitative phosphoproteomic
+21644927	ht_ms_text	2	2011	Biochem J	Discovery of cellular substrates for protein kinase A using a peptide array screening protocol.	ms_text:MS;ht_text:phosphoproteom
+21659604	compendium;ht_ms_text	2	2011	Science	The mTOR-regulated phosphoproteome reveals a mechanism of mTORC1-mediated inhibition of growth factor signaling.	ms_text:mass spectromet;ms_mesh:Mass Spectrometry|Phosphoproteins|Proteome;ht_text:phosphoproteom;ht_mesh:Proteome
+21659605	ht_ms_text	2	2011	Science	Phosphoproteomic analysis identifies Grb10 as an mTORC1 substrate that negatively regulates insulin signaling.	ms_text:proteomic;ms_mesh:Phosphoproteins|Proteome;ht_text:Phosphoproteom;ht_mesh:Proteome
+21712546	compendium	0				compendium PMID
+21725060	ht_ms_text	8	2011	Mol Cell Proteomics	Visualization and biochemical analyses of the emerging mammalian 14-3-3-phosphoproteome.	ms_text:mass spectromet;ms_mesh:Mass Spectrometry|Phosphoproteins;ht_text:phosphoproteom
+21787120	ht_ms_text	2	2011	Crit Rev Biochem Mol Biol	Defining genome maintenance pathways using functional genomic approaches.	ms_text:proteomic;ms_mesh:Mass Spectrometry|Proteomics;ht_text:high-throughput;ht_mesh:Proteomics
+21857030	compendium	0				compendium PMID
+21902226	compendium	0				compendium PMID
+21907143	ht_ms_text	1	2011	Cell Metab	C2 domain-containing phosphoprotein CDP138 regulates GLUT4 insertion into the plasma membrane.	ms_text:proteomic;ms_mesh:Phosphoproteins|Proteomics;ht_text:quantitative phosphoproteomic;ht_mesh:Proteomics
+21936566	compendium	0				compendium PMID
+21936567	ht_ms_text	2	2011	J Proteome Res	Unbiased functional proteomics strategy for protein kinase inhibitor validation and identification of bona fide protein kinase substrates: application to identification of EEF1D as a substrate for CK2	ms_text:proteomic;ms_mesh:Isotope Labeling|Proteomics;ht_text:large-scale;ht_mesh:Proteomics
+21944720	ht_ms_text	2	2011	Dev Cell	Cyclin E constrains Cdk5 activity to regulate synaptic plasticity and memory formation.	ms_text:proteomic;ms_mesh:Proteomics|Spectrometry, Mass, Matrix-Assisted Laser Desorption-Ionization;ht_text:quantitative proteomic;ht_mesh:Proteomics
+21949786	compendium	0				compendium PMID
+21955146	compendium	0				compendium PMID
+21963094	ht_ms_text	2	2011	Cell	Global identification of modular cullin-RING ligase substrates.	ms_text:proteomic;ms_mesh:Proteome;ht_text:Global identification;ht_mesh:Proteome
+22028470	ht_ms_text	107	2011	Sci Signal	Large-scale discovery of ERK2 substrates identifies ERK-mediated transcriptional regulation by ETV3.	ms_mesh:Mass Spectrometry;ht_text:Large-scale
+22115753	compendium	0				compendium PMID
+22179823	ht_ms_text	3	2012	Oncogene	NPM-ALK signals through glycogen synthase kinase 3β to promote oncogenesis.	ms_text:mass spectromet;ht_text:phosphoproteom
+22199227	compendium	0				compendium PMID
+22210691	compendium	0				compendium PMID
+22424773	compendium;ht_ms_text	1	2012	Mol Cell	Proteomic investigations reveal a role for RNA processing factor THRAP3 in the DNA damage response.	ms_text:Proteomic;ms_mesh:Proteomics;ht_text:systems-wide;ht_mesh:Proteomics
+22496350	compendium	0				compendium PMID
+22570334	ht_ms_text	5	2012	Mol Endocrinol	Research resource: identification of novel growth hormone-regulated phosphorylation sites by quantitative phosphoproteomics.	ms_text:proteomic;ms_mesh:Phosphoproteins|Proteome|Proteomics|Tandem Mass Spectrometry;ht_text:quantitative phosphoproteomic;ht_mesh:Proteome|Proteomics
+22641346	ht_ms_text	4	2012	J Cell Biol	LATS1/WARTS phosphorylates MYPT1 to counteract PLK1 and regulate mammalian mitotic progression.	ms_text:proteomic;ht_text:phosphoproteom
+22777824	compendium	0				compendium PMID
+22828320	ht_ms_text	2	2012	Biochim Biophys Acta	Investigation on PLK2 and PLK3 substrate recognition.	ms_text:mass spectromet;ms_mesh:Mass Spectrometry;ht_text:phosphoproteom
+22912867	compendium	0				compendium PMID
+22985185	compendium	0				compendium PMID
+23071622	ht_ms_text	2	2012	PLoS One	Quantitative phosphoproteomics reveals SLP-76 dependent regulation of PAG and Src family kinases in T cells.	ms_text:proteomic;ms_mesh:Phosphoproteins|Proteomics;ht_text:Quantitative phosphoproteomic;ht_mesh:Proteomics
+23090842	compendium	0				compendium PMID
+23116119	ht_ms_text	1	2012	Biochemistry	Serine phosphorylation is critical for the activation of ubiquitin-specific protease 1 and its interaction with WD40-repeat protein UAF1.	ms_text:proteomic;ht_text:Large-scale
+23186163	ht_ms_text	2	2013	J Proteome Res	Toward a comprehensive characterization of a human cancer cell phosphoproteome.	ms_text:Mass spectromet;ms_mesh:Mass Spectrometry|Phosphoproteins|Proteomics;ht_text:phosphoproteom;ht_mesh:Proteomics
+23263557	ht_ms_text	1	2013	Nat Immunol	Identification of regulators of the innate immune response to cytosolic DNA and retroviral infection by an integrative approach.	ms_text:proteomic;ms_mesh:Phosphoproteins|Proteomics;ht_text:quantitative proteomic;ht_mesh:Proteomics
+23312004	compendium	0				compendium PMID
+23322592	compendium	0				compendium PMID
+23438512	ht_ms_text	1	2013	J Proteome Res	Phosphotyrosine profiling of NSCLC cells in response to EGF and HGF reveals network specific mediators of invasion.	ms_text:mass spectromet;ht_text:139 sites
+23532336	compendium	0				compendium PMID
+23542175	ht_ms_text	2	2014	Oncogene	p120 catenin is a key effector of a Ras-PKCɛ oncogenic signaling axis.	ms_text:proteomic;ht_text:phosphoproteom
+23550703	ht_ms_text	8	2013	J Proteome Res	Global analysis of phosphorylation of tau by the checkpoint kinases Chk1 and Chk2 in vitro.	ms_text:mass spectromet;ms_mesh:Chromatography, Liquid|Tandem Mass Spectrometry;ht_text:Global analysis
+23629659	ht_ms_text	2	2013	J Biol Chem	Phosphorylation of serine palmitoyltransferase long chain-1 (SPTLC1) on tyrosine 164 inhibits its activity and promotes cell survival.	ms_text:proteomic;ms_mesh:Proteome;ht_text:phosphoproteom;ht_mesh:Proteome
+23684312	compendium	0				compendium PMID
+23684622	ht_ms_text	1	2013	Cell Metab	Dynamic adipocyte phosphoproteome reveals that Akt directly regulates mTORC2.	ms_text:mass spectromet;ms_mesh:Mass Spectrometry|Proteome|Proteomics;ht_text:phosphoproteom;ht_mesh:Proteome|Proteomics
+23712012	ht_ms_text	2	2013	Mol Syst Biol	Phosphoproteome dynamics reveal novel ERK1/2 MAP kinase substrates with broad spectrum of functions.	ms_text:proteomic;ms_mesh:Phosphoproteins|Proteome;ht_text:Phosphoproteom;ht_mesh:Proteome
+23749302	compendium	0				compendium PMID
+23814019	ht_ms_text	2	2013	Blood	Integrated phosphoproteomic and metabolomic profiling reveals NPM-ALK-mediated phosphorylation of PKM2 and metabolic reprogramming in anaplastic large cell lymphoma.	ms_text:proteomic;ms_mesh:Proteomics;ht_text:phosphoproteom;ht_mesh:Proteomics
+23828894	compendium	0				compendium PMID
+23836654	compendium;ht_ms_text	1	2013	Proc Natl Acad Sci U S A	Dissection of TBK1 signaling via phosphoproteomics in lung cancer cells.	ms_text:proteomic;ms_mesh:Phosphoproteins|Proteomics;ht_text:phosphoproteom;ht_mesh:Proteomics
+23870088	ht_ms_text	4	2013	BMC Biochem	Identification of the lamin A/C phosphoepitope recognized by the antibody P-STM in mitotic HeLa S3 cells.	ms_text:SILAC;ms_mesh:Isotope Labeling|Tandem Mass Spectrometry;ht_text:SILAC
+23874979	ht_ms_text	1	2013	PLoS One	ERK positive feedback regulates a widespread network of tyrosine phosphorylation sites across canonical T cell signaling and actin cytoskeletal proteins in Jurkat T cells.	ms_text:proteomic;ms_mesh:Chromatography, Liquid|Tandem Mass Spectrometry;ht_text:quantitative phosphoproteomic
+23898821	compendium	0				compendium PMID
+23933134	ht_ms_text	2	2013	J Proteomics	Quantitative profiling of tyrosine phosphorylation revealed changes in the activity of the T cell receptor signaling pathway upon cisplatin-induced apoptosis.	ms_text:SILAC;ms_mesh:Proteomics;ht_text:SILAC;ht_mesh:Proteomics
+23940567	ht_ms_text	2	2013	PLoS One	Possible role of the glycogen synthase kinase-3 signaling pathway in trimethyltin-induced hippocampal neurodegeneration in mice.	ms_text:TMT;ht_text:TMT
+24020373	ht_ms_text	2	2013	Biochem J	Endoplasmic reticulum-associated ubiquitin-conjugating enzyme Ube2j1 is a novel substrate of MK2 (MAPKAP kinase-2) involved in MK2-mediated TNFα production.	ms_text:proteomic;ht_text:phosphoproteom
+24117733	compendium	0				compendium PMID
+24196446	ht_ms_text	2	2014	Cell Cycle	Inhibition of endocytic vesicle fusion by Plk1-mediated phosphorylation of vimentin during mitosis.	ms_text:proteomic;ht_text:Phosphoproteom
+24211406	compendium	0				compendium PMID
+24247654	compendium	0				compendium PMID
+24248602	ht_ms_text	1	2014	Mol Cell Biol	Mitotic phosphorylation of eukaryotic initiation factor 4G1 (eIF4G1) at Ser1232 by Cdk1:cyclin B inhibits eIF4A helicase complex binding with RNA.	ms_text:proteomic;ms_mesh:Proteomics;ht_text:phosphoproteom;ht_mesh:Proteomics
+24275569	ht_ms_text	1	2014	J Proteomics	An enzyme assisted RP-RPLC approach for in-depth analysis of human liver phosphoproteome.	ms_text:Orbitrap;ms_mesh:Phosphoproteins|Proteome;ht_text:phosphoproteom;ht_mesh:Proteome
+24275748	compendium	0				compendium PMID
+24324209	compendium	0				compendium PMID
+24339867	ht_ms_text	1	2013	PLoS One	Quantitative proteomic profiling identifies DPYSL3 as pancreatic ductal adenocarcinoma-associated molecule that regulates cell adhesion and migration by stabilization of focal adhesion complex.	ms_text:proteomic;ms_mesh:Proteomics;ht_text:Quantitative proteomic;ht_mesh:Proteomics
+24386391	ht_ms_text	2	2013	PLoS One	Tyrosine phosphorylation allows integration of multiple signaling inputs by IKKβ.	ms_text:titanium dioxide;ht_text:phosphopeptide enrichment
+24461736	ht_ms_text	2	2014	DNA Repair (Amst)	Mass spectrometry-based quantification of the cellular response to methyl methanesulfonate treatment in human cells.	ms_text:Mass spectromet;ms_mesh:Mass Spectrometry|Proteome;ht_text:500 proteins;ht_mesh:Proteome
+24462114	ht_ms_text	6	2014	Mol Cell	Phosphoproteomics screen reveals akt isoform-specific signals linking RNA processing to lung cancer.	ms_text:proteomic;ms_mesh:Phosphoproteins|Proteomics;ht_text:Phosphoproteom;ht_mesh:Proteomics
+24501219	compendium	0				compendium PMID
+24626860	compendium	0				compendium PMID
+24658276	ht_ms_text	4	2014	PLoS One	Searching for novel Cdk5 substrates in brain by comparative phosphoproteomics of wild type and Cdk5-/- mice.	ms_text:proteomic;ms_mesh:Mass Spectrometry|Phosphoproteins|Proteomics;ht_text:phosphoproteom;ht_mesh:Proteomics
+24660806	ht_ms_text	1	2014	Biochem J	Parkin is activated by PINK1-dependent phosphorylation of ubiquitin at Ser65.	ms_text:proteomic;ht_text:phosphoproteom
+24670416	compendium	0				compendium PMID
+24706070	compendium	0				compendium PMID
+24719451	compendium	0				compendium PMID
+24755472	ht_ms_text	2	2014	Cancer Res	G protein-coupled receptor kinase GRK5 phosphorylates moesin and regulates metastasis in prostate cancer.	ms_text:Mass spectromet;ht_text:phosphoproteom
+24782546	compendium	0				compendium PMID
+24850871	compendium	0				compendium PMID
+24917152	ht_ms_text	2	2014	Protein Sci	Cdk5 phosphorylation of EFhd2 at S74 affects its calcium binding activity.	ms_text:proteomic;ht_text:phosphoproteom
+24961811	compendium	0				compendium PMID
+24972320	ht_ms_text	2	2014	J Proteomics	Quantitative phosphoproteomics reveals novel phosphorylation events in insulin signaling regulated by protein phosphatase 1 regulatory subunit 12A.	ms_text:proteomic;ms_mesh:Proteomics;ht_text:Quantitative phosphoproteomic;ht_mesh:Proteomics
+25002506	compendium;ht_ms_text	1	2014	Proc Natl Acad Sci U S A	Phosphoproteomic analysis identifies the tumor suppressor PDCD4 as a RSK substrate negatively regulated by 14-3-3.	ms_text:proteomic;ms_mesh:Phosphoproteins|Proteome|Proteomics;ht_text:Phosphoproteom;ht_mesh:Proteome|Proteomics
+25003641	compendium	0				compendium PMID
+25056879	compendium	0				compendium PMID
+25147952	ht_ms_text	1	2014	PLoS One	Phosphorylation site dynamics of early T-cell receptor signaling.	ms_text:proteomic;ms_mesh:Phosphoproteins|Proteome|Proteomics;ht_text:quantitative proteomic;ht_mesh:Proteome|Proteomics
+25180175	ht_ms_text	2	2014	Biomed Res Int	Phosphoproteomic analysis of gossypol-induced apoptosis in ovarian cancer cell line, HOC1a.	ms_text:proteomic;ms_mesh:Phosphoproteins|Proteome;ht_text:Phosphoproteom;ht_mesh:Proteome
+25247763	compendium;ht_ms_text	8	2014	Nat Commun	Activation of diverse signalling pathways by oncogenic PIK3CA mutations.	ms_text:SILAC;ms_mesh:Chromatography, Liquid|Phosphoproteins|Proteomics|Tandem Mass Spectrometry;ht_text:SILAC;ht_mesh:Proteomics
+25266776	ht_ms_text	1	2014	Mol Cell Proteomics	Quantitative phosphoproteomics of cytotoxic T cells to reveal protein kinase d 2 regulated networks.	ms_text:proteomic;ms_mesh:Isotope Labeling|Phosphoproteins|Proteome;ht_text:Quantitative phosphoproteomic;ht_mesh:Proteome
+25284222	ht_ms_text	1	2014	Mol Cell	Quantitative proteomics reveal a feedforward mechanism for mitochondrial PARKIN translocation and ubiquitin chain synthesis.	ms_text:proteomic;ms_mesh:Proteomics;ht_text:Quantitative proteomic;ht_mesh:Proteomics
+25332170	compendium;ht_ms_text	1	2015	Proteomics	Quantitative phosphoproteomics of Alzheimer's disease reveals cross-talk between kinases and small heat shock proteins.	ms_text:proteomic;ms_mesh:Proteomics|Tandem Mass Spectrometry;ht_text:Quantitative phosphoproteomic;ht_mesh:Proteomics
+25367039	ht_ms_text	1	2015	Proteomics	Quantitative phosphoproteomic analysis of IL-33-mediated signaling.	ms_text:proteomic;ms_mesh:Mass Spectrometry|Proteomics;ht_text:Quantitative phosphoproteomic;ht_mesh:Proteomics
+25403733	ht_ms_text	2	2015	Proteomics	Comprehensive identification of phosphorylation sites on the Numb endocytic adaptor protein.	ms_text:LC-MS;ms_mesh:Tandem Mass Spectrometry;ht_text:Comprehensive identification of phospho
+25404012	compendium	0				compendium PMID
+25478227	ht_ms_text	1	2014	Int J Proteomics	Combined phosphoproteomics and bioinformatics strategy in deciphering drug resistant related pathways in triple negative breast cancer.	ms_text:proteomic;ht_text:phosphoproteom
+25605337	ht_ms_text	1	2015	Mol Cell Biol	PCTK1 regulates integrin-dependent spindle orientation via protein kinase A regulatory subunit KAP0 and myosin X.	ms_text:proteomic;ht_text:Phosphoproteom
+25624455	ht_ms_text	43	2015	J Immunol	Protein tyrosine phosphatase receptor type γ is a JAK phosphatase and negatively regulates leukocyte integrin activation.	ms_text:proteomic;ms_mesh:Phosphoproteins;ht_text:High-throughput
+25678401	ht_ms_text	2	2015	J Pathol	ACK1 promotes gastric cancer epithelial-mesenchymal transition and metastasis through AKT-POU2F1-ECD signalling.	ms_text:SILAC;ht_text:SILAC
+25688093	ht_ms_text	2	2015	J Biol Chem	Phosphorylation of targeting protein for Xenopus kinesin-like protein 2 (TPX2) at threonine 72 in spindle assembly.	ms_text:proteomic;ms_mesh:Phosphoproteins;ht_text:high-throughput
+25733813	ht_ms_text	2	2015	Drug Des Devel Ther	Proteomic response to 5,6-dimethylxanthenone 4-acetic acid (DMXAA, vadimezan) in human non-small cell lung cancer A549 cells determined by the stable-isotope labeling by amino acids in cell culture (S	ms_text:Proteomic;ms_mesh:Isotope Labeling|Proteome|Proteomics;ht_text:SILAC;ht_mesh:Proteome|Proteomics
+25766872	ht_ms_text	2	2015	Biochim Biophys Acta	Pin1: Intimate involvement with the regulatory protein kinase networks in the global phosphorylation landscape.	ms_text:proteomic;ms_mesh:Phosphoproteins|Proteome;ht_text:global phospho;ht_mesh:Proteome
+25849741	compendium;ht_ms_text	2	2015	Nat Commun	Quantitative analysis of the TNF-α-induced phosphoproteome reveals AEG-1/MTDH/LYRIC as an IKKβ substrate.	ms_text:mass spectromet;ms_mesh:Chromatography, Liquid|Mass Spectrometry|Phosphoproteins;ht_text:phosphoproteom
+25850435	compendium	0				compendium PMID
+25907765	compendium	0				compendium PMID
+25921289	compendium	0				compendium PMID
+25956864	ht_ms_text	7	2015	DNA Repair (Amst)	Emerging role of protein phosphatases changes the landscape of phospho-signaling in DNA damage response.	ms_text:proteomic;ms_mesh:Phosphoproteins;ht_text:global phospho
+25976166	ht_ms_text	1	2015	J Cell Biochem	A Kinase-Independent Function of c-Src Mediates p130Cas Phosphorylation at the Serine-639 Site in Pressure Overloaded Myocardium.	ms_text:mass spectromet;ht_text:410 sites
+25990959	ht_ms_text	1	2015	Sci Signal	The catalytic activity of the kinase ZAP-70 mediates basal signaling and negative feedback of the T cell receptor pathway.	ms_text:mass spectromet;ms_mesh:Mass Spectrometry|Proteomics;ht_text:phosphoproteom;ht_mesh:Proteomics
+26029660	ht_ms_text	1	2015	Front Oncol	Phosphoproteomic Analysis of Cell-Based Resistance to BRAF Inhibitor Therapy in Melanoma.	ms_text:proteomic;ht_text:Phosphoproteom
+26038114	ht_ms_text	1	2015	Mol Syst Biol	Systems-wide analysis of BCR signalosomes and downstream phosphorylation and ubiquitylation.	ms_text:mass spectromet;ms_mesh:Proteomics;ht_text:Systems-wide;ht_mesh:Proteomics
+26055452	compendium	0				compendium PMID
+26060313	compendium	0				compendium PMID
+26091039	compendium	0				compendium PMID
+26215634	ht_ms_text	4	2015	Mol Cancer	The pseudokinase SgK223 promotes invasion of pancreatic ductal epithelial cells through JAK1/Stat3 signaling.	ms_text:mass spectromet;ht_text:phosphoproteom
+26265067	compendium	0				compendium PMID
+26270265	compendium	0				compendium PMID
+26329039	ht_ms_text	1	2015	Sci Rep	Phosphoproteomic profiling of tumor tissues identifies HSP27 Ser82 phosphorylation as a robust marker of early ischemia.	ms_text:proteomic;ms_mesh:Phosphoproteins|Proteomics;ht_text:Phosphoproteom;ht_mesh:Proteomics
+26330541	compendium	0				compendium PMID
+26399325	ht_ms_text	2	2015	Nat Commun	Bub1 autophosphorylation feeds back to regulate kinetochore docking and promote localized substrate phosphorylation.	ms_text:proteomic;ms_mesh:Chromatography, Liquid|Mass Spectrometry|Tandem Mass Spectrometry;ht_text:quantitative phosphoproteomic
+26434776	compendium	0				compendium PMID
+26437602	compendium	0				compendium PMID
+26456332	ht_ms_text	1	2015	Cell Metab	Identification of AMPK Phosphorylation Sites Reveals a Network of Proteins Involved in Cell Invasion and Facilitates Large-Scale Substrate Prediction.	ms_text:proteomic;ht_text:Large-Scale
+26462736	compendium	0				compendium PMID
+26471730	compendium;ht_ms_text	2	2015	EMBO J	Phosphoproteomic screening identifies Rab GTPases as novel downstream targets of PINK1.	ms_text:proteomic;ht_text:Phosphoproteom
+26474068	ht_ms_text	1	2015	Mol Cell	RFWD3-Dependent Ubiquitination of RPA Regulates Repair at Stalled Replication Forks.	ms_text:proteomic;ht_text:quantitative proteomic
+26546556	compendium	0				compendium PMID
+26572502	compendium	0				compendium PMID
+26598622	compendium	0				compendium PMID
+26670566	compendium	0				compendium PMID
+26686737	ht_ms_text	1	2016	Arch Biochem Biophys	The role of endothelial mechanosensitive genes in atherosclerosis and omics approaches.	ms_mesh:Proteome|Proteomics;ht_text:global profil;ht_mesh:Proteome|Proteomics
+26699800	compendium	0				compendium PMID
+26708747	ht_ms_text	1	2016	Neuroscience	Stathmin reduction and cytoskeleton rearrangement in rat nucleus accumbens in response to clozapine and risperidone treatment - Comparative proteomic study.	ms_text:proteomic;ms_mesh:Proteomics;ht_text:comprehensive proteom;ht_mesh:Proteomics
+26714015	compendium	0				compendium PMID
+26745281	ht_ms_text	3	2016	PLoS One	Quantitative Phosphoproteomics Analysis of ERBB3/ERBB4 Signaling.	ms_text:proteomic;ms_mesh:Phosphoproteins|Proteome;ht_text:Quantitative Phosphoproteomic;ht_mesh:Proteome
+26777338	ht_ms_text	1	2016	DNA Repair (Amst)	ATM kinase: Much more than a DNA damage responsive protein.	ms_text:proteomic;ms_mesh:Proteomics;ht_text:high throughput;ht_mesh:Proteomics
+26783066	compendium	0				compendium PMID
+26787912	compendium	0				compendium PMID
+26824392	ht_ms_text	2	2016	Elife	Phosphoproteomics reveals that Parkinson's disease kinase LRRK2 regulates a subset of Rab GTPases.	ms_text:proteomic;ms_mesh:Proteome;ht_text:Phosphoproteom;ht_mesh:Proteome
+26853621	compendium	0				compendium PMID
+26876154	ht_ms_text	2	2016	Sci Rep	Pyruvate Kinase M2 Activates mTORC1 by Phosphorylating AKT1S1.	ms_text:proteomic;ht_text:quantitative phosphoproteomic
+26885753	ht_ms_text	1	2016	Oncotarget	Potential role of PCTAIRE-2, PCTAIRE-3 and P-Histone H4 in amyloid precursor protein-dependent Alzheimer pathology.	ms_text:SILAC;ht_text:phosphoproteom
+27025927	ht_ms_text	1	2016	Sci Rep	Changes in Gab2 phosphorylation and interaction partners in response to interleukin (IL)-2 stimulation in T-lymphocytes.	ms_text:TiO2;ms_mesh:Proteomics|Tandem Mass Spectrometry;ht_text:SILAC;ht_mesh:Proteomics
+27035970	ht_ms_text	2	2016	Proc Natl Acad Sci U S A	Phosphorylation of OPTN by TBK1 enhances its binding to Ub chains and promotes selective autophagy of damaged mitochondria.	ms_text:proteomic;ht_text:quantitative proteomic
+27050377	ht_ms_text	1	2016	Oncotarget	ATG9A loss confers resistance to trastuzumab via c-Cbl mediated Her2 degradation.	ms_text:SILAC;ht_text:SILAC
+27050516	compendium;ht_ms_text	1	2016	Cell Rep	Identification of Mediator Kinase Substrates in Human Cells using Cortistatin A and Quantitative Phosphoproteomics.	ms_text:proteomic;ms_mesh:Phosphoproteins|Proteome|Proteomics;ht_text:Quantitative Phosphoproteomic;ht_mesh:Proteome|Proteomics
+27080861	compendium;ht_ms_text	1	2016	Sci Rep	Integrative Phosphoproteomics Links IL-23R Signaling with Metabolic Adaptation in Lymphocytes.	ms_text:proteomic;ms_mesh:Phosphoproteins|Proteomics;ht_text:Phosphoproteom;ht_mesh:Proteomics
+27115346	ht_ms_text	1	2016	Elife	Analysis of protein phosphorylation in nerve terminal reveals extensive changes in active zone proteins upon exocytosis.	ms_text:proteomic;ms_mesh:Proteome;ht_text:quantitative phosphoproteomic;ht_mesh:Proteome
+27134283	compendium	0				compendium PMID
+27149854	ht_ms_text	2	2016	Cell Rep	A Comprehensive Analysis of the Dynamic Response to Aphidicolin-Mediated Replication Stress Uncovers Targets for ATM and ATMIN.	ms_text:proteomic;ht_text:phosphoproteom
+27155012	compendium	0				compendium PMID
+27169363	ht_ms_text	1	2016	Proteomics	A Phos-tag SDS-PAGE method that effectively uses phosphoproteomic data for profiling the phosphorylation dynamics of MEK1.	ms_text:proteomic;ms_mesh:Proteomics;ht_text:phosphoproteom;ht_mesh:Proteomics
+27174698	compendium	0				compendium PMID
+27196784	ht_ms_text	1	2016	Mol Cancer Ther	Quantitative Phosphoproteomics Reveals Wee1 Kinase as a Therapeutic Target in a Model of Proneural Glioblastoma.	ms_text:proteomic;ms_mesh:Mass Spectrometry|Proteomics;ht_text:Quantitative Phosphoproteomic;ht_mesh:Proteomics
+27251275	compendium	0				compendium PMID
+27307491	compendium	0				compendium PMID
+27307780	ht_ms_text	1	2016	Clin Proteomics	Phosphotyrosine profiling of curcumin-induced signaling.	ms_text:SILAC;ht_text:SILAC
+27422710	compendium	0				compendium PMID
+27472459	compendium	0				compendium PMID
+27492266	ht_ms_text	6	2016	Sci Rep	Stress-dependent phosphorylation of myocardin-related transcription factor A (MRTF-A) by the p38(MAPK)/MK2 axis.	ms_text:proteomic;ms_mesh:Proteomics;ht_text:phosphoproteom;ht_mesh:Proteomics
+27505672	ht_ms_text	1	2016	Cancer Cell	Mitochondrial Akt Regulation of Hypoxic Tumor Reprogramming.	ms_text:proteomic;ht_text:phosphoproteom
+27566939	ht_ms_text	1	2016	Immunity	Phosphoproteomic Analyses of Interleukin 2 Signaling Reveal Integrated JAK Kinase-Dependent and -Independent Networks in CD8(+) T Cells.	ms_text:proteomic;ms_mesh:Proteome;ht_text:Phosphoproteom;ht_mesh:Proteome
+27732954	compendium	0				compendium PMID
+27738316	ht_ms_text	6	2016	Oncotarget	Mitotic arrest-induced phosphorylation of Mcl-1 revisited using two-dimensional gel electrophoresis and phosphoproteomics: nine phosphorylation sites identified.	ms_text:proteomic;ms_mesh:Proteomics|Tandem Mass Spectrometry;ht_text:phosphoproteom;ht_mesh:Proteomics
+27752081	ht_ms_text	1	2017	Mol Psychiatry	Corticotropin-releasing factor overexpression gives rise to sex differences in Alzheimer's disease-related signaling.	ms_text:proteomic;ht_text:phosphoproteom
+27782176	ht_ms_text	5	2016	Sci Rep	Functional kinomics establishes a critical node of volume-sensitive cation-Cl- cotransporter regulation in the mammalian brain.	ms_text:proteomic;ms_mesh:Proteomics;ht_text:kinome-wide;ht_mesh:Proteomics
+27794612	compendium	0				compendium PMID
+27834733	compendium	0				compendium PMID
+27909043	compendium	0			Ochoa 2016 MSB atlas (source of 39 compendium conditions)	compendium PMID
+28051168	ht_ms_text	4	2017	Sci Rep	Mechanisms of Yersinia YopO kinase substrate specificity.	ms_text:mass spectromet;ht_text:proteome-wide
+28060719	compendium	0				compendium PMID
+28066266	ht_ms_text	2	2016	Front Physiol	Deep Phosphoproteomic Measurements Pinpointing Drug Induced Protective Mechanisms in Neuronal Cells.	ms_text:proteomic;ht_text:Phosphoproteom
+28102081	compendium	0				compendium PMID
+28122231	compendium	0				compendium PMID
+28165663	compendium	0				compendium PMID
+28174229	ht_ms_text	3	2017	Mol Cell Proteomics	Effects of ErbB2 Overexpression on the Proteome and ErbB Ligand-specific Phosphosignaling in Mammary Luminal Epithelial Cells.	ms_text:SILAC;ms_mesh:Isotope Labeling|Phosphoproteins|Proteomics;ht_text:SILAC;ht_mesh:Proteomics
+28176443	compendium	0				compendium PMID
+28179408	compendium	0				compendium PMID
+28188228	compendium	0				compendium PMID
+28192239	compendium	0				compendium PMID
+28193222	ht_ms_text	3	2017	BMC Biol	Phosphorylation-dependent regulation of ALDH1A1 by Aurora kinase A: insights on their synergistic relationship in pancreatic cancer.	ms_text:proteomic;ht_text:global phospho
+28209619	compendium	0				compendium PMID
+28302921	compendium	0				compendium PMID
+28418008	compendium	0				compendium PMID
+28428613	ht_ms_text	1	2017	Sci Rep	Differential regulation of PKD isoforms in oxidative stress conditions through phosphorylation of a conserved Tyr in the P+1 loop.	ms_text:proteomic;ht_text:large-scale
+28464451	compendium	0				compendium PMID
+28539327	compendium	0				compendium PMID
+28592633	ht_ms_text	1	2017	Mol Biol Cell	The phospho-caveolin-1 scaffolding domain dampens force fluctuations in focal adhesions and promotes cancer cell migration.	ms_text:proteomic;ht_text:Quantitative proteomic
+28600813	compendium	0				compendium PMID
+28606917	compendium	0				compendium PMID
+28634120	compendium	0				compendium PMID
+28644030	ht_ms_text	4	2017	J Proteome Res	A PLC-γ1 Feedback Pathway Regulates Lck Substrate Phosphorylation at the T-Cell Receptor and SLP-76 Complex.	ms_text:proteomic;ms_mesh:Phosphoproteins;ht_text:quantitative phosphoproteomic
+28644433	ht_ms_text	1	2017	Cell Death Differ	CTLA-4-mediated posttranslational modifications direct cytotoxic T-lymphocyte differentiation.	ms_text:proteomic;ht_text:quantitative proteomic
+28651603	ht_ms_text	1	2017	J Neuroinflammation	A systems pharmacology-based approach to identify novel Kv1.3 channel-dependent mechanisms in microglial activation.	ms_text:proteomic;ms_mesh:Proteomics;ht_text:Quantitative proteomic;ht_mesh:Proteomics
+28674419	compendium	0				compendium PMID
+28701735	ht_ms_text	1	2017	Sci Rep	Quantitative proteomics reveal the anti-tumour mechanism of the carbohydrate recognition domain of Galectin-3 in Hepatocellular carcinoma.	ms_text:proteomic;ms_mesh:Proteome|Proteomics;ht_text:Quantitative proteomic;ht_mesh:Proteome|Proteomics
+28717217	ht_ms_text	2	2017	Sci Rep	TKI-addicted ROS1-rearranged cells are destined to survival or death by the intensity of ROS1 kinase activity.	ms_text:proteomic;ms_mesh:Tandem Mass Spectrometry;ht_text:Phosphoproteom
+28808226	ht_ms_text	2	2017	Nat Commun	ATR inhibition facilitates targeting of leukemia dependence on convergent nucleotide biosynthetic pathways.	ms_text:proteomic;ht_text:phosphoproteom
+28842319	compendium	0				compendium PMID
+28860483	ht_ms_text	3	2017	Sci Rep	Selective LRRK2 kinase inhibition reduces phosphorylation of endogenous Rab10 and Rab12 in human peripheral mononuclear blood cells.	ms_text:proteomic;ms_mesh:Phosphoproteins|Proteome|Proteomics;ht_text:phosphoproteom;ht_mesh:Proteome|Proteomics
+28961369	compendium	0				compendium PMID
+28978645	compendium	0				compendium PMID
+28992084	ht_ms_text	2	2018	J Mol Cell Biol	AMPK regulates anaphase central spindle length by phosphorylation of KIF4A.	ms_text:proteomic;ht_text:quantitative phosphoproteomic
+29020638	compendium	0				compendium PMID
+29052541	compendium	0				compendium PMID
+29100370	ht_ms_text	2	2017	Oncotarget	Identification of the PAK4 interactome reveals PAK4 phosphorylation of N-WASP and promotion of Arp2/3-dependent actin polymerization.	ms_text:iTRAQ;ht_text:iTRAQ
+29154753	compendium	0				compendium PMID
+29214152	compendium	0				compendium PMID
+29249144	ht_ms_text	1	2018	J Proteome Res	BioSITe: A Method for Direct Detection and Quantitation of Site-Specific Biotinylation.	ms_text:LC-MS;ms_mesh:Chromatography, Liquid|Tandem Mass Spectrometry;ht_text:SILAC
+29255136	compendium	0				compendium PMID
+29391485	ht_ms_text	1	2018	Sci Rep	Kinome and phosphoproteome of high-grade meningiomas reveal AKAP12 as a central regulator of aggressiveness and its possible role in progression.	ms_text:mass spectromet;ms_mesh:Phosphoproteins|Proteome;ht_text:phosphoproteom;ht_mesh:Proteome
+29414761	compendium	0				compendium PMID
+29435015	compendium	0				compendium PMID
+29436393	ht_ms_text	1	2018	J Exp Med	Therapeutically targeting tumor microenvironment-mediated drug resistance in estrogen receptor-positive breast cancer.	ms_text:proteomic;ht_text:Phosphoproteom
+29438985	ht_ms_text	2	2018	EMBO Mol Med	Inhibition of DDR1-BCR signalling by nilotinib as a new therapeutic strategy for metastatic colorectal cancer.	ms_text:proteomic;ms_mesh:Phosphoproteins;ht_text:quantitative phosphoproteomic
+29460479	compendium	0				compendium PMID
+29485707	ht_ms_text	1	2018	Mol Oncol	Overexpression of Tpl2 is linked to imatinib resistance and activation of MEK-ERK and NF-κB pathways in a model of chronic myeloid leukemia.	ms_text:proteomic;ms_mesh:Proteomics;ht_text:quantitative phosphoproteomic;ht_mesh:Proteomics
+29523821	compendium;ht_ms_text	1	2018	Nat Commun	p38-MK2 signaling axis regulates RNA metabolism after UV-light-induced DNA damage.	ms_text:proteomic;ht_text:quantitative phosphoproteomic
+29535314	compendium	0				compendium PMID
+29541418	ht_ms_text	2	2018	Oncotarget	Parallel comparative proteomics and phosphoproteomics reveal that cattle myostatin regulates phosphorylation of key enzymes in glycogen metabolism and glycolysis pathway.	ms_text:proteomic;ht_text:phosphoproteom
+29622655	compendium	0				compendium PMID
+29743597	compendium	0				compendium PMID
+29883688	ht_ms_text	1	2019	Biochim Biophys Acta Proteins Proteom	Phosphoproteomic identification and functional characterization of protein kinase substrates by 2D-DIGE and Phos-tag PAGE.	ms_text:proteomic;ms_mesh:Phosphoproteins|Proteomics|Tandem Mass Spectrometry;ht_text:Phosphoproteom;ht_mesh:Proteomics
+29970186	compendium	0				compendium PMID
+29970458	compendium	0				compendium PMID
+29980616	compendium	0				compendium PMID
+30001349	compendium	0				compendium PMID
+30030458	ht_ms_text	2	2018	Sci Rep	Assessment of DNA-PKcs kinase activity by quantum dot-based microarray.	ms_text:proteomic;ht_text:high-throughput
+30061712	compendium	0				compendium PMID
+30146332	compendium	0				compendium PMID
+30157440	compendium	0				compendium PMID
+30177828	compendium	0				compendium PMID
+30205043	compendium	0				compendium PMID
+30206219	compendium	0				compendium PMID
+30241606	compendium	0				compendium PMID
+30243273	compendium	0				compendium PMID
+30266825	compendium	0				compendium PMID
+30459281	compendium	0				compendium PMID
+30459283	compendium	0				compendium PMID
+30619164	compendium	0				compendium PMID
+30627666	ht_ms_text	1	2018	Sci Adv	RAB7A phosphorylation by TBK1 promotes mitophagy via the PINK-PARKIN pathway.	ms_text:proteomic;ht_text:global quantitative
+30631047	compendium;ht_ms_text	7	2019	Nat Commun	Global phosphoproteomic analysis reveals ARMC10 as an AMPK substrate that regulates mitochondrial dynamics.	ms_text:proteomic;ms_mesh:Phosphoproteins|Proteome|Proteomics;ht_text:Global phospho;ht_mesh:Proteome|Proteomics
+30650350	compendium	0				compendium PMID
+30652415	compendium	0				compendium PMID
+30672298	compendium	0				compendium PMID
+30699355	compendium	0				compendium PMID
+30755469	compendium	0				compendium PMID
+30773488	compendium	0				compendium PMID
+30804208	ht_ms_text	1	2019	J Biol Chem	Polo-like kinase 4 maintains centriolar satellite integrity by phosphorylation of centrosomal protein 131 (CEP131).	ms_text:proteomic;ht_text:phosphoproteom
+30844378	ht_ms_text	1	2019	Arch Biochem Biophys	Effects of phosphorylation on the NLRP3 inflammasome.	ms_text:proteomic;ht_text:phosphoproteom
+30869898	compendium	0				compendium PMID
+30879985	compendium	0				compendium PMID
+30890742	compendium	0				compendium PMID
+30901187	compendium	0				compendium PMID
+30988284	compendium	0				compendium PMID
+31061140	compendium	0				compendium PMID
+31063128	compendium	0				compendium PMID
+31108958	compendium	0				compendium PMID
+31221721	compendium	0				compendium PMID
+31257184	compendium	0				compendium PMID
+31272499	ht_ms_text	2	2019	J Exp Clin Cancer Res	CDK5-mediated phosphorylation and stabilization of TPX2 promotes hepatocellular tumorigenesis.	ms_text:proteomic;ht_text:phosphoproteom
+31464372	compendium	0				compendium PMID
+31636099	compendium	0				compendium PMID
+31652541	compendium	0				compendium PMID
+31959955	compendium	0				compendium PMID
+32034161	compendium	0				compendium PMID
+32051232	compendium	0				compendium PMID
+32142685	compendium	0				compendium PMID
+32444788	ht_ms_text	1	2020	Commun Biol	Phosphoproteomics identifies dual-site phosphorylation in an extended basophilic motif regulating FILIP1-mediated degradation of filamin-C.	ms_text:proteomic;ms_mesh:Phosphoproteins|Proteome;ht_text:Phosphoproteom;ht_mesh:Proteome
+32461304	compendium	0				compendium PMID
+32606318	compendium	0				compendium PMID
+33092266	ht_ms_text	3	2020	Int J Mol Sci	A Screen for PKN3 Substrates Reveals an Activating Phosphorylation of ARHGAP18.	ms_text:proteomic;ms_mesh:Proteomics;ht_text:phosphoproteom;ht_mesh:Proteomics
+33215756	compendium	0				compendium PMID
+33819647	compendium	0				compendium PMID
+33845483	compendium	0				compendium PMID
+33895337	compendium	0				compendium PMID
+34086370	compendium	0				compendium PMID
+34663829	compendium	0				compendium PMID
+34731634	compendium	0				compendium PMID
+34974192	compendium	0				compendium PMID
+35688186	compendium	0				compendium PMID
+36165955	compendium	0			qPTM database (source of 461 compendium conditions)	compendium PMID
+36781298	compendium	0				compendium PMID
+36926954	compendium	0				compendium PMID
+37188730	compendium	0				compendium PMID
+37236596	compendium	0				compendium PMID
+37783352	compendium	0				compendium PMID
+37813859	compendium	0				compendium PMID
+38047086	compendium	0				compendium PMID
+38593799	compendium	0				compendium PMID

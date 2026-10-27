@@ -1,0 +1,12 @@
+db	drop_reason	n
+iptmnet		9327
+iptmnet	cites_compendium_pmid	1159
+iptmnet	cites_ht_ms_pmid	619
+iptmnet	kinase_not_in_U	299
+iptmnet	noncurated_only(MIMP/ProtMapper/text-mining)	248
+omnipath		19193
+omnipath	cites_compendium_pmid	1267
+omnipath	cites_ht_ms_pmid	4963
+omnipath	kinase_not_in_U	6426
+omnipath	no_reference_not_whitelisted	14
+omnipath	noncurated_only(MIMP/ProtMapper/text-mining)	7166

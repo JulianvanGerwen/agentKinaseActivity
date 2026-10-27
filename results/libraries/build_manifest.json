@@ -1,0 +1,63 @@
+{
+ "inputs_sha256": {
+  "cache/hgnc_symbols.parquet": "15f00b414d1e460ebe46269ea7ee6e32a6dcc73311003301b16900e42c227989",
+  "cache/psp_ks_all.parquet": "ef31c30b0462a30369c7be0e5aa8346b1368f7a011fba950f177224f194b6fcc",
+  "cache/sites.parquet": "f5f7200ea66289c77e8facedb63d4463cec54396ca80ac62d59b057a966eadc1",
+  "data/01_phosphoproteomics_conditions.csv": "1257eb673d1b6db532773f4d6a54a75f2960a7f4434ccb67b0239834170af690",
+  "external/hgnc/hgnc_complete_set.txt": "12363916be36f8f6f91879b0faade4eeaac973722de7136ec61329b77f2c2f91",
+  "external/iptmnet/ptm.txt": "d5b2ed7c7138bc77f6f712feb038e18ddc4c791e96823b286a680e1982eff20f",
+  "external/ksm_index/kinase_list.tsv": "12fd39e611e0d335f08afea083156d3f62bdbe201fdd22991b0b6d356ddd857b",
+  "external/ksm_index/kinase_synonyms.tsv": "f198604c2ff5ff5e4b7bab15b506f29dd07cc622ea4246f282dc0e6cfd738d31",
+  "external/ksm_index/kinases.parquet": "e278ec9b4147d04dd33911f27b76e54e5528c1b1125c5140c588a1d1c49f4637",
+  "external/ksm_index/sites.parquet": "a280d3bb1a843c965b148b2067715567c9a515e9f3e18ab486bb97ed0d052975",
+  "external/ksm_index/universe.parquet": "17f9c6d38f5fbedd307c4a6ffad8e3a5d5cf022e5e12f7f8b9442657a5eb0ce7",
+  "external/omnipath/omnipath_enzsub.tsv": "57fa74706ef9c54ad23fe12e7390ba11a0694a8168534416d183fedc070e4f5d",
+  "external/sugiyama2019/supp_PMC6642169.zip": "178aee0f5d6ed76d044083d23c8a5f2d40611655979be325c510b690a178ba88",
+  "external/uniprot/UP000005640_annotations.tsv.gz": "bb1ab565fc7b3cbee92cdf271f36980d5483a14fe172d8ccd5faa4f7d8c0c6dd",
+  "external/uniprot/UP000005640_reviewed_isoforms.fasta.gz": "63011ee75fbfd0c92f35412fb660cfe920980b0c96276f3f941de91039e8ece1"
+ },
+ "k_max": 500,
+ "library_content_sha256": {
+  "cantley": "8a6aa3f2bb74fe596e3cf8a7bd21b5240a519d932ac798eba0862c6b163498e7",
+  "curated_union": "6a29b3bb32192fcaaf1e97b7f2c8975faa473d0945cba0bb47a1f4bddde69055",
+  "invitro_sugiyama": "fb6fd1bf850c8e005b5a259a8b72ecdbc5fb2de55d2553b83683475d263781b1",
+  "psp_all": "7d5b4c608e0b1216e29e7ffe3f85f80a97be26b20ce5c724640051a22d66a092",
+  "psp_human_only": "6ed09d26591ddb0000555c50470e8a00ff06db3bd7b091257dab0af4d7a2a1a9",
+  "psp_invivo": "d0625ca001872048e7ac0e3b5476ea21da8e08984722c48bb89eb88d066ce51a",
+  "r2np": "9eb4d1a0ab0db2d45269ded2b2309b94c442e59cff78c4a1690a4859824f7ee9",
+  "r3": "d5a5856e86df409cc483f3fcf993f625cd50c151f70ab214b547a4e307d627a7"
+ },
+ "n_edges": {
+  "cantley": 198000,
+  "curated_union": 27598,
+  "invitro_sugiyama": 160982,
+  "psp_all": 17659,
+  "psp_human_only": 14443,
+  "psp_invivo": 10765,
+  "r2np": 251500,
+  "r3": 251500
+ },
+ "predicted_files": {
+  "cantley": {
+   "manifest_check": "unprimed published-definition atlas score, label_derived=False, imputed=False",
+   "name": "cantley",
+   "origin": "kinaseSubMain/cache/features/motif/cantley_unprimed_score.npy",
+   "path": "external/ksm_pred/cantley/cantley_unprimed_score.npy",
+   "sha256": "e5597327729ab3605ca1649d510d89fbeffb0af1c416cd1fe96c6527bd4da2dc"
+  },
+  "r2np": {
+   "manifest_check": "groups=['F1', 'F0', 'F2a', 'F3', 'F4', 'F5', 'F7'] (no F6), split=final_dev, run_id=r2_final_nophospho_uobs__20261026-213950__s0",
+   "name": "r2np",
+   "origin": "kinaseSubMain/cache/runs/r2_final_nophospho_uobs__20261026-213950__s0/uobs_predictions.parquet",
+   "path": "external/ksm_pred/r2np/uobs_predictions.parquet",
+   "sha256": "1edbd2691e3c2d638f449e1a423e97088c6d1299fc791a1eaf10f5d2aca2c052"
+  },
+  "r3": {
+   "manifest_check": "run_id=r3_deploy__20261027-005817__s0, ESM windows + U_ms phospho-channel bit only (no perturbation features; docs/kinasesub_audit.md)",
+   "name": "r3",
+   "origin": "kinaseSubMain/cache/release/r3_deploy_20261027-005816/uobs_predictions.parquet",
+   "path": "external/ksm_pred/r3/uobs_predictions.parquet",
+   "sha256": "2f62988cf798f15ace6cd9925dce77e45ca2c6cf297549203734d256e9d002ba"
+  }
+ }
+}
