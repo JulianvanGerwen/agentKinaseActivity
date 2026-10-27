@@ -1,0 +1,6 @@
+timestamp	git_commit	method	config_hash	branch	split	folds	n_configs_tried	metrics_json
+2026-10-27T11:55:39+00:00	5929a83c3fd9+dirty	smoke_zscore	f7f75ffe93df76d2	smoke	dev	0,1,2,3,4	1	"{""M1-all"": 0.513383751279491, ""M1-sel"": 0.5212365135907966, ""M1-sel-scored"": 0.6660313981678024, ""coverage_M1-sel"": 0.6257947320617621}"
+2026-10-27T11:55:39+00:00	5929a83c3fd9+dirty	smoke_random	b87b87d5ec0f4b05	smoke	dev	0,1,2,3,4	2	"{""M1-all"": 0.4985615872394912, ""M1-sel"": 0.47575511170433943, ""M1-sel-scored"": 0.47575511170433943, ""coverage_M1-sel"": 1.0}"
+2026-10-27T11:55:39+00:00	5929a83c3fd9+dirty	smoke_prior_only	162e8352a5ffa7bc	smoke	dev	0,1,2,3,4	3	"{""M1-all"": 0.5441913199222674, ""M1-sel"": 0.705707794467194, ""M1-sel-scored"": 0.705707794467194, ""coverage_M1-sel"": 1.0}"
+2026-10-27T11:55:39+00:00	5929a83c3fd9+dirty	smoke_shift_prior	e37bb6947d6b8c5f	smoke	dev	0,1,2,3,4	4	"{""M1-all"": 0.526221913843636, ""M1-sel"": 0.5465910840543761, ""M1-sel-scored"": 0.5465910840543761, ""coverage_M1-sel"": 1.0}"
+2026-10-27T11:55:39+00:00	5929a83c3fd9+dirty	smoke_oracle	0a58cd832372e398	smoke	dev	0,1,2,3,4	5	"{""M1-all"": 1.0, ""M1-sel"": 1.0, ""M1-sel-scored"": 1.0, ""coverage_M1-sel"": 1.0}"
