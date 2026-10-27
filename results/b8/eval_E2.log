@@ -1,0 +1,15 @@
+[ctx] 3s; 372 GT conds, 7 DEV nulls, lib rows 27601; GT_FREEZE 1e6f791c6b85f15d
+[b7ctx] 14s sites 189962 conds 1358
+[b8] init 21s
+core-v2 reproduced 0.6803082554884371
+E2 inner fold0 done 26s
+E2 inner fold1 done 31s
+E2 inner fold2 done 35s
+E2 inner fold3 done 39s
+E2 inner fold4 done 41s
+   r  inner_fold0  inner_fold1  inner_fold2  inner_fold3  inner_fold4  oof_M1-sel  oof_M1-all
+0  1       0.7034       0.6946       0.7051       0.6702       0.6683      0.6809      0.6233
+1  2       0.7024       0.6960       0.7043       0.6723       0.6706      0.6819      0.6237
+2  3       0.6950       0.6974       0.7034       0.6718       0.6684      0.6828      0.6251
+E2 dM1-sel {'estimate': -0.0016, 'ci_low': -0.0058, 'ci_high': 0.0015, 'p_one_sided': 0.7951} NI True
+done 56s

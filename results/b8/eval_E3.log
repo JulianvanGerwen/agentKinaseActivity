@@ -1,0 +1,6 @@
+[ctx] 2s; 372 GT conds, 7 DEV nulls, lib rows 27601; GT_FREEZE 1e6f791c6b85f15d
+[b7ctx] 12s sites 189962 conds 1358
+[b8] init 18s
+core-v2 reproduced 0.6803082554884371
+E3 dM1-sel {'estimate': -0.0012, 'ci_low': -0.0056, 'ci_high': 0.0018, 'p_one_sided': 0.7271} NI True
+done 29s

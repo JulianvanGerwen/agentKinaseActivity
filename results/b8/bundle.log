@@ -1,0 +1,14 @@
+[ctx] 2s; 372 GT conds, 7 DEV nulls, lib rows 27601; GT_FREEZE 1e6f791c6b85f15d
+[b7ctx] 12s sites 189962 conds 1358
+[b8] init 19s
+{
+ "core_v1_score_s": 1.461235025897622,
+ "sig_project_s": 0.0076383238192647696,
+ "fuse_calibrated_s": 0.008478061063215137,
+ "ms_per_cond": {
+  "core_v1": 7.3061751294881105,
+  "late_fusion_E1": 0.04239030531607568,
+  "bundle_total": 7.348565434804186
+ },
+ "compendium_1937_s_extrapolated": 14.23417124721571
+}
