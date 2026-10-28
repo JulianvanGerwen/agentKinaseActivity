@@ -1,19 +1,16 @@
 # Agentic AI for bioinformatics: a kinase activity inference case study
 
-This repository is an **exercise in testing agentic AI for bioinformatics research**. A single human-written brief
-(`PROMPT.md`, verbatim) asked an AI agent (Claude, acting as "PI") to run a complete computational biology
-project with a team of AI sub-agents:
-- literature review;
-- study design with independent agentic review rounds;
-- ground-truth construction and auditing;
-- leakage-safe train/validation/test splits;
-- baseline re-implementations and method development;
-- a sealed one-shot test evaluation, independent reproduction and a final report.
+**(Human-written text starts)**
 
-Apart from the brief, the provided data and occasional prompts to continue, the code, analyses, decisions and
-documents in this repository were produced by AI agents. They are shared to show what such a workflow produces,
-including its records, safeguards and failure modes. They have **not been peer reviewed**. Read the results as
-the output of an experiment in agentic research, not as a validated published method.
+This is an exercise in assessing the bioinformatics capabilities of agentic AI. It is part of a hackathon run by the Beltrao lab at ETH Zurich, where we used Claude to run bioinformatics projects (https://github.com/evocellnet/ai-hackathon). All results in this project were generated entirely by AI with minimal human intervention. This is not intended to be viewed as a traditional publication and bioinformatics tool.
+
+The goal of this specific project was to create an estimator of kinase activity changes in phosphoproteomics experiments. It was executed by Claude Opus 5.5 with delegation to Opus 5.5/Sonnet 5.5 subagents, and finished within 24 hours on a computational cluster with 128 Gb RAM and 4 RTX4090 GPUs.
+
+Currently none of the results have been verified by a human. We plan to verify the agent’s methodology and benchmarking, and we will update this section accordingly.
+
+The rest of this repository is entirely AI generated. It is the working directory used by the agent. It also includes code for implementation of the predictive model and a AI-written briefing detailing the final method, the path followed to reach it, and benchmarking against other methods.
+
+**(Human-written text ends)**
 
 ## The scientific task
 
