@@ -8,7 +8,7 @@ The research record is in `RESEARCH_TREE.md` (decisions D0–D14), the design in
 
 ## 1. Summary
 
-**core-v3** takes one vector of site-level log2FC (or any signed statistic) and returns a calibrated activity z-score for all **503 human protein kinases**. It runs in **6.7 ms per condition on one CPU thread**, 2.0 ms on 16 threads and 1.7 ms on GPU. The whole 1,937-condition compendium is scored in 2.9 s.
+**core-v3** takes one vector of site-level log2FC (or any signed statistic) and returns a calibrated activity z-score for all **503 human protein kinases**. It runs in **6.7 ms per condition on one CPU thread**, 2.0 ms on 16 threads and 1.7 ms on GPU. The whole 1,937-condition compendium is scored in 9.2 s on one thread and 2.9 s on 16 threads. That is about 3× slower than z-score and KSEA (about 2 ms per condition) and misses the DESIGN target of ≤ 5 ms on one thread.
 
 On the sealed TEST set it scores M1-sel **0.714**. The set has 468 conditions, of which 245 have ground truth, giving 470 kinase–condition pairs over 67 kinases, 15 of them unseen in development.
 
@@ -23,9 +23,9 @@ On the sealed TEST set it scores M1-sel **0.714**. The set has 468 conditions, o
 | prior-only control (drug-target frequency, oracle sign) | 0.712 | +0.002 [−0.036, +0.083] | 0.50 | **no** |
 | random | 0.487 | +0.227 | descriptive | — |
 
-**Beats rule.** "Beats" requires all four of the following: Holm p < 0.05, ΔM1-sel ≥ 0.01, a gain on unseen kinases, and no loss on the matched-coverage metric M2. core-v3 meets the rule against all three named benchmarks (z-score, KSEA and JUMPsem) and against the best other baseline.
+**Beats rule.** "Beats" requires all four of the following: Holm p < 0.05, ΔM1-sel ≥ 0.01, a positive *point* estimate on unseen kinases, and a point ΔM2 ≥ 0. The unseen-kinase and M2 conditions are point estimates only. Every T-unseen CI crosses 0 (vs z-score +0.054 [−0.049, +0.161]), and core-v3's own T-unseen score (0.557) is close to chance. core-v3 meets the rule against all three named benchmarks (z-score, KSEA and JUMPsem) and against the best other baseline.
 
-**What it does not beat.** core-v3 does not beat the trivial prior-only control. That control knows which kinases are frequent drug targets and the true sign of the perturbation. It is excellent on heavily studied kinases (TEST T-seen 0.844 vs 0.759) and useless on new ones (T-unseen 0.253 vs core-v3 0.557). We deliberately did not add any popularity prior to close this gap (D5), because the brief asks for harmony across kinases, not exploitation of annotation bias.
+**What it does not beat.** core-v3 does not beat the trivial prior-only control. The comparison is inconclusive, not a demonstrated tie: the CI [−0.036, +0.083] is wider than the minimum detectable effect. Prior-only is *significantly better* on M1-all (Δ −0.046 [−0.079, −0.003]) and on well-studied kinases, and has higher harmony (0.750 vs 0.725). It was also ahead on DEV-confirm look 2 (0.856 vs 0.842, n.s.). That control knows which kinases are frequent drug targets and the true sign of the perturbation. It is excellent on heavily studied kinases (TEST T-seen 0.844 vs 0.759) and useless on new ones (T-unseen 0.253 vs core-v3 0.557). We deliberately did not add any popularity prior to close this gap (D5), because the brief asks for harmony across kinases, not exploitation of annotation bias.
 
 ## 2. Problem set-up and evaluation
 
@@ -59,7 +59,7 @@ On the sealed TEST set it scores M1-sel **0.714**. The set has 468 conditions, o
 - A pre-registered Holm family of 6 tests.
 - Minimum detectable effect about 0.06 (C7).
 
-**Controls.** Every method is reported next to the prior-only, shift-prior, random, site-permuted, shuffled-library and residue-matched-library controls.
+**Controls.** On TEST, every method is reported next to the prior-only, shift-prior and random controls, plus site-permuted calibration. The shuffled-library and residue-matched-library controls were run on DEV only.
 
 **Verification.**
 - The harness was re-implemented from scratch by a second agent, with identical results.
@@ -74,17 +74,18 @@ On the sealed TEST set it scores M1-sel **0.714**. The set has 468 conditions, o
    - Predicted: the top 100 sites per kinase from the kinaseSubMain "R2 no-phospho" model, at weight α = 1. That model was audited as leakage-safe (`docs/audit/r2np_leakage.md`) because it does not use phosphoproteomics features.
    - Every one of the 503 kinases therefore has evidence.
 2. **Bayesian linear-Gaussian core.**
-   - Model: x = W·a + b + ε, with prior a ~ N(0, τ²K).
+   - Input: each condition is median-centred and robustly scaled ('wsd').
+   - Model: y = W·a + ε, with prior a ~ N(0, τ²K).
    - K is a kinase-family kernel (ρ_f = 3; ρ_g = 0.25), so understudied kinases borrow strength from relatives.
    - Shared substrates are explained away jointly, unlike per-kinase z-score or KSEA.
-   - Closed-form posterior; no per-kinase trained weights.
+   - Closed-form posterior; the core has no per-kinase trained weights. The signature step below does fit per-kinase components, under the C10 safeguards.
 3. **Calibrated output (z_vif).**
    - The posterior is turned into a z-score with a variance-inflation term, ρ_e ≈ 0.01, fitted on DEV null conditions.
    - Result: about 5% |z| > 1.96 on site-permuted data.
 4. **Late-fused perturbation signatures (B7b, amendment C10).**
    - For kinases with clean perturbation data in the DEV training conditions, a signature of their top 100 responsive sites is correlated with the input.
    - It is added to the core z at α = 1.
-   - Signatures are fitted on DEV-CV ground-truth conditions only. TEST and devconfirm conditions were never used.
+   - Signatures are fitted on DEV-CV ground-truth conditions only. No TEST or devconfirm condition was used to fit them. The fusion settings (α, n_top) were fixed at the DEV-confirm look-2 freeze.
 5. **E1 rescaling.** Each signature kinase gets a scale from a permutation null, which restores calibration for those kinases.
 
 **Deliverables.**
@@ -102,9 +103,9 @@ On the sealed TEST set it scores M1-sel **0.714**. The set has 468 conditions, o
 | B1 extended library (z-score + r2np) | 0.638 (nested) | led to the core library |
 | B2 Bayesian core + family kernel | 0.655 | adopted |
 | B2.1 ρ_f cap, z_vif output (core-v1) | 0.663 | adopted (D6/D7) |
-| B7b late signatures (core-v2) | 0.680, Δ +0.018, p 0.0085 | adopted after audit (D11) |
+| B7b late signatures (core-v2) | 0.680, Δ +0.018 [−0.000, 0.023], p 0.0085 | adopted after audit (D11) |
 | B8 E1 calibration (core-v3) | 0.680 | adopted (calibration fix, D12) |
-| re-split seeds 1–4 | 0.680 ± 0.004 | no selection inflation |
+| re-split seeds 1–4 | 0.680 ± 0.004 | no sign of selection inflation (partitions overlap seed 0, ARI 0.68–0.75) |
 | devconfirm look 2 | core-v3 0.842 vs core-v1 0.803 (p 0.016) | confirmed |
 
 Negative or not adopted:
@@ -142,13 +143,13 @@ core-v3 beats z-score on 51 kinases and loses on 15.
 **Harmony.** The largest gain over the published methods is in the kinases with no quantified PSP substrates (bin 0: 0.72 vs 0.52). That is the understudied regime the brief emphasises.
 
 **Paired secondaries.**
-- core-v3 vs core-v1: +0.021 [+0.001, +0.031]. The gain comes entirely from signature kinases: +0.050 on 311 pairs, versus −0.001 for kinases without a signature.
+- core-v3 vs core-v1: +0.021 [+0.001, +0.031]. This is outside the Holm family and the lower bound is near 0. The gain comes entirely from signature kinases: +0.050 on 311 pairs, versus −0.001 for kinases without a signature. T-family-unseen is slightly worse (−0.005 [−0.011, −0.001]).
 - The A1 stacking secondary (0.686) did not improve on core-v1.
 - M2 (matched coverage) vs z-score is +0.031 [−0.013, +0.073], not significant (Holm p 0.15). Much of the advantage therefore comes from **scoring more kinases well**; on the kinases both methods cover, core-v3 is only modestly better.
 
 **Calibration (|z| > 1.96, target 5%).**
 - Site-permuted TEST conditions: 4.8% (bins 4.2–5.2%).
-- The 5 TEST null conditions (control vs control): 8.1%. z-score and KSEA give a similar 7.8–8.0%.
+- The 5 TEST null conditions (control vs control): 8.1%. With only 5 conditions this estimate is imprecise. z-score and KSEA give a similar 7.8–8.0%.
 - Real "null" experiments carry biological and batch variance that site permutation does not. Treat |z| ≈ 2 as suggestive, not significant.
 
 **Runtime.**
@@ -160,7 +161,7 @@ core-v3 beats z-score on 51 kinases and loses on 15.
 | core-v3, GPU (RTX 4090) | 1.7 ms |
 | JUMPsem (R) | 6–12 s |
 
-core-v3 is in the same speed class as z-score and KSEA.
+z-score and KSEA run at about 2.0 ms per condition on one thread (`results/baselines/baselines_dev.md`), so core-v3 is about 3× slower than them but orders of magnitude faster than JUMPsem. It misses the DESIGN target of ≤ 5 ms on one thread.
 
 ### 4.3 External sets (secondary, independent of the compendium)
 
@@ -174,11 +175,11 @@ The same sets scored with benchmarKIN's original metric are in the ledger, where
 
 - **Tyrosine and CPTAC:** core-v3 is clearly better than every baseline (Δ +0.10 to +0.23, p < 0.001).
 - **Hernández:** this set is small (7 kinases) and core-v3 is not better than z-score (−0.016, CI −0.11 to +0.14). The signature fusion *lowered* it relative to core-v1 (−0.061, n.s.), which is the one external warning sign for the signature component.
-- **benchmarKIN metric on the Hernández and tyrosine sets:** PSP z-score also scores well on the original metric (0.718–0.753), because that metric ignores coverage. Our coverage-aware metric is stricter by design (D1/D3).
+- **benchmarKIN metric on the Hernández and tyrosine sets:** PSP z-score also scores well on the original metric (0.718–0.753), because that metric ignores coverage. Our coverage-aware metric is stricter by design (D1/D3). On the Hernández set under the benchmarKIN metric, core-v3 (0.568) is *below* z-score (0.692), KSEA (0.688) and PSP z (0.753).
 
 ## 5. Limitations
 
-1. **No gain over a popularity prior.** On TEST the prior-only control (drug-target frequency with oracle sign) ties core-v3 overall. It is better on heavily studied kinases and far worse on unseen ones. Users interested only in canonical targets get little extra over "what is usually inhibited"; the value is in breadth and in data-driven evidence.
+1. **No gain over a popularity prior.** On TEST the prior-only control (drug-target frequency with oracle sign) is statistically indistinguishable from core-v3 on M1-sel; the comparison is inconclusive, not shown to be equivalent. It is significantly better on M1-all and on heavily studied kinases, and far worse on unseen ones. Users interested only in canonical targets get little extra over "what is usually inhibited"; the value is in breadth and in data-driven evidence.
 2. **Gains are concentrated.**
    - The signature component helps about a quarter of kinases; 71% of its DEV gain came from 5 kinases (MAP3K7, ROCK1/2, MET, IKBKB).
    - Signatures depend on which kinases were perturbed in the compendium, which is itself a study bias, even though fitting was restricted to DEV conditions.
@@ -189,7 +190,9 @@ The same sets scored with benchmarKIN's original metric are in the ledger, where
    - Some Hijazi target kinases may not be expressed in the cell line, so some "positives" cannot change.
    - Hijazi remains the hardest source: 0.65 on TEST.
    - decryptM scores are inflated by the dasatinib / tyrosine composition: a residue-matched random library already reaches about 0.70 there.
-5. **Calibration on real nulls** is about 8% rather than 5%.
+5. **Calibration on real nulls** is about 8% rather than 5%. It is estimated from only 5 TEST null conditions.
+5b. **Definition caveats (run_test_review).** T-unseen counts a kinase as seen if it appeared in DEV-CV *or* devconfirm, but the signatures and the prior-only control were fitted on DEV-CV only. So 9 kinases count as "seen" although no fitted component saw them. The prior-only control also excludes devconfirm, which makes it slightly weaker than it could be.
+5c. **Speed.** core-v3 misses the ≤ 5 ms single-thread design target (6.7 ms) and is about 3× slower than z-score and KSEA.
 6. **Predicted library dependency.** Breadth relies on one predicted kinase–substrate model (kinaseSubMain R2 no-phospho). It was audited as leakage-safe for our evaluation, but its errors propagate into every understudied kinase.
 7. **Small external sets.** Tyrosine has 16 kinases and Hernández 7, so external CIs are wide.
 8. **Licensing.** The PSP-derived model edges are CC BY-NC-SA and not redistributed. Users must rebuild them with their own PSP download.
