@@ -25,6 +25,7 @@ Build: ``python scripts/build_libraries.py``.
 from __future__ import annotations
 
 import gzip
+import os
 import hashlib
 import json
 import re
@@ -59,7 +60,7 @@ EXTRA_COMPENDIUM_PMIDS = {"36165955": "qPTM database (source of 461 compendium c
 SUGIYAMA_PMID = "31324866"
 
 # Predicted score files (copied from kinaseSubMain, READ-ONLY origin) and the banned kinaseSubMain variants.
-KSM = Path("/cluster/project/beltrao/JvG/Projects/hackathonKinaseSubs/kinaseSubMain")
+KSM = Path(os.environ.get("KINASESUB_DIR", "kinaseSubMain"))  # sibling kinaseSubMain checkout
 PREDICTED_FILES = {
     "r2np": {"path": EXT / "ksm_pred/r2np/uobs_predictions.parquet",
              "origin": "cache/runs/r2_final_nophospho_uobs__20261026-213950__s0/uobs_predictions.parquet",

@@ -35,7 +35,7 @@ Evidence: PROMPT.md, RESEARCH_TREE.md, LESSONS.md, git log (22 commits), docs/re
 - Never commit draft label tables before the split exists (candidate_gt.tsv with TEST labels is in history); seal by mechanism, not convention, and repeat the "do not read history/sealed" ban in every agent prompt.
 - Freeze with a hash and a gate file, and write amendments before seeing their effect (GT_FREEZE sha 1e6f791c, G1.json at 7de8eef).
 - Unscored must be NaN, never 0; make the harness raise on suspicious zeros (zero_policy="raise").
-- Look for sibling project dirs and existing audited resources before building (kinaseSubMain at /cluster/project/beltrao/..., benchmarKIN local; their audit marked which sets leak).
+- Look for sibling project dirs and existing audited resources before building (kinaseSubMain at $KINASESUB_DIR, benchmarKIN local; their audit marked which sets leak).
 - Tell concurrent agents when a shared cache is being regenerated, and require each to report the GT hash behind its numbers.
 - Timebox infrastructure: get to a first end-to-end method number before the next design round; keep one source of truth per fact and fold tree-only updates into work commits (M1 spent all effort on design and GT, with no method result and baselines still in progress).
 ```

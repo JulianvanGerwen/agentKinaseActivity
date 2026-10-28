@@ -1,0 +1,13 @@
+{
+ "name": "core-v3 (mvp)",
+ "note": "Subset of models/core_v3/manifest.json. edges.tsv.gz is not shipped (PSP licence); build it with mvp/build_edges.py.",
+ "config_sha256_research": "d0bdbb7745d715045a5468ef2fa1465920ef0549d393829547f8a184ac52b084",
+ "rho_e_refit": 0.01,
+ "rho_sig_refit": 0.8977178151216297,
+ "artifact_sha256": {
+  "kinases.tsv": "893845bcc664283b09d5d2525aeccf664fbddeec84f7e4ba5381877901415886",
+  "signatures.tsv.gz": "0a028fb088a732662c130e100405223a7da6d0ade5e9d0286f9c4da592c1a6e4",
+  "e1_scales.tsv": "a3fb18e96ba2d153137417ba775a29840c8fe820049e0b627e22f2c053f79f55",
+  "sig_selection.tsv": "e7483053374707743d9c831578f5ac29dae48b08d3250a387da4e338381569ac"
+ }
+}

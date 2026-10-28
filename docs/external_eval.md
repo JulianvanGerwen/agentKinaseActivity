@@ -45,7 +45,7 @@ Score convention: DataFrame condition(or sample) x HGNC kinase, NaN = unscored.
    target dropped; decoupler mcauroc (1000 draws, negatives resampled to n_pos with replacement, seed 42). Tumour
    (`benchmarkin_tumour`): kinases with >=30 scored samples, per-cohort z over samples, GS+/GS- pooled over cohorts,
    1000 x 80% subsamples without replacement, mean AUROC.
-Reference implementation: `/cluster/project/beltrao/JvG/Projects/hackathonKinaseSubs/kinaseSubMain/src/ksp/downstream/`
+Reference implementation: `$KINASESUB_DIR/src/ksp/downstream/`
 (re-implemented, not imported).
 
 ## Validation (synthetic only)

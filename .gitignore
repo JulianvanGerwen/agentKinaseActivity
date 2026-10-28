@@ -1,12 +1,67 @@
-# restricted / large data never committed
+# ---------------------------------------------------------------------------------------------------------------
+# Restricted, licensed or large input data: never committed (see DATA.md for sources, checksums and licences)
+# ---------------------------------------------------------------------------------------------------------------
+# user-provided compendium, PhosphoSitePlus files, publisher PDFs, Klaeger tables
 data/
+# third-party downloads (benchmarKIN, OmniPath, iPTMnet, HGNC) and the R environment
 external/
+# derived caches, incl. the sealed TEST labels (cache/sealed)
 cache/
+# agent scratch space
+agents/
+
+# PhosphoSitePlus (CC BY-NC-SA 3.0, registration required) and anything derived from it at edge level
+Kinase_Substrate_Dataset*
+Phosphorylation_site_dataset*
+Regulatory_sites*
+*psp*.parquet
+models/*/edges.tsv.gz
+# built locally by mvp/build_edges.py from the user's own PSP download
+mvp/model/edges.tsv.gz
+omnipath_enzsub*.tsv
+
+# Publications and spreadsheets supplied as inputs (publisher copyright)
+*.pdf
+*.xlsx
+*.xls
+
+# Large binary / intermediate formats (scores, matrices, model caches)
 *.parquet
+*.feather
+*.npy
 *.npz
 *.pkl
+*.pickle
+*.h5
+*.hdf5
+*.pt
+*.ckpt
+*.zarr/
+
+# Logs and run outputs (the committed TEST log and b4b fit logs are tracked explicitly)
 logs/*.log
+results/*.log
+nohup.out
+mvp/example/*_scores.tsv
+
+# Secrets and personal/local configuration
+.env
+.env.*
+*.pem
+*.key
+.netrc
+.Rhistory
+.RData
+.claude/
+.vscode/
+.idea/
+
+# Python / tooling
 __pycache__/
 *.pyc
-models/*/edges.tsv.gz
-results/*.log
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+build/
+dist/
+.DS_Store

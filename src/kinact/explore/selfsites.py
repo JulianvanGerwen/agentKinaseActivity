@@ -15,6 +15,7 @@ Helpers to EXCLUDE self-sites from an input vector (needed for GT-A, DESIGN §3)
 """
 from __future__ import annotations
 
+import os
 import re
 from pathlib import Path
 
@@ -24,7 +25,7 @@ import scipy.sparse as sp
 
 ROOT = Path(__file__).resolve().parents[3]
 REG_PQ = ROOT / "cache/psp_regulatory.parquet"
-DOMAINS_PQ = Path("/cluster/project/beltrao/JvG/Projects/hackathonKinaseSubs/kinaseSubMain/cache/phosformer/"
+DOMAINS_PQ = Path(os.environ.get("KINASESUB_DIR", "kinaseSubMain"), "cache/phosformer/"
                   "kinase_domains.parquet")
 ACT = re.compile(r"(?:^|;\s*)(?:enzymatic )?activity, induced")
 INH = re.compile(r"(?:^|;\s*)(?:enzymatic )?activity, inhibited")

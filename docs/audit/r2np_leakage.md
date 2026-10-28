@@ -2,7 +2,7 @@
 
 Independent audit, 2026-10-27. Scope: predicted KS libraries `r2np` (kinaseSubMain R2 "nophospho", DEV-only, seed 0,
 sha `1edbd269…`), `r3` (R3 deploy, sha `2f62988c…`), `cantley` (`cantley_unprimed_score.npy`, sha `e5597327…`).
-kinaseSubMain (`KSM/` = `/cluster/project/beltrao/JvG/Projects/hackathonKinaseSubs/kinaseSubMain`) was only read.
+kinaseSubMain (`KSM/` = `$KINASESUB_DIR`) was only read.
 Empirical checks use DEV folds 0–4 only, through `kinact.explore.lib_variants.DevData` / `Evaluator`. Nothing under
 `cache/sealed`, and no git history of `results/ground_truth`, was opened.
 Scripts: `scripts/audit_r2np_leakage/a{1,3,4,5,6}.py` (outputs to `cache/audit_r2np/`).

@@ -1,6 +1,6 @@
 # Audit: kinaseSubMain (predicted kinase–substrate sites) for reuse
 
-Sister repo (READ-ONLY): `/cluster/project/beltrao/JvG/Projects/hackathonKinaseSubs/kinaseSubMain` (below: `KSM/`).
+Sister repo (READ-ONLY): `$KINASESUB_DIR` (below: `KSM/`).
 Audited 2026-10-27 from REPORT.md v3, DATA.md, docs/{downstream,features_phospho,features_motif,model_r2,model_r3}.md,
 run manifests and parquet metadata (read with `KSM/.venv/bin/python -I`). Nothing in KSM was modified.
 

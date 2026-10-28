@@ -51,7 +51,7 @@ Notes
 - `external/benchmarkin_github/` — tyrosineData.rda / tyrosineMeta.rda from github.com/saezlab/benchmarKIN main@2aa6e25c4e5c, GPL-3.
 - `external/benchmarkin_py/` — Python (parquet/json) conversions of the above produced by kinaseSubMain `src/ksp/downstream/bench_data.py` (derived; same licences). The `r2_clean`/`r2_nophospho` dirs were NOT copied.
 
-## KS-library sources (added 2026-10-27 by the library builder; copied READ-ONLY from kinaseSubMain = `KSM/` = /cluster/project/beltrao/JvG/Projects/hackathonKinaseSubs/kinaseSubMain; never committed)
+## KS-library sources (added 2026-10-27 by the library builder; copied READ-ONLY from kinaseSubMain = `KSM/` = $KINASESUB_DIR; never committed)
 Used only through `scripts/build_libraries.py` → `cache/libraries/*.parquet`; report `results/libraries/LIBRARY_REPORT.md`; per-build input hashes in `results/libraries/build_manifest.json`.
 
 | File | Source | Version / date | sha256 | Licence |

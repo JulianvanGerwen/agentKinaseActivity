@@ -1,0 +1,43 @@
+{
+ "name": "core-v3",
+ "description": "core-v1 (D6/D7: curated_union + r2np top-100, Bayesian core, family kernel, z_vif) + late-fused perturbation-response signatures (B7b, D11; alpha=1, clean+contrast, fitted on DEV-CV GT conditions only, C10) + E1 per-signature-kinase permutation-null scale of the fused z (B8, D12). Built by scripts/build_core_v3_artifacts.py.",
+ "library": {
+  "curated": "curated_union",
+  "predicted": {
+   "r2np": {
+    "k": 100,
+    "alpha": 1.0
+   }
+  }
+ },
+ "scale": "wsd",
+ "winsor": null,
+ "borrow": true,
+ "min_substrates": 1,
+ "tau": 0.125,
+ "rho_f": 3.0,
+ "rho_g": 0.25,
+ "rho_e": 0.01,
+ "output": "z_vif + late signature fusion (E1)",
+ "artifacts": ".",
+ "signatures": {
+  "file": "signatures.tsv.gz",
+  "scales_file": "e1_scales.tsv",
+  "variant": "clean+contrast",
+  "alpha": 1.0,
+  "n_top": 100,
+  "kappa": 0.0,
+  "rho_sig": 0.8977178151216297,
+  "clip": 4.0,
+  "min_sites": 5,
+  "e1_scale": true
+ },
+ "provenance": {
+  "core": "identical to config/core_v1.json (frozen config hash 04b69b6513e3927d)",
+  "alpha": "DEV-confirm look-2 freeze (alpha OOF 0.25/0.5/1 = .6758/.6791/.6819); D11",
+  "n_top_kappa": "DEV-confirm look-2 freeze (results/g2_prep/devconfirm_look2_frozen.json, config_hash 46caff727af577b3): argmax pooled seed-0 OOF M1-sel of the B7 primary grid; alpha = argmax OOF of the late fusion",
+  "rho_sig": "RMS of raw z_sig over the 7 DEV role=null conditions",
+  "e1_scale": "B8 E1: v_k = mean (z_core + alpha z_sig)^2 over site-permuted DEV-CV GT conditions (seed 0)",
+  "mvp": "Copied from config/core_v3.json (frozen; sha256 d0bdbb77...). Only `artifacts` changed. edges.tsv.gz is built locally by mvp/build_edges.py."
+ }
+}

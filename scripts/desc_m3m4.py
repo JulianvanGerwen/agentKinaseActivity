@@ -15,6 +15,7 @@ M4: per (kinase k, study = PMID) among DEV GT conditions where k is a direct hig
     kinases. Scored kinases only.
 """
 import json
+import os
 import sys
 
 import numpy as np
@@ -24,7 +25,7 @@ from desc_common import FOLDS, METHODS, OUT, Data, score_all
 from kinact import controls as ctl
 from kinact.external_eval import auroc
 
-sys.path.insert(0, "/cluster/project/beltrao/JvG/Projects/hackathonKinaseSubs/kinaseSubMain/src")
+sys.path.insert(0, os.path.join(os.environ.get("KINASESUB_DIR", "kinaseSubMain"), "src"))
 from ksp.downstream.evaluate import perturbation_eval  # noqa: E402
 
 
