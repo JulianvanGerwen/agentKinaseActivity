@@ -65,3 +65,5 @@ __pycache__/
 build/
 dist/
 .DS_Store
+# the research briefing is our own output and is published
+!docs/briefing/BRIEFING.pdf
