@@ -1,0 +1,68 @@
+{
+ "FREEZE.json": {
+  "gt_hash": "82969a090d74adca4de74df8916c07cf1cad906ab9164d3e97faeecf01abbe4f",
+  "gt_freeze_sha256": "1e6f791c6b85f15dfe51d7eb045bf392a6b25be576b10974f7bba6c5d887baac",
+  "config_sha256": "d0bdbb7745d715045a5468ef2fa1465920ef0549d393829547f8a184ac52b084",
+  "model_manifest_sha256": "969209312dd8c4a116f05493ae97fa208806d45bec24bf75689fcb9a5df86a57",
+  "code_commit": "03ab343d86cbdb15bd53cd1b7e01b3c0a2648504",
+  "gate": "G2",
+  "date": "2026-10-27",
+  "written_by": "PI",
+  "final_method": "core-v3 (config/core_v3.json; D11-D13)",
+  "holm_family": [
+   "core-v3 vs zscore (curated min1)",
+   "vs KSEA (curated min1)",
+   "vs JUMPsem (DEV-best)",
+   "vs PhosX-like (best-other)",
+   "vs prior-only",
+   "vs zscore on M2"
+  ],
+  "beats_rule": "Holm p<0.05 AND dM1-sel>=0.01 AND dM1-sel>0 on T-unseen AND point dM2>=0",
+  "mde_m1sel": 0.0605,
+  "secondary": [
+   "core-v1",
+   "A1 stack",
+   "PSP z-score min3",
+   "external sets"
+  ]
+ },
+ "FREEZE_sha256": "4520d0a86d8e13f3123e50954be20570e38f14a7d0d6710f2960b0cf46d036f9",
+ "verified": {
+  "gt_hash": "82969a090d74adca4de74df8916c07cf1cad906ab9164d3e97faeecf01abbe4f",
+  "gt_freeze_sha256": "1e6f791c6b85f15dfe51d7eb045bf392a6b25be576b10974f7bba6c5d887baac",
+  "config_sha256": "d0bdbb7745d715045a5468ef2fa1465920ef0549d393829547f8a184ac52b084",
+  "model_manifest_sha256": "969209312dd8c4a116f05493ae97fa208806d45bec24bf75689fcb9a5df86a57",
+  "code_commit": "03ab343d86cbdb15bd53cd1b7e01b3c0a2648504"
+ },
+ "artifacts": {
+  "n_checked": 6,
+  "mismatch": {}
+ },
+ "inputs": {
+  "n_checked": 34,
+  "mismatch": {},
+  "logged_only": {
+   "cache/libraries/cantley.parquet": "b32c81915ab3fc8a388f65e0cba547242c24933a91b7ea95d8b0087ff51055c1",
+   "cache/libraries/curated_union.parquet": "cb89265965d7e250a59f96ada97c4e080e21c7e0583935957e61fa7ead0a490b",
+   "cache/libraries/invitro_sugiyama.parquet": "6948be9ab0424e169e1e074fa917cbe1b7776477e8c886d8c3501452d824ce62",
+   "cache/libraries/psp_all.parquet": "4604e07887e7472b0b917d92bd76476dd23e571542d9f013053bd22c87f52fee",
+   "cache/libraries/psp_human_only.parquet": "6cd656473e6ad12935bfba8581423a6fbca926c158e022b6e2e22c30d92d6f47",
+   "cache/libraries/psp_invivo.parquet": "040aae7b8dcb705aa256c2ff645f901e350436ec356988d9d583c6374b00fdcb",
+   "cache/libraries/r2np.parquet": "69b9c5884f86e54574a1ebf8c3fe42d26612e574c7bd61ad6632f6c6d3f5c6d8",
+   "cache/libraries/r3.parquet": "19e0da3b4a860c4d10db8839c355ced474773d9793491b4ce146d19a285e9797",
+   "cache/external/pert_experiments.tsv": "1f9255c1948406058ace1557a6ce86cd97fd08187e2806171bf7f4a2bbf9c073",
+   "cache/external/pert_hernandez_new.parquet": "72cf1d82cf2306224650de7b084aa13566959a6d9f336bab274f200f22733f8a",
+   "cache/external/pert_targets.tsv": "824f92bc26206d1b97616f91515d2c7266fb78d616b2bfb620bdc40b6447ae5a",
+   "cache/external/pert_tyrosine.parquet": "e561f1d34e1c949a99f739e5e1b52cfe9c2d6efc439675f4da5de5f91ad8ebd9",
+   "cache/external/prep_report.json": "1b87631c3ca3e77ee4d8c3445a0c305b6bfd432bef37fb2b1627dcf046807be8",
+   "cache/external/tumour_BRCA.parquet": "257038b82523f3a7da4af6401a2817598898189f77d061158ac54b879a8c649e",
+   "cache/external/tumour_CCRCC.parquet": "09e61736af9cfa42a155e9cd925e30630fc9f1e12a90849328ab3aedb9d0566e",
+   "cache/external/tumour_GBM.parquet": "d91791165f794b9e3151426dbec408b3522f8e53e2bc77cbeba860827e0c2ae6",
+   "cache/external/tumour_HNSCC.parquet": "a9dcc27172ccf07f344ebcf7567da7830ed009f062e1e43f54d56915358cb639",
+   "cache/external/tumour_LSCC.parquet": "abbae9540dd0c82856829a1089ded57d320ad0d73d2cbe26163c31c92b2c3a5e",
+   "cache/external/tumour_LUAD.parquet": "d04421d8f560d16c0ab7f6e858d1d77a391293cf82461b8a40b1acc0ddd5968e",
+   "cache/external/tumour_UCEC.parquet": "f72c332d7a85f1cdc452acb201f44c0ff7fac450330b07cc28170cc4c463a3d8",
+   "cache/external/tumour_gs_long.tsv": "8e0e626a1d9fed54d587fa68406057ca413b5a2ef470dadacf49f54fcb73bf85"
+  }
+ }
+}

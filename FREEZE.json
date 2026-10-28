@@ -1,0 +1,27 @@
+{
+ "gt_hash": "82969a090d74adca4de74df8916c07cf1cad906ab9164d3e97faeecf01abbe4f",
+ "gt_freeze_sha256": "1e6f791c6b85f15dfe51d7eb045bf392a6b25be576b10974f7bba6c5d887baac",
+ "config_sha256": "d0bdbb7745d715045a5468ef2fa1465920ef0549d393829547f8a184ac52b084",
+ "model_manifest_sha256": "969209312dd8c4a116f05493ae97fa208806d45bec24bf75689fcb9a5df86a57",
+ "code_commit": "03ab343d86cbdb15bd53cd1b7e01b3c0a2648504",
+ "gate": "G2",
+ "date": "2026-10-27",
+ "written_by": "PI",
+ "final_method": "core-v3 (config/core_v3.json; D11-D13)",
+ "holm_family": [
+  "core-v3 vs zscore (curated min1)",
+  "vs KSEA (curated min1)",
+  "vs JUMPsem (DEV-best)",
+  "vs PhosX-like (best-other)",
+  "vs prior-only",
+  "vs zscore on M2"
+ ],
+ "beats_rule": "Holm p<0.05 AND dM1-sel>=0.01 AND dM1-sel>0 on T-unseen AND point dM2>=0",
+ "mde_m1sel": 0.0605,
+ "secondary": [
+  "core-v1",
+  "A1 stack",
+  "PSP z-score min3",
+  "external sets"
+ ]
+}

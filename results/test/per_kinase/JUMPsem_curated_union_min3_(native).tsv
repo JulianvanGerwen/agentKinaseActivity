@@ -1,0 +1,208 @@
+kinase	n_pairs	n_conditions	n_groups	n_pairs_M1sel	pair_coverage	sources	bin	M1-sel	M1-all	M1-sel-scored	p_perm	q_bh	significant	seen_in_train
+AAK1	3	3	1	0	0	H	1-4		0.5					True
+ABL1	6	6	2	3	1	D,H	1-4	0.421162	0.511679	0.244385	0.932534	1	False	True
+ABL2	6	6	2	0	0	H	0		0.5					True
+ACVR1B	3	3	1	0	0	H	0		0.5					False
+AKT1	26	26	4	23	0.961538	D,H,O	>=20	0.539243	0.531824	0.735148	0.0454773	1	False	True
+AKT2	24	24	4	21	0.958333	D,H,O	5-19	0.522595	0.511321	0.639516	0.234383	1	False	True
+AKT3	21	21	3	18	1	D,H,O	5-19	0.552766	0.569347	0.717194	0.0769615	1	False	True
+ALK	3	3	1	0	0	H	0		0.5					True
+ARAF	2	2	1	2	0	O	1-4	0.5	0.5		1	1	False	False
+ATM	5	5	3	5	0.6	O	>=20	0.486768	0.488055	0.461365	0.655172	1	False	True
+ATR	10	10	4	10	0.2	O	5-19	0.492978	0.493897	0.092471	0.981009	1	False	True
+AURKA	11	11	7	8	0.818182	H,O	5-19	0.510705	0.514876	0.625469	0.228886	1	False	True
+AURKB	7	7	6	7	0.571429	O	>=20	0.491347	0.491606	0.407675	0.716642	1	False	True
+AURKC	3	3	1	0	0	H	1-4		0.5					True
+BLK	3	3	1	0	0	H	0		0.5					True
+BMP2K	6	6	2	0	0	H	1-4		0.5					True
+BMPR2	3	3	1	0	0	H	0		0.5					False
+BRAF	27	27	2	27	0	O	1-4	0.5	0.5		1	1	False	False
+BTK	3	3	1	0	0	H	0		0.5					True
+CAMK4	3	3	1	0	0.666667	H	1-4		0.573733					True
+CDK1	9	9	6	6	0.555556	H,O	>=20	0.488542	0.507206	0.332369	0.801599	1	False	True
+CDK11A	3	3	1	0	0	H	0		0.5					False
+CDK12	1	1	1	1	0	O	0	0.5	0.5		1	1	False	True
+CDK16	3	3	1	0	0.666667	H	1-4		0.478836					True
+CDK17	3	3	1	0	0	H	0		0.5					True
+CDK18	3	3	1	0	0	H	1-4		0.5					True
+CDK2	3	3	1	0	1	H	>=20		0.577098					True
+CDK4	3	3	1	0	1	H	5-19		0.566515					True
+CDK6	3	3	1	0	1	H	5-19		0.46901					True
+CDK7	3	3	1	0	1	H	5-19		0.504566					True
+CHEK1	3	3	1	3	0.333333	O	>=20	0.473737	0.480303	0.117647	0.894553	1	False	True
+CHEK2	4	4	2	4	0.5	O	5-19	0.517276	0.516057	0.587629	0.344328	1	False	True
+CHUK	12	12	4	12	0.0833333	O	1-4	0.533543	0.533543	0.915584	0.085957	1	False	True
+CILK1	3	3	1	0	0	H	0		0.5					True
+CLK1	3	3	1	0	1	H	1-4		0.440639					True
+CLK2	6	6	2	0	1	H	0		0.484266					True
+CLK3	3	3	1	0	0	H	0		0.5					True
+CLK4	9	9	3	3	0	H	0	0.5	0.5		1	1	False	True
+CSK	9	9	3	0	0	H	0		0.5					True
+CSNK1G3	3	3	1	3	0	H	1-4	0.5	0.5		1	1	False	False
+CSNK2A1	4	4	1	1	0.75	H,O	>=20	0.5	0.491781		1	1	False	True
+CSNK2A2	4	4	1	1	0.75	H,O	1-4	0.5	0.496854		1	1	False	True
+DAPK1	3	3	1	0	1	H	1-4		0.538813					True
+DAPK2	3	3	1	0	0	H	0		0.5					True
+DAPK3	3	3	1	0	1	H	1-4		0.471842					True
+DCLK1	3	3	1	0	0	H	0		0.5					True
+DCLK2	3	3	1	0	0	H	0		0.5					True
+DCLK3	3	3	1	0	0	H	0		0.5					True
+DSTYK	3	3	1	0	0	H	0		0.5					False
+DYRK1A	3	3	1	0	1	H	5-19		0.51446					True
+DYRK1B	3	3	1	0	1	H	1-4		0.471842					True
+DYRK2	3	3	1	0	1	H	5-19		0.499239					True
+EGFR	53	53	4	53	0.754717	D,O	5-19	0.520585	0.520416	0.684031	0.157421	1	False	True
+EIF2AK1	3	3	1	0	0	H	0		0.5					False
+EIF2AK4	3	3	1	0	0	H	0		0.5					True
+EPHA1	3	3	1	0	0	H	0		0.5					True
+EPHA2	3	3	1	0	0	H	0		0.5					True
+EPHA4	3	3	1	0	0	H	0		0.5					True
+EPHB2	3	3	1	0	0	H	0		0.5					True
+EPHB4	3	3	1	0	0	H	0		0.5					True
+EPHB6	3	3	1	0	0	H	0		0.5					True
+ERBB2	32	32	1	32	0.6875	D,O	1-4	0.500418	0.503051	0.502375	0.484258	1	False	True
+FAM20C	1	1	1	1	0	O	0	0.5	0.5		1	1	False	False
+FER	6	6	2	0	0	H	1-4		0.5					True
+FGFR1	3	3	1	0	0	H	0		0.5					True
+FGFR2	3	3	1	0	0	H	0		0.5					True
+FGFR3	3	3	1	0	0	H	0		0.5					False
+FLT1	3	3	1	0	0	H	0		0.5					False
+FLT3	6	6	2	3	0	H	0	0.5	0.5		1	1	False	True
+FLT4	3	3	1	0	0	H	0		0.5					False
+FRK	6	6	2	0	0	H	0		0.5					True
+FYN	6	6	2	0	0	H	1-4		0.5					True
+GAK	3	3	1	0	0	H	0		0.5					True
+GRK1	6	6	2	0	0	H	0		0.5					True
+GRK7	6	6	2	0	0	H	0		0.5					True
+HCK	6	6	2	0	0	H	0		0.5					True
+HIPK1	3	3	1	0	0.666667	H	1-4		0.527397					True
+HIPK2	6	6	2	0	1	H	5-19		0.513894					True
+HIPK3	6	6	2	0	0	H	0		0.5					True
+HIPK4	3	3	1	0	0	H	0		0.5					True
+IKBKB	13	13	4	13	0.153846	O	0	0.493747	0.493241	0.425135	0.646677	1	False	True
+IKBKE	3	3	1	0	0	H	1-4		0.5					True
+INSR	1	1	1	1	0	O	0	0.5	0.5		1	1	False	True
+JAK1	10	10	2	7	0	H,O	0	0.5	0.5		1	1	False	True
+JAK2	16	16	4	7	0	H,O	1-4	0.5	0.5		1	1	False	True
+JAK3	9	9	3	0	0	H	0		0.5					True
+KDR	1	1	1	1	0	O	0	0.5	0.5		1	1	False	False
+KIT	7	7	2	7	0	D,H	0	0.5	0.5		1	1	False	True
+LATS2	9	9	3	3	0	H	1-4	0.5	0.5		1	1	False	True
+LCK	11	11	4	5	0.181818	H,O	0	0.509039	0.50452	0.733333	0.130435	1	False	True
+LIMK1	6	6	2	0	0	H	1-4		0.5					False
+LIMK2	6	6	2	0	1	H	1-4		0.521146					True
+LTK	3	3	1	0	0	H	0		0.5					False
+LYN	3	3	1	0	0	H	0		0.5					True
+MAP2K1	13	13	1	13	0.769231	D,H,O	1-4	0.515486	0.517775	0.560592	0.251374	1	False	True
+MAP2K2	15	15	2	12	0	D,H,O	1-4	0.5	0.5		1	1	False	True
+MAP2K3	6	6	2	0	0	H	0		0.5					True
+MAP2K4	3	3	1	0	0	H	0		0.5					True
+MAP2K5	6	6	2	3	0	H	0	0.5	0.5		1	1	False	False
+MAP3K1	3	3	1	0	0.666667	H	1-4		0.526743					False
+MAP3K10	6	6	2	0	0	H	1-4		0.5					False
+MAP3K15	6	6	2	0	0	H	0		0.5					True
+MAP3K19	9	9	3	0	0	H	0		0.5					True
+MAP3K2	6	6	2	0	0	H	1-4		0.5					True
+MAP3K20	6	6	2	3	0	H	1-4	0.5	0.5		1	1	False	True
+MAP3K3	3	3	1	0	0	H	0		0.5					True
+MAP3K4	3	3	1	0	0	H	0		0.5					False
+MAP3K7	12	12	4	12	0.75	O	0	0.482553	0.48246	0.439965	0.733133	1	False	True
+MAP4K1	6	6	2	0	0	H	1-4		0.5					True
+MAP4K2	6	6	2	0	0	H	1-4		0.5					True
+MAP4K3	6	6	2	0	0	H	0		0.5					False
+MAP4K5	3	3	1	0	0	H	1-4		0.5					True
+MAPK1	7	7	4	7	0.714286	H,O	>=20	0.511356	0.511356	0.600167	0.244378	1	False	True
+MAPK11	8	8	4	8	0.875	H,O	1-4	0.489437	0.489437	0.450126	0.701649	1	False	True
+MAPK12	11	11	4	5	1	H,O	5-19	0.499936	0.49947	0.50184	0.508246	1	False	True
+MAPK13	2	2	1	2	1	O	5-19	0.497854	0.497854	0.492369	0.513743	1	False	False
+MAPK14	11	11	6	11	0.636364	H,O	>=20	0.497954	0.497954	0.49032	0.571714	1	False	True
+MAPK15	9	9	3	3	0.333333	H	1-4	0.499297	0.517972	0.491525	0.512744	1	False	True
+MAPK3	7	7	4	7	0.714286	H,O	>=20	0.520033	0.520033	0.669006	0.118441	1	False	True
+MAPK8	3	3	2	3	0	O	>=20	0.5	0.5		1	1	False	True
+MAST1	3	3	1	0	0	H	0		0.5					True
+MASTL	1	1	1	1	0	O	1-4	0.5	0.5		1	1	False	False
+MELK	3	3	1	0	1	H	5-19		0.512734					True
+MERTK	3	3	1	0	0	H	1-4		0.5					True
+MET	1	1	1	1	0	O	1-4	0.5	0.5		1	1	False	True
+MINK1	3	3	1	0	0	H	0		0.5					True
+MKNK2	3	3	1	0	0	H	0		0.5					True
+MTOR	18	18	5	18	0.888889	H,O	5-19	0.501003	0.501003	0.497056	0.471264	1	False	True
+MYO3B	3	3	1	0	0	H	0		0.5					False
+NEK1	3	3	1	0	0	H	0		0.5					False
+NEK10	3	3	1	0	0	H	0		0.5					True
+NEK9	3	3	1	0	0	H	1-4		0.5					False
+NTRK1	6	6	2	0	0	H	0		0.5					True
+NTRK2	6	6	2	0	0	H	0		0.5					True
+NTRK3	6	6	2	0	0	H	0		0.5					True
+NUAK1	3	3	1	0	0.666667	H	1-4		0.446237					True
+NUAK2	3	3	1	0	0	H	1-4		0.5					True
+PAK1	3	3	1	3	1	H	>=20	0.538306	0.538306	0.642231	0.209895	1	False	True
+PAK2	3	3	1	3	1	H	1-4	0.555108	0.555108	0.706482	0.109945	1	False	True
+PAK3	3	3	1	3	0	H	0	0.5	0.5		1	1	False	False
+PAK5	3	3	1	0	0	H	0		0.5					True
+PDGFRA	7	7	2	7	0	D,H	0	0.5	0.5		1	1	False	True
+PDGFRB	4	4	1	4	0	D	0	0.5	0.5		1	1	False	True
+PDPK1	9	9	3	6	1	H	5-19	0.464719	0.501948	0.35577	0.888556	1	False	False
+PHKG2	3	3	1	0	1	H	0		0.496956					True
+PIM1	3	3	1	0	1	H	5-19		0.539574					True
+PIM3	6	6	2	0	1	H	5-19		0.496185					True
+PKMYT1	3	3	1	0	0	H	1-4		0.5					False
+PKN2	3	3	1	0	0	H	0		0.5					True
+PLK1	4	4	4	4	0.5	O	>=20	0.49401	0.49401	0.445709	0.630685	1	False	True
+PLK4	6	6	2	0	0	H	1-4		0.5					True
+PRKACA	3	3	1	0	1	H	>=20		0.538348					True
+PRKACB	3	3	1	0	0.666667	H	1-4		0.51733					True
+PRKCA	4	4	1	1	1	H,O	>=20	0.382287	0.404155	0.00934579	0.990505	1	False	True
+PRKCB	4	4	1	1	1	H,O	5-19	0.384529	0.39503	0.0186916	0.973513	1	False	True
+PRKCD	3	3	1	0	1	H	>=20		0.526217					True
+PRKCE	3	3	1	0	1	H	5-19		0.511236					True
+PRKCG	3	3	1	0	1	H	5-19		0.5					True
+PRKCH	6	6	2	3	0.666667	H	1-4	0.515184	0.525382	0.59375	0.321339	1	False	True
+PRKCI	3	3	1	0	1	H	5-19		0.434082					False
+PRKCQ	3	3	1	0	1	H	5-19		0.499251					True
+PRKCZ	3	3	1	0	1	H	5-19		0.470037					True
+PRKD2	3	3	1	0	0.666667	H	1-4		0.442933					True
+PRKD3	6	6	2	0	0	H	0		0.5					True
+PRKDC	3	3	1	3	1	O	>=20	0.507301	0.524485	0.518574	0.454773	1	False	True
+PRKG1	3	3	1	0	1	H	5-19		0.530236					True
+PRKG2	3	3	1	0	1	H	1-4		0.502212					True
+PRKX	3	3	1	0	0	H	0		0.5					True
+PTK2	3	3	1	0	1	H	1-4		0.539171					False
+PTK2B	3	3	1	0	0	H	0		0.5					False
+RAF1	2	2	1	2	1	O	5-19	0.469262	0.469262	0.355769	0.750625	1	False	False
+RET	3	3	1	0	0	H	1-4		0.5					True
+RIOK1	3	3	1	0	0	H	0		0.5					True
+RIPK2	6	6	2	3	0	H	0	0.5	0.5		1	1	False	True
+RIPK3	3	3	1	0	0	H	1-4		0.5					False
+ROCK1	3	3	1	0	1	H	5-19		0.567109					True
+ROCK2	3	3	1	0	1	H	1-4		0.532448					True
+ROS1	3	3	1	0	0	H	0		0.5					True
+RPS6KA1	3	3	1	0	1	H	>=20		0.459665					True
+RPS6KB1	10	10	4	7	1	H,O	5-19	0.484489	0.502563	0.430953	0.686657	1	False	True
+SBK3	3	3	1	0	0	H	0		0.5					False
+SIK2	6	6	2	0	1	H	1-4		0.57363					True
+SLK	6	6	2	0	0	H	0		0.5					True
+SRC	6	6	2	0	1	H	5-19		0.511451					True
+SRPK1	3	3	1	0	0	H	1-4		0.5					True
+STK10	6	6	2	0	0	H	1-4		0.5					True
+STK16	3	3	1	0	0.666667	H	0		0.455453					True
+STK17A	6	6	2	3	1	H	0	0.516631	0.498802	0.567641	0.350325	1	False	True
+STK17B	6	6	2	3	0	H	1-4	0.5	0.5		1	1	False	False
+STK26	3	3	1	0	0	H	1-4		0.5					False
+STK3	6	6	2	0	1	H	1-4		0.523255					True
+STK35	3	3	1	0	0	H	0		0.5					False
+STK38	3	3	1	0	0.333333	H	1-4		0.484779					True
+STK38L	3	3	1	0	0	H	0		0.5					True
+STK4	9	9	3	3	1	H	1-4	0.493492	0.514077	0.471212	0.562719	1	False	False
+TAOK1	6	6	2	3	0	H	1-4	0.5	0.5		1	1	False	True
+TBK1	3	3	1	0	1	H	5-19		0.497717					True
+TEC	3	3	1	0	0	H	0		0.5					True
+TNIK	3	3	1	0	0	H	0		0.5					False
+TNK1	3	3	1	0	0	H	0		0.5					True
+TNK2	6	6	2	0	0	H	1-4		0.5					True
+TRPM6	3	3	1	3	0	H	0	0.5	0.5		1	1	False	False
+TYK2	6	6	2	0	0	H	1-4		0.5					True
+ULK1	3	3	1	0	1	H	5-19		0.54384					True
+ULK2	3	3	1	0	0	H	1-4		0.5					True
+YES1	3	3	1	0	0	H	0		0.5					True
+ZAP70	5	5	2	5	0	O	1-4	0.5	0.5		1	1	False	False
