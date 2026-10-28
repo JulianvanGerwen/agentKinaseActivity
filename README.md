@@ -12,6 +12,20 @@ The rest of this repository is entirely AI generated. It is the working director
 
 **(Human-written text ends)**
 
+## Start here: the research briefing
+
+**[`docs/briefing/BRIEFING.pdf`](docs/briefing/BRIEFING.pdf)** (source: [`BRIEFING.md`](docs/briefing/BRIEFING.md)) is a
+paper-length briefing for a general scientific audience. It covers the project both as an exercise in agentic science
+and as a bioinformatics study:
+- how the AI team was organised;
+- how the benchmark and metrics were built;
+- which methods were tried and why;
+- the sealed test results, with figures;
+- take-away messages and limitations.
+
+Figures are regenerated from committed results with `python scripts/briefing_figures.py`. The PDF is rendered with
+`python scripts/render_briefing.py`, which needs `pip install markdown xhtml2pdf`.
+
 ## The scientific task
 
 The task was to estimate changes in human protein kinase activity from phosphoproteomics data (site-level log2 fold
@@ -26,7 +40,9 @@ The winning method, **core-v3**, has three parts:
 - per-kinase calibration.
 
 On a sealed test set (468 conditions, 67 kinases), it reached a coverage-aware AUROC of 0.714. The comparators
-scored 0.584 (z-score), 0.582 (KSEA), 0.549 (PhosX-like) and 0.505 (JUMPsem); each difference has Holm p = 0.003. It
+scored 0.584 (z-score), 0.582 (KSEA), 0.549 (PhosX-like) and 0.505 (JUMPsem); each difference has Holm p = 0.003.
+JUMPsem is a multi-sample method and was applied here to per-study log2 fold changes without replicates, which may
+not suit it. It
 scores 503 kinases in about 7 ms per condition. It did **not** beat a trivial "drug-target popularity" control
 (0.712), which wins on well-studied kinases but fails on unseen ones. The full results, limitations and remaining
 ideas are in [`REPORT.md`](REPORT.md).
@@ -47,6 +63,7 @@ cd mvp && python -m kinact_mvp score example/toy_input.tsv -o example/toy_scores
 
 | file | what it is |
 |---|---|
+| `docs/briefing/` | research briefing (PDF + markdown) and its figures |
 | `PROMPT.md` | the human brief, verbatim; the only task specification the agents received |
 | `RESEARCH_TREE.md` | the PI agent's research tree: status, decision log (D0–D14), every branch with outcome |
 | `LITERATURE.md` | agent-written literature review |

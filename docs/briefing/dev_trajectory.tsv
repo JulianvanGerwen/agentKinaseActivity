@@ -1,0 +1,7 @@
+step	label	dev_m1sel	source
+0	Best published\nbaseline\n(z-score)	0.563	results/baselines/baselines_dev.md
+1	+ predicted\nsubstrates	0.638	results/b1/b1_report.md (nested)
+2	Bayesian joint\nmodel + family\nprior	0.655	results/b2/b2_report.md (nested)
+3	calibrated\noutput\n(core-v1)	0.663	results/b21/b21_report.md; RESEARCH_TREE D7
+4	+ perturbation\nsignatures\n(core-v2)	0.680	results/b7b/b7b_report.md
+5	+ per-kinase\nrecalibration\n(core-v3)	0.680	results/b8/b8_report.md
