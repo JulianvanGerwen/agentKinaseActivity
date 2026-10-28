@@ -2,12 +2,13 @@
 
 Legend: [ ] planned · [~] in progress · [x] done · [-] abandoned/negative · [!] key finding
 
-## Status summary (2026-10-27, M1: G1 frozen)
-Design closed after 3 review rounds (DESIGN v3 + C7/C8). G1 frozen (results/G1.json, commit 7de8eef): GT built from rule tables and independently audited (12 fixes), split seed 90 (TEST sealed in cache/sealed: 468 conds, 470 M1-sel pairs, 67 kinases, 15 unseen), harness verified independently (from-scratch reimplementation identical; benchmarKIN reference 0.775 reproduced on their data), bias-corrected bootstrap (C8). MDE on TEST ≈ 0.06 M1-sel. 96 tests pass. Libraries built (PSP variants, leakage-filtered curated union, Sugiyama, predicted top-500 for 503 kinases).
+## Status summary (2026-10-28, M2: G2 frozen, sealed TEST run done)
+The sealed one-shot TEST run is complete (FREEZE.json + results/test/, commit be2ef15; freeze checks passed; independently reproduced bit-identically from commit 03ab343, runtime fields aside). On 468 TEST conditions (245 evaluable, 470 M1-sel pairs, 67 kinases, 15 unseen), core-v3 scores M1-sel 0.714 vs z-score 0.584, KSEA 0.582, PhosX-like 0.549, JUMPsem 0.505; all four "beats" tests pass (Holm p 0.003; Δ +0.13..+0.21; T-unseen Δ > 0; M2 ≥ 0). Harmony 0.725 (bins 0.72/0.66/0.70/0.82). Runtime 6.7 ms/cond (1 thread), 2.0 ms (16 threads), 1.7 ms (GPU); full compendium 2.9 s.
 
-Key finding for strategy: under the pre-registered coverage-aware primary metric (unscored = ½), PSP z-score scores M1-sel 0.515 (scored-only 0.633, coverage 0.58) — barely above random (Δ +0.010, n.s.) — while the popularity prior-only control scores 0.687. Winning therefore requires accurate scores for MANY kinases (incl. understudied ones), i.e. extended/predicted libraries + a statistic that ranks well across kinases with very different substrate counts. Next: baselines finishing; then method branch 1 (library variants) and 2 (Bayesian core).
+Not beaten: the prior-only control (0.712; Δ +0.002, p 0.50). It wins on well-studied kinases (T-seen 0.844 vs 0.759) but is far below chance on unseen kinases (0.253 vs core-v3 0.557). Calibration is 4.8% on site-permuted data but 8.1% on real null conditions. core-v3 vs core-v1 +0.021, carried by signature kinases. On the external Hernández set, core-v3 is below core-v1 (0.552 vs 0.613). Retro done and REPORT.md written. Remaining ideas need a fresh independent test set (TEST is spent); see REPORT §6.
 
 ## Decision log
+- D14 (G2/TEST): FREEZE.json written at 03ab343 and TEST run exactly once; results committed with the freeze file (be2ef15) and reproduced by an independent agent. Claims are restricted to the pre-registered Holm family: core-v3 beats z-score, KSEA, JUMPsem and PhosX-like; there is no claim vs prior-only, and the M2 vs z-score test is not significant (p 0.15 after Holm). No further method changes after TEST.
 - D13: Final TEST model = core-v3 with signature settings (n_top, κ)=(100,0) exactly as frozen for DEV-confirm look #2 (results/g2_prep/devconfirm_look2_frozen.json); build verifies ρ_sig/E1/counts reproduce. A1 secondary coreg config = majority of per-fold DEV picks. Comparators fixed: z-score curated min1 (+ PSP min3 reported), KSEA curated min1, JUMPsem best DEV, best-other = PhosX-like, prior-only.
 - D12: Final box B8 (results/b8/b8_report.md): core-v3 = core-v2 + E1 (per-signature-kinase permutation-null scale of the fused z; signature-kinase |z|>1.96 on permuted data 7.0%→5.1%, ΔM1-sel −0.0007). E2 shared-factor removal (Δ −0.0016, p .80) and E3 top-3 bagging (Δ −0.0012, p .73) rejected. Development stopped; next: seeds 1–4 re-split, DEV-confirm look #2 on core-v3, G2.
 - D11: core-v2 = core-v1 + late-fusion signatures (B7b, α=1, signatures fitted on DEV-CV conditions only). Conditional on DEV-confirm look #2; revert to core-v1 if Δ ≤ 0 there.
@@ -81,4 +82,8 @@ Key finding for strategy: under the pre-registered coverage-aware primary metric
 - [x] 10. Pre-G2 checks (results/g2_prep/g2_prep.md)
   - Re-split seeds 1–4: core-v3 0.6800±0.0037 (seed 0: 0.6796) — no fold-selection inflation (caveat: partitions overlap seed 0, ARI 0.68–0.75). Δ vs core-v1 +0.011..+0.019; vs prior-only −0.006±0.009.
   - [!] DEV-confirm look #2 (179 pairs): core-v3 0.842 vs core-v1 0.803 (+0.039 [0.006,0.069], p .016) → D11 condition PASSED, core-v3 kept; vs PSP-z +0.298, KSEA +0.225, prior-only −0.014 (n.s.). 3 looks left.
-- [ ] 6. Sealed test + REPORT.md
+- [x] 6. Sealed TEST (results/test/LEDGER.md; FREEZE.json; reproduced)
+  - [!] core-v3 M1-sel 0.714: beats z-score (+0.130 [0.090,0.169]), KSEA (+0.132), JUMPsem (+0.209), PhosX-like (+0.165); all Holm p 0.003.
+  - [!] vs prior-only +0.002 [−0.036,0.083] p 0.50 (no claim); T-unseen 0.557 vs 0.253; T-seen 0.759 vs 0.844.
+  - core-v3 vs core-v1 +0.021 [0.001,0.031] (signature kinases +0.050); A1 secondary 0.686 (not better). Calibration: nulls 8.1%, site-permuted 4.8%. External: Tyr 0.737, Hernández 0.552 (core-v1 0.613), CPTAC 0.672.
+  - [x] 6.1 LESSONS retro (docs/retro/m2_retro.md; LESSONS pruned to 12 rules) · [x] 6.2 REPORT.md
