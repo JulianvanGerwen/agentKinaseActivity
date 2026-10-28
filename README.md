@@ -8,7 +8,7 @@ The goal of this specific project was to create an estimator of kinase activity 
 
 Currently none of the results have been verified by a human. We plan to verify the agent’s methodology and benchmarking, and we will update this section accordingly.
 
-The rest of this repository is entirely AI generated. It is the working directory used by the agent. It also includes code for implementation of the predictive model and a AI-written briefing detailing the final method, the path followed to reach it, and benchmarking against other methods.
+The rest of this repository is entirely AI generated. It is the working directory used by the agent. It also includes code for implementation of the predictive model and a AI-written briefing ([`docs/briefing/BRIEFING.pdf`](docs/briefing/BRIEFING.pdf)) detailing the final method, the path followed to reach it, and benchmarking against other methods.
 
 **(Human-written text ends)**
 
